@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noise Infusion Dashboard</title>
+  <link rel="stylesheet" href="shared/mdi.css">
+  <style>
+    body {
+      font-family: var(--font-sans, system-ui, sans-serif);
+      max-width: 680px;
+      margin: 80px auto;
+      padding: 0 24px;
+      background: var(--color-bg, #fff);
+      color: var(--color-text, #1a1a2e);
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 8px; }
+    p  { color: var(--color-muted, #555); margin-bottom: 40px; font-size: 0.95rem; }
+    .cards { display: flex; gap: 20px; flex-wrap: wrap; }
+    .card {
+      flex: 1;
+      min-width: 220px;
+      border: 1px solid var(--color-border, #dde);
+      border-radius: 10px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow .15s, transform .15s;
+    }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
+    .card h2 { font-size: 1.05rem; margin: 0 0 8px; }
+    .card p  { font-size: 0.88rem; margin: 0; color: var(--color-muted, #666); }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      background: var(--mdi-teal, #00788a);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Noise Infusion Dashboard</h1>
+  <p>Interactive demos illustrating real data disclosure risks in education data.</p>
+  <div class="cards">
+    <a class="card" href="multi-select/">
+      <div class="tag">Demo 1</div>
+      <h2>Multi-Select &amp; Noise Infusion</h2>
+      <p>Explore how noise is applied to earnings and demographic data across program profiles.</p>
+    </a>
+    <a class="card" href="suppression/">
+      <div class="tag">Demo 2</div>
+      <h2>Suppression &amp; Back-Calculation</h2>
+      <p>See how suppressed cells can be reverse-engineered from published aggregate totals.</p>
+    </a>
+  </div>
+</body>
+</html>
