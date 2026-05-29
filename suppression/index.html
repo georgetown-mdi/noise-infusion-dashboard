@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-K Assessment Results — District and School</title>
+<link rel="stylesheet" href="../shared/mdi.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="dash-header">
+  <div class="dash-title">Pre-K Assessment Results — District and School</div>
+  <nav class="dash-tabs">
+    <!-- Tab 1 and Tab 2 are the "separate tabs" mirroring Texas TPEIR's design.
+         The suppression in Tab 1 is designed without awareness of Tab 2's totals. -->
+    <button class="dash-tab active" data-tab="assess">Assessment Results</button>
+    <button class="dash-tab" data-tab="enroll">District Enrollment</button>
+    <button class="dash-tab" data-tab="comp">+ Complementary Suppression</button>
+    <button class="dash-tab" data-tab="noise">+ Noise Infusion</button>
+  </nav>
+</header>
+
+<!-- ══ Tab 1: Assessment Results ══════════════════════════════════════════ -->
+<div id="pane-assess" class="tab-pane active">
+
+  <div class="pane-desc">
+    <strong>% of 4-year-olds meeting pre-K benchmark, by racial/ethnic subgroup.</strong>
+    Cells with fewer than 10 students are suppressed (—) per state disclosure-avoidance policy.
+    <span class="danger-txt">The district total is visible — and the enrollment counts are one tab away.</span>
+  </div>
+
+  <div class="table-card">
+    <div class="table-card-head">
+      <span class="table-card-title">% Meeting Benchmark — All Subpopulations</span>
+      <div class="legend">
+        <span class="legend-item">
+          <span class="swatch" style="background:#fff5f5;border:1px solid #e8b8b8"></span>
+          Suppressed — N &lt; 10
+        </span>
+        <span class="legend-item">
+          <span class="swatch" style="background:#f0f4fa;border:1px solid var(--pale)"></span>
+          All students total
+        </span>
+      </div>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead class="data-thead"></thead>
+        <tbody id="tbody-assess"></tbody>
+      </table>
+    </div>
+    <div class="table-foot">— = Suppressed; fewer than 10 students in subgroup. Percentages represent students meeting the benchmark on at least one assessment.</div>
+  </div>
+
+  <button class="show-attack-btn" id="showAttackBtn">Show back-calculation attacks ↓</button>
+
+  <div class="attack-panel" id="attackPanel" style="display:none">
+    <div class="attack-panel-head">⚠ Back-calculation using District Enrollment tab (Tab 2)</div>
+    <div class="attack-list" id="attackList"></div>
+  </div>
+
+</div>
+
+<!-- ══ Tab 2: District Enrollment ══════════════════════════════════════════ -->
+<div id="pane-enroll" class="tab-pane">
+
+  <div class="pane-desc">
+    <strong>Enrollment counts used to calculate assessment rates.</strong>
+    These counts are published without suppression — enrollment is considered non-sensitive aggregate data.
+    <span class="danger-txt">Combined with Tab 1's assessment results, these totals expose suppressed subgroup sizes exactly.</span>
+  </div>
+
+  <div class="table-card">
+    <div class="table-card-head">
+      <span class="table-card-title">Students Assessed — Count by Subgroup</span>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead class="data-thead"></thead>
+        <tbody id="tbody-enroll"></tbody>
+      </table>
+    </div>
+    <div class="table-foot">All students enrolled in the pre-K program who completed at least one assessment during the school year.</div>
+  </div>
+
+</div>
+
+<!-- ══ Tab 3: Complementary Suppression ═══════════════════════════════════ -->
+<div id="pane-comp" class="tab-pane">
+
+  <div class="pane-desc">
+    <strong>Complementary suppression applied:</strong> the All Students total is also suppressed wherever back-calculation would expose a hidden subgroup.
+    <span class="danger-txt">This prevents exact recovery — but totals are now missing for most districts.</span>
+  </div>
+
+  <div class="table-card">
+    <div class="table-card-head">
+      <span class="table-card-title">% Meeting Benchmark — Complementary Suppression Applied</span>
+      <div class="legend">
+        <span class="legend-item">
+          <span class="swatch" style="background:#fff5f5;border:1px solid #e8b8b8"></span>
+          Primary suppression
+        </span>
+        <span class="legend-item">
+          <span class="swatch" style="background:#f0f0f0;border:1px solid #ddd"></span>
+          Complementary suppression
+        </span>
+      </div>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead class="data-thead"></thead>
+        <tbody id="tbody-comp"></tbody>
+      </table>
+    </div>
+    <div class="table-foot">— = Suppressed. Totals suppressed in 7 of 8 districts to prevent back-calculation.</div>
+  </div>
+
+  <div class="comp-note">
+    <strong>The cost:</strong> Complementary suppression works but cascades. When many subgroups are small, nearly every district-level total must be hidden — often the most important figure for administrators and policymakers. In this dataset, 7 of 8 district totals are suppressed. Third-level suppression (to prevent recovering complementary cells from other known values) can further hollow out a table.
+  </div>
+
+</div>
+
+<!-- ══ Tab 4: Noise Infusion ════════════════════════════════════════════════ -->
+<div id="pane-noise" class="tab-pane">
+
+  <div class="pane-desc">
+    <strong>Calibrated noise added to every cell — including totals.</strong>
+    <span class="ok-txt">No cells suppressed. All subgroups and totals publishable. Back-calculation yields a noisy result, not the true value.</span>
+  </div>
+
+  <div class="table-card">
+    <div class="table-card-head">
+      <span class="table-card-title">% Meeting Benchmark — Noise-Infused</span>
+      <div class="legend">
+        <span class="legend-item">
+          <span class="swatch" style="background:#eef7f8;border:1px solid #a8d8dc"></span>
+          ~ = noise-infused approximate value
+        </span>
+      </div>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead class="data-thead"></thead>
+        <tbody id="tbody-noise"></tbody>
+      </table>
+    </div>
+    <div class="table-foot">All values are approximate. The ~ prefix indicates noise-infused output. The noise is calibrated to provide differential privacy guarantees.</div>
+  </div>
+
+  <div class="noise-info">
+    <strong>Why back-calculation fails:</strong> Because the published total is itself noisy, computing <em>Total − White − Hispanic − Asian − …</em> does not recover the true suppressed count — it recovers a perturbed value with uncertainty spanning several individuals. Noise on each cell is statistically independent, so combining cells accumulates — rather than cancels — uncertainty.
+  </div>
+
+</div>
+
+<script src="../shared/noise.js"></script>
+<script src="data.js"></script>
+<script src="tables.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

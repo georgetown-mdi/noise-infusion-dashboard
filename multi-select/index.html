@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workforce Outcomes Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="../shared/mdi.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="dash-header">
+  <div class="dash-title">Workforce Outcomes Dashboard</div>
+  <nav class="dash-tabs">
+    <button class="dash-tab dash-tab-inactive">Home</button>
+    <button class="dash-tab dash-tab-inactive">Program Background</button>
+    <button class="dash-tab active" data-tab="earnings">Earnings</button>
+    <button class="dash-tab dash-tab-inactive">Industry</button>
+    <button class="dash-tab" data-tab="demographics">Demographics</button>
+  </nav>
+</header>
+
+<!-- ── Filter bar (always visible) ── -->
+<div class="filter-bar">
+  <div class="filter-cell">
+    <label class="filter-label" for="orgSelect">Organization</label>
+    <select class="filter-select" id="orgSelect"></select>
+  </div>
+  <div class="filter-cell">
+    <label class="filter-label" for="progSelect">Program</label>
+    <select class="filter-select" id="progSelect"></select>
+  </div>
+</div>
+
+<!-- ── Stats row ── -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-label">Matched Sample Size</span>
+    <span class="stat-value" id="matchedN">—</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">Avg. Program Length</span>
+    <span class="stat-value" id="avgMonths">—</span>
+    <span class="stat-sub">months</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">Median Q4 Wage</span>
+    <span class="stat-value" id="statMedianWage">—</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">Employment Rate</span>
+    <span class="stat-value" id="statEmpRate">—</span>
+  </div>
+  <div style="margin-left:auto;display:flex;align-items:center">
+    <div class="noise-row" style="border:none;padding:0">
+      <span>Raw data</span>
+      <label class="toggle">
+        <input type="checkbox" id="noiseToggle">
+        <span class="slider"></span>
+      </label>
+      <span class="noise-label">Noise-infused</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Risk banner (conditionally shown) ── -->
+<div id="riskBanner" style="display:none"></div>
+
+<!-- ══ Earnings tab pane ══════════════════════════════════════════════════ -->
+<div id="pane-earnings" class="tab-pane active">
+
+  <div class="pane-desc">
+    <strong>Post-program earnings outcomes</strong> for matched participants.
+    Quarters 1–4 after program exit, matched to UI wage records.
+    Use the filters above to drill into a specific organization or program.
+  </div>
+
+  <div class="earn-grid">
+
+    <div class="earn-chart-card">
+      <div class="earn-card-title">Median Quarterly Wage — Post-Program Earnings Trajectory</div>
+      <div class="earn-chart-wrap">
+        <canvas id="earningsChart"></canvas>
+      </div>
+      <div class="earn-card-foot">Each bar represents all matched participants' median quarterly wage at that quarter post-exit.</div>
+    </div>
+
+    <div class="earn-side">
+      <div class="earn-kpi-card">
+        <div class="earn-kpi-label">Median Q4 Wage</div>
+        <div class="earn-kpi-val" id="earnQ4">—</div>
+        <div class="earn-kpi-sub">per quarter · annualized: <span id="earnAnnual">—</span></div>
+      </div>
+      <div class="earn-kpi-card">
+        <div class="earn-kpi-label">Employment Rate</div>
+        <div class="earn-kpi-val" id="earnRate">—</div>
+        <div class="earn-kpi-sub">employed at 4 quarters post-exit</div>
+      </div>
+      <div class="earn-kpi-card earn-kpi-card-note">
+        <div class="earn-kpi-label">About this view</div>
+        <p>Earnings are matched via UI wage records. Participants must have completed at least one quarter of employment to be included.</p>
+        <p style="margin-top:6px">Click the <strong>Demographics</strong> tab to view participant characteristics — and see what happens when demographic filters are enabled.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="noise-info" id="earnNoiseInfo" style="display:none">
+    <strong>What does ~ mean?</strong> The tilde prefix signals <em>deliberate perturbation</em> — not measurement uncertainty.
+    The agency knows the exact value but adds calibrated noise before publishing.
+    An adversary who tries to back-calculate a hidden figure (e.g. Total earnings − visible subgroups)
+    recovers a noisy result, not the true count. Unlike suppression, every cell is still published —
+    there's no missing data to signal that a subgroup is small.
+  </div>
+
+</div><!-- /pane-earnings -->
+
+<!-- ══ Demographics tab pane ══════════════════════════════════════════════ -->
+<div id="pane-demographics" class="tab-pane">
+
+  <!-- Demographic filter addon (the problematic feature) -->
+  <div class="demo-filter-toggle-row">
+    <label>
+      <input type="checkbox" id="demoFilterToggle" style="accent-color:#8b5a00">
+      Enable demographic characteristic filters
+    </label>
+    <span class="note">Adding these multi-select filters allows users to drill into subgroups — reducing the matched sample size below safe thresholds.</span>
+  </div>
+
+  <div class="demo-filter-panel" id="demoFilterPanel">
+    <div class="demo-filter-col">
+      <span class="filter-label">Gender (select one or more)</span>
+      <div id="genderMulti"></div>
+    </div>
+    <div class="demo-filter-col">
+      <span class="filter-label">Race / Ethnicity (select one or more)</span>
+      <div id="raceMulti"></div>
+    </div>
+  </div>
+
+  <!-- 3-column demographic panel grid -->
+  <div class="demo-grid" id="demoPanels">
+
+    <!-- Col 1: Gender + Homeless -->
+    <div class="demo-col">
+      <div class="demo-col-title">Gender</div>
+      <div id="genderCircles"></div>
+
+      <div class="demo-subsection">
+        <div class="demo-subsection-title">Homeless</div>
+        <div id="homelessTable"></div>
+      </div>
+    </div>
+
+    <!-- Col 2: Race + Public Benefits -->
+    <div class="demo-col">
+      <div class="demo-col-title">Race</div>
+      <div class="race-chart-wrap">
+        <canvas id="raceChart"></canvas>
+      </div>
+
+      <div class="demo-subsection">
+        <div class="demo-subsection-title">Public Benefits</div>
+        <div id="benefitsTable"></div>
+      </div>
+    </div>
+
+    <!-- Col 3: Completion + Education -->
+    <div class="demo-col">
+      <div class="demo-col-title">Completion Status</div>
+      <div class="completion-chart-wrap">
+        <canvas id="completionChart"></canvas>
+      </div>
+
+      <div class="demo-subsection">
+        <div class="demo-subsection-title">Education</div>
+        <div id="eduBars"></div>
+      </div>
+    </div>
+
+  </div><!-- /demo-grid -->
+
+</div><!-- /pane-demographics -->
+
+<!-- ── Footer note ── -->
+<div class="dash-note">
+  Note: The dashboard will not display any values for a sample size less than 5 to adhere with data sharing requirements and protect confidentiality.
+</div>
+
+<script src="../shared/noise.js"></script>
+<script src="data.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
