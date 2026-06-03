@@ -276,40 +276,40 @@ body {
   <div class="filter-cell">
     <span class="filter-label">Program</span>
     <div class="ms-wrapper" id="progWrapper">
-      <div class="ms-display" id="progDisplay" tabindex="0">(全部)</div>
+      <div class="ms-display" id="progDisplay" tabindex="0">(All)</div>
       <div class="ms-panel" id="progPanel"></div>
     </div>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Program Completion</span>
-    <select class="filter-select"><option>(全部)</option></select>
+    <select class="filter-select"><option>(All)</option></select>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Highest Education L...</span>
-    <select class="filter-select"><option>(全部)</option></select>
+    <select class="filter-select"><option>(All)</option></select>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Race</span>
     <div class="ms-wrapper" id="raceWrapper">
-      <div class="ms-display" id="raceDisplay" tabindex="0">(全部)</div>
+      <div class="ms-display" id="raceDisplay" tabindex="0">(All)</div>
       <div class="ms-panel" id="racePanel"></div>
     </div>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Gender</span>
     <div class="ms-wrapper" id="genderWrapper">
-      <div class="ms-display" id="genderDisplay" tabindex="0">(全部)</div>
+      <div class="ms-display" id="genderDisplay" tabindex="0">(All)</div>
       <div class="ms-panel" id="genderPanel"></div>
     </div>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Justice System Hist...</span>
-    <select class="filter-select"><option>Missing/NULL</option><option>(全部)</option></select>
+    <select class="filter-select"><option>Missing/NULL</option><option>(All)</option></select>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Lives in Denver Cou...</span>
     <div class="ms-wrapper" id="countyWrapper">
-      <div class="ms-display" id="countyDisplay" tabindex="0">(全部)</div>
+      <div class="ms-display" id="countyDisplay" tabindex="0">(All)</div>
       <div class="ms-panel" id="countyPanel"></div>
     </div>
   </div>
@@ -376,17 +376,17 @@ body {
   // ── Example definitions ──────────────────────────────────────────────────
   const examples = {
     1: {
-      progSel:     ['(全部)'],
-      raceSel:     ['(全部)', 'AIAN'],       // non-exclusive: All + AIAN both checked
-      genderSel:   ['(全部)'],
+      progSel:     ['(All)'],
+      raceSel:     ['(All)', 'AIAN'],       // non-exclusive: All + AIAN both checked
+      genderSel:   ['(All)'],
       countyDenver: false,
       exposure: {
         filterDesc: [
           { label: 'Organization', value: 'ActivateWork' },
-          { label: 'Program',      value: '(全部)' },
-          { label: 'Race',         value: '(全部) + AIAN', flag: true },
-          { label: 'Gender',       value: '(全部)' },
-          { label: 'Denver County', value: '(全部)' },
+          { label: 'Program',      value: '(All)' },
+          { label: 'Race',         value: '(All) + AIAN', flag: true },
+          { label: 'Gender',       value: '(All)' },
+          { label: 'Denver County', value: '(All)' },
         ],
         math: [
           { expr: 'Base N',                    result: '367',  note: 'ActivateWork, all programs' },
@@ -394,7 +394,7 @@ body {
           { expr: 'AIAN estimated count',      result: '5',    note: '367 × 1.4%', danger: true },
           { expr: '"All Races" checked → displayed N', result: '367', note: 'Bug: All overrides filter' },
         ],
-        why: `The Race dropdown has <strong>"(全部)" [All Races]</strong> checked alongside
+        why: `The Race dropdown has <strong>"All Races"</strong> checked alongside
               <strong>"AIAN"</strong> — a non-exclusive combination the UI permits.
               <div class="id-box">
                 <strong>The trap:</strong> The dashboard still shows N = 367 because "All Races" takes
@@ -413,10 +413,10 @@ body {
       exposure: {
         filterDesc: [
           { label: 'Organization', value: 'ActivateWork' },
-          { label: 'Program',      value: '(全部)' },
+          { label: 'Program',      value: '(All)' },
           { label: 'Race',         value: 'AIAN + White', flag: true },
           { label: 'Gender',       value: 'Male', flag: true },
-          { label: 'Denver County', value: '(全部)' },
+          { label: 'Denver County', value: '(All)' },
         ],
         math: [
           { expr: 'AIAN + White share',         result: '19.9%', note: '1.4% + 18.5%' },
@@ -444,8 +444,8 @@ body {
           { label: 'Organization', value: 'ActivateWork' },
           { label: 'Program',      value: 'AWS re/Start + Desktop Support', flag: true },
           { label: 'Race',         value: 'Hispanic or Latino', flag: true },
-          { label: 'Gender',       value: '(全部)' },
-          { label: 'Denver County', value: '(全部)' },
+          { label: 'Gender',       value: '(All)' },
+          { label: 'Denver County', value: '(All)' },
         ],
         math: [
           { expr: 'AWS re/Start (N=18), Hispanic', result: '1',  note: '18 × 5.6%', danger: true },
@@ -501,9 +501,9 @@ body {
   function refreshDisplay(displayEl, checked, allLabel) {
     const specific = checked.filter(v => v !== allLabel);
     if (checked.includes(allLabel)) {
-      displayEl.textContent = specific.length ? `(全部) + ${specific.join(', ')}` : '(全部)';
+      displayEl.textContent = specific.length ? `(All) + ${specific.join(', ')}` : '(All)';
     } else if (specific.length === 0) {
-      displayEl.textContent = '(全部)';
+      displayEl.textContent = '(All)';
     } else {
       displayEl.textContent = specific.join(', ');
     }
@@ -535,17 +535,17 @@ body {
   }
 
   function applyStateToUI() {
-    setPanel('progPanel',   state.progSel,   '(全部)');
-    setPanel('racePanel',   state.raceSel,   '(全部)');
-    setPanel('genderPanel', state.genderSel, '(全部)');
-    setPanel('countyPanel', state.countyDenver ? ['Yes (Denver Co.)'] : ['(全部)'], '(全部)');
-    refreshDisplay(document.getElementById('progDisplay'),   state.progSel,   '(全部)');
-    refreshDisplay(document.getElementById('raceDisplay'),   state.raceSel,   '(全部)');
-    refreshDisplay(document.getElementById('genderDisplay'), state.genderSel, '(全部)');
-    refreshDisplay(document.getElementById('countyDisplay'), state.countyDenver ? ['Yes (Denver Co.)'] : ['(全部)'], '(全部)');
-    markNonExclusive(document.getElementById('progPanel'),   '(全部)');
-    markNonExclusive(document.getElementById('racePanel'),   '(全部)');
-    markNonExclusive(document.getElementById('genderPanel'), '(全部)');
+    setPanel('progPanel',   state.progSel,   '(All)');
+    setPanel('racePanel',   state.raceSel,   '(All)');
+    setPanel('genderPanel', state.genderSel, '(All)');
+    setPanel('countyPanel', state.countyDenver ? ['Yes (Denver Co.)'] : ['(All)'], '(All)');
+    refreshDisplay(document.getElementById('progDisplay'),   state.progSel,   '(All)');
+    refreshDisplay(document.getElementById('raceDisplay'),   state.raceSel,   '(All)');
+    refreshDisplay(document.getElementById('genderDisplay'), state.genderSel, '(All)');
+    refreshDisplay(document.getElementById('countyDisplay'), state.countyDenver ? ['Yes (Denver Co.)'] : ['(All)'], '(All)');
+    markNonExclusive(document.getElementById('progPanel'),   '(All)');
+    markNonExclusive(document.getElementById('racePanel'),   '(All)');
+    markNonExclusive(document.getElementById('genderPanel'), '(All)');
   }
 
   function setPanel(panelId, selected, allLabel) {
@@ -726,13 +726,13 @@ body {
 
   // ── Main render ──────────────────────────────────────────────────────────
   function render() {
-    const includesAllProg   = state.progSel.includes('(全部)');
-    const includesAllRace   = state.raceSel.includes('(全部)');
-    const includesAllGender = state.genderSel.includes('(全部)');
+    const includesAllProg   = state.progSel.includes('(All)');
+    const includesAllRace   = state.raceSel.includes('(All)');
+    const includesAllGender = state.genderSel.includes('(All)');
 
-    const effectiveProg   = state.progSel.filter(p => p !== '(全部)');
-    const effectiveRace   = includesAllRace   ? [] : state.raceSel.filter(r => r !== '(全部)');
-    const effectiveGender = includesAllGender ? [] : state.genderSel.filter(g => g !== '(全部)');
+    const effectiveProg   = state.progSel.filter(p => p !== '(All)');
+    const effectiveRace   = includesAllRace   ? [] : state.raceSel.filter(r => r !== '(All)');
+    const effectiveGender = includesAllGender ? [] : state.genderSel.filter(g => g !== '(All)');
 
     const profile = SD.coData.getProfile(effectiveProg, includesAllProg || !state.progSel.length);
 
@@ -761,10 +761,10 @@ body {
   }
 
   // ── Init ─────────────────────────────────────────────────────────────────
-  buildPanel(document.getElementById('progPanel'),   SD.coData.programList.filter(p => p !== 'All'), 'progSel',    '(全部)');
-  buildPanel(document.getElementById('racePanel'),   SD.coData.raceList,                              'raceSel',    '(全部)');
-  buildPanel(document.getElementById('genderPanel'), SD.coData.genderList,                            'genderSel',  '(全部)');
-  buildPanel(document.getElementById('countyPanel'), ['Yes (Denver Co.)'],                             'countyDenver_sel', '(全部)');
+  buildPanel(document.getElementById('progPanel'),   SD.coData.programList.filter(p => p !== 'All'), 'progSel',    '(All)');
+  buildPanel(document.getElementById('racePanel'),   SD.coData.raceList,                              'raceSel',    '(All)');
+  buildPanel(document.getElementById('genderPanel'), SD.coData.genderList,                            'genderSel',  '(All)');
+  buildPanel(document.getElementById('countyPanel'), ['Yes (Denver Co.)'],                             'countyDenver_sel', '(All)');
 
   setupToggle(document.getElementById('progDisplay'),   document.getElementById('progPanel'));
   setupToggle(document.getElementById('raceDisplay'),   document.getElementById('racePanel'));
@@ -775,8 +775,8 @@ body {
   document.getElementById('countyPanel').querySelectorAll('input').forEach(cb => {
     cb.addEventListener('change', () => {
       const checked = Array.from(document.getElementById('countyPanel').querySelectorAll('input:checked')).map(e => e.value);
-      state.countyDenver = checked.includes('Yes (Denver Co.)') && !checked.includes('(全部)');
-      refreshDisplay(document.getElementById('countyDisplay'), checked, '(全部)');
+      state.countyDenver = checked.includes('Yes (Denver Co.)') && !checked.includes('(All)');
+      refreshDisplay(document.getElementById('countyDisplay'), checked, '(All)');
       render();
     });
   });
