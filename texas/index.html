@@ -66,10 +66,8 @@ td.race-cell { color: #333; padding-left: 18px; }
 .attack-panel { margin: 0 10px 10px; background: #fff; border: 2px solid #003f8a; border-radius: 4px; overflow: hidden; }
 .attack-header { background: #003f8a; color: #fff; padding: 10px 18px; font-size: 13px; font-weight: 700; letter-spacing: .02em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .attack-header .tag { background: rgba(255,255,255,.2); padding: 2px 9px; border-radius: 3px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
-.attack-header .note { font-size: 11px; font-weight: 400; opacity: .85; margin-left: auto; }
-.attack-body { display: grid; grid-template-columns: 1fr 1fr; }
+.attack-body { display: grid; grid-template-columns: 1fr; }
 .attack-left { padding: 16px 20px; border-right: 1px solid #c8d8f0; }
-.attack-right { padding: 16px 20px; background: #f5f8ff; }
 .atk-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #003f8a; margin-bottom: 12px; }
 .math-table { width: 100%; border-collapse: collapse; font-family: 'Courier New', monospace; font-size: 13px; }
 .math-table td { padding: 4px 6px; vertical-align: middle; }
@@ -87,12 +85,6 @@ td.race-cell { color: #333; padding-left: 18px; }
 .rc-stat { text-align: center; }
 .rc-num { font-size: 28px; font-weight: 700; line-height: 1; }
 .rc-desc { font-size: 10px; opacity: .72; margin-top: 2px; }
-.why-text { font-size: 12px; color: #444; line-height: 1.65; margin-bottom: 12px; }
-.why-text strong { color: #003f8a; }
-.why-rule { background: #e8f0ff; border-left: 3px solid #003f8a; padding: 9px 13px; font-size: 12px; color: #333; line-height: 1.65; border-radius: 0 3px 3px 0; margin-top: 8px; }
-
-/* ── Footer ── */
-.dash-note { margin: 0 10px 10px; padding: 9px 14px; font-size: 11px; color: #555; border: 1px solid #ccc; border-radius: 2px; background: #fff; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -140,7 +132,6 @@ td.race-cell { color: #333; padding-left: 18px; }
   <span class="step-label">Dashboard tab:</span>
   <button class="step-btn" id="stepSummary" onclick="setStep('summary')">District Summary (no suppression)</button>
   <button class="step-btn active" id="stepRace"    onclick="setStep('race')">Race / Ethnicity (with suppression)</button>
-  <span class="step-hint">— toggle to see what each public tab reveals</span>
 </div>
 
 <!-- Data table -->
@@ -155,7 +146,6 @@ td.race-cell { color: #333; padding-left: 18px; }
         <th class="left" style="width:170px">Subject</th>
         <th class="left" style="width:170px">Race / Ethnicity</th>
         <th>Total<br>Students (N)</th>
-        <th>Both BOY<br>&amp; EOY Assessed</th>
         <th>Proficient<br>BOY (N)</th>
         <th>Proficient<br>BOY (%)</th>
         <th class="attack-col">Proficient<br>EOY (N)</th>
@@ -172,7 +162,6 @@ td.race-cell { color: #333; padding-left: 18px; }
   <div class="attack-header">
     <span>Complementary Disclosure Attack</span>
     <span class="tag">Cell Suppression Bypass</span>
-    <span class="note">Two public tabs · zero hacking required</span>
   </div>
   <div class="attack-body">
     <div class="attack-left">
@@ -180,30 +169,7 @@ td.race-cell { color: #333; padding-left: 18px; }
       <table class="math-table" id="mathTable"></table>
       <div id="resultCallout"></div>
     </div>
-    <div class="attack-right">
-      <div class="atk-label">Why Suppression Fails Here</div>
-      <div class="why-text">
-        The <strong>Race/Ethnicity tab</strong> hides any cell where N &lt; 10, replacing it with NA.
-        But the <strong>District Summary tab</strong> shows district-wide totals — those totals are large
-        enough that suppression doesn't apply to them.
-      </div>
-      <div class="why-text">
-        Because both tabs are on the same public dashboard, any visitor can open Tab 1, copy the
-        district total, then open Tab 2, subtract the visible race groups, and recover the
-        <strong>exact count hidden behind NA</strong>.
-        No data breach. No special access. Just arithmetic on two public pages.
-      </div>
-      <div class="why-rule" id="whyRule"></div>
-    </div>
   </div>
-</div>
-
-<div class="dash-note">
-  Note: Cell suppression (NA) protects small groups in isolation. But when district-wide totals
-  are published on a separate tab without the same suppression logic applied,
-  <strong>the total minus the visible subgroups recovers the exact suppressed count</strong> —
-  exposing how many students from a hidden group attended, and how many passed.
-  This is known as <em>complementary disclosure</em>.
 </div>
 
 <script src="data.js"></script>
@@ -243,12 +209,11 @@ td.race-cell { color: #333; padding-left: 18px; }
               <td class="left subject-cell" rowspan="1">${subj}</td>
               <td class="left race-cell" style="font-weight:700;color:#003f8a">All students</td>
               <td>${tot.ecds}</td>
-              <td>${tot.both}</td>
               <td>${tot.boyProf}</td>
-              <td>${pct(tot.boyProf, tot.both)}</td>
+              <td>${pct(tot.boyProf, tot.ecds)}</td>
               <td class="attack-td">${tot.eoyProf}</td>
-              <td>${pct(tot.eoyProf, tot.both)}</td>
-              <td>${tot.both ? (Math.round(tot.eoyProf/tot.both*100) - Math.round(tot.boyProf/tot.both*100)) + 'pp' : '—'}</td>
+              <td>${pct(tot.eoyProf, tot.ecds)}</td>
+              <td>${tot.ecds ? (Math.round(tot.eoyProf/tot.ecds*100) - Math.round(tot.boyProf/tot.ecds*100)) + 'pp' : '—'}</td>
             `;
             body.appendChild(tr);
           }
@@ -263,10 +228,10 @@ td.race-cell { color: #333; padding-left: 18px; }
         const bothVal  = suppressed ? na() : r.both;
         const boyVal   = boyProfHidden ? na() : r.boyProf;
         const eoyVal   = eoyProfHidden ? na() : r.eoyProf;
-        const boyPct   = boyProfHidden ? na() : pct(r.boyProf, r.both);
-        const eoyPct   = eoyProfHidden ? na() : pct(r.eoyProf, r.both);
+        const boyPct   = boyProfHidden ? na() : pct(r.boyProf, r.ecds);
+        const eoyPct   = eoyProfHidden ? na() : pct(r.eoyProf, r.ecds);
         const diffPct  = (boyProfHidden || eoyProfHidden) ? na() :
-          (Math.round(r.eoyProf / r.both * 100) - Math.round(r.boyProf / r.both * 100)) + 'pp';
+          (Math.round(r.eoyProf / r.ecds * 100) - Math.round(r.boyProf / r.ecds * 100)) + 'pp';
 
         const attackSubjMatch = subj === s.attackSubject;
         const eoyTdClass = attackSubjMatch ? 'attack-td' : '';
@@ -274,8 +239,7 @@ td.race-cell { color: #333; padding-left: 18px; }
         tr.innerHTML = `
           ${isFirst ? `<td class="left subject-cell" rowspan="${rows.length}">${subj}</td>` : ''}
           <td class="left race-cell ${suppressed ? 'na-cell' : ''}">${r.race}</td>
-          <td class="${suppressed ? '' : ''}">${ecdsVal}</td>
-          <td>${bothVal}</td>
+          <td>${ecdsVal}</td>
           <td>${boyVal}</td>
           <td>${boyPct}</td>
           <td class="${eoyTdClass}">${eoyVal}</td>
@@ -293,7 +257,6 @@ td.race-cell { color: #333; padding-left: 18px; }
         // But district summary has actual totals
         const visRows = rows.filter(r => r.shown);
         const visEcds = visRows.reduce((s, r) => s + r.ecds, 0);
-        const visBoth = visRows.reduce((s, r) => s + r.both, 0);
         const visBoy  = visRows.filter(r => !r.boyProfHidden).reduce((s, r) => s + r.boyProf, 0);
         const visEoy  = visRows.filter(r => !r.eoyProfHidden).reduce((s, r) => s + r.eoyProf, 0);
         const hasEoySup = rows.some(r => !r.shown || r.eoyProfHidden);
@@ -303,7 +266,6 @@ td.race-cell { color: #333; padding-left: 18px; }
         ttr.innerHTML = `
           <td class="left" colspan="2" style="padding-left:8px;font-size:11px;color:#888">Subtotal (visible only)</td>
           <td>${visEcds} ${tot.ecds - visEcds > 0 ? `<span style="color:#c8a060;font-size:10px">+${tot.ecds-visEcds} NA</span>` : ''}</td>
-          <td>${visBoth}</td>
           <td>${hasBoySupp ? `${visBoy} <span style="color:#c8a060;font-size:10px">+? NA</span>` : visBoy}</td>
           <td>—</td>
           <td class="${subjectIsAttack ? 'attack-td' : ''}">${hasEoySup ? `${visEoy} <span style="color:#c8a060;font-size:10px">+? NA</span>` : visEoy}</td>
@@ -368,14 +330,6 @@ td.race-cell { color: #333; padding-left: 18px; }
       </div>
     `;
 
-    // Why rule
-    const visEoyStr = atk.visRows.filter(r => !r.eoyProfHidden).map(r => `${r.race}=${r.eoyProf}`).join(', ');
-    document.getElementById('whyRule').innerHTML =
-      `<strong>Subject:</strong> ${s.attackSubject}<br>
-       <strong>District Summary tab</strong> shows total proficient EOY = ${atk.totalEoyProf} (no suppression)<br>
-       <strong>Race/Ethnicity tab</strong> shows: ${visEoyStr}<br>
-       ${atk.totalEoyProf} − (${atk.visRows.filter(r=>!r.eoyProfHidden).map(r=>r.eoyProf).join(' + ')}) = <strong>${atk.suppEoyProf}</strong>
-       proficient students whose cells display NA — recovered exactly`;
   }
 
   window.setStep = function (step) {
