@@ -7,239 +7,101 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  background: #e8ecf1;
-  color: #1a1a1a;
-  font-size: 13px;
-  min-height: 100vh;
-}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #e8ecf1; color: #1a1a1a; font-size: 13px; }
 
-/* ── Title bar ── */
-.title-bar {
-  background: #8C1D18;
-  padding: 14px 24px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.01em;
-}
-
-/* ── Back link inside title ── */
-.back-row {
-  background: #6b1614;
-  padding: 4px 16px;
-  font-size: 11px;
-}
-.back-row a { color: rgba(255,255,255,.65); text-decoration: none; }
+/* ── Header ── */
+.back-row { background: #6b1614; padding: 4px 16px; font-size: 11px; }
+.back-row a { color: rgba(255,255,255,.6); text-decoration: none; }
 .back-row a:hover { color: #fff; }
-
-/* ── Tab nav ── */
-.tab-nav {
-  display: flex;
-  background: #2d2d2d;
-}
-.tab-btn {
-  flex: 1; padding: 12px 8px;
-  font-size: 13px; font-weight: 600;
-  color: #ccc; background: none; border: none;
-  cursor: pointer; text-align: center;
-  border-right: 1px solid #444;
-  transition: background .12s, color .12s;
-}
-.tab-btn:last-child { border-right: none; }
-.tab-btn:hover { background: #3d3d3d; color: #fff; }
+.title-bar { background: #8C1D18; padding: 14px 24px; text-align: center; font-size: 20px; font-weight: 700; color: #fff; letter-spacing: .01em; }
+.tab-nav { display: flex; background: #2d2d2d; }
+.tab-btn { flex: 1; padding: 12px 8px; font-size: 13px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; text-align: center; }
 .tab-btn.active { background: #8C1D18; color: #fff; }
-.tab-btn.inactive { cursor: default; opacity: .55; pointer-events: none; }
+.tab-btn.inactive { opacity: .45; pointer-events: none; cursor: default; }
 
 /* ── Example strip ── */
-.example-strip {
-  display: flex; align-items: center; gap: 8px;
-  padding: 8px 16px;
-  background: #fff;
-  border-bottom: 2px solid #8C1D18;
-  flex-wrap: wrap;
-}
-.example-strip-label {
-  font-size: 11px; font-weight: 700; color: #666;
-  text-transform: uppercase; letter-spacing: .05em;
-  margin-right: 4px;
-}
-.ex-btn {
-  padding: 5px 14px; font-size: 12px; font-weight: 600;
-  border: 1px solid #ccc; border-radius: 3px;
-  background: #f5f5f5; color: #333; cursor: pointer;
-  transition: background .12s, border-color .12s;
-}
+.example-strip { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: #fff; border-bottom: 2px solid #8C1D18; flex-wrap: wrap; }
+.strip-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; }
+.ex-btn { padding: 5px 14px; font-size: 12px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; color: #333; cursor: pointer; }
 .ex-btn:hover { background: #e8e8e8; }
 .ex-btn.active { background: #8C1D18; color: #fff; border-color: #8C1D18; }
 
 /* ── Filter bar ── */
-.filter-bar {
-  display: flex; flex-wrap: wrap;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 6px 12px;
-  gap: 6px 12px;
-  align-items: flex-end;
-}
+.filter-bar { display: flex; flex-wrap: wrap; gap: 6px 12px; background: #fff; border-bottom: 1px solid #ccc; padding: 6px 12px; align-items: flex-end; }
 .filter-cell { display: flex; flex-direction: column; min-width: 110px; }
-.filter-label {
-  font-size: 11px; font-weight: 700; color: #333;
-  margin-bottom: 3px; white-space: nowrap;
-}
-.filter-select {
-  padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a;
-  background: #fff; border: 1px solid #aaa; border-radius: 2px;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 6px center;
-  cursor: pointer;
-}
-.filter-select:focus { outline: 2px solid #003da5; outline-offset: 1px; }
-
-/* ── Custom multi-select dropdown ── */
+.filter-label { font-size: 11px; font-weight: 700; color: #333; margin-bottom: 3px; }
+.filter-select { padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 6px center; }
 .ms-wrapper { position: relative; }
-.ms-display {
-  padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a;
-  background: #fff; border: 1px solid #aaa; border-radius: 2px;
-  cursor: pointer; user-select: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2020/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E");
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 6px center;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  max-width: 160px;
-}
-.ms-display.warn { border-color: #e07b20; background-color: #fff8ec; }
-.ms-panel {
-  display: none; position: absolute; top: calc(100% + 2px); left: 0;
-  min-width: 200px;
-  background: #fff; border: 1px solid #aaa; border-radius: 2px;
-  z-index: 200; max-height: 240px; overflow-y: auto;
-  box-shadow: 0 4px 14px rgba(0,0,0,.18);
-}
+.ms-display { padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; cursor: pointer; user-select: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 6px center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+.ms-display.active-filter { border-color: #8C1D18; background-color: #fff5f5; font-weight: 700; }
+.ms-panel { display: none; position: absolute; top: calc(100% + 2px); left: 0; min-width: 220px; background: #fff; border: 1px solid #aaa; border-radius: 2px; z-index: 200; max-height: 240px; overflow-y: auto; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
 .ms-panel.open { display: block; }
-.ms-item {
-  display: flex; align-items: center; gap: 8px;
-  padding: 6px 12px; font-size: 12px; cursor: pointer;
-}
+.ms-item { display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; cursor: pointer; }
 .ms-item:hover { background: #f0f4fa; }
-.ms-item input[type=checkbox] { accent-color: #003da5; flex-shrink: 0; }
-.ms-item.all-opt { font-weight: 700; border-bottom: 1px solid #ddd; background: #f8f8f8; }
-.ms-item.nonexcl { background: #fff8ec; }
-.ms-item.nonexcl input { accent-color: #e07b20; }
+.ms-item input { accent-color: #8C1D18; flex-shrink: 0; }
+.ms-item.all-opt { font-weight: 700; border-bottom: 1px solid #ddd; background: #fafafa; }
 
-/* ── Exposure explanation panel ── */
-.exposure-panel {
-  display: none;
-  margin: 0; padding: 0;
-  border-bottom: 3px solid #8C1D18;
+/* ── Attack panel ── */
+.attack-panel {
+  margin: 8px; background: #fff; border: 2px solid #8C1D18; border-radius: 4px; overflow: hidden;
 }
-.exposure-panel.show { display: block; }
-.exposure-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-  background: #fff;
+.attack-header {
+  background: #8C1D18; color: #fff; padding: 8px 14px;
+  font-size: 12px; font-weight: 700; letter-spacing: .03em;
+  display: flex; align-items: center; gap: 8px;
 }
-.exp-col {
-  padding: 12px 16px;
-  border-right: 1px solid #ddd;
-}
-.exp-col:last-child { border-right: none; }
-.exp-col-title {
-  font-size: 10px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .06em; color: #888; margin-bottom: 6px;
-}
-.exp-filters { display: flex; flex-wrap: wrap; gap: 4px; }
-.exp-chip {
-  font-size: 11px; padding: 2px 8px; border-radius: 12px;
-  background: #e8ecf4; color: #333; border: 1px solid #c8d0e0;
-}
-.exp-chip.flagged { background: #8C1D18; color: #fff; border-color: #8C1D18; }
-.exp-math { font-size: 12px; line-height: 1.8; color: #333; }
-.exp-math .step { display: flex; align-items: baseline; gap: 6px; }
-.exp-math .arrow { color: #aaa; }
-.exp-math .small-n { color: #8C1D18; font-weight: 700; font-size: 14px; }
-.exp-math .label { color: #666; font-size: 11px; }
-.exp-why { font-size: 12px; line-height: 1.6; color: #333; }
-.exp-why strong { color: #8C1D18; }
-.exp-why .id-box {
-  margin-top: 8px; padding: 8px 10px;
-  background: #fff0f0; border: 1px solid #e8c0c0; border-radius: 3px;
-  font-size: 11px; color: #8C1D18; line-height: 1.5;
-}
-.exposure-toggle {
-  background: #f4f6fa; padding: 4px 16px;
-  font-size: 11px; color: #555; cursor: pointer;
-  border: none; width: 100%; text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-.exposure-toggle:hover { background: #eaeef4; }
+.attack-header .tag { background: rgba(255,255,255,.2); padding: 2px 8px; border-radius: 3px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+.attack-body { display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr; align-items: center; gap: 0; }
+.query-col { padding: 14px 16px; }
+.query-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #888; margin-bottom: 8px; }
+.query-desc { font-size: 11px; color: #555; margin-bottom: 10px; line-height: 1.5; }
+.query-n { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; }
+.query-n-label { font-size: 10px; color: #888; margin-top: 2px; margin-bottom: 8px; }
+.query-wage { font-size: 22px; font-weight: 700; color: #8C1D18; line-height: 1; }
+.query-wage-label { font-size: 10px; color: #888; margin-top: 2px; }
+.op-col { text-align: center; font-size: 22px; font-weight: 700; color: #aaa; }
+.result-col { padding: 14px 16px; background: #fff8f8; border-left: 1px solid #f0c0c0; }
+.result-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #8C1D18; margin-bottom: 8px; }
+.result-who { font-size: 11px; color: #555; margin-bottom: 12px; line-height: 1.5; font-style: italic; }
+.result-math { font-size: 11px; color: #666; line-height: 1.8; margin-bottom: 10px; font-family: 'Courier New', monospace; }
+.result-math .calc-line { white-space: nowrap; }
+.result-math .calc-line.eq { color: #8C1D18; font-weight: 700; }
+.result-value { font-size: 32px; font-weight: 700; color: #8C1D18; line-height: 1; }
+.result-value-label { font-size: 11px; color: #8C1D18; margin-top: 3px; }
+.query-col + .op-col { border-left: 1px solid #f0e0e0; }
 
-/* ── Main content grid ── */
-.main-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  gap: 8px;
-  padding: 8px;
-  align-items: start;
-}
+/* ── Step switcher ── */
+.step-bar { display: flex; align-items: center; gap: 6px; padding: 8px 14px; background: #fafafa; border-top: 1px solid #eee; }
+.step-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-right: 4px; }
+.step-btn { padding: 4px 12px; font-size: 11px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #fff; color: #444; cursor: pointer; }
+.step-btn:hover { background: #f0f0f0; }
+.step-btn.active { background: #2d2d2d; color: #fff; border-color: #2d2d2d; }
+.step-hint { font-size: 11px; color: #888; margin-left: 8px; }
 
-/* ── Left sidebar ── */
+/* ── Chart area ── */
+.main-grid { display: grid; grid-template-columns: 200px 1fr 200px; gap: 8px; padding: 8px; align-items: start; }
 .left-col { display: flex; flex-direction: column; gap: 8px; }
-.stat-card {
-  background: #fff; border: 1px solid #ccc;
-  padding: 12px 14px;
-}
-.stat-card-label {
-  font-size: 11px; font-weight: 700; color: #333;
-  margin-bottom: 4px; line-height: 1.3;
-}
-.stat-card-value {
-  font-size: 28px; font-weight: 700; color: #1a1a1a;
-  line-height: 1.1;
-}
-.stat-card-value.risk { color: #8C1D18; }
-.stat-card-value.warn { color: #8b5a00; }
+.stat-card { background: #fff; border: 1px solid #ccc; padding: 12px 14px; }
+.stat-card-label { font-size: 11px; font-weight: 700; color: #333; margin-bottom: 4px; }
+.stat-card-value { font-size: 26px; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
+.stat-card-value.warn { color: #8C1D18; }
 .stat-card-sub { font-size: 12px; color: #555; margin-top: 2px; }
-.org-text { font-size: 12px; color: #444; line-height: 1.6; margin-top: 4px; }
-
-/* ── Center chart ── */
-.center-col {
-  background: #fff; border: 1px solid #ccc; padding: 12px;
-}
-.chart-title {
-  font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px;
-}
-.chart-wrap { position: relative; height: 340px; }
-
-/* ── Right chart ── */
-.right-col {
-  background: #fff; border: 1px solid #ccc; padding: 12px;
-}
-.right-chart-title {
-  font-size: 12px; font-weight: 700; color: #1a1a1a;
-  text-align: center; margin-bottom: 8px;
-}
-.bar-wrap { position: relative; height: 340px; }
+.org-text { font-size: 11px; color: #444; line-height: 1.6; margin-top: 4px; }
+.center-col { background: #fff; border: 1px solid #ccc; padding: 12px; }
+.chart-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.chart-wrap { position: relative; height: 280px; }
+.right-col { background: #fff; border: 1px solid #ccc; padding: 12px; }
+.right-title { font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+.bar-wrap { position: relative; height: 280px; }
 
 /* ── Footer ── */
-.dash-note {
-  padding: 8px 16px; font-size: 11px; color: #555;
-  border-top: 1px solid #ccc; background: #fff; line-height: 1.5;
-  margin-top: 8px;
-}
+.dash-note { padding: 8px 16px; font-size: 11px; color: #555; border-top: 1px solid #ccc; background: #fff; margin-top: 8px; line-height: 1.5; }
 </style>
 </head>
 <body>
 
-<!-- Title -->
 <div class="back-row"><a href="../">← All Demos</a></div>
 <div class="title-bar">Colorado Wage Outcomes Results Coalition Dashboard</div>
-
-<!-- Tab nav -->
 <nav class="tab-nav">
   <button class="tab-btn inactive">Home</button>
   <button class="tab-btn inactive">Program Background</button>
@@ -250,83 +112,76 @@ body {
 
 <!-- Example selector -->
 <div class="example-strip">
-  <span class="example-strip-label">Demo scenario:</span>
-  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — AIAN/White, Male</button>
-  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black, Male+Female, Denver</button>
-  <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — AWS re/Start+Desktop, Hispanic</button>
-  <span style="font-size:11px;color:#888;margin-left:8px">← click to load pre-scripted filter state</span>
+  <span class="strip-label">Demo scenario:</span>
+  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — AIAN / White · Male</button>
+  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black · Male+Female · Denver</button>
+  <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — AWS re/Start+Desktop · Hispanic</button>
+  <span style="font-size:11px;color:#888;margin-left:6px">← click to load scenario</span>
 </div>
 
-<!-- Exposure explanation toggle + panel -->
-<button class="exposure-toggle" id="expToggleBtn" onclick="toggleExposure()">
-  ▼ Show why this filter combination exposes a small group
-</button>
-<div class="exposure-panel show" id="exposurePanel">
-  <div class="exposure-inner" id="exposureInner"></div>
-</div>
-
-<!-- Filter bar -->
+<!-- Filter bar (mirrors Tableau layout) -->
 <div class="filter-bar">
   <div class="filter-cell">
     <span class="filter-label">Organization</span>
-    <select class="filter-select" disabled style="opacity:.6">
-      <option>ActivateWork</option>
-    </select>
+    <select class="filter-select" disabled style="opacity:.6"><option>ActivateWork</option></select>
   </div>
-  <div class="filter-cell">
+  <div class="filter-cell" id="progCell">
     <span class="filter-label">Program</span>
-    <div class="ms-wrapper" id="progWrapper">
-      <div class="ms-display" id="progDisplay" tabindex="0">(All)</div>
-      <div class="ms-panel" id="progPanel"></div>
-    </div>
+    <div class="ms-wrapper"><div class="ms-display" id="progDisplay">(All)</div><div class="ms-panel" id="progPanel"></div></div>
   </div>
   <div class="filter-cell">
     <span class="filter-label">Program Completion</span>
     <select class="filter-select"><option>(All)</option></select>
   </div>
   <div class="filter-cell">
-    <span class="filter-label">Highest Education L...</span>
+    <span class="filter-label">Highest Education</span>
     <select class="filter-select"><option>(All)</option></select>
   </div>
-  <div class="filter-cell">
+  <div class="filter-cell" id="raceCell">
     <span class="filter-label">Race</span>
-    <div class="ms-wrapper" id="raceWrapper">
-      <div class="ms-display" id="raceDisplay" tabindex="0">(All)</div>
-      <div class="ms-panel" id="racePanel"></div>
-    </div>
+    <div class="ms-wrapper"><div class="ms-display" id="raceDisplay">(All)</div><div class="ms-panel" id="racePanel"></div></div>
   </div>
-  <div class="filter-cell">
+  <div class="filter-cell" id="genderCell">
     <span class="filter-label">Gender</span>
-    <div class="ms-wrapper" id="genderWrapper">
-      <div class="ms-display" id="genderDisplay" tabindex="0">(All)</div>
-      <div class="ms-panel" id="genderPanel"></div>
-    </div>
+    <div class="ms-wrapper"><div class="ms-display" id="genderDisplay">(All)</div><div class="ms-panel" id="genderPanel"></div></div>
   </div>
   <div class="filter-cell">
-    <span class="filter-label">Justice System Hist...</span>
+    <span class="filter-label">Justice System Hist.</span>
     <select class="filter-select"><option>Missing/NULL</option><option>(All)</option></select>
   </div>
-  <div class="filter-cell">
-    <span class="filter-label">Lives in Denver Cou...</span>
-    <div class="ms-wrapper" id="countyWrapper">
-      <div class="ms-display" id="countyDisplay" tabindex="0">(All)</div>
-      <div class="ms-panel" id="countyPanel"></div>
-    </div>
+  <div class="filter-cell" id="denverCell">
+    <span class="filter-label">Lives in Denver Co.</span>
+    <div class="ms-wrapper"><div class="ms-display" id="denverDisplay">(All)</div><div class="ms-panel" id="denverPanel"></div></div>
   </div>
 </div>
 
-<!-- Main content -->
-<div class="main-grid">
+<!-- Back-calculation attack panel -->
+<div class="attack-panel">
+  <div class="attack-header">
+    <span>Back-Calculation Attack</span>
+    <span class="tag">Select-All Filter Weakness</span>
+    <span style="margin-left:auto;font-size:11px;font-weight:400;opacity:.85">Both queries are publicly accessible. The difference is 1 person.</span>
+  </div>
+  <div class="attack-body" id="attackBody"></div>
+  <!-- Step switcher: toggle filter bar between Query A+B and Query A -->
+  <div class="step-bar">
+    <span class="step-label">Dashboard view:</span>
+    <button class="step-btn active" id="stepAB" onclick="setStep('ab')">Query A+B (includes target)</button>
+    <button class="step-btn"        id="stepA"  onclick="setStep('a')">Query A (remove 1 group)</button>
+    <span class="step-hint">— toggle to see how a researcher submits two queries to the dashboard</span>
+  </div>
+</div>
 
-  <!-- Left sidebar -->
+<!-- Earnings chart area -->
+<div class="main-grid">
   <div class="left-col">
     <div class="stat-card">
       <div class="stat-card-label">Matched Sample Size</div>
-      <div class="stat-card-value" id="matchedN">367</div>
+      <div class="stat-card-value" id="matchedN">—</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-label">Average Program Length</div>
-      <div class="stat-card-value" style="font-size:20px" id="progLength">3 – 4</div>
+      <div class="stat-card-value" style="font-size:20px">3 – 4</div>
       <div class="stat-card-sub">Months</div>
     </div>
     <div class="stat-card">
@@ -334,378 +189,153 @@ body {
       <div class="org-text" id="orgText"></div>
     </div>
   </div>
-
-  <!-- Center: earnings chart -->
   <div class="center-col">
-    <div class="chart-title">Average Quarterly Earnings Relative to Program Start</div>
-    <div class="chart-wrap">
-      <canvas id="earningsChart"></canvas>
-    </div>
+    <div class="chart-title" id="chartTitle">Average Quarterly Earnings Relative to Program Start</div>
+    <div class="chart-wrap"><canvas id="earningsChart"></canvas></div>
   </div>
-
-  <!-- Right: pre/post bar chart -->
   <div class="right-col">
-    <div class="right-chart-title">Pre Average vs. Post Average<br>Quarterly Earnings</div>
-    <div class="bar-wrap">
-      <canvas id="barChart"></canvas>
-    </div>
+    <div class="right-title">Pre Average vs. Post Average<br>Quarterly Earnings</div>
+    <div class="bar-wrap"><canvas id="barChart"></canvas></div>
   </div>
-
 </div>
 
 <div class="dash-note">
   Note: The dashboard will not display any values for a sample size less than 5 people to adhere with data sharing requirements and protecting confidentiality.
+  <strong>Both queries in each example have N ≥ 5 — neither triggers suppression — yet together they expose one individual's exact earnings.</strong>
 </div>
 
 <script src="data.js"></script>
 <script>
 (function () {
-  const SUPPRESS  = 5;
-  const THRESHOLD = 10;
 
-  // ── State ────────────────────────────────────────────────────────────────
-  const state = {
-    progSel:      [],
-    raceSel:      [],
-    genderSel:    [],
-    countyDenver: false,
-    activeExample: 1,
-    exposureOpen: true,
-  };
+  const RACES   = ['AIAN','Asian','Black or African American','Hispanic or Latino','Multiracial','NHPI','Other','White'];
+  const GENDERS = ['Female','Male','Other'];
+  const PROGS   = ['IT Certification','Cybersecurity Bootcamp','Admin & Office Skills','AWS re/Start','Desktop Support'];
 
-  // ── Example definitions ──────────────────────────────────────────────────
-  const examples = {
-    1: {
-      // Org: ActivateWork, Program: All, Race: AIAN + White (1 AIAN), Gender: Male, Denver: All
-      progSel:     [],
-      raceSel:     ['AIAN', 'White'],
-      genderSel:   ['Male'],
-      countyDenver: false,
-      exposure: {
-        filterDesc: [
-          { label: 'Organization',  value: 'ActivateWork' },
-          { label: 'Program',       value: 'All' },
-          { label: 'Race',          value: 'AIAN + White', flag: true },
-          { label: 'Gender',        value: 'Male', flag: true },
-          { label: 'Denver County', value: 'All' },
-        ],
-        math: [
-          { expr: 'ActivateWork total N',        result: '367',  note: 'all programs' },
-          { expr: 'AIAN + White share',          result: '19.3%', note: '0.8% + 18.5%' },
-          { expr: 'Male share',                  result: '34.6%', note: '' },
-          { expr: 'N shown (AIAN + White, Male)', result: '~25',  note: '367 × 19.3% × 34.6%' },
-          { expr: 'AIAN males in that group',    result: '1',    note: '367 × 0.8% × 34.6%', danger: true },
-        ],
-        why: `Race is filtered to <strong>AIAN + White</strong> and Gender to <strong>Male</strong>.
-              The displayed N ≈ 25 appears safe — but AIAN and White are counted together,
-              masking that only <strong>1 person is AIAN</strong>.
-              <div class="id-box">
-                <strong>Why this exposes them:</strong> The select-all weakness lets users combine
-                non-exclusive race groups into one N. The AIAN individual is invisible inside
-                N = 25, yet their earnings data is fully visible in any race-level breakdown.
-              </div>`,
-      },
-    },
-    2: {
-      // Org: ActivateWork, Program: All, Race: Black, Gender: Male + Female (1 female), Denver: Yes
-      progSel:     [],
-      raceSel:     ['Black or African American'],
-      genderSel:   ['Male', 'Female'],
-      countyDenver: true,
-      exposure: {
-        filterDesc: [
-          { label: 'Organization',  value: 'ActivateWork' },
-          { label: 'Program',       value: 'All' },
-          { label: 'Race',          value: 'Black or African American', flag: true },
-          { label: 'Gender',        value: 'Male + Female', flag: true },
-          { label: 'Denver County', value: 'Yes', flag: true },
-        ],
-        math: [
-          { expr: 'Black participants (Denver only)', result: '~8',  note: '367 Denver subset × 29.5%' },
-          { expr: 'Male + Female selected (= All)',   result: '8',   note: 'both genders checked — non-exclusive with All' },
-          { expr: 'Female share of Black Denver',     result: '~13%', note: 'Denver skews male for this org' },
-          { expr: 'Black Female in Denver',           result: '1',   note: 'below suppression threshold', danger: true },
-        ],
-        why: `Gender is set to <strong>Male + Female</strong> simultaneously — which is
-              functionally identical to selecting "All Genders," yet the UI shows two specific
-              selections, implying a narrowed filter.
-              <div class="id-box">
-                <strong>Why this exposes them:</strong> Combined with Race = Black and
-                Denver County = Yes, the group shrinks to ~8 people.
-                Of those, only <strong>1 is female</strong> — fully identifiable by
-                race, gender, and geography alone.
-              </div>`,
-      },
-    },
-    3: {
-      // Org: ActivateWork, Program: AWS re/Start + Desktop Support (1 AWS), Race: Hispanic, Gender: All, Denver: All
-      progSel:     ['AWS re/Start', 'Desktop Support'],
-      raceSel:     ['Hispanic or Latino'],
-      genderSel:   [],
-      countyDenver: false,
-      exposure: {
-        filterDesc: [
-          { label: 'Organization',  value: 'ActivateWork' },
-          { label: 'Program',       value: 'AWS re/Start + Desktop Support', flag: true },
-          { label: 'Race',          value: 'Hispanic or Latino', flag: true },
-          { label: 'Gender',        value: 'All' },
-          { label: 'Denver County', value: 'All' },
-        ],
-        math: [
-          { expr: 'AWS re/Start total N',            result: '18',  note: '' },
-          { expr: 'Hispanic in AWS re/Start',        result: '1',   note: '18 × 5.6%', danger: true },
-          { expr: 'Desktop Support total N',         result: '15',  note: '' },
-          { expr: 'Hispanic in Desktop Support',     result: '3',   note: '15 × 20%' },
-          { expr: 'Combined displayed N',            result: '4',   note: '1 + 3 — below threshold', danger: true },
-        ],
-        why: `Program is set to <strong>AWS re/Start + Desktop Support</strong> together —
-              a multi-select combination that pools two small programs into one N of 4.
-              <div class="id-box">
-                <strong>Why this exposes them:</strong> Only <strong>1 person in AWS re/Start
-                is Hispanic</strong>. Selecting both programs hides this in a combined N,
-                but any program-level row in the report reveals the intersection at N = 1.
-                Program enrollment is often semi-public, making this person identifiable
-                by program + race alone.
-              </div>`,
-      },
-    },
-  };
+  let activeExample = 1;
+  let activeStep    = 'ab'; // 'ab' or 'a'
 
-  // ── Multi-select panel builder ───────────────────────────────────────────
-  function buildPanel(panelEl, items, stateKey, allLabel) {
-    panelEl.innerHTML = '';
+  // ── Multi-select builder ─────────────────────────────────────────────────
+  function buildPanel(panelId, items, allLabel) {
+    const panel = document.getElementById(panelId);
+    panel.innerHTML = '';
     const allDiv = document.createElement('div');
     allDiv.className = 'ms-item all-opt';
-    allDiv.innerHTML = `<input type="checkbox" value="${allLabel}"> ${allLabel}`;
-    panelEl.appendChild(allDiv);
+    allDiv.innerHTML = `<input type="checkbox" value="${allLabel}" checked> ${allLabel}`;
+    panel.appendChild(allDiv);
     items.forEach(item => {
       const div = document.createElement('div');
       div.className = 'ms-item';
       div.innerHTML = `<input type="checkbox" value="${item}"> ${item}`;
-      panelEl.appendChild(div);
-    });
-    panelEl.querySelectorAll('input').forEach(cb => {
-      cb.addEventListener('change', () => {
-        state[stateKey] = Array.from(panelEl.querySelectorAll('input:checked')).map(e => e.value);
-        markNonExclusive(panelEl, allLabel);
-        refreshDisplay(panelEl.previousElementSibling, state[stateKey], allLabel);
-        render();
-      });
+      panel.appendChild(div);
     });
   }
 
-  function markNonExclusive(panelEl, allLabel) {
-    const checked = Array.from(panelEl.querySelectorAll('input:checked')).map(e => e.value);
-    const hasAll  = checked.includes(allLabel);
-    panelEl.querySelectorAll('.ms-item:not(.all-opt)').forEach(item => {
-      item.classList.toggle('nonexcl', hasAll && item.querySelector('input').checked);
+  function setChecked(panelId, values, allLabel) {
+    const panel = document.getElementById(panelId);
+    panel.querySelectorAll('input').forEach(cb => {
+      cb.checked = values.length === 0
+        ? cb.value === allLabel
+        : values.includes(cb.value);
     });
-    panelEl.previousElementSibling.classList.toggle('warn', hasAll && checked.length > 1);
+    refreshDisplay(panelId.replace('Panel', 'Display'), values, allLabel);
   }
 
-  function refreshDisplay(displayEl, checked, allLabel) {
-    const specific = checked.filter(v => v !== allLabel);
-    if (checked.includes(allLabel)) {
-      displayEl.textContent = specific.length ? `(All) + ${specific.join(', ')}` : '(All)';
-    } else if (specific.length === 0) {
-      displayEl.textContent = '(All)';
-    } else {
-      displayEl.textContent = specific.join(', ');
-    }
+  function refreshDisplay(displayId, values, allLabel) {
+    const el = document.getElementById(displayId);
+    el.textContent = values.length === 0 ? `(All)` : values.join(', ');
+    el.classList.toggle('active-filter', values.length > 0);
   }
 
-  function setupToggle(displayEl, panelEl) {
-    displayEl.addEventListener('click', e => {
+  function setupToggle(displayId, panelId) {
+    document.getElementById(displayId).addEventListener('click', e => {
       e.stopPropagation();
-      document.querySelectorAll('.ms-panel.open').forEach(p => { if (p !== panelEl) p.classList.remove('open'); });
-      panelEl.classList.toggle('open');
+      document.querySelectorAll('.ms-panel.open').forEach(p => {
+        if (p.id !== panelId) p.classList.remove('open');
+      });
+      document.getElementById(panelId).classList.toggle('open');
     });
   }
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.ms-panel.open').forEach(p => p.classList.remove('open'));
-  });
+  document.addEventListener('click', () => document.querySelectorAll('.ms-panel.open').forEach(p => p.classList.remove('open')));
 
-  // ── Load example ─────────────────────────────────────────────────────────
-  function loadExample(n) {
-    state.activeExample = n;
-    [1,2,3].forEach(i => document.getElementById(`ex${i}btn`).classList.toggle('active', i === n));
-    const ex = examples[n];
-    state.progSel    = [...ex.progSel];
-    state.raceSel    = [...ex.raceSel];
-    state.genderSel  = [...ex.genderSel];
-    state.countyDenver = ex.countyDenver;
-    applyStateToUI();
-    renderExposure(ex.exposure);
-    render();
-  }
+  // ── Attack panel ─────────────────────────────────────────────────────────
+  function renderAttackPanel(scenario) {
+    const { ab, a } = scenario;
+    const individual = SD.coData.backCalc(scenario);
 
-  function applyStateToUI() {
-    setPanel('progPanel',   state.progSel,   '(All)');
-    setPanel('racePanel',   state.raceSel,   '(All)');
-    setPanel('genderPanel', state.genderSel, '(All)');
-    setPanel('countyPanel', state.countyDenver ? ['Yes (Denver Co.)'] : ['(All)'], '(All)');
-    refreshDisplay(document.getElementById('progDisplay'),   state.progSel,   '(All)');
-    refreshDisplay(document.getElementById('raceDisplay'),   state.raceSel,   '(All)');
-    refreshDisplay(document.getElementById('genderDisplay'), state.genderSel, '(All)');
-    refreshDisplay(document.getElementById('countyDisplay'), state.countyDenver ? ['Yes (Denver Co.)'] : ['(All)'], '(All)');
-    markNonExclusive(document.getElementById('progPanel'),   '(All)');
-    markNonExclusive(document.getElementById('racePanel'),   '(All)');
-    markNonExclusive(document.getElementById('genderPanel'), '(All)');
-  }
+    const abSum = ab.avgQ4 * ab.n;
+    const aSum  = a.avgQ4  * a.n;
 
-  function setPanel(panelId, selected, allLabel) {
-    document.querySelectorAll(`#${panelId} input`).forEach(cb => {
-      cb.checked = selected.includes(cb.value) ||
-        (selected.length === 0 && cb.value === allLabel);
-    });
-  }
-
-  // ── Exposure panel render ────────────────────────────────────────────────
-  function renderExposure(exp) {
-    const inner = document.getElementById('exposureInner');
-    const filtersHtml = exp.filterDesc.map(f =>
-      `<span class="exp-chip ${f.flag ? 'flagged' : ''}">${f.label}: ${f.value}</span>`
-    ).join('');
-
-    const mathHtml = exp.math.map(m =>
-      `<div class="step">
-        <span style="flex:1;color:#555;font-size:11px">${m.expr}</span>
-        <span class="arrow">→</span>
-        <span class="${m.danger ? 'small-n' : ''}" style="${m.danger ? '' : 'font-weight:600'}">${m.result}</span>
-        ${m.note ? `<span class="label">(${m.note})</span>` : ''}
-       </div>`
-    ).join('');
-
-    inner.innerHTML = `
-      <div class="exp-col">
-        <div class="exp-col-title">Filter State</div>
-        <div class="exp-filters">${filtersHtml}</div>
+    document.getElementById('attackBody').innerHTML = `
+      <div class="query-col">
+        <div class="query-label">Query A+B</div>
+        <div class="query-desc">${ab.desc}</div>
+        <div class="query-n">${ab.n}</div>
+        <div class="query-n-label">matched participants</div>
+        <div class="query-wage">$${ab.avgQ4.toLocaleString()}</div>
+        <div class="query-wage-label">avg Q4 wage (public)</div>
       </div>
-      <div class="exp-col">
-        <div class="exp-col-title">Subgroup Math</div>
-        <div class="exp-math">${mathHtml}</div>
+      <div class="op-col">−</div>
+      <div class="query-col">
+        <div class="query-label">Query A (remove 1 group)</div>
+        <div class="query-desc">${a.desc}</div>
+        <div class="query-n">${a.n}</div>
+        <div class="query-n-label">matched participants</div>
+        <div class="query-wage">$${a.avgQ4.toLocaleString()}</div>
+        <div class="query-wage-label">avg Q4 wage (public)</div>
       </div>
-      <div class="exp-col">
-        <div class="exp-col-title">Why This Exposes Someone</div>
-        <div class="exp-why">${exp.why}</div>
+      <div class="op-col">=</div>
+      <div class="result-col">
+        <div class="result-label">Individual Exposed</div>
+        <div class="result-who">${scenario.target.note}</div>
+        <div class="result-math">
+          <div class="calc-line">($${ab.avgQ4.toLocaleString()} × ${ab.n}) − ($${a.avgQ4.toLocaleString()} × ${a.n})</div>
+          <div class="calc-line">$${abSum.toLocaleString()} − $${aSum.toLocaleString()}</div>
+          <div class="calc-line eq">= $${individual.toLocaleString()}</div>
+        </div>
+        <div class="result-value">$${individual.toLocaleString()}</div>
+        <div class="result-value-label">this person's Q4 earnings — recovered exactly</div>
       </div>
     `;
   }
 
-  window.toggleExposure = function () {
-    state.exposureOpen = !state.exposureOpen;
-    const panel = document.getElementById('exposurePanel');
-    const btn   = document.getElementById('expToggleBtn');
-    panel.classList.toggle('show', state.exposureOpen);
-    btn.textContent = state.exposureOpen
-      ? '▼ Show why this filter combination exposes a small group'
-      : '▶ Show why this filter combination exposes a small group';
-  };
-
   // ── Charts ───────────────────────────────────────────────────────────────
-  let earningsChartInst = null;
-  let barChartInst      = null;
+  let earningsInst = null, barInst = null;
 
-  function renderCharts(profile) {
-    const { quarters, values, preAvg, postAvg } = profile.earnings;
-    const { mitLivingWage, denverMinWage } = profile;
-
-    // Earnings line chart
-    if (earningsChartInst) earningsChartInst.destroy();
-    earningsChartInst = new Chart(document.getElementById('earningsChart'), {
-      type: 'bar',
+  function renderCharts(query) {
+    if (earningsInst) earningsInst.destroy();
+    earningsInst = new Chart(document.getElementById('earningsChart'), {
+      type: 'line',
       data: {
-        labels: quarters.map(String),
+        labels: query.quarters.map(String),
         datasets: [
-          {
-            type: 'line',
-            label: 'Average Quarterly Earnings',
-            data: values,
-            borderColor: '#8C6A3A',
-            backgroundColor: 'rgba(140,106,58,.12)',
-            borderWidth: 2.5,
-            pointRadius: 2,
-            tension: 0.35,
-            fill: false,
-            order: 1,
-          },
-          {
-            type: 'line',
-            label: `MIT Living Wage (~$${mitLivingWage.toLocaleString()})`,
-            data: quarters.map(() => mitLivingWage),
-            borderColor: '#888',
-            borderWidth: 1,
-            borderDash: [5, 4],
-            pointRadius: 0,
-            fill: false,
-            order: 2,
-          },
-          {
-            type: 'line',
-            label: `Denver Min. Wage (~$${denverMinWage.toLocaleString()})`,
-            data: quarters.map(() => denverMinWage),
-            borderColor: '#bbb',
-            borderWidth: 1,
-            borderDash: [3, 3],
-            pointRadius: 0,
-            fill: false,
-            order: 3,
-          },
+          { label: 'Avg Quarterly Earnings', data: query.values, borderColor: '#8C6A3A', backgroundColor: 'rgba(140,106,58,.1)', borderWidth: 2.5, pointRadius: 2, tension: 0.35, fill: true },
+          { label: `MIT Living Wage (~$${SD.coData.mitLivingWage.toLocaleString()})`, data: query.quarters.map(() => SD.coData.mitLivingWage), borderColor: '#888', borderWidth: 1, borderDash: [5,4], pointRadius: 0, fill: false },
+          { label: `Denver Min. Wage (~$${SD.coData.denverMinWage.toLocaleString()})`, data: query.quarters.map(() => SD.coData.denverMinWage), borderColor: '#bbb', borderWidth: 1, borderDash: [3,3], pointRadius: 0, fill: false },
         ],
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 20 } },
-          tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } },
-        },
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 18 } }, tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } } },
         scales: {
-          x: {
-            title: { display: true, text: 'Relative Number of Quarters from Program Start', font: { size: 11 } },
-            grid: { color: '#eee' },
-            ticks: { font: { size: 10 } },
-          },
-          y: {
-            title: { display: true, text: 'Average Quarterly Earnings', font: { size: 11 } },
-            ticks: {
-              font: { size: 10 },
-              callback: v => `$${(v/1000).toFixed(0)}K`,
-            },
-            grid: { color: '#eee' },
-            min: 0, max: 20000,
-          },
+          x: { title: { display: true, text: 'Relative Quarters from Program Start', font: { size: 10 } }, ticks: { font: { size: 10 } }, grid: { color: '#eee' } },
+          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => `$${(v/1000).toFixed(0)}K` }, grid: { color: '#eee' } },
         },
-        annotation: {},
       },
     });
 
-    // Pre/post bar chart
-    if (barChartInst) barChartInst.destroy();
-    barChartInst = new Chart(document.getElementById('barChart'), {
+    if (barInst) barInst.destroy();
+    barInst = new Chart(document.getElementById('barChart'), {
       type: 'bar',
       data: {
         labels: ['Pre-Period\n(Qtr −8 to −1)', 'Post-Period\n(Qtr 1 to 12)'],
-        datasets: [{
-          data: [preAvg, postAvg],
-          backgroundColor: ['#8C6A3A', '#8C6A3A'],
-          borderRadius: 2,
-        }],
+        datasets: [{ data: [query.preAvg, query.postAvg], backgroundColor: '#8C6A3A', borderRadius: 2 }],
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } },
-          datalabels: { display: false },
-        },
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } } },
         scales: {
-          y: {
-            min: 0, max: 16000,
-            ticks: { font: { size: 10 }, callback: v => `$${(v/1000).toFixed(0)}K` },
-            grid: { color: '#eee' },
-          },
+          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => `$${(v/1000).toFixed(0)}K` }, grid: { color: '#eee' } },
           x: { ticks: { font: { size: 10 } }, grid: { display: false } },
         },
       },
@@ -714,14 +344,9 @@ body {
           const ctx2 = chart.ctx;
           chart.data.datasets.forEach((ds, i) => {
             ds.data.forEach((val, j) => {
-              const meta = chart.getDatasetMeta(i);
-              const bar  = meta.data[j];
-              ctx2.save();
-              ctx2.fillStyle = '#1a1a1a';
-              ctx2.font = 'bold 13px sans-serif';
-              ctx2.textAlign = 'center';
-              ctx2.fillText(`$${val.toLocaleString()}`, bar.x, bar.y - 6);
-              ctx2.restore();
+              const bar = chart.getDatasetMeta(i).data[j];
+              ctx2.save(); ctx2.fillStyle = '#1a1a1a'; ctx2.font = 'bold 12px sans-serif'; ctx2.textAlign = 'center';
+              ctx2.fillText(`$${val.toLocaleString()}`, bar.x, bar.y - 5); ctx2.restore();
             });
           });
         },
@@ -729,67 +354,56 @@ body {
     });
   }
 
-  // ── Main render ──────────────────────────────────────────────────────────
-  function render() {
-    const includesAllProg   = state.progSel.includes('(All)');
-    const includesAllRace   = state.raceSel.includes('(All)');
-    const includesAllGender = state.genderSel.includes('(All)');
+  // ── Step toggling (A+B vs A) ─────────────────────────────────────────────
+  window.setStep = function (step) {
+    activeStep = step;
+    document.getElementById('stepAB').classList.toggle('active', step === 'ab');
+    document.getElementById('stepA').classList.toggle('active', step === 'a');
+    applyStep();
+  };
 
-    const effectiveProg   = state.progSel.filter(p => p !== '(All)');
-    const effectiveRace   = includesAllRace   ? [] : state.raceSel.filter(r => r !== '(All)');
-    const effectiveGender = includesAllGender ? [] : state.genderSel.filter(g => g !== '(All)');
+  function applyStep() {
+    const scenario = SD.coData.scenarios[activeExample];
+    const query    = activeStep === 'ab' ? scenario.ab : scenario.a;
 
-    const profile = SD.coData.getProfile(effectiveProg, includesAllProg || !state.progSel.length);
+    setChecked('progPanel',   query.filters.prog,   '(All)');
+    setChecked('racePanel',   query.filters.race,   '(All)');
+    setChecked('genderPanel', query.filters.gender, '(All)');
+    setChecked('denverPanel', query.filters.denver ? ['Yes (Denver Co.)'] : [], '(All)');
 
-    // True N (proper filter) — passes progSel so scenario overrides can match
-    const trueN = SD.coData.computeN(profile, effectiveGender, effectiveRace, state.countyDenver, effectiveProg);
+    document.getElementById('matchedN').textContent = query.n;
+    document.getElementById('matchedN').className = 'stat-card-value' + (query.n < 10 ? ' warn' : '');
+    document.getElementById('orgText').textContent  = SD.coData.orgOverview;
+    document.getElementById('chartTitle').textContent =
+      `Average Quarterly Earnings — ${query.desc}`;
 
-    // Apparent N (All + specific bug: All wins, N stays at base)
-    const bugActive = (includesAllRace && effectiveRace.length > 0) ||
-                      (includesAllGender && effectiveGender.length > 0) ||
-                      (includesAllProg  && effectiveProg.length > 0);
-    const apparentN = bugActive
-      ? SD.coData.computeN(profile, [], [], state.countyDenver, [])
-      : trueN;
-
-    const displayN = bugActive ? apparentN : trueN;
-
-    // N display
-    const nEl = document.getElementById('matchedN');
-    nEl.textContent = displayN < SUPPRESS ? '—' : displayN.toLocaleString();
-    nEl.className = 'stat-card-value' + (displayN < SUPPRESS ? ' risk' : displayN < THRESHOLD ? ' warn' : '');
-
-    document.getElementById('progLength').textContent = profile.months;
-    document.getElementById('orgText').textContent    = profile.orgOverview;
-
-    renderCharts(profile);
+    renderCharts(query);
   }
 
-  // ── Init ─────────────────────────────────────────────────────────────────
-  buildPanel(document.getElementById('progPanel'),   SD.coData.programList.filter(p => p !== 'All'), 'progSel',    '(All)');
-  buildPanel(document.getElementById('racePanel'),   SD.coData.raceList,                              'raceSel',    '(All)');
-  buildPanel(document.getElementById('genderPanel'), SD.coData.genderList,                            'genderSel',  '(All)');
-  buildPanel(document.getElementById('countyPanel'), ['Yes (Denver Co.)'],                             'countyDenver_sel', '(All)');
+  // ── Load example ─────────────────────────────────────────────────────────
+  window.loadExample = function (n) {
+    activeExample = n;
+    activeStep    = 'ab';
+    [1,2,3].forEach(i => document.getElementById(`ex${i}btn`).classList.toggle('active', i === n));
+    document.getElementById('stepAB').classList.add('active');
+    document.getElementById('stepA').classList.remove('active');
 
-  setupToggle(document.getElementById('progDisplay'),   document.getElementById('progPanel'));
-  setupToggle(document.getElementById('raceDisplay'),   document.getElementById('racePanel'));
-  setupToggle(document.getElementById('genderDisplay'), document.getElementById('genderPanel'));
-  setupToggle(document.getElementById('countyDisplay'), document.getElementById('countyPanel'));
+    renderAttackPanel(SD.coData.scenarios[n]);
+    applyStep();
+  };
 
-  // County special handling
-  document.getElementById('countyPanel').querySelectorAll('input').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const checked = Array.from(document.getElementById('countyPanel').querySelectorAll('input:checked')).map(e => e.value);
-      state.countyDenver = checked.includes('Yes (Denver Co.)') && !checked.includes('(All)');
-      refreshDisplay(document.getElementById('countyDisplay'), checked, '(All)');
-      render();
-    });
-  });
+  // ── Init ──────────────────────────────────────────────────────────────────
+  buildPanel('progPanel',   PROGS,   '(All)');
+  buildPanel('racePanel',   RACES,   '(All)');
+  buildPanel('genderPanel', GENDERS, '(All)');
+  buildPanel('denverPanel', ['Yes (Denver Co.)'], '(All)');
 
-  window.loadExample = loadExample;
+  setupToggle('progDisplay',   'progPanel');
+  setupToggle('raceDisplay',   'racePanel');
+  setupToggle('genderDisplay', 'genderPanel');
+  setupToggle('denverDisplay', 'denverPanel');
 
   loadExample(1);
-
 })();
 </script>
 </body>
