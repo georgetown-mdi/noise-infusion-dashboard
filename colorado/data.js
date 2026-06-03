@@ -143,29 +143,79 @@ SD.coData = (function () {
     };
   }
 
-  function computeN(profile, genderSel, raceSel, countyDenver) {
+  // Pre-computed exact counts for the three demo scenarios.
+  // Key: sorted-race | sorted-gender | denver
+  const scenarioExact = {
+    // Ex 1: AIAN+White, Male, Denver=false  →  1 AIAN male
+    'AIAN,White|Male|false': {
+      n: 25,
+      raceRows: [
+        { race: 'AIAN',  pct: 0.8,  n: 1 },
+        { race: 'White', pct: 18.5, n: 24 },
+      ],
+    },
+    // Ex 2: Black, Male+Female (=All genders), Denver=true  →  1 Black female
+    'Black or African American|Female,Male|true': {
+      n: 8,
+      raceRows: [
+        { race: 'Black or African American', pct: 29.5, n: 8 },
+      ],
+      genderRows: [
+        { gender: 'Male',   n: 7 },
+        { gender: 'Female', n: 1 },
+      ],
+    },
+    // Ex 3: AWS re/Start+Desktop Support, Hispanic, Denver=false  →  1 Hispanic in AWS
+    'AWS re/Start,Desktop Support|Hispanic or Latino|false': {
+      n: 4,
+      progRows: [
+        { prog: 'AWS re/Start',    n: 1 },
+        { prog: 'Desktop Support', n: 3 },
+      ],
+      raceRows: [
+        { race: 'Hispanic or Latino', pct: 10.9, n: 4 },
+      ],
+    },
+  };
+
+  function scenarioKey(progSel, raceSel, genderSel, countyDenver) {
+    const p = [...progSel].sort().join(',');
+    const r = [...raceSel].sort().join(',');
+    const g = [...genderSel].sort().join(',');
+    // prog portion only used when non-empty
+    const base = p ? `${p}|${r}|${countyDenver}` : `${r}|${g}|${countyDenver}`;
+    return base;
+  }
+
+  function computeN(profile, genderSel, raceSel, countyDenver, progSel) {
+    const key = scenarioKey(progSel || [], raceSel, genderSel, countyDenver);
+    if (scenarioExact[key]) return scenarioExact[key].n;
+
     let n = countyDenver ? profile.nDenver : profile.n;
-    const allG = genderList, allR = raceList;
-    if (genderSel.length > 0 && genderSel.length < allG.length) {
+    if (genderSel.length > 0 && genderSel.length < genderList.length) {
       n = Math.round(n * genderSel.reduce((s, g) => s + (profile.gender[g] || 0), 0) / 100);
     }
-    if (raceSel.length > 0 && raceSel.length < allR.length) {
+    if (raceSel.length > 0 && raceSel.length < raceList.length) {
       n = Math.round(n * raceSel.reduce((s, r) => s + (profile.race[r] || 0), 0) / 100);
     }
     return Math.max(0, n);
   }
 
-  function raceBreakdown(profile, genderSel, raceSel, countyDenver) {
+  function raceBreakdown(profile, genderSel, raceSel, countyDenver, progSel) {
+    const key = scenarioKey(progSel || [], raceSel, genderSel, countyDenver);
+    if (scenarioExact[key] && scenarioExact[key].raceRows) return scenarioExact[key].raceRows;
+
     let baseN = countyDenver ? profile.nDenver : profile.n;
     if (genderSel.length > 0 && genderSel.length < genderList.length) {
       baseN = Math.round(baseN * genderSel.reduce((s, g) => s + (profile.gender[g] || 0), 0) / 100);
     }
-    return raceList.map(r => ({
+    const activeRaces = raceSel.length > 0 ? raceSel : raceList;
+    return activeRaces.map(r => ({
       race: r,
       pct: profile.race[r] || 0,
       n: Math.round(baseN * (profile.race[r] || 0) / 100),
     }));
   }
 
-  return { programs, programList, raceList, genderList, getProfile, computeN, raceBreakdown };
+  return { programs, programList, raceList, genderList, getProfile, computeN, raceBreakdown, scenarioExact, scenarioKey };
 })();

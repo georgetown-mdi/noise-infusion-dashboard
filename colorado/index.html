@@ -251,9 +251,9 @@ body {
 <!-- Example selector -->
 <div class="example-strip">
   <span class="example-strip-label">Demo scenario:</span>
-  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — All + AIAN</button>
-  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — AIAN / White + Male</button>
-  <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — Program Combo</button>
+  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — AIAN/White, Male</button>
+  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black, Male+Female, Denver</button>
+  <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — AWS re/Start+Desktop, Hispanic</button>
   <span style="font-size:11px;color:#888;margin-left:8px">← click to load pre-scripted filter state</span>
 </div>
 
@@ -376,91 +376,96 @@ body {
   // ── Example definitions ──────────────────────────────────────────────────
   const examples = {
     1: {
-      progSel:     ['(All)'],
-      raceSel:     ['(All)', 'AIAN'],       // non-exclusive: All + AIAN both checked
-      genderSel:   ['(All)'],
-      countyDenver: false,
-      exposure: {
-        filterDesc: [
-          { label: 'Organization', value: 'ActivateWork' },
-          { label: 'Program',      value: '(All)' },
-          { label: 'Race',         value: '(All) + AIAN', flag: true },
-          { label: 'Gender',       value: '(All)' },
-          { label: 'Denver County', value: '(All)' },
-        ],
-        math: [
-          { expr: 'Base N',                    result: '367',  note: 'ActivateWork, all programs' },
-          { expr: 'AIAN % of base',            result: '1.4%', note: '' },
-          { expr: 'AIAN estimated count',      result: '5',    note: '367 × 1.4%', danger: true },
-          { expr: '"All Races" checked → displayed N', result: '367', note: 'Bug: All overrides filter' },
-        ],
-        why: `The Race dropdown has <strong>"All Races"</strong> checked alongside
-              <strong>"AIAN"</strong> — a non-exclusive combination the UI permits.
-              <div class="id-box">
-                <strong>The trap:</strong> The dashboard still shows N = 367 because "All Races" takes
-                precedence. The viewer assumes the data is safe at N=367 and never sees that
-                AIAN = <strong>5 people</strong>. If any other filter narrows scope (e.g. program,
-                gender, or county), the AIAN count can drop below the suppression threshold of 5 —
-                making individuals identifiable.
-              </div>`,
-      },
-    },
-    2: {
+      // Org: ActivateWork, Program: All, Race: AIAN + White (1 AIAN), Gender: Male, Denver: All
       progSel:     [],
       raceSel:     ['AIAN', 'White'],
       genderSel:   ['Male'],
       countyDenver: false,
       exposure: {
         filterDesc: [
-          { label: 'Organization', value: 'ActivateWork' },
-          { label: 'Program',      value: '(All)' },
-          { label: 'Race',         value: 'AIAN + White', flag: true },
-          { label: 'Gender',       value: 'Male', flag: true },
-          { label: 'Denver County', value: '(All)' },
+          { label: 'Organization',  value: 'ActivateWork' },
+          { label: 'Program',       value: 'All' },
+          { label: 'Race',          value: 'AIAN + White', flag: true },
+          { label: 'Gender',        value: 'Male', flag: true },
+          { label: 'Denver County', value: 'All' },
         ],
         math: [
-          { expr: 'AIAN + White share',         result: '19.9%', note: '1.4% + 18.5%' },
-          { expr: 'Male share',                 result: '34.6%', note: '' },
-          { expr: 'N (AIAN+White, Male)',        result: '~25',   note: '367 × 19.9% × 34.6%' },
-          { expr: 'Of those — AIAN (Male)',      result: '1–2',   note: '367 × 1.4% × 34.6%', danger: true },
+          { expr: 'ActivateWork total N',        result: '367',  note: 'all programs' },
+          { expr: 'AIAN + White share',          result: '19.3%', note: '0.8% + 18.5%' },
+          { expr: 'Male share',                  result: '34.6%', note: '' },
+          { expr: 'N shown (AIAN + White, Male)', result: '~25',  note: '367 × 19.3% × 34.6%' },
+          { expr: 'AIAN males in that group',    result: '1',    note: '367 × 0.8% × 34.6%', danger: true },
         ],
-        why: `Selecting <strong>AIAN + White</strong> without "All Races" is a proper filter,
-              but the combined group N ≈ 25 looks safe. Hidden inside: the AIAN component
-              is <strong>only 1–2 people</strong>.
+        why: `Race is filtered to <strong>AIAN + White</strong> and Gender to <strong>Male</strong>.
+              The displayed N ≈ 25 appears safe — but AIAN and White are counted together,
+              masking that only <strong>1 person is AIAN</strong>.
               <div class="id-box">
-                <strong>Why this exposes them:</strong> Anyone who knows a male AIAN participant
-                in ActivateWork can find their earnings data here. The N = 25 headline masks
-                the single-digit AIAN sub-count within.
+                <strong>Why this exposes them:</strong> The select-all weakness lets users combine
+                non-exclusive race groups into one N. The AIAN individual is invisible inside
+                N = 25, yet their earnings data is fully visible in any race-level breakdown.
+              </div>`,
+      },
+    },
+    2: {
+      // Org: ActivateWork, Program: All, Race: Black, Gender: Male + Female (1 female), Denver: Yes
+      progSel:     [],
+      raceSel:     ['Black or African American'],
+      genderSel:   ['Male', 'Female'],
+      countyDenver: true,
+      exposure: {
+        filterDesc: [
+          { label: 'Organization',  value: 'ActivateWork' },
+          { label: 'Program',       value: 'All' },
+          { label: 'Race',          value: 'Black or African American', flag: true },
+          { label: 'Gender',        value: 'Male + Female', flag: true },
+          { label: 'Denver County', value: 'Yes', flag: true },
+        ],
+        math: [
+          { expr: 'Black participants (Denver only)', result: '~8',  note: '367 Denver subset × 29.5%' },
+          { expr: 'Male + Female selected (= All)',   result: '8',   note: 'both genders checked — non-exclusive with All' },
+          { expr: 'Female share of Black Denver',     result: '~13%', note: 'Denver skews male for this org' },
+          { expr: 'Black Female in Denver',           result: '1',   note: 'below suppression threshold', danger: true },
+        ],
+        why: `Gender is set to <strong>Male + Female</strong> simultaneously — which is
+              functionally identical to selecting "All Genders," yet the UI shows two specific
+              selections, implying a narrowed filter.
+              <div class="id-box">
+                <strong>Why this exposes them:</strong> Combined with Race = Black and
+                Denver County = Yes, the group shrinks to ~8 people.
+                Of those, only <strong>1 is female</strong> — fully identifiable by
+                race, gender, and geography alone.
               </div>`,
       },
     },
     3: {
+      // Org: ActivateWork, Program: AWS re/Start + Desktop Support (1 AWS), Race: Hispanic, Gender: All, Denver: All
       progSel:     ['AWS re/Start', 'Desktop Support'],
       raceSel:     ['Hispanic or Latino'],
       genderSel:   [],
       countyDenver: false,
       exposure: {
         filterDesc: [
-          { label: 'Organization', value: 'ActivateWork' },
-          { label: 'Program',      value: 'AWS re/Start + Desktop Support', flag: true },
-          { label: 'Race',         value: 'Hispanic or Latino', flag: true },
-          { label: 'Gender',       value: '(All)' },
-          { label: 'Denver County', value: '(All)' },
+          { label: 'Organization',  value: 'ActivateWork' },
+          { label: 'Program',       value: 'AWS re/Start + Desktop Support', flag: true },
+          { label: 'Race',          value: 'Hispanic or Latino', flag: true },
+          { label: 'Gender',        value: 'All' },
+          { label: 'Denver County', value: 'All' },
         ],
         math: [
-          { expr: 'AWS re/Start (N=18), Hispanic', result: '1',  note: '18 × 5.6%', danger: true },
-          { expr: 'Desktop Support (N=15), Hispanic', result: '3', note: '15 × 20%' },
-          { expr: 'Combined displayed N',          result: '4',  note: '1 + 3', danger: true },
-          { expr: 'AWS re/Start Hispanic alone',   result: '1',  note: 'Below suppression threshold', danger: true },
+          { expr: 'AWS re/Start total N',            result: '18',  note: '' },
+          { expr: 'Hispanic in AWS re/Start',        result: '1',   note: '18 × 5.6%', danger: true },
+          { expr: 'Desktop Support total N',         result: '15',  note: '' },
+          { expr: 'Hispanic in Desktop Support',     result: '3',   note: '15 × 20%' },
+          { expr: 'Combined displayed N',            result: '4',   note: '1 + 3 — below threshold', danger: true },
         ],
-        why: `Selecting two programs together brings the combined Hispanic N to 4 —
-              already below the 5-person threshold. But the real exposure is finer:
-              <strong>only 1 person</strong> in AWS re/Start is Hispanic.
+        why: `Program is set to <strong>AWS re/Start + Desktop Support</strong> together —
+              a multi-select combination that pools two small programs into one N of 4.
               <div class="id-box">
-                <strong>Why this exposes them:</strong> In any program-level breakdown of this
-                report, the AWS re/Start row and Hispanic column intersect at N = 1.
-                That individual can be identified by program, race, and organization alone —
-                three attributes that are often semi-public.
+                <strong>Why this exposes them:</strong> Only <strong>1 person in AWS re/Start
+                is Hispanic</strong>. Selecting both programs hides this in a combined N,
+                but any program-level row in the report reveals the intersection at N = 1.
+                Program enrollment is often semi-public, making this person identifiable
+                by program + race alone.
               </div>`,
       },
     },
@@ -736,15 +741,15 @@ body {
 
     const profile = SD.coData.getProfile(effectiveProg, includesAllProg || !state.progSel.length);
 
-    // True N (proper filter)
-    const trueN = SD.coData.computeN(profile, effectiveGender, effectiveRace, state.countyDenver);
+    // True N (proper filter) — passes progSel so scenario overrides can match
+    const trueN = SD.coData.computeN(profile, effectiveGender, effectiveRace, state.countyDenver, effectiveProg);
 
     // Apparent N (All + specific bug: All wins, N stays at base)
     const bugActive = (includesAllRace && effectiveRace.length > 0) ||
                       (includesAllGender && effectiveGender.length > 0) ||
                       (includesAllProg  && effectiveProg.length > 0);
     const apparentN = bugActive
-      ? SD.coData.computeN(profile, [], [], state.countyDenver)
+      ? SD.coData.computeN(profile, [], [], state.countyDenver, [])
       : trueN;
 
     const displayN = bugActive ? apparentN : trueN;
