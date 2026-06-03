@@ -3,567 +3,787 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demo 1 · Colorado — Select-All Filter Weakness</title>
-<link rel="stylesheet" href="../shared/mdi.css">
+<title>Colorado Wage Outcomes Results Coalition Dashboard — Demo 1</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-/* ── Back nav ── */
-.back-nav {
-  display: flex; align-items: center; gap: 16px;
-  padding: 8px 16px;
-  background: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,.12);
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: #e8ecf1;
+  color: #1a1a1a;
+  font-size: 13px;
+  min-height: 100vh;
 }
-.back-link {
-  color: rgba(255,255,255,.65); text-decoration: none; font-size: 12px;
-}
-.back-link:hover { color: #fff; }
 
-/* ── Example selector ── */
+/* ── Title bar ── */
+.title-bar {
+  background: #8C1D18;
+  padding: 14px 24px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+/* ── Back link inside title ── */
+.back-row {
+  background: #6b1614;
+  padding: 4px 16px;
+  font-size: 11px;
+}
+.back-row a { color: rgba(255,255,255,.65); text-decoration: none; }
+.back-row a:hover { color: #fff; }
+
+/* ── Tab nav ── */
+.tab-nav {
+  display: flex;
+  background: #2d2d2d;
+}
+.tab-btn {
+  flex: 1; padding: 12px 8px;
+  font-size: 13px; font-weight: 600;
+  color: #ccc; background: none; border: none;
+  cursor: pointer; text-align: center;
+  border-right: 1px solid #444;
+  transition: background .12s, color .12s;
+}
+.tab-btn:last-child { border-right: none; }
+.tab-btn:hover { background: #3d3d3d; color: #fff; }
+.tab-btn.active { background: #8C1D18; color: #fff; }
+.tab-btn.inactive { cursor: default; opacity: .55; pointer-events: none; }
+
+/* ── Example strip ── */
 .example-strip {
   display: flex; align-items: center; gap: 8px;
-  padding: 10px 16px;
-  background: #f4f6fa;
-  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 2px solid #8C1D18;
   flex-wrap: wrap;
 }
-.example-label { font-size: 11px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: .04em; }
+.example-strip-label {
+  font-size: 11px; font-weight: 700; color: #666;
+  text-transform: uppercase; letter-spacing: .05em;
+  margin-right: 4px;
+}
 .ex-btn {
   padding: 5px 14px; font-size: 12px; font-weight: 600;
-  border: 1px solid var(--border); border-radius: 4px;
-  background: #fff; color: var(--text); cursor: pointer;
-  transition: background .12s, color .12s, border-color .12s;
+  border: 1px solid #ccc; border-radius: 3px;
+  background: #f5f5f5; color: #333; cursor: pointer;
+  transition: background .12s, border-color .12s;
 }
-.ex-btn:hover { background: var(--pale); }
-.ex-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
-
-/* ── Scenario callout ── */
-.scenario-callout {
-  padding: 10px 16px;
-  font-size: 12px; line-height: 1.6;
-  border-bottom: 1px solid var(--border);
-}
-.scenario-callout.ex1 { background: #fff8ec; border-left: 4px solid #e07b20; }
-.scenario-callout.ex2 { background: #fef2f2; border-left: 4px solid var(--danger); }
-.scenario-callout.ex3 { background: #fef2f2; border-left: 4px solid var(--danger); }
-.scenario-callout strong { color: var(--navy); }
-.scenario-callout .weakness-tag {
-  display: inline-block; font-size: 10px; font-weight: 700;
-  padding: 1px 7px; border-radius: 3px; margin-right: 6px;
-  text-transform: uppercase; letter-spacing: .04em;
-}
-.ex1 .weakness-tag { background: #e07b20; color: #fff; }
-.ex2 .weakness-tag, .ex3 .weakness-tag { background: var(--danger); color: #fff; }
+.ex-btn:hover { background: #e8e8e8; }
+.ex-btn.active { background: #8C1D18; color: #fff; border-color: #8C1D18; }
 
 /* ── Filter bar ── */
 .filter-bar {
-  display: flex; flex-wrap: wrap; gap: 0;
-  background: #fff; border-bottom: 1px solid var(--border);
+  display: flex; flex-wrap: wrap;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 12px;
+  gap: 6px 12px;
+  align-items: flex-end;
 }
-.filter-cell {
-  flex: 1; min-width: 140px;
-  padding: 7px 14px;
-  border-right: 1px solid var(--border);
+.filter-cell { display: flex; flex-direction: column; min-width: 110px; }
+.filter-label {
+  font-size: 11px; font-weight: 700; color: #333;
+  margin-bottom: 3px; white-space: nowrap;
 }
-.filter-cell:last-child { border-right: none; }
-.filter-cell .filter-label { margin-bottom: 4px; }
+.filter-select {
+  padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a;
+  background: #fff; border: 1px solid #aaa; border-radius: 2px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 6px center;
+  cursor: pointer;
+}
+.filter-select:focus { outline: 2px solid #003da5; outline-offset: 1px; }
 
-/* custom multi-select dropdown */
+/* ── Custom multi-select dropdown ── */
 .ms-wrapper { position: relative; }
 .ms-display {
-  width: 100%; padding: 5px 26px 5px 8px; font-size: 12px;
-  color: var(--text); background: #fff; border: 1px solid #aaa;
-  border-radius: 2px; cursor: pointer; user-select: none;
+  padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a;
+  background: #fff; border: 1px solid #aaa; border-radius: 2px;
+  cursor: pointer; user-select: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2020/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E");
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 8px center;
+  background-repeat: no-repeat; background-position: right 6px center;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 160px;
 }
 .ms-display.warn { border-color: #e07b20; background-color: #fff8ec; }
 .ms-panel {
-  display: none; position: absolute; top: calc(100% + 2px); left: 0; right: 0;
+  display: none; position: absolute; top: calc(100% + 2px); left: 0;
+  min-width: 200px;
   background: #fff; border: 1px solid #aaa; border-radius: 2px;
-  z-index: 100; max-height: 200px; overflow-y: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  z-index: 200; max-height: 240px; overflow-y: auto;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
 }
 .ms-panel.open { display: block; }
 .ms-item {
-  display: flex; align-items: center; gap: 7px;
-  padding: 5px 10px; font-size: 12px; cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer;
 }
-.ms-item:hover { background: var(--bg); }
-.ms-item input { accent-color: var(--blue); flex-shrink: 0; }
-.ms-item.all-opt { font-weight: 700; border-bottom: 1px solid var(--border); }
+.ms-item:hover { background: #f0f4fa; }
+.ms-item input[type=checkbox] { accent-color: #003da5; flex-shrink: 0; }
+.ms-item.all-opt { font-weight: 700; border-bottom: 1px solid #ddd; background: #f8f8f8; }
 .ms-item.nonexcl { background: #fff8ec; }
 .ms-item.nonexcl input { accent-color: #e07b20; }
 
-/* ── Stats bar ── */
-.stats-bar {
-  display: flex; align-items: center; gap: 28px;
-  padding: 8px 16px; background: #fff;
-  border-bottom: 1px solid var(--border);
-}
-.stat-item { display: flex; flex-direction: column; gap: 1px; }
-.stat-label {
-  font-size: 10px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .04em; color: var(--gray);
-}
-.stat-value { font-size: 22px; font-weight: 700; color: var(--navy); line-height: 1.1; }
-.stat-sub { font-size: 11px; color: var(--gray); }
-
-/* ── Risk banner ── */
-.risk-banner {
-  padding: 8px 16px; font-size: 11px; font-weight: 600; line-height: 1.5;
+/* ── Exposure explanation panel ── */
+.exposure-panel {
   display: none;
+  margin: 0; padding: 0;
+  border-bottom: 3px solid #8C1D18;
 }
-.risk-banner.show { display: block; }
-.risk-banner.risk { background: #fde8e8; color: var(--danger); border-bottom: 1px solid #e8b8b8; }
-.risk-banner.suppress { background: #3a1a1a; color: #fff; border-bottom: 1px solid #200e0e; }
-.risk-banner.ambiguous { background: #fff3e0; color: #8b5a00; border-bottom: 1px solid #e0c880; }
+.exposure-panel.show { display: block; }
+.exposure-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  background: #fff;
+}
+.exp-col {
+  padding: 12px 16px;
+  border-right: 1px solid #ddd;
+}
+.exp-col:last-child { border-right: none; }
+.exp-col-title {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: #888; margin-bottom: 6px;
+}
+.exp-filters { display: flex; flex-wrap: wrap; gap: 4px; }
+.exp-chip {
+  font-size: 11px; padding: 2px 8px; border-radius: 12px;
+  background: #e8ecf4; color: #333; border: 1px solid #c8d0e0;
+}
+.exp-chip.flagged { background: #8C1D18; color: #fff; border-color: #8C1D18; }
+.exp-math { font-size: 12px; line-height: 1.8; color: #333; }
+.exp-math .step { display: flex; align-items: baseline; gap: 6px; }
+.exp-math .arrow { color: #aaa; }
+.exp-math .small-n { color: #8C1D18; font-weight: 700; font-size: 14px; }
+.exp-math .label { color: #666; font-size: 11px; }
+.exp-why { font-size: 12px; line-height: 1.6; color: #333; }
+.exp-why strong { color: #8C1D18; }
+.exp-why .id-box {
+  margin-top: 8px; padding: 8px 10px;
+  background: #fff0f0; border: 1px solid #e8c0c0; border-radius: 3px;
+  font-size: 11px; color: #8C1D18; line-height: 1.5;
+}
+.exposure-toggle {
+  background: #f4f6fa; padding: 4px 16px;
+  font-size: 11px; color: #555; cursor: pointer;
+  border: none; width: 100%; text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.exposure-toggle:hover { background: #eaeef4; }
 
-/* ── Race breakdown table ── */
-.breakdown-wrap { padding: 16px; }
-.breakdown-title {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .05em; color: var(--gray); margin-bottom: 10px;
+/* ── Main content grid ── */
+.main-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 8px;
+  padding: 8px;
+  align-items: start;
 }
-.race-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-.race-table th {
-  text-align: left; font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .04em; color: var(--gray);
-  padding: 4px 10px; border-bottom: 2px solid var(--border);
+
+/* ── Left sidebar ── */
+.left-col { display: flex; flex-direction: column; gap: 8px; }
+.stat-card {
+  background: #fff; border: 1px solid #ccc;
+  padding: 12px 14px;
 }
-.race-table td { padding: 5px 10px; border-bottom: 1px solid var(--border); }
-.race-table tr:last-child td { border-bottom: none; }
-.race-table tr.dimmed td { opacity: 0.3; }
-.race-table tr.danger td:first-child { color: var(--danger); font-weight: 700; }
-.race-table .n-cell { font-weight: 700; }
-.race-table .n-cell.danger { color: var(--danger); }
-.race-table .n-cell.warn { color: #8b5a00; }
-.race-bar { height: 6px; background: var(--pale); border-radius: 3px; }
-.race-bar-fill { height: 100%; border-radius: 3px; background: var(--blue); }
+.stat-card-label {
+  font-size: 11px; font-weight: 700; color: #333;
+  margin-bottom: 4px; line-height: 1.3;
+}
+.stat-card-value {
+  font-size: 28px; font-weight: 700; color: #1a1a1a;
+  line-height: 1.1;
+}
+.stat-card-value.risk { color: #8C1D18; }
+.stat-card-value.warn { color: #8b5a00; }
+.stat-card-sub { font-size: 12px; color: #555; margin-top: 2px; }
+.org-text { font-size: 12px; color: #444; line-height: 1.6; margin-top: 4px; }
+
+/* ── Center chart ── */
+.center-col {
+  background: #fff; border: 1px solid #ccc; padding: 12px;
+}
+.chart-title {
+  font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px;
+}
+.chart-wrap { position: relative; height: 340px; }
+
+/* ── Right chart ── */
+.right-col {
+  background: #fff; border: 1px solid #ccc; padding: 12px;
+}
+.right-chart-title {
+  font-size: 12px; font-weight: 700; color: #1a1a1a;
+  text-align: center; margin-bottom: 8px;
+}
+.bar-wrap { position: relative; height: 340px; }
 
 /* ── Footer ── */
-.dash-note { padding: 10px 16px; font-size: 11px; color: var(--gray); border-top: 1px solid var(--border); background: #fff; line-height: 1.5; }
+.dash-note {
+  padding: 8px 16px; font-size: 11px; color: #555;
+  border-top: 1px solid #ccc; background: #fff; line-height: 1.5;
+  margin-top: 8px;
+}
 </style>
 </head>
 <body>
 
-<header class="dash-header">
-  <div class="back-nav">
-    <a class="back-link" href="../">← All Demos</a>
-  </div>
-  <div class="dash-title">Workforce Outcomes Dashboard · ActivateWork Colorado</div>
-  <nav class="dash-tabs">
-    <button class="dash-tab active">Demographics</button>
-  </nav>
-</header>
+<!-- Title -->
+<div class="back-row"><a href="../">← All Demos</a></div>
+<div class="title-bar">Colorado Wage Outcomes Results Coalition Dashboard</div>
+
+<!-- Tab nav -->
+<nav class="tab-nav">
+  <button class="tab-btn inactive">Home</button>
+  <button class="tab-btn inactive">Program Background</button>
+  <button class="tab-btn active">Earnings</button>
+  <button class="tab-btn inactive">Industry</button>
+  <button class="tab-btn inactive">Demographics</button>
+</nav>
 
 <!-- Example selector -->
 <div class="example-strip">
-  <span class="example-label">Demo scenario:</span>
-  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — All + Specific</button>
-  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — AIAN/White + Male</button>
+  <span class="example-strip-label">Demo scenario:</span>
+  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — All + AIAN</button>
+  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — AIAN / White + Male</button>
   <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — Program Combo</button>
+  <span style="font-size:11px;color:#888;margin-left:8px">← click to load pre-scripted filter state</span>
 </div>
 
-<!-- Scenario callout -->
-<div class="scenario-callout ex1" id="callout"></div>
+<!-- Exposure explanation toggle + panel -->
+<button class="exposure-toggle" id="expToggleBtn" onclick="toggleExposure()">
+  ▼ Show why this filter combination exposes a small group
+</button>
+<div class="exposure-panel show" id="exposurePanel">
+  <div class="exposure-inner" id="exposureInner"></div>
+</div>
 
 <!-- Filter bar -->
 <div class="filter-bar">
-
-  <!-- Org (fixed) -->
   <div class="filter-cell">
-    <label class="filter-label">Organization</label>
+    <span class="filter-label">Organization</span>
     <select class="filter-select" disabled style="opacity:.6">
       <option>ActivateWork</option>
     </select>
   </div>
-
-  <!-- Program multi-select -->
   <div class="filter-cell">
-    <label class="filter-label" for="progDisplay">Program</label>
+    <span class="filter-label">Program</span>
     <div class="ms-wrapper" id="progWrapper">
-      <div class="ms-display" id="progDisplay" tabindex="0">(All Programs)</div>
+      <div class="ms-display" id="progDisplay" tabindex="0">(全部)</div>
       <div class="ms-panel" id="progPanel"></div>
     </div>
   </div>
-
-  <!-- Race multi-select -->
   <div class="filter-cell">
-    <label class="filter-label">Race / Ethnicity</label>
+    <span class="filter-label">Program Completion</span>
+    <select class="filter-select"><option>(全部)</option></select>
+  </div>
+  <div class="filter-cell">
+    <span class="filter-label">Highest Education L...</span>
+    <select class="filter-select"><option>(全部)</option></select>
+  </div>
+  <div class="filter-cell">
+    <span class="filter-label">Race</span>
     <div class="ms-wrapper" id="raceWrapper">
-      <div class="ms-display" id="raceDisplay" tabindex="0">(All Races)</div>
+      <div class="ms-display" id="raceDisplay" tabindex="0">(全部)</div>
       <div class="ms-panel" id="racePanel"></div>
     </div>
   </div>
-
-  <!-- Gender multi-select -->
   <div class="filter-cell">
-    <label class="filter-label">Gender</label>
+    <span class="filter-label">Gender</span>
     <div class="ms-wrapper" id="genderWrapper">
-      <div class="ms-display" id="genderDisplay" tabindex="0">(All Genders)</div>
+      <div class="ms-display" id="genderDisplay" tabindex="0">(全部)</div>
       <div class="ms-panel" id="genderPanel"></div>
     </div>
   </div>
-
-  <!-- County -->
   <div class="filter-cell">
-    <label class="filter-label" for="countySelect">Denver County</label>
-    <select class="filter-select" id="countySelect">
-      <option value="all">All</option>
-      <option value="yes">Yes (in Denver)</option>
-    </select>
+    <span class="filter-label">Justice System Hist...</span>
+    <select class="filter-select"><option>Missing/NULL</option><option>(全部)</option></select>
   </div>
-
-</div>
-
-<!-- Stats bar -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="stat-label">Matched N</span>
-    <span class="stat-value" id="matchedN">—</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-label">Apparent N (with All bug)</span>
-    <span class="stat-value" id="apparentN" style="color:var(--gray)">—</span>
-  </div>
-  <div class="stat-item" id="aianStatWrap" style="display:none">
-    <span class="stat-label">AIAN in selection</span>
-    <span class="stat-value" id="aianN" style="color:var(--danger)">—</span>
+  <div class="filter-cell">
+    <span class="filter-label">Lives in Denver Cou...</span>
+    <div class="ms-wrapper" id="countyWrapper">
+      <div class="ms-display" id="countyDisplay" tabindex="0">(全部)</div>
+      <div class="ms-panel" id="countyPanel"></div>
+    </div>
   </div>
 </div>
 
-<!-- Risk banner -->
-<div class="risk-banner" id="riskBanner"></div>
+<!-- Main content -->
+<div class="main-grid">
 
-<!-- Race breakdown table -->
-<div class="breakdown-wrap">
-  <div class="breakdown-title">Race / Ethnicity Breakdown</div>
-  <table class="race-table">
-    <thead>
-      <tr>
-        <th>Race / Ethnicity</th>
-        <th>% of group</th>
-        <th>N (est.)</th>
-        <th style="width:140px">Distribution</th>
-      </tr>
-    </thead>
-    <tbody id="raceTbody"></tbody>
-  </table>
+  <!-- Left sidebar -->
+  <div class="left-col">
+    <div class="stat-card">
+      <div class="stat-card-label">Matched Sample Size</div>
+      <div class="stat-card-value" id="matchedN">367</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Average Program Length</div>
+      <div class="stat-card-value" style="font-size:20px" id="progLength">3 – 4</div>
+      <div class="stat-card-sub">Months</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">Organization Overview</div>
+      <div class="org-text" id="orgText"></div>
+    </div>
+  </div>
+
+  <!-- Center: earnings chart -->
+  <div class="center-col">
+    <div class="chart-title">Average Quarterly Earnings Relative to Program Start</div>
+    <div class="chart-wrap">
+      <canvas id="earningsChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Right: pre/post bar chart -->
+  <div class="right-col">
+    <div class="right-chart-title">Pre Average vs. Post Average<br>Quarterly Earnings</div>
+    <div class="bar-wrap">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
 </div>
 
 <div class="dash-note">
-  Note: All values are estimates based on percentage distributions applied to matched N.
-  Cells with N &lt; 5 are suppressed in production dashboards.
-  <strong>This demo intentionally surfaces them to illustrate disclosure risk.</strong>
+  Note: The dashboard will not display any values for a sample size less than 5 people to adhere with data sharing requirements and protecting confidentiality.
 </div>
 
-<script src="../shared/noise.js"></script>
 <script src="data.js"></script>
 <script>
 (function () {
-
-  const PROGRAMS = SD.coData.programList;
-  const RACES    = ['White', 'Hispanic/Latino', 'Black/Af. Am.', 'Asian', 'Multiracial', 'AIAN', 'Other'];
-  const GENDERS  = ['Female', 'Male', 'Other'];
-  const SUPPRESS = 5;
+  const SUPPRESS  = 5;
   const THRESHOLD = 10;
 
-  // State
+  // ── State ────────────────────────────────────────────────────────────────
   const state = {
-    progSel:     [],       // checked programs (may include 'All')
-    raceSel:     [],       // checked races (may include 'All Races')
-    genderSel:   [],       // checked genders (may include 'All Genders')
+    progSel:      [],
+    raceSel:      [],
+    genderSel:    [],
     countyDenver: false,
     activeExample: 1,
+    exposureOpen: true,
   };
 
-  // Build multi-select panels
+  // ── Example definitions ──────────────────────────────────────────────────
+  const examples = {
+    1: {
+      progSel:     ['(全部)'],
+      raceSel:     ['(全部)', 'AIAN'],       // non-exclusive: All + AIAN both checked
+      genderSel:   ['(全部)'],
+      countyDenver: false,
+      exposure: {
+        filterDesc: [
+          { label: 'Organization', value: 'ActivateWork' },
+          { label: 'Program',      value: '(全部)' },
+          { label: 'Race',         value: '(全部) + AIAN', flag: true },
+          { label: 'Gender',       value: '(全部)' },
+          { label: 'Denver County', value: '(全部)' },
+        ],
+        math: [
+          { expr: 'Base N',                    result: '367',  note: 'ActivateWork, all programs' },
+          { expr: 'AIAN % of base',            result: '1.4%', note: '' },
+          { expr: 'AIAN estimated count',      result: '5',    note: '367 × 1.4%', danger: true },
+          { expr: '"All Races" checked → displayed N', result: '367', note: 'Bug: All overrides filter' },
+        ],
+        why: `The Race dropdown has <strong>"(全部)" [All Races]</strong> checked alongside
+              <strong>"AIAN"</strong> — a non-exclusive combination the UI permits.
+              <div class="id-box">
+                <strong>The trap:</strong> The dashboard still shows N = 367 because "All Races" takes
+                precedence. The viewer assumes the data is safe at N=367 and never sees that
+                AIAN = <strong>5 people</strong>. If any other filter narrows scope (e.g. program,
+                gender, or county), the AIAN count can drop below the suppression threshold of 5 —
+                making individuals identifiable.
+              </div>`,
+      },
+    },
+    2: {
+      progSel:     [],
+      raceSel:     ['AIAN', 'White'],
+      genderSel:   ['Male'],
+      countyDenver: false,
+      exposure: {
+        filterDesc: [
+          { label: 'Organization', value: 'ActivateWork' },
+          { label: 'Program',      value: '(全部)' },
+          { label: 'Race',         value: 'AIAN + White', flag: true },
+          { label: 'Gender',       value: 'Male', flag: true },
+          { label: 'Denver County', value: '(全部)' },
+        ],
+        math: [
+          { expr: 'AIAN + White share',         result: '19.9%', note: '1.4% + 18.5%' },
+          { expr: 'Male share',                 result: '34.6%', note: '' },
+          { expr: 'N (AIAN+White, Male)',        result: '~25',   note: '367 × 19.9% × 34.6%' },
+          { expr: 'Of those — AIAN (Male)',      result: '1–2',   note: '367 × 1.4% × 34.6%', danger: true },
+        ],
+        why: `Selecting <strong>AIAN + White</strong> without "All Races" is a proper filter,
+              but the combined group N ≈ 25 looks safe. Hidden inside: the AIAN component
+              is <strong>only 1–2 people</strong>.
+              <div class="id-box">
+                <strong>Why this exposes them:</strong> Anyone who knows a male AIAN participant
+                in ActivateWork can find their earnings data here. The N = 25 headline masks
+                the single-digit AIAN sub-count within.
+              </div>`,
+      },
+    },
+    3: {
+      progSel:     ['AWS re/Start', 'Desktop Support'],
+      raceSel:     ['Hispanic or Latino'],
+      genderSel:   [],
+      countyDenver: false,
+      exposure: {
+        filterDesc: [
+          { label: 'Organization', value: 'ActivateWork' },
+          { label: 'Program',      value: 'AWS re/Start + Desktop Support', flag: true },
+          { label: 'Race',         value: 'Hispanic or Latino', flag: true },
+          { label: 'Gender',       value: '(全部)' },
+          { label: 'Denver County', value: '(全部)' },
+        ],
+        math: [
+          { expr: 'AWS re/Start (N=18), Hispanic', result: '1',  note: '18 × 5.6%', danger: true },
+          { expr: 'Desktop Support (N=15), Hispanic', result: '3', note: '15 × 20%' },
+          { expr: 'Combined displayed N',          result: '4',  note: '1 + 3', danger: true },
+          { expr: 'AWS re/Start Hispanic alone',   result: '1',  note: 'Below suppression threshold', danger: true },
+        ],
+        why: `Selecting two programs together brings the combined Hispanic N to 4 —
+              already below the 5-person threshold. But the real exposure is finer:
+              <strong>only 1 person</strong> in AWS re/Start is Hispanic.
+              <div class="id-box">
+                <strong>Why this exposes them:</strong> In any program-level breakdown of this
+                report, the AWS re/Start row and Hispanic column intersect at N = 1.
+                That individual can be identified by program, race, and organization alone —
+                three attributes that are often semi-public.
+              </div>`,
+      },
+    },
+  };
+
+  // ── Multi-select panel builder ───────────────────────────────────────────
   function buildPanel(panelEl, items, stateKey, allLabel) {
     panelEl.innerHTML = '';
-
-    // "All" option
-    const allItem = document.createElement('div');
-    allItem.className = 'ms-item all-opt';
-    allItem.innerHTML = `<input type="checkbox" value="${allLabel}"> ${allLabel}`;
-    panelEl.appendChild(allItem);
-
+    const allDiv = document.createElement('div');
+    allDiv.className = 'ms-item all-opt';
+    allDiv.innerHTML = `<input type="checkbox" value="${allLabel}"> ${allLabel}`;
+    panelEl.appendChild(allDiv);
     items.forEach(item => {
       const div = document.createElement('div');
       div.className = 'ms-item';
       div.innerHTML = `<input type="checkbox" value="${item}"> ${item}`;
       panelEl.appendChild(div);
     });
-
-    panelEl.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    panelEl.querySelectorAll('input').forEach(cb => {
       cb.addEventListener('change', () => {
-        const checked = Array.from(panelEl.querySelectorAll('input:checked')).map(e => e.value);
-        state[stateKey] = checked;
-        checkNonExclusive(panelEl, allLabel);
-        updateDisplay(panelEl.previousElementSibling, checked, allLabel);
+        state[stateKey] = Array.from(panelEl.querySelectorAll('input:checked')).map(e => e.value);
+        markNonExclusive(panelEl, allLabel);
+        refreshDisplay(panelEl.previousElementSibling, state[stateKey], allLabel);
         render();
       });
     });
   }
 
-  // Highlight non-exclusive items (when "All" + specific are both checked)
-  function checkNonExclusive(panelEl, allLabel) {
+  function markNonExclusive(panelEl, allLabel) {
     const checked = Array.from(panelEl.querySelectorAll('input:checked')).map(e => e.value);
     const hasAll  = checked.includes(allLabel);
     panelEl.querySelectorAll('.ms-item:not(.all-opt)').forEach(item => {
-      const cb = item.querySelector('input');
-      if (hasAll && cb.checked) {
-        item.classList.add('nonexcl');
-      } else {
-        item.classList.remove('nonexcl');
-      }
+      item.classList.toggle('nonexcl', hasAll && item.querySelector('input').checked);
     });
-    const displayEl = panelEl.previousElementSibling;
-    displayEl.classList.toggle('warn', hasAll && checked.length > 1);
+    panelEl.previousElementSibling.classList.toggle('warn', hasAll && checked.length > 1);
   }
 
-  function updateDisplay(displayEl, checked, allLabel) {
-    if (checked.length === 0 || checked.includes(allLabel)) {
-      const specific = checked.filter(v => v !== allLabel);
-      if (specific.length === 0) {
-        displayEl.textContent = `(${allLabel})`;
-      } else {
-        displayEl.textContent = `${allLabel} + ${specific.join(', ')}`;
-      }
+  function refreshDisplay(displayEl, checked, allLabel) {
+    const specific = checked.filter(v => v !== allLabel);
+    if (checked.includes(allLabel)) {
+      displayEl.textContent = specific.length ? `(全部) + ${specific.join(', ')}` : '(全部)';
+    } else if (specific.length === 0) {
+      displayEl.textContent = '(全部)';
     } else {
-      displayEl.textContent = checked.join(', ');
+      displayEl.textContent = specific.join(', ');
     }
   }
 
-  // Toggle dropdown panels
   function setupToggle(displayEl, panelEl) {
     displayEl.addEventListener('click', e => {
       e.stopPropagation();
-      document.querySelectorAll('.ms-panel.open').forEach(p => {
-        if (p !== panelEl) p.classList.remove('open');
-      });
+      document.querySelectorAll('.ms-panel.open').forEach(p => { if (p !== panelEl) p.classList.remove('open'); });
       panelEl.classList.toggle('open');
     });
   }
-
   document.addEventListener('click', () => {
     document.querySelectorAll('.ms-panel.open').forEach(p => p.classList.remove('open'));
   });
 
-  // ── Load example (pre-scripted states) ──────────────────────────────────
-  const examples = {
-    1: {
-      progSel:    ['All Programs'],
-      raceSel:    ['All Races', 'AIAN'],   // the non-exclusive trap
-      genderSel:  ['All Genders'],
-      countyDenver: false,
-      calloutClass: 'ex1',
-      callout: `
-        <span class="weakness-tag">Non-exclusive selection</span>
-        <strong>Scenario:</strong> The race filter has <em>both</em> "All Races" and "AIAN" checked simultaneously —
-        an ambiguous, non-exclusive combination the UI allows but shouldn't.<br>
-        <strong>The trap:</strong> The dashboard shows N = 234 (the "All" record wins), giving a false sense of safety.
-        But AIAN represents only <strong>~3 people</strong> in this group.
-        A viewer who doesn't uncheck "All Races" never sees that the AIAN subgroup is below the disclosure threshold.
-      `,
-    },
-    2: {
-      progSel:    [],
-      raceSel:    ['AIAN', 'White'],
-      genderSel:  ['Male'],
-      countyDenver: false,
-      calloutClass: 'ex2',
-      callout: `
-        <span class="weakness-tag">Disclosure risk</span>
-        <strong>Scenario:</strong> Race = AIAN + White, Gender = Male (no "All" in the selection — this is a proper filter).
-        N drops to approximately <strong>16</strong>. Of those, <strong>1 person</strong> is AIAN —
-        identifiable by the combination of race, gender, and organization.
-        The AIAN row in the table is below the suppression threshold.
-      `,
-    },
-    3: {
-      progSel:    ['AWS re/Start', 'Desktop Support'],
-      raceSel:    ['Hispanic/Latino'],
-      genderSel:  [],
-      countyDenver: false,
-      calloutClass: 'ex3',
-      callout: `
-        <span class="weakness-tag">Disclosure risk</span>
-        <strong>Scenario:</strong> Program = AWS re/Start + Desktop Support (multi-select), Race = Hispanic/Latino.
-        Across both programs there are only <strong>~3 Hispanic participants</strong>,
-        of whom <strong>1</strong> is in AWS re/Start.
-        Anyone who knows a Hispanic participant enrolled in AWS re/Start can identify them in this report.
-      `,
-    },
-  };
-
+  // ── Load example ─────────────────────────────────────────────────────────
   function loadExample(n) {
     state.activeExample = n;
+    [1,2,3].forEach(i => document.getElementById(`ex${i}btn`).classList.toggle('active', i === n));
     const ex = examples[n];
-
-    // Update button styles
-    [1, 2, 3].forEach(i => {
-      document.getElementById(`ex${i}btn`).classList.toggle('active', i === n);
-    });
-
-    // Restore filter state
     state.progSel    = [...ex.progSel];
     state.raceSel    = [...ex.raceSel];
     state.genderSel  = [...ex.genderSel];
     state.countyDenver = ex.countyDenver;
-
     applyStateToUI();
+    renderExposure(ex.exposure);
     render();
   }
 
   function applyStateToUI() {
-    const ex = examples[state.activeExample];
+    setPanel('progPanel',   state.progSel,   '(全部)');
+    setPanel('racePanel',   state.raceSel,   '(全部)');
+    setPanel('genderPanel', state.genderSel, '(全部)');
+    setPanel('countyPanel', state.countyDenver ? ['Yes (Denver Co.)'] : ['(全部)'], '(全部)');
+    refreshDisplay(document.getElementById('progDisplay'),   state.progSel,   '(全部)');
+    refreshDisplay(document.getElementById('raceDisplay'),   state.raceSel,   '(全部)');
+    refreshDisplay(document.getElementById('genderDisplay'), state.genderSel, '(全部)');
+    refreshDisplay(document.getElementById('countyDisplay'), state.countyDenver ? ['Yes (Denver Co.)'] : ['(全部)'], '(全部)');
+    markNonExclusive(document.getElementById('progPanel'),   '(全部)');
+    markNonExclusive(document.getElementById('racePanel'),   '(全部)');
+    markNonExclusive(document.getElementById('genderPanel'), '(全部)');
+  }
 
-    // Programs panel
-    document.querySelectorAll('#progPanel input').forEach(cb => {
-      cb.checked = state.progSel.includes(cb.value);
+  function setPanel(panelId, selected, allLabel) {
+    document.querySelectorAll(`#${panelId} input`).forEach(cb => {
+      cb.checked = selected.includes(cb.value) ||
+        (selected.length === 0 && cb.value === allLabel);
     });
-    checkNonExclusive(document.getElementById('progPanel'), 'All Programs');
-    updateDisplay(document.getElementById('progDisplay'), state.progSel, 'All Programs');
+  }
 
-    // Race panel
-    document.querySelectorAll('#racePanel input').forEach(cb => {
-      cb.checked = state.raceSel.includes(cb.value);
+  // ── Exposure panel render ────────────────────────────────────────────────
+  function renderExposure(exp) {
+    const inner = document.getElementById('exposureInner');
+    const filtersHtml = exp.filterDesc.map(f =>
+      `<span class="exp-chip ${f.flag ? 'flagged' : ''}">${f.label}: ${f.value}</span>`
+    ).join('');
+
+    const mathHtml = exp.math.map(m =>
+      `<div class="step">
+        <span style="flex:1;color:#555;font-size:11px">${m.expr}</span>
+        <span class="arrow">→</span>
+        <span class="${m.danger ? 'small-n' : ''}" style="${m.danger ? '' : 'font-weight:600'}">${m.result}</span>
+        ${m.note ? `<span class="label">(${m.note})</span>` : ''}
+       </div>`
+    ).join('');
+
+    inner.innerHTML = `
+      <div class="exp-col">
+        <div class="exp-col-title">Filter State</div>
+        <div class="exp-filters">${filtersHtml}</div>
+      </div>
+      <div class="exp-col">
+        <div class="exp-col-title">Subgroup Math</div>
+        <div class="exp-math">${mathHtml}</div>
+      </div>
+      <div class="exp-col">
+        <div class="exp-col-title">Why This Exposes Someone</div>
+        <div class="exp-why">${exp.why}</div>
+      </div>
+    `;
+  }
+
+  window.toggleExposure = function () {
+    state.exposureOpen = !state.exposureOpen;
+    const panel = document.getElementById('exposurePanel');
+    const btn   = document.getElementById('expToggleBtn');
+    panel.classList.toggle('show', state.exposureOpen);
+    btn.textContent = state.exposureOpen
+      ? '▼ Show why this filter combination exposes a small group'
+      : '▶ Show why this filter combination exposes a small group';
+  };
+
+  // ── Charts ───────────────────────────────────────────────────────────────
+  let earningsChartInst = null;
+  let barChartInst      = null;
+
+  function renderCharts(profile) {
+    const { quarters, values, preAvg, postAvg } = profile.earnings;
+    const { mitLivingWage, denverMinWage } = profile;
+
+    // Earnings line chart
+    if (earningsChartInst) earningsChartInst.destroy();
+    earningsChartInst = new Chart(document.getElementById('earningsChart'), {
+      type: 'bar',
+      data: {
+        labels: quarters.map(String),
+        datasets: [
+          {
+            type: 'line',
+            label: 'Average Quarterly Earnings',
+            data: values,
+            borderColor: '#8C6A3A',
+            backgroundColor: 'rgba(140,106,58,.12)',
+            borderWidth: 2.5,
+            pointRadius: 2,
+            tension: 0.35,
+            fill: false,
+            order: 1,
+          },
+          {
+            type: 'line',
+            label: `MIT Living Wage (~$${mitLivingWage.toLocaleString()})`,
+            data: quarters.map(() => mitLivingWage),
+            borderColor: '#888',
+            borderWidth: 1,
+            borderDash: [5, 4],
+            pointRadius: 0,
+            fill: false,
+            order: 2,
+          },
+          {
+            type: 'line',
+            label: `Denver Min. Wage (~$${denverMinWage.toLocaleString()})`,
+            data: quarters.map(() => denverMinWage),
+            borderColor: '#bbb',
+            borderWidth: 1,
+            borderDash: [3, 3],
+            pointRadius: 0,
+            fill: false,
+            order: 3,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 20 } },
+          tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } },
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Relative Number of Quarters from Program Start', font: { size: 11 } },
+            grid: { color: '#eee' },
+            ticks: { font: { size: 10 } },
+          },
+          y: {
+            title: { display: true, text: 'Average Quarterly Earnings', font: { size: 11 } },
+            ticks: {
+              font: { size: 10 },
+              callback: v => `$${(v/1000).toFixed(0)}K`,
+            },
+            grid: { color: '#eee' },
+            min: 0, max: 20000,
+          },
+        },
+        annotation: {},
+      },
     });
-    checkNonExclusive(document.getElementById('racePanel'), 'All Races');
-    updateDisplay(document.getElementById('raceDisplay'), state.raceSel, 'All Races');
 
-    // Gender panel
-    document.querySelectorAll('#genderPanel input').forEach(cb => {
-      cb.checked = state.genderSel.includes(cb.value);
+    // Pre/post bar chart
+    if (barChartInst) barChartInst.destroy();
+    barChartInst = new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Pre-Period\n(Qtr −8 to −1)', 'Post-Period\n(Qtr 1 to 12)'],
+        datasets: [{
+          data: [preAvg, postAvg],
+          backgroundColor: ['#8C6A3A', '#8C6A3A'],
+          borderRadius: 2,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } },
+          datalabels: { display: false },
+        },
+        scales: {
+          y: {
+            min: 0, max: 16000,
+            ticks: { font: { size: 10 }, callback: v => `$${(v/1000).toFixed(0)}K` },
+            grid: { color: '#eee' },
+          },
+          x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+        },
+      },
+      plugins: [{
+        afterDatasetsDraw(chart) {
+          const ctx2 = chart.ctx;
+          chart.data.datasets.forEach((ds, i) => {
+            ds.data.forEach((val, j) => {
+              const meta = chart.getDatasetMeta(i);
+              const bar  = meta.data[j];
+              ctx2.save();
+              ctx2.fillStyle = '#1a1a1a';
+              ctx2.font = 'bold 13px sans-serif';
+              ctx2.textAlign = 'center';
+              ctx2.fillText(`$${val.toLocaleString()}`, bar.x, bar.y - 6);
+              ctx2.restore();
+            });
+          });
+        },
+      }],
     });
-    checkNonExclusive(document.getElementById('genderPanel'), 'All Genders');
-    updateDisplay(document.getElementById('genderDisplay'), state.genderSel, 'All Genders');
-
-    // County
-    document.getElementById('countySelect').value = state.countyDenver ? 'yes' : 'all';
-
-    // Callout
-    const callout = document.getElementById('callout');
-    callout.className = `scenario-callout ${ex.calloutClass}`;
-    callout.innerHTML = ex.callout;
   }
 
   // ── Main render ──────────────────────────────────────────────────────────
   function render() {
-    const includesAllProg   = state.progSel.includes('All Programs');
-    const includesAllRace   = state.raceSel.includes('All Races');
-    const includesAllGender = state.genderSel.includes('All Genders');
+    const includesAllProg   = state.progSel.includes('(全部)');
+    const includesAllRace   = state.raceSel.includes('(全部)');
+    const includesAllGender = state.genderSel.includes('(全部)');
 
-    const effectiveProg   = state.progSel.filter(p => p !== 'All Programs');
-    const effectiveRace   = includesAllRace ? [] : state.raceSel;
-    const effectiveGender = includesAllGender ? [] : state.genderSel;
+    const effectiveProg   = state.progSel.filter(p => p !== '(全部)');
+    const effectiveRace   = includesAllRace   ? [] : state.raceSel.filter(r => r !== '(全部)');
+    const effectiveGender = includesAllGender ? [] : state.genderSel.filter(g => g !== '(全部)');
 
-    // "True" N — what it SHOULD be after filtering
-    const trueN = SD.coData.computeN(
-      effectiveProg, effectiveGender, effectiveRace, state.countyDenver, false
-    );
+    const profile = SD.coData.getProfile(effectiveProg, includesAllProg || !state.progSel.length);
 
-    // "Apparent" N — what the buggy dashboard shows when "All" + specific are both selected
-    const buggyN = (includesAllProg || includesAllRace || includesAllGender)
-      ? SD.coData.computeN([], [], [], state.countyDenver, true)
+    // True N (proper filter)
+    const trueN = SD.coData.computeN(profile, effectiveGender, effectiveRace, state.countyDenver);
+
+    // Apparent N (All + specific bug: All wins, N stays at base)
+    const bugActive = (includesAllRace && effectiveRace.length > 0) ||
+                      (includesAllGender && effectiveGender.length > 0) ||
+                      (includesAllProg  && effectiveProg.length > 0);
+    const apparentN = bugActive
+      ? SD.coData.computeN(profile, [], [], state.countyDenver)
       : trueN;
 
-    const hasBug = buggyN !== trueN;
+    const displayN = bugActive ? apparentN : trueN;
 
-    // Matched N display
+    // N display
     const nEl = document.getElementById('matchedN');
-    nEl.textContent = trueN < SUPPRESS ? '—' : trueN.toLocaleString();
-    nEl.style.color = trueN < SUPPRESS ? '#fff' : trueN < THRESHOLD ? '#8b5a00' : 'var(--navy)';
-    nEl.parentElement.style.background = trueN < SUPPRESS ? '#3a1a1a' : '';
+    nEl.textContent = displayN < SUPPRESS ? '—' : displayN.toLocaleString();
+    nEl.className = 'stat-card-value' + (displayN < SUPPRESS ? ' risk' : displayN < THRESHOLD ? ' warn' : '');
 
-    // Apparent N (only show when there's a mismatch due to non-exclusive All)
-    const appWrap = document.getElementById('apparentN').parentElement;
-    const appEl   = document.getElementById('apparentN');
-    if (hasBug) {
-      appWrap.style.display = '';
-      appEl.textContent     = buggyN.toLocaleString();
-      appEl.style.color     = 'var(--gray)';
-    } else {
-      appWrap.style.display = 'none';
-    }
+    document.getElementById('progLength').textContent = profile.months;
+    document.getElementById('orgText').textContent    = profile.orgOverview;
 
-    // AIAN stat (for example 2)
-    const aianWrap = document.getElementById('aianStatWrap');
-    const aianEl   = document.getElementById('aianN');
-    const rows     = SD.coData.raceBreakdown(effectiveProg, effectiveGender, effectiveRace, state.countyDenver, false);
-    const aianRow  = rows.find(r => r.race === 'AIAN');
-    if (aianRow && effectiveRace.includes('AIAN') && !includesAllRace) {
-      aianWrap.style.display = '';
-      aianEl.textContent     = aianRow.n < SUPPRESS ? '< 5' : aianRow.n;
-    } else {
-      aianWrap.style.display = 'none';
-    }
-
-    // Risk banner
-    const banner = document.getElementById('riskBanner');
-    if (hasBug) {
-      banner.className = 'risk-banner show ambiguous';
-      banner.textContent = `⚠ Non-exclusive selection: "All" is checked alongside specific items. The dashboard shows N = ${buggyN} (the "All" record), masking the true filtered N of ${trueN}. This is the select-all filter weakness.`;
-    } else if (trueN < SUPPRESS) {
-      banner.className = 'risk-banner show suppress';
-      banner.textContent = `N = ${trueN} — below minimum display threshold (${SUPPRESS}). Values suppressed.`;
-    } else if (trueN < THRESHOLD) {
-      banner.className = 'risk-banner show risk';
-      banner.textContent = `N = ${trueN} — below disclosure threshold (${THRESHOLD}). Subgroup may identify individuals.`;
-    } else {
-      banner.className = 'risk-banner';
-    }
-
-    // Race table
-    renderRaceTable(rows, effectiveRace, trueN);
-  }
-
-  function renderRaceTable(rows, activeRaces, totalN) {
-    const tbody = document.getElementById('raceTbody');
-    tbody.innerHTML = '';
-    const maxPct = Math.max(...rows.map(r => r.pct));
-
-    rows.forEach(({ race, pct, n, shown }) => {
-      const filtered = activeRaces.length > 0 && !activeRaces.includes(race);
-      const isDanger = n > 0 && n < SUPPRESS;
-      const isWarn   = n >= SUPPRESS && n < THRESHOLD;
-
-      const tr = document.createElement('tr');
-      if (filtered) tr.classList.add('dimmed');
-
-      const nDisplay = n === 0 ? '0' : n < SUPPRESS ? `<span style="color:var(--danger);font-weight:700">&lt; ${SUPPRESS} ⚠</span>` : n;
-      const nClass   = isDanger ? 'danger' : isWarn ? 'warn' : '';
-      const barW     = maxPct > 0 ? Math.round(pct / maxPct * 100) : 0;
-
-      tr.innerHTML = `
-        <td>${race}</td>
-        <td>${pct.toFixed(1)}%</td>
-        <td class="n-cell ${nClass}">${typeof nDisplay === 'number' ? nDisplay : nDisplay}</td>
-        <td><div class="race-bar"><div class="race-bar-fill" style="width:${barW}%"></div></div></td>
-      `;
-      tbody.appendChild(tr);
-    });
+    renderCharts(profile);
   }
 
   // ── Init ─────────────────────────────────────────────────────────────────
-  buildPanel(document.getElementById('progPanel'),   PROGRAMS.filter(p => p !== 'All'), 'progSel',    'All Programs');
-  buildPanel(document.getElementById('racePanel'),   RACES,                              'raceSel',    'All Races');
-  buildPanel(document.getElementById('genderPanel'), GENDERS,                            'genderSel',  'All Genders');
+  buildPanel(document.getElementById('progPanel'),   SD.coData.programList.filter(p => p !== 'All'), 'progSel',    '(全部)');
+  buildPanel(document.getElementById('racePanel'),   SD.coData.raceList,                              'raceSel',    '(全部)');
+  buildPanel(document.getElementById('genderPanel'), SD.coData.genderList,                            'genderSel',  '(全部)');
+  buildPanel(document.getElementById('countyPanel'), ['Yes (Denver Co.)'],                             'countyDenver_sel', '(全部)');
 
   setupToggle(document.getElementById('progDisplay'),   document.getElementById('progPanel'));
   setupToggle(document.getElementById('raceDisplay'),   document.getElementById('racePanel'));
   setupToggle(document.getElementById('genderDisplay'), document.getElementById('genderPanel'));
+  setupToggle(document.getElementById('countyDisplay'), document.getElementById('countyPanel'));
 
-  document.getElementById('countySelect').addEventListener('change', e => {
-    state.countyDenver = e.target.value === 'yes';
-    render();
+  // County special handling
+  document.getElementById('countyPanel').querySelectorAll('input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const checked = Array.from(document.getElementById('countyPanel').querySelectorAll('input:checked')).map(e => e.value);
+      state.countyDenver = checked.includes('Yes (Denver Co.)') && !checked.includes('(全部)');
+      refreshDisplay(document.getElementById('countyDisplay'), checked, '(全部)');
+      render();
+    });
   });
 
-  loadExample(1);
-
-  // expose for button onclick
   window.loadExample = loadExample;
+
+  loadExample(1);
 
 })();
 </script>
