@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snoke Dashboard — Disclosure Risk Demos</title>
+  <link rel="stylesheet" href="shared/mdi.css">
+  <style>
+    body { max-width: 720px; margin: 80px auto; padding: 0 24px; }
+    h1 { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .sub { color: var(--gray); font-size: 0.9rem; margin-bottom: 40px; }
+    .cards { display: flex; gap: 20px; flex-wrap: wrap; }
+    .card {
+      flex: 1; min-width: 240px;
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 24px; text-decoration: none; color: inherit;
+      transition: box-shadow .15s, transform .15s;
+    }
+    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
+    .card h2 { font-size: 1rem; margin: 0 0 6px; color: var(--navy); }
+    .card p { font-size: 0.85rem; color: var(--gray); margin: 0; line-height: 1.5; }
+    .tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .05em;
+      padding: 2px 8px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .tag-co { background: var(--blue); color: #fff; }
+    .tag-tx { background: var(--teal); color: #fff; }
+  </style>
+</head>
+<body>
+  <h1>Disclosure Risk Demos</h1>
+  <p class="sub">Interactive scenarios illustrating real privacy risks in workforce outcomes dashboards.</p>
+  <div class="cards">
+    <a class="card" href="colorado/">
+      <div class="tag tag-co">Demo 1 · Colorado</div>
+      <h2>Select-All Filter Weakness</h2>
+      <p>Three examples showing how non-exclusive dropdown selections can mask small subgroup sizes and expose individual participants.</p>
+    </a>
+    <a class="card" href="texas/">
+      <div class="tag tag-tx">Demo 2 · Texas</div>
+      <h2>By-District Breakdown</h2>
+      <p>How geographic filtering combined with race, gender, and program selectors reduces matched N to individually identifiable records.</p>
+    </a>
+  </div>
+</body>
+</html>
