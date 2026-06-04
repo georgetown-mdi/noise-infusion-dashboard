@@ -6,61 +6,66 @@
   <title>Disclosure Risk Demos</title>
   <link rel="stylesheet" href="shared/mdi.css">
   <style>
-    body { background: #dde1e8; }
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; background: var(--bg); }
 
-    .site-back { background: #6b1614; padding: 4px 20px; font-size: 11px; }
-    .site-back a { color: rgba(255,255,255,.6); text-decoration: none; }
-    .site-title { background: #8C1D18; padding: 14px 28px; text-align: center; font-size: 21px; font-weight: 700; color: #fff; letter-spacing: .01em; }
+    /* ── MDI header ── */
+    .dash-header { background: var(--navy); flex-shrink: 0; padding: 0; }
+    .dash-eyebrow { padding: 8px 24px 0; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.45); }
+    .dash-title { padding: 6px 24px 14px; font-size: 20px; font-weight: 700; color: #fff; letter-spacing: .01em; }
 
-    .content { max-width: 780px; margin: 36px auto; padding: 0 28px 48px; }
+    /* ── Content fills remaining space ── */
+    .content { flex: 1; display: flex; flex-direction: column; padding: 28px 28px 28px; gap: 20px; min-height: 0; }
 
-    .intro-block { margin-bottom: 20px; }
-    .intro-block p { font-size: 0.9rem; color: #444; line-height: 1.65; margin-bottom: 10px; max-width: 640px; }
-    .caveat { font-size: 0.8rem; color: #555; padding: 10px 14px; background: rgba(140,29,24,.06); border-left: 3px solid #8C1D18; border-radius: 2px; line-height: 1.55; }
-    .caveat strong { color: #8C1D18; }
+    .intro { font-size: 0.88rem; color: var(--gray); line-height: 1.65; max-width: 700px; }
+    .caveat { font-size: 0.8rem; color: var(--gray); padding: 10px 14px; background: var(--pale); border-left: 3px solid var(--blue); border-radius: 2px; line-height: 1.55; max-width: 700px; }
+    .caveat strong { color: var(--navy); }
 
-    .cards { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 28px; }
+    /* ── Cards consume remaining vertical space ── */
+    .cards { flex: 1; display: flex; gap: 20px; min-height: 0; }
     .card {
-      flex: 1; min-width: 260px;
-      background: #fff; border: 1px solid #ccc; border-radius: 4px;
-      padding: 22px; text-decoration: none; color: inherit;
+      flex: 1;
+      background: var(--white); border: 1px solid var(--border); border-radius: 6px;
+      padding: 28px; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 12px;
       transition: box-shadow .15s, transform .15s;
-      display: flex; flex-direction: column; gap: 8px;
     }
-    .card:hover { box-shadow: 0 4px 20px rgba(140,29,24,.14); transform: translateY(-2px); }
+    .card:hover { box-shadow: 0 6px 24px rgba(4,30,66,.12); transform: translateY(-2px); }
+
     .tag {
       display: inline-block; font-size: 0.68rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .05em;
-      padding: 3px 9px; border-radius: 3px; align-self: flex-start;
-      background: #8C1D18; color: #fff;
+      text-transform: uppercase; letter-spacing: .06em;
+      padding: 4px 10px; border-radius: 3px; align-self: flex-start; color: #fff;
     }
-    .tag-2 { background: #6b1614; }
-    .card h2 { font-size: 1rem; font-weight: 700; margin: 0; color: #1a1a1a; }
-    .card .domain { font-size: 0.75rem; font-weight: 600; color: #8C1D18; text-transform: uppercase; letter-spacing: .04em; }
-    .card p { font-size: 0.84rem; color: #555; margin: 0; line-height: 1.55; }
-    .card .cta { font-size: 0.8rem; font-weight: 700; color: #8C1D18; margin-top: 4px; }
+    .tag-red  { background: var(--danger); }
+    .tag-blue { background: var(--blue); }
+
+    .card .domain { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--teal); }
+    .card h2 { font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--navy); }
+    .card p { font-size: 0.86rem; color: var(--gray); margin: 0; line-height: 1.6; flex: 1; }
+    .card .cta { font-size: 0.8rem; font-weight: 700; color: var(--blue); padding-top: 4px; border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
-  <div class="site-back"><a href="#">Georgetown McCourt · MDI</a></div>
-  <div class="site-title">Disclosure Risk Demos</div>
+  <div class="dash-header">
+    <div class="dash-eyebrow">Georgetown McCourt School · MDI</div>
+    <div class="dash-title">Disclosure Risk Demos</div>
+  </div>
 
   <div class="content">
-    <div class="intro-block">
-      <p>
-        Data suppression rules protect privacy by hiding cells with small counts — but they don't prevent every attack.
-        These demos show two techniques that recover individual-level information from publicly accessible dashboards,
-        even when every published value passes the suppression threshold.
-      </p>
-      <div class="caveat">
-        <strong>All data shown is synthetic.</strong> District codes, participant counts, wages, and assessment scores
-        are fabricated to illustrate the attack patterns. No real individual's information is at risk.
-      </div>
+    <p class="intro">
+      Data suppression rules protect privacy by hiding cells with small counts — but they don't prevent every attack.
+      These demos show two techniques that recover individual-level information from publicly accessible dashboards,
+      even when every published value passes the suppression threshold.
+    </p>
+    <div class="caveat">
+      <strong>All data shown is synthetic.</strong> District codes, participant counts, wages, and assessment scores
+      are fabricated to illustrate the attack patterns. No real individual's information is at risk.
     </div>
 
     <div class="cards">
       <a class="card" href="back-calc/">
-        <div class="tag">Demo 1 · Back-Calculation Attack</div>
+        <div class="tag tag-red">Demo 1 · Back-Calculation Attack</div>
         <div class="domain">Workforce Earnings Data</div>
         <h2>Select-All Filter Weakness</h2>
         <p>
@@ -71,7 +76,7 @@
       </a>
 
       <a class="card" href="suppression/">
-        <div class="tag tag-2">Demo 2 · Complementary Disclosure</div>
+        <div class="tag tag-blue">Demo 2 · Complementary Disclosure</div>
         <div class="domain">Early Childhood Assessment Data</div>
         <h2>Cross-Breakdown Inference</h2>
         <p>
