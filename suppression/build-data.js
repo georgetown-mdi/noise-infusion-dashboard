@@ -4,8 +4,8 @@
 const fs   = require('fs');
 const path = require('path');
 
-const CSV_PATH   = path.join(__dirname, '..', 'fake_texas_data.csv');
-const NAMES_PATH = path.join(__dirname, '..', 'district_names.csv');
+const CSV_PATH   = path.join(__dirname, 'fake_data.csv');
+const NAMES_PATH = path.join(__dirname, 'district_names.csv');
 const OUT_PATH   = path.join(__dirname, 'data.js');
 
 // Parse a CSV file into an array of row objects

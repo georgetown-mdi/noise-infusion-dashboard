@@ -3,44 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snoke Dashboard — Disclosure Risk Demos</title>
+  <title>Disclosure Risk Demos</title>
   <link rel="stylesheet" href="shared/mdi.css">
   <style>
-    body { max-width: 720px; margin: 80px auto; padding: 0 24px; }
-    h1 { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .sub { color: var(--gray); font-size: 0.9rem; margin-bottom: 40px; }
+    body { max-width: 780px; margin: 60px auto; padding: 0 28px; }
+    .eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); margin-bottom: 10px; }
+    h1 { font-size: 1.65rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
+    .intro { font-size: 0.9rem; color: var(--gray); line-height: 1.65; margin-bottom: 10px; max-width: 640px; }
+    .caveat { font-size: 0.8rem; color: var(--gray); margin-bottom: 40px; padding: 10px 14px; background: #f5f7fa; border-left: 3px solid var(--teal); border-radius: 2px; line-height: 1.55; }
+    .caveat strong { color: var(--navy); }
     .cards { display: flex; gap: 20px; flex-wrap: wrap; }
     .card {
-      flex: 1; min-width: 240px;
+      flex: 1; min-width: 260px;
       border: 1px solid var(--border); border-radius: 8px;
       padding: 24px; text-decoration: none; color: inherit;
       transition: box-shadow .15s, transform .15s;
+      display: flex; flex-direction: column; gap: 8px;
     }
     .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
-    .card h2 { font-size: 1rem; margin: 0 0 6px; color: var(--navy); }
-    .card p { font-size: 0.85rem; color: var(--gray); margin: 0; line-height: 1.5; }
     .tag {
-      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: .05em;
-      padding: 2px 8px; border-radius: 4px; margin-bottom: 10px;
+      padding: 3px 9px; border-radius: 4px; align-self: flex-start;
     }
-    .tag-co { background: var(--blue); color: #fff; }
-    .tag-tx { background: var(--teal); color: #fff; }
+    .tag-1 { background: var(--blue); color: #fff; }
+    .tag-2 { background: var(--teal); color: #fff; }
+    .card h2 { font-size: 1rem; font-weight: 700; margin: 0; color: var(--navy); }
+    .card .domain { font-size: 0.75rem; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: .04em; }
+    .card p { font-size: 0.84rem; color: var(--gray); margin: 0; line-height: 1.55; }
+    .card .cta { font-size: 0.8rem; font-weight: 700; color: var(--blue); margin-top: 4px; }
   </style>
 </head>
 <body>
+  <div class="eyebrow">Georgetown McCourt School · MDI</div>
   <h1>Disclosure Risk Demos</h1>
-  <p class="sub">Interactive scenarios illustrating real privacy risks in workforce outcomes dashboards.</p>
+  <p class="intro">
+    Data suppression rules protect privacy by hiding cells with small counts — but they don't prevent every attack.
+    These demos show two techniques that recover individual-level information from publicly accessible dashboards,
+    even when every published value passes the suppression threshold.
+  </p>
+  <div class="caveat">
+    <strong>All data shown is synthetic.</strong> District codes, participant counts, wages, and assessment scores
+    are fabricated to illustrate the attack patterns. No real individual's information is at risk.
+  </div>
+
   <div class="cards">
     <a class="card" href="back-calc/">
-      <div class="tag tag-co">Demo 1 · Back-Calculation Attack</div>
+      <div class="tag tag-1">Demo 1 · Back-Calculation Attack</div>
+      <div class="domain">Workforce Earnings Data</div>
       <h2>Select-All Filter Weakness</h2>
-      <p>Three examples showing how non-exclusive dropdown selections can mask small subgroup sizes and expose individual participants.</p>
+      <p>
+        A user submits two valid queries — both above the suppression threshold — then subtracts the aggregates
+        to isolate a single participant's exact quarterly wage. No cells are suppressed. No rules are broken.
+      </p>
+      <div class="cta">Explore the attack →</div>
     </a>
+
     <a class="card" href="suppression/">
-      <div class="tag tag-tx">Demo 2 · Suppression Attack</div>
-      <h2>By-District Breakdown</h2>
-      <p>How geographic filtering combined with race, gender, and program selectors reduces matched N to individually identifiable records.</p>
+      <div class="tag tag-2">Demo 2 · Complementary Disclosure</div>
+      <div class="domain">Early Childhood Assessment Data</div>
+      <h2>Cross-Breakdown Inference</h2>
+      <p>
+        When a district reports results for most subgroups, the suppressed cell is recoverable by subtraction
+        from the published total. This demo shows how suppression fails when breakdowns aren't coordinated.
+      </p>
+      <div class="cta">Explore the attack →</div>
     </a>
   </div>
 </body>

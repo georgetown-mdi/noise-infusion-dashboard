@@ -7,72 +7,94 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; }
-.back-row { background: #6b1614; padding: 5px 20px; font-size: 11px; }
+html, body { height: 100%; overflow: hidden; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; display: flex; flex-direction: column; }
+
+.back-row { background: #6b1614; padding: 4px 20px; font-size: 11px; flex-shrink: 0; }
 .back-row a { color: rgba(255,255,255,.6); text-decoration: none; }
 .back-row a:hover { color: #fff; }
-.title-bar { background: #8C1D18; padding: 16px 28px; text-align: center; font-size: 21px; font-weight: 700; color: #fff; letter-spacing: .01em; }
-.tab-nav { display: flex; background: #2d2d2d; }
-.tab-btn { flex: 1; padding: 13px 8px; font-size: 13px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; text-align: center; }
+.title-bar { background: #8C1D18; padding: 10px 28px; text-align: center; font-size: 18px; font-weight: 700; color: #fff; letter-spacing: .01em; flex-shrink: 0; }
+.tab-nav { display: flex; background: #2d2d2d; flex-shrink: 0; }
+.tab-btn { flex: 1; padding: 8px; font-size: 12px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; text-align: center; }
 .tab-btn.active { background: #8C1D18; color: #fff; }
 .tab-btn.inactive { opacity: .45; pointer-events: none; cursor: default; }
-.example-strip { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: #fff; border-bottom: 2px solid #8C1D18; flex-wrap: wrap; }
-.strip-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; white-space: nowrap; }
-.ex-btn { padding: 6px 16px; font-size: 12px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; color: #333; cursor: pointer; white-space: nowrap; }
+
+.controls { background: #fff; border-bottom: 2px solid #8C1D18; flex-shrink: 0; }
+.ctrl-top { display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-bottom: 1px solid #eee; flex-wrap: wrap; }
+.ctrl-divider { flex: 1; }
+.strip-label { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+.ex-btn { padding: 4px 12px; font-size: 11px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; color: #333; cursor: pointer; white-space: nowrap; }
 .ex-btn:hover { background: #e8e8e8; }
 .ex-btn.active { background: #8C1D18; color: #fff; border-color: #8C1D18; }
-.filter-bar { display: flex; flex-wrap: wrap; gap: 8px 16px; background: #fff; border-bottom: 1px solid #ccc; padding: 8px 20px 10px; align-items: flex-end; }
-.filter-cell { display: flex; flex-direction: column; min-width: 120px; }
-.filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+.step-label { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.step-btn { padding: 4px 12px; font-size: 11px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #fff; color: #444; cursor: pointer; white-space: nowrap; }
+.step-btn:hover { background: #f0f0f0; }
+.step-btn.active { background: #2d2d2d; color: #fff; border-color: #2d2d2d; }
+.step-hint { font-size: 10px; color: #aaa; white-space: nowrap; }
+.ctrl-filters { display: flex; flex-wrap: wrap; gap: 5px 14px; padding: 5px 16px 7px; align-items: flex-end; }
+.filter-cell { display: flex; flex-direction: column; min-width: 110px; }
+.filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
 .ms-wrapper { position: relative; }
-.ms-display { padding: 5px 24px 5px 8px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; cursor: pointer; user-select: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 7px center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px; }
+.ms-display { padding: 4px 22px 4px 8px; font-size: 11px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; cursor: pointer; user-select: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 6px center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
 .ms-display.active-filter { border-color: #8C1D18; background-color: #fff5f5; font-weight: 700; }
-.ms-panel { display: none; position: absolute; top: calc(100% + 2px); left: 0; min-width: 220px; background: #fff; border: 1px solid #aaa; border-radius: 2px; z-index: 200; max-height: 240px; overflow-y: auto; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+.ms-panel { display: none; position: absolute; top: calc(100% + 2px); left: 0; min-width: 210px; background: #fff; border: 1px solid #aaa; border-radius: 2px; z-index: 200; max-height: 220px; overflow-y: auto; box-shadow: 0 4px 14px rgba(0,0,0,.18); }
 .ms-panel.open { display: block; }
-.ms-item { display: flex; align-items: center; gap: 8px; padding: 7px 12px; font-size: 12px; cursor: pointer; }
+.ms-item { display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; cursor: pointer; }
 .ms-item:hover { background: #f0f4fa; }
 .ms-item input { accent-color: #8C1D18; flex-shrink: 0; }
 .ms-item.all-opt { font-weight: 700; border-bottom: 1px solid #ddd; background: #fafafa; }
-.attack-panel { margin: 10px 10px 0; background: #fff; border: 2px solid #8C1D18; border-radius: 4px; overflow: hidden; }
-.attack-header { background: #8C1D18; color: #fff; padding: 10px 18px; font-size: 13px; font-weight: 700; letter-spacing: .03em; display: flex; align-items: center; gap: 10px; }
-.attack-header .tag { background: rgba(255,255,255,.2); padding: 3px 10px; border-radius: 3px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
-.attack-body { display: grid; grid-template-columns: 1fr 32px 1fr 32px 1.15fr; align-items: stretch; gap: 0; border-top: 1px solid #f0c0c0; }
-.query-col { padding: 16px 20px; }
-.query-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #888; margin-bottom: 10px; }
-.query-desc { font-size: 12px; color: #444; margin-bottom: 12px; line-height: 1.55; }
-.query-n { font-size: 32px; font-weight: 700; color: #1a1a1a; line-height: 1; }
-.query-n-label { font-size: 10px; color: #888; margin-top: 3px; margin-bottom: 10px; }
-.query-wage { font-size: 24px; font-weight: 700; color: #8C1D18; line-height: 1; }
-.query-wage-label { font-size: 10px; color: #888; margin-top: 3px; }
-.op-col { display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 300; color: #bbb; border-left: 1px solid #f0e0e0; }
-.result-col { padding: 16px 20px; background: #fff8f8; border-left: 2px solid #e8b0b0; }
-.result-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #8C1D18; margin-bottom: 10px; }
-.result-who { font-size: 12px; color: #555; margin-bottom: 14px; line-height: 1.55; font-style: italic; }
-.result-math { font-size: 12px; color: #666; line-height: 2; margin-bottom: 12px; font-family: 'Courier New', monospace; }
-.result-math .calc-line { white-space: nowrap; }
-.result-math .calc-line.eq { color: #8C1D18; font-weight: 700; }
-.result-value { font-size: 36px; font-weight: 700; color: #8C1D18; line-height: 1; }
-.result-value-label { font-size: 11px; color: #8C1D18; margin-top: 4px; opacity: .85; }
-.step-bar { display: flex; align-items: center; gap: 8px; padding: 9px 18px; background: #fafafa; border-bottom: 1px solid #ccc; }
-.step-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-right: 4px; white-space: nowrap; }
-.step-btn { padding: 5px 14px; font-size: 11px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #fff; color: #444; cursor: pointer; white-space: nowrap; }
-.step-btn:hover { background: #f0f0f0; }
-.step-btn.active { background: #2d2d2d; color: #fff; border-color: #2d2d2d; }
-.step-hint { font-size: 11px; color: #999; margin-left: 6px; }
-.main-grid { display: grid; grid-template-columns: 210px 1fr 270px; gap: 10px; padding: 10px; align-items: stretch; }
-.left-col { display: flex; flex-direction: column; gap: 10px; }
-.stat-card { background: #fff; border: 1px solid #ccc; padding: 14px 16px; border-radius: 2px; }
-.stat-card-label { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
-.stat-card-value { font-size: 30px; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
+
+/* ── Page body ── */
+.page-body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 8px 10px; overflow: hidden; min-height: 0; }
+
+/* Stat cards row */
+.stat-mini-row { display: flex; gap: 8px; flex-shrink: 0; }
+.stat-card { background: #fff; border: 1px solid #ccc; padding: 9px 14px; border-radius: 2px; flex: 1; }
+.stat-card-label { font-size: 10px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
+.stat-card-value { font-size: 24px; font-weight: 700; color: #1a1a1a; line-height: 1; }
 .stat-card-value.warn { color: #8C1D18; }
-.stat-card-sub { font-size: 12px; color: #555; margin-top: 3px; }
-.center-col { background: #fff; border: 1px solid #ccc; padding: 14px 16px; border-radius: 2px; display: flex; flex-direction: column; }
-.chart-title { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
-.chart-wrap { position: relative; flex: 1; min-height: 280px; }
-.right-col { background: #fff; border: 1px solid #ccc; padding: 14px 16px; border-radius: 2px; display: flex; flex-direction: column; }
-.right-title { font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 10px; color: #1a1a1a; line-height: 1.4; }
-.bar-wrap { position: relative; flex: 1; min-height: 280px; }
-.dash-note { margin: 0 10px 10px; padding: 10px 16px; font-size: 11px; color: #555; border: 1px solid #ccc; border-radius: 2px; background: #fff; line-height: 1.6; }
+.stat-card-sub { font-size: 11px; color: #555; margin-top: 2px; }
+
+/* Main area: line chart left 2/3, right col 1/3 */
+.main-area { flex: 1; display: flex; gap: 8px; min-height: 0; }
+
+.left-pane { flex: 2; background: #fff; border: 1px solid #ccc; padding: 10px 14px; border-radius: 2px; display: flex; flex-direction: column; min-width: 0; }
+.chart-title { font-size: 11px; font-weight: 700; margin-bottom: 6px; color: #1a1a1a; }
+.chart-wrap { position: relative; flex: 1; min-height: 0; }
+
+.right-pane { flex: 1; display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+
+/* Bar chart card */
+.bar-card { flex: 0 0 36%; background: #fff; border: 1px solid #ccc; padding: 10px 14px; border-radius: 2px; display: flex; flex-direction: column; min-height: 0; }
+.bar-title { font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 6px; color: #1a1a1a; line-height: 1.35; }
+.bar-wrap { position: relative; flex: 1; min-height: 0; }
+
+/* Attack panel */
+.attack-panel { flex: 1; background: #fff; border: 2px solid #8C1D18; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+.attack-header { background: #8C1D18; color: #fff; padding: 8px 14px; font-size: 12px; font-weight: 700; letter-spacing: .03em; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.attack-header .tag { background: rgba(255,255,255,.2); padding: 2px 7px; border-radius: 3px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+.attack-header .note { margin-left: auto; font-size: 10px; font-weight: 400; opacity: .85; }
+.attack-body { flex: 1; display: flex; flex-direction: column; border-top: 1px solid #f0c0c0; overflow: hidden; }
+.attack-queries { display: flex; align-items: stretch; flex: 1; min-height: 0; }
+.query-col { flex: 1; padding: 10px 14px; min-width: 0; overflow: hidden; }
+.query-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #888; margin-bottom: 5px; }
+.query-desc { font-size: 10px; color: #444; margin-bottom: 7px; line-height: 1.4; }
+.query-n { font-size: 24px; font-weight: 700; color: #1a1a1a; line-height: 1; }
+.query-n-label { font-size: 10px; color: #888; margin-left: 3px; }
+.query-wage { font-size: 16px; font-weight: 700; color: #8C1D18; margin-top: 5px; }
+.query-wage-label { font-size: 10px; color: #888; }
+.op-col { width: 28px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 300; color: #bbb; border-left: 1px solid #f0e0e0; border-right: 1px solid #f0e0e0; flex-shrink: 0; }
+.result-row { padding: 9px 14px; background: #fff8f8; border-top: 2px solid #e8b0b0; flex-shrink: 0; display: flex; align-items: center; gap: 16px; }
+.result-left { flex: 1; min-width: 0; }
+.result-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #8C1D18; margin-bottom: 2px; }
+.result-who { font-size: 10px; color: #555; font-style: italic; }
+.result-math { font-size: 10px; color: #666; font-family: 'Courier New', monospace; line-height: 1.7; flex-shrink: 0; }
+.result-math .eq { color: #8C1D18; font-weight: 700; }
+.result-right { text-align: right; flex-shrink: 0; }
+.result-value { font-size: 26px; font-weight: 700; color: #8C1D18; line-height: 1; }
+.result-value-label { font-size: 10px; color: #8C1D18; opacity: .85; margin-top: 2px; }
+
+.dash-note { flex-shrink: 0; margin: 0 10px 8px; padding: 6px 14px; font-size: 10px; color: #555; border: 1px solid #ccc; border-radius: 2px; background: #fff; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -87,73 +109,79 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
   <button class="tab-btn inactive">Demographics</button>
 </nav>
 
-<div class="example-strip">
-  <span class="strip-label">Demo scenario:</span>
-  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — AIAN / White · Male</button>
-  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black · Male+Female · Metro Area</button>
-  <span style="font-size:11px;color:#888;margin-left:6px">← click to load scenario</span>
-</div>
-
-<div class="filter-bar">
-  <div class="filter-cell" id="progCell">
-    <span class="filter-label">Program</span>
-    <div class="ms-wrapper"><div class="ms-display" id="progDisplay">(All)</div><div class="ms-panel" id="progPanel"></div></div>
-  </div>
-  <div class="filter-cell" id="raceCell">
-    <span class="filter-label">Race</span>
-    <div class="ms-wrapper"><div class="ms-display" id="raceDisplay">(All)</div><div class="ms-panel" id="racePanel"></div></div>
-  </div>
-  <div class="filter-cell" id="genderCell">
-    <span class="filter-label">Gender</span>
-    <div class="ms-wrapper"><div class="ms-display" id="genderDisplay">(All)</div><div class="ms-panel" id="genderPanel"></div></div>
-  </div>
-  <div class="filter-cell" id="denverCell">
-    <span class="filter-label">Metro Area</span>
-    <div class="ms-wrapper"><div class="ms-display" id="denverDisplay">(All)</div><div class="ms-panel" id="denverPanel"></div></div>
-  </div>
-</div>
-
-<div class="step-bar">
+<div class="controls">
+  <div class="ctrl-top">
+    <span class="strip-label">Scenario:</span>
+    <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — AIAN / White · Male</button>
+    <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black · Male+Female · Metro Area</button>
+    <div class="ctrl-divider"></div>
     <span class="step-label">Dashboard view:</span>
     <button class="step-btn active" id="stepAB" onclick="setStep('ab')">Query A+B (includes target)</button>
     <button class="step-btn"        id="stepA"  onclick="setStep('a')">Query A (remove 1 group)</button>
-    <span class="step-hint">— toggle to see how a researcher submits two queries to the dashboard</span>
+    <span class="step-hint">← toggle to simulate two queries</span>
   </div>
+  <div class="ctrl-filters">
+    <div class="filter-cell" id="progCell">
+      <span class="filter-label">Program</span>
+      <div class="ms-wrapper"><div class="ms-display" id="progDisplay">(All)</div><div class="ms-panel" id="progPanel"></div></div>
+    </div>
+    <div class="filter-cell" id="raceCell">
+      <span class="filter-label">Race</span>
+      <div class="ms-wrapper"><div class="ms-display" id="raceDisplay">(All)</div><div class="ms-panel" id="racePanel"></div></div>
+    </div>
+    <div class="filter-cell" id="genderCell">
+      <span class="filter-label">Gender</span>
+      <div class="ms-wrapper"><div class="ms-display" id="genderDisplay">(All)</div><div class="ms-panel" id="genderPanel"></div></div>
+    </div>
+    <div class="filter-cell" id="denverCell">
+      <span class="filter-label">Metro Area</span>
+      <div class="ms-wrapper"><div class="ms-display" id="denverDisplay">(All)</div><div class="ms-panel" id="denverPanel"></div></div>
+    </div>
+  </div>
+</div>
 
-<div class="main-grid">
-  <div class="left-col">
+<div class="page-body">
+  <div class="stat-mini-row">
     <div class="stat-card">
       <div class="stat-card-label">Matched Sample Size</div>
       <div class="stat-card-value" id="matchedN">—</div>
     </div>
     <div class="stat-card">
       <div class="stat-card-label">Average Program Length</div>
-      <div class="stat-card-value" style="font-size:20px">3 – 4</div>
+      <div class="stat-card-value" style="font-size:18px">3 – 4</div>
       <div class="stat-card-sub">Months</div>
     </div>
   </div>
-  <div class="center-col">
-    <div class="chart-title" id="chartTitle">Average Quarterly Earnings Relative to Program Start</div>
-    <div class="chart-wrap"><canvas id="earningsChart"></canvas></div>
-  </div>
-  <div class="right-col">
-    <div class="right-title">Pre Average vs. Post Average<br>Quarterly Earnings</div>
-    <div class="bar-wrap"><canvas id="barChart"></canvas></div>
-  </div>
-</div>
 
-<div class="attack-panel">
-  <div class="attack-header">
-    <span>Back-Calculation Attack</span>
-    <span class="tag">Select-All Filter Weakness</span>
-    <span style="margin-left:auto;font-size:11px;font-weight:400;opacity:.85">Both queries are publicly accessible. The difference is 1 person.</span>
+  <div class="main-area">
+    <!-- Left 2/3: line chart -->
+    <div class="left-pane">
+      <div class="chart-title" id="chartTitle">Average Quarterly Earnings Relative to Program Start</div>
+      <div class="chart-wrap"><canvas id="earningsChart"></canvas></div>
+    </div>
+
+    <!-- Right 1/3: bar chart stacked over attack panel -->
+    <div class="right-pane">
+      <div class="bar-card">
+        <div class="bar-title">Pre vs. Post<br>Avg Quarterly Earnings</div>
+        <div class="bar-wrap"><canvas id="barChart"></canvas></div>
+      </div>
+
+      <div class="attack-panel">
+        <div class="attack-header">
+          <span>Back-Calculation Attack</span>
+          <span class="tag">Select-All Weakness</span>
+          <span class="note">Diff = 1 person</span>
+        </div>
+        <div class="attack-body" id="attackBody"></div>
+      </div>
+    </div>
   </div>
-  <div class="attack-body" id="attackBody"></div>
 </div>
 
 <div class="dash-note">
-  Note: The dashboard will not display any values for a sample size less than 5 people to adhere with data sharing requirements and protecting confidentiality.
-  <strong>Both queries in each example have N ≥ 5 — neither triggers suppression — yet together they expose one individual's exact earnings.</strong>
+  Dashboard suppresses values when N &lt; 5.
+  <strong>Both queries shown have N ≥ 5 — neither triggers suppression — yet together they expose one individual's exact earnings.</strong>
 </div>
 
 <script src="data.js"></script>
@@ -185,9 +213,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
   function setChecked(panelId, values, allLabel) {
     const panel = document.getElementById(panelId);
     panel.querySelectorAll('input').forEach(cb => {
-      cb.checked = values.length === 0
-        ? cb.value === allLabel
-        : values.includes(cb.value);
+      cb.checked = values.length === 0 ? cb.value === allLabel : values.includes(cb.value);
     });
     refreshDisplay(panelId.replace('Panel', 'Display'), values, allLabel);
   }
@@ -216,34 +242,37 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     const aSum  = a.avgQ4  * a.n;
 
     document.getElementById('attackBody').innerHTML =
-      '<div class="query-col">' +
-        '<div class="query-label">Query A+B</div>' +
-        '<div class="query-desc">' + ab.desc + '</div>' +
-        '<div class="query-n">' + ab.n + '</div>' +
-        '<div class="query-n-label">matched participants</div>' +
-        '<div class="query-wage">$' + ab.avgQ4.toLocaleString() + '</div>' +
-        '<div class="query-wage-label">avg Q4 wage (public)</div>' +
-      '</div>' +
-      '<div class="op-col">−</div>' +
-      '<div class="query-col">' +
-        '<div class="query-label">Query A (remove 1 group)</div>' +
-        '<div class="query-desc">' + a.desc + '</div>' +
-        '<div class="query-n">' + a.n + '</div>' +
-        '<div class="query-n-label">matched participants</div>' +
-        '<div class="query-wage">$' + a.avgQ4.toLocaleString() + '</div>' +
-        '<div class="query-wage-label">avg Q4 wage (public)</div>' +
-      '</div>' +
-      '<div class="op-col">=</div>' +
-      '<div class="result-col">' +
-        '<div class="result-label">Individual Exposed</div>' +
-        '<div class="result-who">' + scenario.target.note + '</div>' +
-        '<div class="result-math">' +
-          '<div class="calc-line">($' + ab.avgQ4.toLocaleString() + ' × ' + ab.n + ') − ($' + a.avgQ4.toLocaleString() + ' × ' + a.n + ')</div>' +
-          '<div class="calc-line">$' + abSum.toLocaleString() + ' − $' + aSum.toLocaleString() + '</div>' +
-          '<div class="calc-line eq">= $' + individual.toLocaleString() + '</div>' +
+      '<div class="attack-queries">' +
+        '<div class="query-col">' +
+          '<div class="query-label">Query A+B</div>' +
+          '<div class="query-desc">' + ab.desc + '</div>' +
+          '<span class="query-n">' + ab.n + '</span><span class="query-n-label">participants</span>' +
+          '<div class="query-wage">$' + ab.avgQ4.toLocaleString() + '</div>' +
+          '<div class="query-wage-label">avg Q4 wage</div>' +
         '</div>' +
-        '<div class="result-value">$' + individual.toLocaleString() + '</div>' +
-        '<div class="result-value-label">this person\'s Q4 earnings — recovered exactly</div>' +
+        '<div class="op-col">−</div>' +
+        '<div class="query-col">' +
+          '<div class="query-label">Query A (−1 group)</div>' +
+          '<div class="query-desc">' + a.desc + '</div>' +
+          '<span class="query-n">' + a.n + '</span><span class="query-n-label">participants</span>' +
+          '<div class="query-wage">$' + a.avgQ4.toLocaleString() + '</div>' +
+          '<div class="query-wage-label">avg Q4 wage</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="result-row">' +
+        '<div class="result-left">' +
+          '<div class="result-label">Individual Exposed</div>' +
+          '<div class="result-who">' + scenario.target.note + '</div>' +
+        '</div>' +
+        '<div class="result-math">' +
+          '($' + ab.avgQ4.toLocaleString() + '×' + ab.n + ') − ($' + a.avgQ4.toLocaleString() + '×' + a.n + ')<br>' +
+          '$' + abSum.toLocaleString() + ' − $' + aSum.toLocaleString() + '<br>' +
+          '<span class="eq">= $' + individual.toLocaleString() + '</span>' +
+        '</div>' +
+        '<div class="result-right">' +
+          '<div class="result-value">$' + individual.toLocaleString() + '</div>' +
+          '<div class="result-value-label">Q4 earnings — exact</div>' +
+        '</div>' +
       '</div>';
   }
 
@@ -263,10 +292,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 18 } }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toLocaleString() } } },
+        plugins: { legend: { position: 'bottom', labels: { font: { size: 9 }, boxWidth: 14 } }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toLocaleString() } } },
         scales: {
-          x: { title: { display: true, text: 'Relative Quarters from Program Start', font: { size: 10 } }, ticks: { font: { size: 10 } }, grid: { color: '#eee' } },
-          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#eee' } },
+          x: { title: { display: true, text: 'Relative Quarters from Program Start', font: { size: 9 } }, ticks: { font: { size: 9 } }, grid: { color: '#eee' } },
+          y: { min: 0, max: 14000, ticks: { font: { size: 9 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#eee' } },
         },
       },
     });
@@ -275,15 +304,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     barInst = new Chart(document.getElementById('barChart'), {
       type: 'bar',
       data: {
-        labels: ['Pre-Period\n(Qtr -8 to -1)', 'Post-Period\n(Qtr 1 to 12)'],
+        labels: ['Pre\n(Q-8 to -1)', 'Post\n(Q1 to 12)'],
         datasets: [{ data: [query.preAvg, query.postAvg], backgroundColor: '#8C6A3A', borderRadius: 2 }],
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toLocaleString() } } },
         scales: {
-          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#eee' } },
-          x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+          y: { min: 0, max: 14000, ticks: { font: { size: 9 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#eee' } },
+          x: { ticks: { font: { size: 9 } }, grid: { display: false } },
         },
       },
       plugins: [{
@@ -292,8 +321,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
           chart.data.datasets.forEach((ds, i) => {
             ds.data.forEach((val, j) => {
               const bar = chart.getDatasetMeta(i).data[j];
-              ctx2.save(); ctx2.fillStyle = '#1a1a1a'; ctx2.font = 'bold 12px sans-serif'; ctx2.textAlign = 'center';
-              ctx2.fillText('$' + val.toLocaleString(), bar.x, bar.y - 5); ctx2.restore();
+              ctx2.save(); ctx2.fillStyle = '#1a1a1a'; ctx2.font = 'bold 11px sans-serif'; ctx2.textAlign = 'center';
+              ctx2.fillText('$' + val.toLocaleString(), bar.x, bar.y - 4); ctx2.restore();
             });
           });
         },
@@ -358,14 +387,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     if (filtersMatchQuery(s.ab))     setStep('ab');
     else if (filtersMatchQuery(s.a)) setStep('a');
     else {
-      const race   = getChecked('racePanel',   '(All)');
-      const gender = getChecked('genderPanel', '(All)');
-      const prog   = getChecked('progPanel',   '(All)');
-      const denver = getChecked('denverPanel', '(All)');
-      refreshDisplay('raceDisplay',   race,   '(All)');
-      refreshDisplay('genderDisplay', gender, '(All)');
-      refreshDisplay('progDisplay',   prog,   '(All)');
-      refreshDisplay('denverDisplay', denver, '(All)');
+      refreshDisplay('raceDisplay',   getChecked('racePanel',   '(All)'), '(All)');
+      refreshDisplay('genderDisplay', getChecked('genderPanel', '(All)'), '(All)');
+      refreshDisplay('progDisplay',   getChecked('progPanel',   '(All)'), '(All)');
+      refreshDisplay('denverDisplay', getChecked('denverPanel', '(All)'), '(All)');
     }
   }
 
