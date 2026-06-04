@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colorado Wage Outcomes Results Coalition Dashboard — Demo 1</title>
+<title>Workforce Outcomes Dashboard — Demo 1</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; }
-
-/* ── Header ── */
 .back-row { background: #6b1614; padding: 5px 20px; font-size: 11px; }
 .back-row a { color: rgba(255,255,255,.6); text-decoration: none; }
 .back-row a:hover { color: #fff; }
@@ -18,19 +16,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 .tab-btn { flex: 1; padding: 13px 8px; font-size: 13px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; text-align: center; }
 .tab-btn.active { background: #8C1D18; color: #fff; }
 .tab-btn.inactive { opacity: .45; pointer-events: none; cursor: default; }
-
-/* ── Example strip ── */
 .example-strip { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: #fff; border-bottom: 2px solid #8C1D18; flex-wrap: wrap; }
 .strip-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; margin-right: 4px; white-space: nowrap; }
 .ex-btn { padding: 6px 16px; font-size: 12px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; color: #333; cursor: pointer; white-space: nowrap; }
 .ex-btn:hover { background: #e8e8e8; }
 .ex-btn.active { background: #8C1D18; color: #fff; border-color: #8C1D18; }
-
-/* ── Filter bar ── */
 .filter-bar { display: flex; flex-wrap: wrap; gap: 8px 16px; background: #fff; border-bottom: 1px solid #ccc; padding: 8px 20px 10px; align-items: flex-end; }
 .filter-cell { display: flex; flex-direction: column; min-width: 120px; }
 .filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
-.filter-select { padding: 5px 24px 5px 8px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 7px center; }
 .ms-wrapper { position: relative; }
 .ms-display { padding: 5px 24px 5px 8px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; cursor: pointer; user-select: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 7px center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px; }
 .ms-display.active-filter { border-color: #8C1D18; background-color: #fff5f5; font-weight: 700; }
@@ -40,16 +33,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 .ms-item:hover { background: #f0f4fa; }
 .ms-item input { accent-color: #8C1D18; flex-shrink: 0; }
 .ms-item.all-opt { font-weight: 700; border-bottom: 1px solid #ddd; background: #fafafa; }
-
-/* ── Attack panel ── */
-.attack-panel {
-  margin: 10px 10px 0; background: #fff; border: 2px solid #8C1D18; border-radius: 4px; overflow: hidden;
-}
-.attack-header {
-  background: #8C1D18; color: #fff; padding: 10px 18px;
-  font-size: 13px; font-weight: 700; letter-spacing: .03em;
-  display: flex; align-items: center; gap: 10px;
-}
+.attack-panel { margin: 10px 10px 0; background: #fff; border: 2px solid #8C1D18; border-radius: 4px; overflow: hidden; }
+.attack-header { background: #8C1D18; color: #fff; padding: 10px 18px; font-size: 13px; font-weight: 700; letter-spacing: .03em; display: flex; align-items: center; gap: 10px; }
 .attack-header .tag { background: rgba(255,255,255,.2); padding: 3px 10px; border-radius: 3px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
 .attack-body { display: grid; grid-template-columns: 1fr 32px 1fr 32px 1.15fr; align-items: stretch; gap: 0; border-top: 1px solid #f0c0c0; }
 .query-col { padding: 16px 20px; }
@@ -68,16 +53,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 .result-math .calc-line.eq { color: #8C1D18; font-weight: 700; }
 .result-value { font-size: 36px; font-weight: 700; color: #8C1D18; line-height: 1; }
 .result-value-label { font-size: 11px; color: #8C1D18; margin-top: 4px; opacity: .85; }
-
-/* ── Step switcher ── */
-.step-bar { display: flex; align-items: center; gap: 8px; padding: 9px 18px; background: #fafafa; border-top: 1px solid #eee; }
+.step-bar { display: flex; align-items: center; gap: 8px; padding: 9px 18px; background: #fafafa; border-bottom: 1px solid #ccc; }
 .step-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-right: 4px; white-space: nowrap; }
 .step-btn { padding: 5px 14px; font-size: 11px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #fff; color: #444; cursor: pointer; white-space: nowrap; }
 .step-btn:hover { background: #f0f0f0; }
 .step-btn.active { background: #2d2d2d; color: #fff; border-color: #2d2d2d; }
 .step-hint { font-size: 11px; color: #999; margin-left: 6px; }
-
-/* ── Chart area ── */
 .main-grid { display: grid; grid-template-columns: 210px 1fr 270px; gap: 10px; padding: 10px; align-items: stretch; }
 .left-col { display: flex; flex-direction: column; gap: 10px; }
 .stat-card { background: #fff; border: 1px solid #ccc; padding: 14px 16px; border-radius: 2px; }
@@ -85,22 +66,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 .stat-card-value { font-size: 30px; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
 .stat-card-value.warn { color: #8C1D18; }
 .stat-card-sub { font-size: 12px; color: #555; margin-top: 3px; }
-.org-text { font-size: 11px; color: #555; line-height: 1.65; margin-top: 4px; }
 .center-col { background: #fff; border: 1px solid #ccc; padding: 14px 16px; border-radius: 2px; display: flex; flex-direction: column; }
 .chart-title { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
 .chart-wrap { position: relative; flex: 1; min-height: 280px; }
 .right-col { background: #fff; border: 1px solid #ccc; padding: 14px 16px; border-radius: 2px; display: flex; flex-direction: column; }
 .right-title { font-size: 12px; font-weight: 700; text-align: center; margin-bottom: 10px; color: #1a1a1a; line-height: 1.4; }
 .bar-wrap { position: relative; flex: 1; min-height: 280px; }
-
-/* ── Footer ── */
 .dash-note { margin: 0 10px 10px; padding: 10px 16px; font-size: 11px; color: #555; border: 1px solid #ccc; border-radius: 2px; background: #fff; line-height: 1.6; }
 </style>
 </head>
 <body>
 
 <div class="back-row"><a href="../">← All Demos</a></div>
-<div class="title-bar">Colorado Wage Outcomes Results Coalition Dashboard</div>
+<div class="title-bar">Workforce Outcomes Dashboard</div>
 <nav class="tab-nav">
   <button class="tab-btn inactive">Home</button>
   <button class="tab-btn inactive">Program Background</button>
@@ -109,32 +87,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
   <button class="tab-btn inactive">Demographics</button>
 </nav>
 
-<!-- Example selector -->
 <div class="example-strip">
   <span class="strip-label">Demo scenario:</span>
   <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — AIAN / White · Male</button>
-  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black · Male+Female · Denver</button>
-  <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — AWS re/Start+Desktop · Hispanic</button>
+  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — Black · Male+Female · Metro Area</button>
   <span style="font-size:11px;color:#888;margin-left:6px">← click to load scenario</span>
 </div>
 
-<!-- Filter bar (mirrors Tableau layout) -->
 <div class="filter-bar">
-  <div class="filter-cell">
-    <span class="filter-label">Organization</span>
-    <select class="filter-select" disabled style="opacity:.6"><option>ActivateWork</option></select>
-  </div>
   <div class="filter-cell" id="progCell">
     <span class="filter-label">Program</span>
     <div class="ms-wrapper"><div class="ms-display" id="progDisplay">(All)</div><div class="ms-panel" id="progPanel"></div></div>
-  </div>
-  <div class="filter-cell">
-    <span class="filter-label">Program Completion</span>
-    <select class="filter-select"><option>(All)</option></select>
-  </div>
-  <div class="filter-cell">
-    <span class="filter-label">Highest Education</span>
-    <select class="filter-select"><option>(All)</option></select>
   </div>
   <div class="filter-cell" id="raceCell">
     <span class="filter-label">Race</span>
@@ -144,34 +107,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     <span class="filter-label">Gender</span>
     <div class="ms-wrapper"><div class="ms-display" id="genderDisplay">(All)</div><div class="ms-panel" id="genderPanel"></div></div>
   </div>
-  <div class="filter-cell">
-    <span class="filter-label">Justice System Hist.</span>
-    <select class="filter-select"><option>Missing/NULL</option><option>(All)</option></select>
-  </div>
   <div class="filter-cell" id="denverCell">
-    <span class="filter-label">Lives in Denver Co.</span>
+    <span class="filter-label">Metro Area</span>
     <div class="ms-wrapper"><div class="ms-display" id="denverDisplay">(All)</div><div class="ms-panel" id="denverPanel"></div></div>
   </div>
 </div>
 
-<!-- Back-calculation attack panel -->
-<div class="attack-panel">
-  <div class="attack-header">
-    <span>Back-Calculation Attack</span>
-    <span class="tag">Select-All Filter Weakness</span>
-    <span style="margin-left:auto;font-size:11px;font-weight:400;opacity:.85">Both queries are publicly accessible. The difference is 1 person.</span>
-  </div>
-  <div class="attack-body" id="attackBody"></div>
-  <!-- Step switcher: toggle filter bar between Query A+B and Query A -->
-  <div class="step-bar">
+<div class="step-bar">
     <span class="step-label">Dashboard view:</span>
     <button class="step-btn active" id="stepAB" onclick="setStep('ab')">Query A+B (includes target)</button>
     <button class="step-btn"        id="stepA"  onclick="setStep('a')">Query A (remove 1 group)</button>
     <span class="step-hint">— toggle to see how a researcher submits two queries to the dashboard</span>
   </div>
-</div>
 
-<!-- Earnings chart area -->
 <div class="main-grid">
   <div class="left-col">
     <div class="stat-card">
@@ -183,10 +131,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
       <div class="stat-card-value" style="font-size:20px">3 – 4</div>
       <div class="stat-card-sub">Months</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-card-label">Organization Overview</div>
-      <div class="org-text" id="orgText"></div>
-    </div>
   </div>
   <div class="center-col">
     <div class="chart-title" id="chartTitle">Average Quarterly Earnings Relative to Program Start</div>
@@ -196,6 +140,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     <div class="right-title">Pre Average vs. Post Average<br>Quarterly Earnings</div>
     <div class="bar-wrap"><canvas id="barChart"></canvas></div>
   </div>
+</div>
+
+<div class="attack-panel">
+  <div class="attack-header">
+    <span>Back-Calculation Attack</span>
+    <span class="tag">Select-All Filter Weakness</span>
+    <span style="margin-left:auto;font-size:11px;font-weight:400;opacity:.85">Both queries are publicly accessible. The difference is 1 person.</span>
+  </div>
+  <div class="attack-body" id="attackBody"></div>
 </div>
 
 <div class="dash-note">
@@ -209,23 +162,22 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 
   const RACES   = ['AIAN','Asian','Black or African American','Hispanic or Latino','Multiracial','NHPI','Other','White'];
   const GENDERS = ['Female','Male','Other'];
-  const PROGS   = ['IT Certification','Cybersecurity Bootcamp','Admin & Office Skills','AWS re/Start','Desktop Support'];
+  const PROGS   = ['IT Certification','Cybersecurity Bootcamp','Admin & Office Skills','Cloud Computing Basics','Tech Support Essentials'];
 
   let activeExample = 1;
-  let activeStep    = 'ab'; // 'ab' or 'a'
+  let activeStep    = 'ab';
 
-  // ── Multi-select builder ─────────────────────────────────────────────────
   function buildPanel(panelId, items, allLabel) {
     const panel = document.getElementById(panelId);
     panel.innerHTML = '';
     const allDiv = document.createElement('div');
     allDiv.className = 'ms-item all-opt';
-    allDiv.innerHTML = `<input type="checkbox" value="${allLabel}" checked> ${allLabel}`;
+    allDiv.innerHTML = '<input type="checkbox" value="' + allLabel + '" checked> ' + allLabel;
     panel.appendChild(allDiv);
     items.forEach(item => {
       const div = document.createElement('div');
       div.className = 'ms-item';
-      div.innerHTML = `<input type="checkbox" value="${item}"> ${item}`;
+      div.innerHTML = '<input type="checkbox" value="' + item + '"> ' + item;
       panel.appendChild(div);
     });
   }
@@ -242,7 +194,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 
   function refreshDisplay(displayId, values, allLabel) {
     const el = document.getElementById(displayId);
-    el.textContent = values.length === 0 ? `(All)` : values.join(', ');
+    el.textContent = values.length === 0 ? '(All)' : values.join(', ');
     el.classList.toggle('active-filter', values.length > 0);
   }
 
@@ -257,48 +209,44 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
   }
   document.addEventListener('click', () => document.querySelectorAll('.ms-panel.open').forEach(p => p.classList.remove('open')));
 
-  // ── Attack panel ─────────────────────────────────────────────────────────
   function renderAttackPanel(scenario) {
     const { ab, a } = scenario;
     const individual = SD.coData.backCalc(scenario);
-
     const abSum = ab.avgQ4 * ab.n;
     const aSum  = a.avgQ4  * a.n;
 
-    document.getElementById('attackBody').innerHTML = `
-      <div class="query-col">
-        <div class="query-label">Query A+B</div>
-        <div class="query-desc">${ab.desc}</div>
-        <div class="query-n">${ab.n}</div>
-        <div class="query-n-label">matched participants</div>
-        <div class="query-wage">$${ab.avgQ4.toLocaleString()}</div>
-        <div class="query-wage-label">avg Q4 wage (public)</div>
-      </div>
-      <div class="op-col">−</div>
-      <div class="query-col">
-        <div class="query-label">Query A (remove 1 group)</div>
-        <div class="query-desc">${a.desc}</div>
-        <div class="query-n">${a.n}</div>
-        <div class="query-n-label">matched participants</div>
-        <div class="query-wage">$${a.avgQ4.toLocaleString()}</div>
-        <div class="query-wage-label">avg Q4 wage (public)</div>
-      </div>
-      <div class="op-col">=</div>
-      <div class="result-col">
-        <div class="result-label">Individual Exposed</div>
-        <div class="result-who">${scenario.target.note}</div>
-        <div class="result-math">
-          <div class="calc-line">($${ab.avgQ4.toLocaleString()} × ${ab.n}) − ($${a.avgQ4.toLocaleString()} × ${a.n})</div>
-          <div class="calc-line">$${abSum.toLocaleString()} − $${aSum.toLocaleString()}</div>
-          <div class="calc-line eq">= $${individual.toLocaleString()}</div>
-        </div>
-        <div class="result-value">$${individual.toLocaleString()}</div>
-        <div class="result-value-label">this person's Q4 earnings — recovered exactly</div>
-      </div>
-    `;
+    document.getElementById('attackBody').innerHTML =
+      '<div class="query-col">' +
+        '<div class="query-label">Query A+B</div>' +
+        '<div class="query-desc">' + ab.desc + '</div>' +
+        '<div class="query-n">' + ab.n + '</div>' +
+        '<div class="query-n-label">matched participants</div>' +
+        '<div class="query-wage">$' + ab.avgQ4.toLocaleString() + '</div>' +
+        '<div class="query-wage-label">avg Q4 wage (public)</div>' +
+      '</div>' +
+      '<div class="op-col">−</div>' +
+      '<div class="query-col">' +
+        '<div class="query-label">Query A (remove 1 group)</div>' +
+        '<div class="query-desc">' + a.desc + '</div>' +
+        '<div class="query-n">' + a.n + '</div>' +
+        '<div class="query-n-label">matched participants</div>' +
+        '<div class="query-wage">$' + a.avgQ4.toLocaleString() + '</div>' +
+        '<div class="query-wage-label">avg Q4 wage (public)</div>' +
+      '</div>' +
+      '<div class="op-col">=</div>' +
+      '<div class="result-col">' +
+        '<div class="result-label">Individual Exposed</div>' +
+        '<div class="result-who">' + scenario.target.note + '</div>' +
+        '<div class="result-math">' +
+          '<div class="calc-line">($' + ab.avgQ4.toLocaleString() + ' × ' + ab.n + ') − ($' + a.avgQ4.toLocaleString() + ' × ' + a.n + ')</div>' +
+          '<div class="calc-line">$' + abSum.toLocaleString() + ' − $' + aSum.toLocaleString() + '</div>' +
+          '<div class="calc-line eq">= $' + individual.toLocaleString() + '</div>' +
+        '</div>' +
+        '<div class="result-value">$' + individual.toLocaleString() + '</div>' +
+        '<div class="result-value-label">this person\'s Q4 earnings — recovered exactly</div>' +
+      '</div>';
   }
 
-  // ── Charts ───────────────────────────────────────────────────────────────
   let earningsInst = null, barInst = null;
 
   function renderCharts(query) {
@@ -309,16 +257,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
         labels: query.quarters.map(String),
         datasets: [
           { label: 'Avg Quarterly Earnings', data: query.values, borderColor: '#8C6A3A', backgroundColor: 'rgba(140,106,58,.1)', borderWidth: 2.5, pointRadius: 2, tension: 0.35, fill: true },
-          { label: `MIT Living Wage (~$${SD.coData.mitLivingWage.toLocaleString()})`, data: query.quarters.map(() => SD.coData.mitLivingWage), borderColor: '#888', borderWidth: 1, borderDash: [5,4], pointRadius: 0, fill: false },
-          { label: `Denver Min. Wage (~$${SD.coData.denverMinWage.toLocaleString()})`, data: query.quarters.map(() => SD.coData.denverMinWage), borderColor: '#bbb', borderWidth: 1, borderDash: [3,3], pointRadius: 0, fill: false },
+          { label: 'Area Living Wage (~$' + SD.coData.mitLivingWage.toLocaleString() + ')', data: query.quarters.map(() => SD.coData.mitLivingWage), borderColor: '#888', borderWidth: 1, borderDash: [5,4], pointRadius: 0, fill: false },
+          { label: 'Regional Min. Wage (~$' + SD.coData.denverMinWage.toLocaleString() + ')', data: query.quarters.map(() => SD.coData.denverMinWage), borderColor: '#bbb', borderWidth: 1, borderDash: [3,3], pointRadius: 0, fill: false },
         ],
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 18 } }, tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } } },
+        plugins: { legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 18 } }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toLocaleString() } } },
         scales: {
           x: { title: { display: true, text: 'Relative Quarters from Program Start', font: { size: 10 } }, ticks: { font: { size: 10 } }, grid: { color: '#eee' } },
-          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => `$${(v/1000).toFixed(0)}K` }, grid: { color: '#eee' } },
+          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#eee' } },
         },
       },
     });
@@ -327,14 +275,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     barInst = new Chart(document.getElementById('barChart'), {
       type: 'bar',
       data: {
-        labels: ['Pre-Period\n(Qtr −8 to −1)', 'Post-Period\n(Qtr 1 to 12)'],
+        labels: ['Pre-Period\n(Qtr -8 to -1)', 'Post-Period\n(Qtr 1 to 12)'],
         datasets: [{ data: [query.preAvg, query.postAvg], backgroundColor: '#8C6A3A', borderRadius: 2 }],
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` $${ctx.raw.toLocaleString()}` } } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toLocaleString() } } },
         scales: {
-          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => `$${(v/1000).toFixed(0)}K` }, grid: { color: '#eee' } },
+          y: { min: 0, max: 14000, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#eee' } },
           x: { ticks: { font: { size: 10 } }, grid: { display: false } },
         },
       },
@@ -345,7 +293,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
             ds.data.forEach((val, j) => {
               const bar = chart.getDatasetMeta(i).data[j];
               ctx2.save(); ctx2.fillStyle = '#1a1a1a'; ctx2.font = 'bold 12px sans-serif'; ctx2.textAlign = 'center';
-              ctx2.fillText(`$${val.toLocaleString()}`, bar.x, bar.y - 5); ctx2.restore();
+              ctx2.fillText('$' + val.toLocaleString(), bar.x, bar.y - 5); ctx2.restore();
             });
           });
         },
@@ -353,7 +301,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     });
   }
 
-  // ── Step toggling (A+B vs A) ─────────────────────────────────────────────
   window.setStep = function (step) {
     activeStep = step;
     document.getElementById('stepAB').classList.toggle('active', step === 'ab');
@@ -368,22 +315,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     setChecked('progPanel',   query.filters.prog,   '(All)');
     setChecked('racePanel',   query.filters.race,   '(All)');
     setChecked('genderPanel', query.filters.gender, '(All)');
-    setChecked('denverPanel', query.filters.denver ? ['Yes (Denver Co.)'] : [], '(All)');
+    setChecked('denverPanel', query.filters.denver ? ['Yes (Metro Area)'] : [], '(All)');
 
     document.getElementById('matchedN').textContent = query.n;
     document.getElementById('matchedN').className = 'stat-card-value' + (query.n < 10 ? ' warn' : '');
-    document.getElementById('orgText').textContent  = SD.coData.orgOverview;
-    document.getElementById('chartTitle').textContent =
-      `Average Quarterly Earnings — ${query.desc}`;
+    document.getElementById('chartTitle').textContent = 'Average Quarterly Earnings — ' + query.desc;
 
     renderCharts(query);
   }
 
-  // ── Load example ─────────────────────────────────────────────────────────
   window.loadExample = function (n) {
     activeExample = n;
     activeStep    = 'ab';
-    [1,2,3].forEach(i => document.getElementById(`ex${i}btn`).classList.toggle('active', i === n));
+    [1,2].forEach(i => document.getElementById('ex' + i + 'btn').classList.toggle('active', i === n));
     document.getElementById('stepAB').classList.add('active');
     document.getElementById('stepA').classList.remove('active');
 
@@ -391,7 +335,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     applyStep();
   };
 
-  // ── Filter change → attack panel sync ───────────────────────────────────
   function getChecked(panelId, allLabel) {
     const vals = [];
     document.getElementById(panelId).querySelectorAll('input').forEach(cb => {
@@ -414,7 +357,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     const s = SD.coData.scenarios[activeExample];
     if (filtersMatchQuery(s.ab))     setStep('ab');
     else if (filtersMatchQuery(s.a)) setStep('a');
-    // partial/unrecognized state: leave step buttons as-is but still refresh display
     else {
       const race   = getChecked('racePanel',   '(All)');
       const gender = getChecked('genderPanel', '(All)');
@@ -427,11 +369,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
     }
   }
 
-  // ── Init ──────────────────────────────────────────────────────────────────
   buildPanel('progPanel',   PROGS,   '(All)');
   buildPanel('racePanel',   RACES,   '(All)');
   buildPanel('genderPanel', GENDERS, '(All)');
-  buildPanel('denverPanel', ['Yes (Denver Co.)'], '(All)');
+  buildPanel('denverPanel', ['Yes (Metro Area)'], '(All)');
 
   setupToggle('progDisplay',   'progPanel');
   setupToggle('raceDisplay',   'racePanel');
