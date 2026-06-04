@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Texas ECDS Dashboard — Demo 2</title>
+<title>Early Childhood Assessment — Data Comparison Demo</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; }
@@ -15,350 +15,197 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 .title-bar { background: #003f8a; padding: 14px 28px; display: flex; align-items: center; gap: 16px; }
 .title-text { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: .01em; flex: 1; }
 .title-meta { font-size: 11px; color: rgba(255,255,255,.65); line-height: 1.5; }
-.tab-nav { display: flex; background: #2d2d2d; }
-.tab-btn { padding: 11px 20px; font-size: 12px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; white-space: nowrap; }
-.tab-btn.active { background: #003f8a; color: #fff; }
-.tab-btn.inactive { opacity: .4; pointer-events: none; cursor: default; }
 
-/* ── Example strip ── */
-.example-strip { display: flex; align-items: center; gap: 8px; padding: 9px 18px; background: #fff; border-bottom: 2px solid #003f8a; flex-wrap: wrap; }
-.strip-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; margin-right: 2px; white-space: nowrap; }
-.ex-btn { padding: 5px 14px; font-size: 12px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; color: #333; cursor: pointer; white-space: nowrap; }
-.ex-btn:hover { background: #e8e8e8; }
-.ex-btn.active { background: #003f8a; color: #fff; border-color: #003f8a; }
+/* ── Subject tab nav ── */
+.tab-nav { display: flex; background: #2d2d2d; overflow-x: auto; }
+.tab-btn { padding: 11px 18px; font-size: 12px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.tab-btn.active { background: #003f8a; color: #fff; }
 
 /* ── Filter bar ── */
-.filter-bar { display: flex; flex-wrap: wrap; gap: 8px 20px; background: #fff; border-bottom: 1px solid #ccc; padding: 7px 18px 9px; align-items: flex-end; }
-.filter-cell { display: flex; flex-direction: column; min-width: 140px; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px 20px; background: #fff; border-bottom: 2px solid #003f8a; padding: 8px 18px 10px; align-items: flex-end; }
+.filter-cell { display: flex; flex-direction: column; min-width: 160px; }
 .filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
-.filter-select { padding: 4px 22px 4px 7px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 6px center; }
-.filter-select.highlight { border-color: #003f8a; background-color: #f0f5ff; font-weight: 700; }
+.filter-select { padding: 5px 24px 5px 8px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 7px center; cursor: pointer; }
 
-/* ── Step switcher ── */
-.step-bar { display: flex; align-items: center; gap: 8px; padding: 8px 18px; background: #f0f0f0; border-bottom: 1px solid #ddd; }
-.step-label { font-size: 11px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; margin-right: 2px; white-space: nowrap; }
-.step-btn { padding: 5px 14px; font-size: 11px; font-weight: 600; border: 1px solid #ccc; border-radius: 3px; background: #fff; color: #444; cursor: pointer; white-space: nowrap; }
-.step-btn:hover { background: #e8e8e8; }
-.step-btn.active { background: #2d2d2d; color: #fff; border-color: #2d2d2d; }
-.step-hint { font-size: 11px; color: #888; margin-left: 4px; }
+/* ── Legend ── */
+.legend-bar { display: flex; gap: 16px; padding: 8px 18px; background: #f5f7fa; border-bottom: 1px solid #dde1e8; flex-wrap: wrap; align-items: center; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #444; }
+.legend-swatch { width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0; }
+.sw-conf  { background: #1a5c3a; }
+.sw-supp  { background: #8a4000; }
+.sw-noisy { background: #003f8a; }
+.legend-note { font-size: 11px; color: #777; margin-left: auto; font-style: italic; }
 
-/* ── Data table ── */
-.table-wrap { margin: 10px; background: #fff; border: 1px solid #ccc; border-radius: 2px; overflow-x: auto; }
-.table-title-row { padding: 9px 14px; background: #f0f4fa; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
-.table-title { font-size: 12px; font-weight: 700; color: #1a1a1a; }
-.table-subtitle { font-size: 11px; color: #888; }
-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+/* ── Table ── */
+.table-wrap { margin: 10px; background: #fff; border: 1px solid #ccc; border-radius: 3px; overflow-x: auto; }
+.table-caption { padding: 9px 14px; background: #f0f4fa; border-bottom: 1px solid #ddd; font-size: 12px; font-weight: 700; color: #1a1a1a; }
+
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
 th { background: #e8edf5; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #444; padding: 7px 10px; text-align: right; border-bottom: 2px solid #c8d4e8; white-space: nowrap; }
 th.left { text-align: left; }
-th.attack-col { background: #fce8c8; color: #7a3a00; }
-td { padding: 6px 10px; font-size: 12px; text-align: right; border-bottom: 1px solid #f0f0f0; }
+td { padding: 5px 10px; font-size: 12px; text-align: right; border-bottom: 1px solid #f0f0f0; }
 td.left { text-align: left; }
-td.subject-cell { font-weight: 700; color: #003f8a; font-size: 11px; background: #f5f8ff; padding-top: 10px; vertical-align: top; white-space: nowrap; }
-td.race-cell { color: #333; padding-left: 18px; }
-.na-cell { color: #c8a060; font-style: italic; }
-.na-badge { display: inline-block; background: #fce8c8; color: #7a3a00; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: .03em; }
-.attack-td { background: #fff8ef; }
-.total-row td { background: #f0f4fa; font-weight: 700; border-top: 1px solid #c8d4e8; border-bottom: 2px solid #c8d4e8; color: #003f8a; }
-.total-row td.left { font-weight: 700; }
-.summary-total-row td { background: #e8f0ff; font-weight: 700; }
 
-/* ── Attack panel ── */
-.attack-panel { margin: 0 10px 10px; background: #fff; border: 2px solid #003f8a; border-radius: 4px; overflow: hidden; }
-.attack-header { background: #003f8a; color: #fff; padding: 10px 18px; font-size: 13px; font-weight: 700; letter-spacing: .02em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.attack-header .tag { background: rgba(255,255,255,.2); padding: 2px 9px; border-radius: 3px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
-.attack-body { display: grid; grid-template-columns: 1fr; }
-.attack-left { padding: 16px 20px; border-right: 1px solid #c8d8f0; }
-.atk-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #003f8a; margin-bottom: 12px; }
-.math-table { width: 100%; border-collapse: collapse; font-family: 'Courier New', monospace; font-size: 13px; }
-.math-table td { padding: 4px 6px; vertical-align: middle; }
-.math-table .op { color: #888; text-align: center; width: 24px; }
-.math-table .desc { color: #444; }
-.math-table .desc.vis { color: #666; }
-.math-table .val { text-align: right; font-weight: 700; min-width: 44px; color: #1a1a1a; }
-.math-table .val.vis { color: #555; }
-.math-table tr.divider td { border-top: 2px solid #003f8a; padding-top: 8px; color: #003f8a; font-weight: 700; }
-.math-table .val.result { color: #003f8a; font-size: 17px; }
-.result-callout { margin-top: 14px; background: #003f8a; color: #fff; border-radius: 4px; padding: 12px 16px; }
-.result-callout-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .75; margin-bottom: 6px; }
-.result-callout-who { font-size: 12px; opacity: .9; font-style: italic; line-height: 1.5; margin-bottom: 12px; }
-.result-callout-stats { display: flex; gap: 22px; }
-.rc-stat { text-align: center; }
-.rc-num { font-size: 28px; font-weight: 700; line-height: 1; }
-.rc-desc { font-size: 10px; opacity: .72; margin-top: 2px; }
+/* Section header rows */
+.section-conf td  { background: #1a5c3a; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; }
+.section-supp td  { background: #8a4000; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; }
+.section-noisy td { background: #003f8a; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; }
+
+/* Data rows per version */
+.row-conf  td { background: #f0f8f4; }
+.row-supp  td { background: #fff8f2; }
+.row-noisy td { background: #f0f5ff; }
+
+/* NA badge */
+.na { color: #c45200; font-weight: 700; font-style: italic; }
+
+/* Highlight cells where noisy ≠ conf */
+.noisy-diff { color: #003f8a; font-weight: 700; }
+
+/* Spacer between sections */
+.section-gap td { height: 6px; background: #dde1e8; padding: 0; border: none; }
 </style>
 </head>
 <body>
 
 <div class="back-row"><a href="../">← All Demos</a></div>
 <div class="title-bar">
-  <div class="title-text">Texas ECDS Kindergarten Readiness Dashboard</div>
+  <div class="title-text">Early Childhood Assessment — Three-Way Data Comparison</div>
   <div class="title-meta">School Year: <strong style="color:#fff">2022–23</strong><br>Suppression threshold: N &lt; 10</div>
 </div>
-<nav class="tab-nav">
-  <button class="tab-btn inactive">Home</button>
-  <button class="tab-btn inactive">District Summary</button>
-  <button class="tab-btn active" id="tabRace">Race / Ethnicity</button>
-  <button class="tab-btn inactive">Homeless</button>
-  <button class="tab-btn inactive">Foster Care</button>
-</nav>
 
-<!-- Example selector -->
-<div class="example-strip">
-  <span class="strip-label">Demo scenario:</span>
-  <button class="ex-btn active" id="ex1btn" onclick="loadExample(1)">Example 1 — District A (7 hidden students)</button>
-  <button class="ex-btn"        id="ex2btn" onclick="loadExample(2)">Example 2 — District B (10 hidden students)</button>
-  <button class="ex-btn"        id="ex3btn" onclick="loadExample(3)">Example 3 — District C (15 hidden students)</button>
-  <span style="font-size:11px;color:#888;margin-left:4px">← click to load scenario</span>
-</div>
+<nav class="tab-nav" id="subjectTabs"></nav>
 
-<!-- Filter bar -->
 <div class="filter-bar">
   <div class="filter-cell">
     <span class="filter-label">District</span>
-    <select class="filter-select highlight" id="districtSel" disabled></select>
+    <select class="filter-select" id="districtSel" onchange="render()"></select>
   </div>
   <div class="filter-cell">
     <span class="filter-label">School Year</span>
     <select class="filter-select" disabled><option>2022 – 2023</option></select>
   </div>
-  <div class="filter-cell">
-    <span class="filter-label">Breakdown</span>
-    <select class="filter-select" disabled><option>Race / Ethnicity</option></select>
-  </div>
 </div>
 
-<!-- Step switcher: mimic navigating between Dashboard tabs -->
-<div class="step-bar">
-  <span class="step-label">Dashboard tab:</span>
-  <button class="step-btn" id="stepSummary" onclick="setStep('summary')">District Summary (no suppression)</button>
-  <button class="step-btn active" id="stepRace"    onclick="setStep('race')">Race / Ethnicity (with suppression)</button>
+<div class="legend-bar">
+  <div class="legend-item"><span class="legend-swatch sw-conf"></span> Confidential (true values)</div>
+  <div class="legend-item"><span class="legend-swatch sw-supp"></span> Suppressed (public release)</div>
+  <div class="legend-item"><span class="legend-swatch sw-noisy"></span> Noise-Infused (differential privacy)</div>
+  <span class="legend-note">Bold blue = value differs from confidential</span>
 </div>
 
-<!-- Data table -->
 <div class="table-wrap">
-  <div class="table-title-row">
-    <span class="table-title" id="tableTitle">Prekindergarten Assessment Results — by Subject and Race/Ethnicity</span>
-    <span class="table-subtitle" id="tableSubtitle">Race / Ethnicity tab · suppression applied (N &lt; 10 → NA)</span>
-  </div>
-  <table id="mainTable">
+  <div class="table-caption" id="tableCaption"></div>
+  <table>
     <thead>
       <tr>
-        <th class="left" style="width:170px">Subject</th>
-        <th class="left" style="width:170px">Race / Ethnicity</th>
-        <th>Total<br>Students (N)</th>
-        <th>Proficient<br>BOY (N)</th>
-        <th>Proficient<br>BOY (%)</th>
-        <th class="attack-col">Proficient<br>EOY (N)</th>
-        <th>Proficient<br>EOY (%)</th>
-        <th>Δ Proficiency<br>(pp)</th>
+        <th class="left" style="width:55px">Version</th>
+        <th class="left" style="width:200px">Demographic Group</th>
+        <th>Enrolled<br>(N)</th>
+        <th>BOY Prof<br>(N)</th>
+        <th>BOY Prof<br>(%)</th>
+        <th>EOY Prof<br>(N)</th>
+        <th>EOY Prof<br>(%)</th>
       </tr>
     </thead>
     <tbody id="tableBody"></tbody>
   </table>
 </div>
 
-<!-- Attack panel -->
-<div class="attack-panel">
-  <div class="attack-header">
-    <span>Complementary Disclosure Attack</span>
-    <span class="tag">Cell Suppression Bypass</span>
-  </div>
-  <div class="attack-body">
-    <div class="attack-left">
-      <div class="atk-label">The Calculation</div>
-      <table class="math-table" id="mathTable"></table>
-      <div id="resultCallout"></div>
-    </div>
-  </div>
-</div>
-
 <script src="data.js"></script>
 <script>
 (function () {
-  let activeExample = 1;
-  let activeStep = 'race'; // 'race' | 'summary'
-
-  const DIST_NAMES = { 1: 'District A (TX)', 2: 'District B (TX)', 3: 'District C (TX)' };
+  let activeSubject = SD.txData.SUBJECTS[0];
 
   function pct(num, den) {
-    if (!den) return '—';
+    if (num === null || !den) return '<span class="na">NA</span>';
     return Math.round(num / den * 100) + '%';
   }
-  function na() { return '<span class="na-badge">NA</span>'; }
+  function val(v, confV, cls) {
+    if (v === null) return '<span class="na">NA</span>';
+    const diff = confV !== null && v !== confV;
+    return diff ? `<span class="noisy-diff">${v}</span>` : v;
+  }
+  function plain(v) {
+    if (v === null) return '<span class="na">NA</span>';
+    return v;
+  }
 
-  function renderTable() {
-    const s = SD.txData.scenarios[activeExample];
-    const isSummary = activeStep === 'summary';
-    const totals = SD.txData.districtTotals(s);
-    const body = document.getElementById('tableBody');
-    body.innerHTML = '';
-
+  function buildTabs() {
+    const nav = document.getElementById('subjectTabs');
     SD.txData.SUBJECTS.forEach(subj => {
-      const rows = s.subjects[subj];
-      const tot  = totals[subj];
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (subj === activeSubject ? ' active' : '');
+      btn.textContent = subj;
+      btn.onclick = () => { activeSubject = subj; updateTabs(); render(); };
+      nav.appendChild(btn);
+    });
+  }
 
-      rows.forEach((r, idx) => {
-        const isFirst = idx === 0;
-        const tr = document.createElement('tr');
+  function updateTabs() {
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', SD.txData.SUBJECTS[i] === activeSubject);
+    });
+  }
 
-        // In summary mode: only show one aggregated row per subject (the FIRST row is replaced with totals)
-        if (isSummary) {
-          if (idx === 0) {
-            tr.className = 'summary-total-row';
-            tr.innerHTML = `
-              <td class="left subject-cell" rowspan="1">${subj}</td>
-              <td class="left race-cell" style="font-weight:700;color:#003f8a">All students</td>
-              <td>${tot.ecds}</td>
-              <td>${tot.boyProf}</td>
-              <td>${pct(tot.boyProf, tot.ecds)}</td>
-              <td class="attack-td">${tot.eoyProf}</td>
-              <td>${pct(tot.eoyProf, tot.ecds)}</td>
-              <td>${tot.ecds ? (Math.round(tot.eoyProf/tot.ecds*100) - Math.round(tot.boyProf/tot.ecds*100)) + 'pp' : '—'}</td>
-            `;
-            body.appendChild(tr);
-          }
-          return; // skip remaining race rows in summary mode
-        }
+  function buildDistrictDropdown() {
+    const sel = document.getElementById('districtSel');
+    Object.entries(SD.txData.districts).forEach(([key, d]) => {
+      const opt = document.createElement('option');
+      opt.value = key;
+      opt.textContent = d.label;
+      sel.appendChild(opt);
+    });
+  }
 
-        // Race/Ethnicity tab view
-        const suppressed = !r.shown;
-        const boyProfHidden = r.boyProfHidden || suppressed;
-        const eoyProfHidden = r.eoyProfHidden || suppressed;
-        const ecdsVal  = suppressed ? na() : r.ecds;
-        const bothVal  = suppressed ? na() : r.both;
-        const boyVal   = boyProfHidden ? na() : r.boyProf;
-        const eoyVal   = eoyProfHidden ? na() : r.eoyProf;
-        const boyPct   = boyProfHidden ? na() : pct(r.boyProf, r.ecds);
-        const eoyPct   = eoyProfHidden ? na() : pct(r.eoyProf, r.ecds);
-        const diffPct  = (boyProfHidden || eoyProfHidden) ? na() :
-          (Math.round(r.eoyProf / r.ecds * 100) - Math.round(r.boyProf / r.ecds * 100)) + 'pp';
+  window.render = function () {
+    const distKey = document.getElementById('districtSel').value;
+    const dist = SD.txData.districts[distKey];
+    const rows = dist.subjects[activeSubject];
 
-        const attackSubjMatch = subj === s.attackSubject;
-        const eoyTdClass = attackSubjMatch ? 'attack-td' : '';
+    document.getElementById('tableCaption').textContent =
+      `${activeSubject} · ${dist.label}`;
 
-        tr.innerHTML = `
-          ${isFirst ? `<td class="left subject-cell" rowspan="${rows.length}">${subj}</td>` : ''}
-          <td class="left race-cell ${suppressed ? 'na-cell' : ''}">${r.race}</td>
-          <td>${ecdsVal}</td>
-          <td>${boyVal}</td>
-          <td>${boyPct}</td>
-          <td class="${eoyTdClass}">${eoyVal}</td>
-          <td>${eoyPct}</td>
-          <td>${diffPct}</td>
-        `;
-        body.appendChild(tr);
+    const VERSIONS = [
+      { key: 'conf',  label: 'Conf.',   rowCls: 'row-conf',  secCls: 'section-conf',  fullLabel: 'Confidential (true values)' },
+      { key: 'supp',  label: 'Supp.',   rowCls: 'row-supp',  secCls: 'section-supp',  fullLabel: 'Suppressed (public release · N < 10 → NA)' },
+      { key: 'noisy', label: 'Noisy',   rowCls: 'row-noisy', secCls: 'section-noisy', fullLabel: 'Noise-Infused (differential privacy release)' },
+    ];
+
+    let html = '';
+    VERSIONS.forEach((ver, vi) => {
+      if (vi > 0) html += `<tr class="section-gap"><td colspan="7"></td></tr>`;
+      html += `<tr class="${ver.secCls}"><td colspan="7">${ver.fullLabel}</td></tr>`;
+
+      rows.forEach(row => {
+        const d = row[ver.key];
+        const c = row.conf;
+
+        const enrCell  = ver.key === 'conf' ? (d.enrolled  ?? '<span class="na">NA</span>') : val(d.enrolled,  c.enrolled,  ver.key);
+        const boyNCell = ver.key === 'conf' ? (d.boyProf   !== null ? d.boyProf : '<span class="na">NA</span>') : val(d.boyProf,  c.boyProf,  ver.key);
+        const eoyNCell = ver.key === 'conf' ? (d.eoyProf   !== null ? d.eoyProf : '<span class="na">NA</span>') : val(d.eoyProf,  c.eoyProf,  ver.key);
+
+        const boyPctCell = pct(d.boyProf, d.enrolled);
+        const eoyPctCell = pct(d.eoyProf, d.enrolled);
+
+        html += `<tr class="${ver.rowCls}">
+          <td class="left" style="font-size:10px;color:#888;font-weight:600">${ver.label}</td>
+          <td class="left">${row.group}</td>
+          <td>${enrCell}</td>
+          <td>${boyNCell}</td>
+          <td>${boyPctCell}</td>
+          <td>${eoyNCell}</td>
+          <td>${eoyPctCell}</td>
+        </tr>`;
       });
-
-      // Add subject total row for race tab
-      if (!isSummary) {
-        const ttr = document.createElement('tr');
-        ttr.className = 'total-row';
-        // For the total row, we show ONLY visible portions (since some are suppressed)
-        // But district summary has actual totals
-        const visRows = rows.filter(r => r.shown);
-        const visEcds = visRows.reduce((s, r) => s + r.ecds, 0);
-        const visBoy  = visRows.filter(r => !r.boyProfHidden).reduce((s, r) => s + r.boyProf, 0);
-        const visEoy  = visRows.filter(r => !r.eoyProfHidden).reduce((s, r) => s + r.eoyProf, 0);
-        const hasEoySup = rows.some(r => !r.shown || r.eoyProfHidden);
-        const hasBoySupp = rows.some(r => !r.shown || r.boyProfHidden);
-        const subjectIsAttack = subj === s.attackSubject;
-
-        ttr.innerHTML = `
-          <td class="left" colspan="2" style="padding-left:8px;font-size:11px;color:#888">Subtotal (visible only)</td>
-          <td>${visEcds}</td>
-          <td>${hasBoySupp ? `${visBoy}` : visBoy}</td>
-          <td>—</td>
-          <td class="${subjectIsAttack ? 'attack-td' : ''}">${visEoy}</td>
-          <td>—</td>
-          <td>—</td>
-        `;
-        body.appendChild(ttr);
-      }
     });
-  }
 
-  function renderAttackPanel() {
-    const s    = SD.txData.scenarios[activeExample];
-    const atk  = SD.txData.attackCalc(s, s.attackSubject);
-
-    // Math table
-    let mathHtml = `
-      <tr>
-        <td class="op"></td>
-        <td class="desc">District total (District Summary tab)</td>
-        <td class="val">${atk.totalEoyProf}</td>
-      </tr>
-    `;
-    atk.visRows.filter(r => !r.eoyProfHidden).forEach(r => {
-      mathHtml += `
-        <tr>
-          <td class="op" style="color:#888">−</td>
-          <td class="desc vis">${r.race} (visible on Race tab)</td>
-          <td class="val vis">− ${r.eoyProf}</td>
-        </tr>
-      `;
-    });
-    mathHtml += `
-      <tr class="divider">
-        <td class="op">=</td>
-        <td class="desc" style="color:#003f8a">Suppressed groups (shown as NA) — <em>${s.attackSubject}</em></td>
-        <td class="val result">${atk.suppEoyProf}</td>
-      </tr>
-    `;
-    document.getElementById('mathTable').innerHTML = mathHtml;
-
-    // Result callout
-    const suppNames = atk.suppRows.map(r => r.race).join(' + ');
-    document.getElementById('resultCallout').innerHTML = `
-      <div class="result-callout">
-        <div class="result-callout-label">Exposed</div>
-        <div class="result-callout-who">${suppNames} students in ${s.districtName}</div>
-        <div class="result-callout-stats">
-          <div class="rc-stat">
-            <div class="rc-num">${atk.suppEcds}</div>
-            <div class="rc-desc">students enrolled (was NA on enrollment column)</div>
-          </div>
-          <div class="rc-stat">
-            <div class="rc-num">${atk.suppEoyProf}</div>
-            <div class="rc-desc">proficient at EOY (recovered exactly)</div>
-          </div>
-          <div class="rc-stat">
-            <div class="rc-num">${Math.round(atk.suppEoyProf / atk.suppEcds * 100)}%</div>
-            <div class="rc-desc">EOY proficiency rate</div>
-          </div>
-        </div>
-      </div>
-    `;
-
-  }
-
-  window.setStep = function (step) {
-    activeStep = step;
-    document.getElementById('stepSummary').classList.toggle('active', step === 'summary');
-    document.getElementById('stepRace').classList.toggle('active', step === 'race');
-    document.getElementById('tabRace').textContent = step === 'summary' ? 'District Summary' : 'Race / Ethnicity';
-    document.getElementById('tableSubtitle').textContent = step === 'summary'
-      ? 'District Summary tab · no suppression applied — totals are always shown'
-      : 'Race / Ethnicity tab · suppression applied (N < 10 → NA)';
-    renderTable();
+    document.getElementById('tableBody').innerHTML = html;
   };
 
-  window.loadExample = function (n) {
-    activeExample = n;
-    activeStep = 'race';
-    [1,2,3].forEach(i => document.getElementById(`ex${i}btn`).classList.toggle('active', i === n));
-    document.getElementById('stepRace').classList.add('active');
-    document.getElementById('stepSummary').classList.remove('active');
-    document.getElementById('tabRace').textContent = 'Race / Ethnicity';
-    document.getElementById('tableSubtitle').textContent = 'Race / Ethnicity tab · suppression applied (N < 10 → NA)';
-    document.getElementById('districtSel').innerHTML = `<option>${DIST_NAMES[n]}</option>`;
-    document.getElementById('tableTitle').textContent =
-      `Prekindergarten Assessment Results · ${DIST_NAMES[n]} — by Subject and Race/Ethnicity`;
-    renderTable();
-    renderAttackPanel();
-  };
-
-  loadExample(1);
+  buildTabs();
+  buildDistrictDropdown();
+  render();
 })();
 </script>
 </body>
