@@ -119,16 +119,16 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
   let activeSubject = SD.txData.SUBJECTS[0];
 
   function pct(num, den) {
-    if (num === null || !den) return '<span class="na">NA</span>';
+    if (num === null || !den) return '<span class="na">*</span>';
     return Math.round(num / den * 100) + '%';
   }
   function val(v, confV, cls) {
-    if (v === null) return '<span class="na">NA</span>';
+    if (v === null) return '<span class="na">*</span>';
     const diff = confV !== null && v !== confV;
     return diff ? `<span class="noisy-diff">${v}</span>` : v;
   }
   function plain(v) {
-    if (v === null) return '<span class="na">NA</span>';
+    if (v === null) return '<span class="na">*</span>';
     return v;
   }
 
@@ -169,7 +169,7 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
 
     const VERSIONS = [
       { key: 'conf',  label: 'Conf.',   rowCls: 'row-conf',  secCls: 'section-conf',  fullLabel: 'Confidential (true values)' },
-      { key: 'supp',  label: 'Supp.',   rowCls: 'row-supp',  secCls: 'section-supp',  fullLabel: 'Suppressed (public release · N < 10 → NA)' },
+      { key: 'supp',  label: 'Supp.',   rowCls: 'row-supp',  secCls: 'section-supp',  fullLabel: 'Suppressed (public release · N < 10 → *)' },
       { key: 'noisy', label: 'Noisy',   rowCls: 'row-noisy', secCls: 'section-noisy', fullLabel: 'Noise-Infused (differential privacy release)' },
     ];
 
