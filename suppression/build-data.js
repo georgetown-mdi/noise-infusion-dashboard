@@ -4,7 +4,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const CSV_PATH   = path.join(__dirname, 'fake_data.csv');
+const CSV_PATH   = path.join(__dirname, 'fake_texas_data_v2.csv');
 const NAMES_PATH = path.join(__dirname, 'district_names.csv');
 const OUT_PATH   = path.join(__dirname, 'data.js');
 
@@ -31,10 +31,9 @@ const parse = v => v === 'NA' ? null : parseInt(v, 10);
 const jv    = v => v === null ? 'null' : v;
 
 const SUBJECTS = [
-  'Emergent Literacy Reading',
-  'Emergent Literacy Writing',
-  'Health and Wellness',
-  'Language and Communication',
+  'Reading',
+  'Writing',
+  'Health',
   'Mathematics',
 ];
 
@@ -55,9 +54,9 @@ for (const code of allCodes) {
                    r['ASSESSMENT SUBJECT'] === subj)
       .map(r => ({
         group: r['DATA_CATEGORY'],
-        conf:  { enrolled: parse(r['ECDS_REPORTED']),          boyProf: parse(r['MATCH_PROFICIENT_BOY']),          eoyProf: parse(r['MATCH_PROFICIENT_EOY'])          },
-        supp:  { enrolled: parse(r['ECDS_REPORTED_suppress']), boyProf: parse(r['MATCH_PROFICIENT_BOY_suppress']), eoyProf: parse(r['MATCH_PROFICIENT_EOY_suppress']) },
-        noisy: { enrolled: parse(r['ECDS_REPORTED_noisy_pp']), boyProf: parse(r['MATCH_PROFICIENT_BOY_noisy_pp']), eoyProf: parse(r['MATCH_PROFICIENT_EOY_noisy_pp']) },
+        conf:  { enrolled: parse(r['ECDS_REPORTED']),          assessed: parse(r['BOTH_BOY_EOY_ASSESSED']),          proficient: parse(r['MATCH_PROFICIENT_EOY'])          },
+        supp:  { enrolled: parse(r['ECDS_REPORTED_suppress']), assessed: parse(r['BOTH_BOY_EOY_ASSESSED_suppress']), proficient: parse(r['MATCH_PROFICIENT_EOY_suppress']) },
+        noisy: { enrolled: parse(r['ECDS_REPORTED_noisy_pp']), assessed: parse(r['BOTH_BOY_EOY_ASSESSED_noisy_pp']), proficient: parse(r['MATCH_PROFICIENT_EOY_noisy_pp']) },
       }));
   }
 }
@@ -83,7 +82,7 @@ for (const [dk, dv] of Object.entries(districts)) {
   for (const subj of SUBJECTS) {
     out += `        '${subj}': [\n`;
     for (const r of dv.subjects[subj]) {
-      out += `          { group: '${r.group}', conf: { enrolled: ${jv(r.conf.enrolled)}, boyProf: ${jv(r.conf.boyProf)}, eoyProf: ${jv(r.conf.eoyProf)} }, supp: { enrolled: ${jv(r.supp.enrolled)}, boyProf: ${jv(r.supp.boyProf)}, eoyProf: ${jv(r.supp.eoyProf)} }, noisy: { enrolled: ${jv(r.noisy.enrolled)}, boyProf: ${jv(r.noisy.boyProf)}, eoyProf: ${jv(r.noisy.eoyProf)} } },\n`;
+      out += `          { group: '${r.group}', conf: { enrolled: ${jv(r.conf.enrolled)}, assessed: ${jv(r.conf.assessed)}, proficient: ${jv(r.conf.proficient)} }, supp: { enrolled: ${jv(r.supp.enrolled)}, assessed: ${jv(r.supp.assessed)}, proficient: ${jv(r.supp.proficient)} }, noisy: { enrolled: ${jv(r.noisy.enrolled)}, assessed: ${jv(r.noisy.assessed)}, proficient: ${jv(r.noisy.proficient)} } },\n`;
     }
     out += `        ],\n`;
   }

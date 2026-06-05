@@ -58,9 +58,11 @@ td.left { text-align: left; }
 
 /* NA badge */
 .na { color: #c45200; font-weight: 700; font-style: italic; }
+td:has(.na) { background: rgba(196, 82, 0, 0.12) !important; }
 
 /* Highlight cells where noisy ≠ conf */
 .noisy-diff { color: #003f8a; font-weight: 700; }
+td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
 
 /* Spacer between sections */
 .section-gap td { height: 6px; background: #dde1e8; padding: 0; border: none; }
@@ -102,10 +104,9 @@ td.left { text-align: left; }
         <th class="left" style="width:55px">Version</th>
         <th class="left" style="width:200px">Demographic Group</th>
         <th>Enrolled<br>(N)</th>
-        <th>BOY Prof<br>(N)</th>
-        <th>BOY Prof<br>(%)</th>
-        <th>EOY Prof<br>(N)</th>
-        <th>EOY Prof<br>(%)</th>
+        <th>Assessed<br>(N)</th>
+        <th>Proficient<br>(N)</th>
+        <th>Proficient<br>(%)</th>
       </tr>
     </thead>
     <tbody id="tableBody"></tbody>
@@ -174,28 +175,26 @@ td.left { text-align: left; }
 
     let html = '';
     VERSIONS.forEach((ver, vi) => {
-      if (vi > 0) html += `<tr class="section-gap"><td colspan="7"></td></tr>`;
-      html += `<tr class="${ver.secCls}"><td colspan="7">${ver.fullLabel}</td></tr>`;
+      if (vi > 0) html += `<tr class="section-gap"><td colspan="6"></td></tr>`;
+      html += `<tr class="${ver.secCls}"><td colspan="6">${ver.fullLabel}</td></tr>`;
 
       rows.forEach(row => {
         const d = row[ver.key];
         const c = row.conf;
 
-        const enrCell  = ver.key === 'conf' ? (d.enrolled  ?? '<span class="na">NA</span>') : val(d.enrolled,  c.enrolled,  ver.key);
-        const boyNCell = ver.key === 'conf' ? (d.boyProf   !== null ? d.boyProf : '<span class="na">NA</span>') : val(d.boyProf,  c.boyProf,  ver.key);
-        const eoyNCell = ver.key === 'conf' ? (d.eoyProf   !== null ? d.eoyProf : '<span class="na">NA</span>') : val(d.eoyProf,  c.eoyProf,  ver.key);
+        const enrCell  = ver.key === 'conf' ? (d.enrolled   ?? '<span class="na">NA</span>') : val(d.enrolled,   c.enrolled,   ver.key);
+        const assCell  = ver.key === 'conf' ? (d.assessed   !== null ? d.assessed   : '<span class="na">NA</span>') : val(d.assessed,   c.assessed,   ver.key);
+        const profCell = ver.key === 'conf' ? (d.proficient !== null ? d.proficient : '<span class="na">NA</span>') : val(d.proficient, c.proficient, ver.key);
 
-        const boyPctCell = pct(d.boyProf, d.enrolled);
-        const eoyPctCell = pct(d.eoyProf, d.enrolled);
+        const profPctCell = pct(d.proficient, d.assessed);
 
         html += `<tr class="${ver.rowCls}">
           <td class="left" style="font-size:10px;color:#888;font-weight:600">${ver.label}</td>
           <td class="left">${row.group}</td>
           <td>${enrCell}</td>
-          <td>${boyNCell}</td>
-          <td>${boyPctCell}</td>
-          <td>${eoyNCell}</td>
-          <td>${eoyPctCell}</td>
+          <td>${assCell}</td>
+          <td>${profCell}</td>
+          <td>${profPctCell}</td>
         </tr>`;
       });
     });
