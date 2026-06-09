@@ -6,79 +6,78 @@
 <title>Early Childhood Assessment — Data Comparison Demo</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; }
+html, body { height: 100%; overflow: hidden; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; display: flex; flex-direction: column; }
 
 /* ── Header ── */
-.back-row { background: #00305e; padding: 5px 20px; font-size: 11px; }
-.back-row a { color: rgba(255,255,255,.6); text-decoration: none; }
-.back-row a:hover { color: #fff; }
-.title-bar { background: #003f8a; padding: 14px 28px; display: flex; align-items: center; gap: 16px; }
-.title-text { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: .01em; flex: 1; }
-.title-meta { font-size: 11px; color: rgba(255,255,255,.65); line-height: 1.5; }
+.header { background: #003f8a; padding: 10px 18px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.back-link { font-size: 11px; color: rgba(255,255,255,.6); text-decoration: none; flex-shrink: 0; }
+.back-link:hover { color: #fff; }
+.title-text { font-size: 14px; font-weight: 700; color: #fff; flex: 1; }
+.title-meta { font-size: 10px; color: rgba(255,255,255,.65); white-space: nowrap; }
 
-/* ── Subject tab nav ── */
-.tab-nav { display: flex; background: #2d2d2d; overflow-x: auto; }
-.tab-btn { padding: 11px 18px; font-size: 12px; font-weight: 600; color: #ccc; background: none; border: none; border-right: 1px solid #444; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
-.tab-btn.active { background: #003f8a; color: #fff; }
+/* ── Controls + legend in one bar ── */
+.controls { display: flex; align-items: center; gap: 14px; padding: 7px 14px; background: #fff; border-bottom: 2px solid #003f8a; flex-shrink: 0; }
+.tab-nav { display: flex; gap: 3px; }
+.tab-btn { padding: 5px 12px; font-size: 11px; font-weight: 600; color: #555; background: #eee; border: 1px solid #ccc; border-radius: 2px; cursor: pointer; }
+.tab-btn.active { background: #003f8a; color: #fff; border-color: #003f8a; }
+.filter-cell { display: flex; flex-direction: column; gap: 3px; }
+.filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; }
+.filter-select { padding: 5px 22px 5px 8px; font-size: 11px; border: 1px solid #aaa; border-radius: 2px; appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E") no-repeat right 7px center; cursor: pointer; min-width: 160px; }
+.legend { display: flex; gap: 10px; align-items: center; margin-left: auto; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; color: #444; }
+.legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.sw-conf  { background: #4a9e72; }
+.sw-supp  { background: #c46820; }
+.sw-noisy { background: #2d6abf; }
+.legend-note { font-size: 10px; color: #777; font-style: italic; }
 
-/* ── Filter bar ── */
-.filter-bar { display: flex; flex-wrap: wrap; gap: 8px 20px; background: #fff; border-bottom: 2px solid #003f8a; padding: 8px 18px 10px; align-items: flex-end; }
-.filter-cell { display: flex; flex-direction: column; min-width: 160px; }
-.filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
-.filter-select { padding: 5px 24px 5px 8px; font-size: 12px; color: #1a1a1a; background: #fff; border: 1px solid #aaa; border-radius: 2px; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 7px center; cursor: pointer; }
+/* ── Table fills remaining height ── */
+.table-wrap { flex: 1; overflow: hidden; margin: 14px 10px; background: #fff; border: 1px solid #ccc; border-radius: 3px; display: flex; flex-direction: column; }
+.table-caption { padding: 4px 12px; background: #f0f4fa; border-bottom: 1px solid #ddd; font-size: 11px; font-weight: 700; color: #1a1a1a; flex-shrink: 0; }
 
-/* ── Legend ── */
-.legend-bar { display: flex; gap: 16px; padding: 8px 18px; background: #f5f7fa; border-bottom: 1px solid #dde1e8; flex-wrap: wrap; align-items: center; }
-.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #444; }
-.legend-swatch { width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0; }
-.sw-conf  { background: #1a5c3a; }
-.sw-supp  { background: #8a4000; }
-.sw-noisy { background: #003f8a; }
-.legend-note { font-size: 11px; color: #777; margin-left: auto; font-style: italic; }
-
-/* ── Table ── */
-.table-wrap { margin: 10px; background: #fff; border: 1px solid #ccc; border-radius: 3px; overflow-x: auto; }
-.table-caption { padding: 9px 14px; background: #f0f4fa; border-bottom: 1px solid #ddd; font-size: 12px; font-weight: 700; color: #1a1a1a; }
-
-table { width: 100%; border-collapse: collapse; min-width: 640px; }
-th { background: #e8edf5; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #444; padding: 7px 10px; text-align: right; border-bottom: 2px solid #c8d4e8; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #e8edf5; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #444; padding: 7px 10px; text-align: right; border-bottom: 2px solid #c8d4e8; white-space: nowrap; }
 th.left { text-align: left; }
-td { padding: 5px 10px; font-size: 12px; text-align: right; border-bottom: 1px solid #f0f0f0; }
+td { padding: 4px 10px; font-size: 11px; text-align: right; border-bottom: 1px solid #f0f0f0; }
 td.left { text-align: left; }
 
 /* Section header rows */
-.section-conf td  { background: #1a5c3a; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; }
-.section-supp td  { background: #8a4000; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; }
-.section-noisy td { background: #003f8a; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; }
+.section-conf td  { background: #4a9e72; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; text-align: left; }
+.section-supp td  { background: #c46820; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; text-align: left; }
+.section-noisy td { background: #2d6abf; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; text-align: left; }
 
-/* Data rows per version */
-.row-conf  td { background: #f0f8f4; }
-.row-supp  td { background: #fff8f2; }
-.row-noisy td { background: #f0f5ff; }
+/* Data rows */
+.row-conf td, .row-supp td, .row-noisy td { background: #f5f5f5; }
 
 /* NA badge */
 .na { color: #c45200; font-weight: 700; font-style: italic; }
-td:has(.na) { background: rgba(196, 82, 0, 0.12) !important; }
+td:has(.na) { background: rgba(196, 82, 0, 0.1) !important; }
 
-/* Highlight cells where noisy ≠ conf */
+/* Cells where noisy ≠ conf */
 .noisy-diff { color: #003f8a; font-weight: 700; }
-td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
+td:has(.noisy-diff) { background: #c8c8c8 !important; }
 
 /* Spacer between sections */
-.section-gap td { height: 6px; background: #dde1e8; padding: 0; border: none; }
+.section-gap td { height: 5px; background: #dde1e8; padding: 0; border: none; }
+
+/* Category group divider */
+.group-header td { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; text-align: left; border-bottom: 1px solid #ccd4e4; }
+.group-header-conf  td { background: #dff2e9; color: #1a5c3a; border-bottom-color: #b8dccb; }
+.group-header-supp  td { background: #fce8d0; color: #7a3800; border-bottom-color: #e8c8a0; }
+.group-header-noisy td { background: #d0e4f8; color: #003f8a; border-bottom-color: #a8c8f0; }
 </style>
 </head>
 <body>
 
-<div class="back-row"><a href="../">← All Demos</a></div>
-<div class="title-bar">
+<div class="header">
+  <a class="back-link" href="../">← All Demos</a>
   <div class="title-text">Early Childhood Assessment — Three-Way Data Comparison</div>
-  <div class="title-meta">School Year: <strong style="color:#fff">2022–23</strong><br>Suppression threshold: N &lt; 10</div>
+  <div class="title-meta">School Year: <strong style="color:#fff">2022–23</strong> · Suppression threshold: N &lt; 10</div>
 </div>
 
-<nav class="tab-nav" id="subjectTabs"></nav>
-
-<div class="filter-bar">
+<div class="controls">
+  <nav class="tab-nav" id="subjectTabs"></nav>
   <div class="filter-cell">
     <span class="filter-label">District</span>
     <select class="filter-select" id="districtSel" onchange="render()"></select>
@@ -87,13 +86,12 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
     <span class="filter-label">School Year</span>
     <select class="filter-select" disabled><option>2022 – 2023</option></select>
   </div>
-</div>
-
-<div class="legend-bar">
-  <div class="legend-item"><span class="legend-swatch sw-conf"></span> Confidential (true values)</div>
-  <div class="legend-item"><span class="legend-swatch sw-supp"></span> Suppressed (public release)</div>
-  <div class="legend-item"><span class="legend-swatch sw-noisy"></span> Noise-Infused (differential privacy)</div>
-  <span class="legend-note">Bold blue = value differs from confidential</span>
+  <div class="legend">
+    <div class="legend-item"><span class="legend-swatch sw-conf"></span> <span>Confidential<br>(true values)</span></div>
+    <div class="legend-item"><span class="legend-swatch sw-supp"></span> <span>Suppressed<br>(public release)</span></div>
+    <div class="legend-item"><span class="legend-swatch sw-noisy"></span> <span>Noise-Infused<br>(differential privacy)</span></div>
+    <span class="legend-note">Bold blue + darker cell = differs from confidential</span>
+  </div>
 </div>
 
 <div class="table-wrap">
@@ -102,11 +100,11 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
     <thead>
       <tr>
         <th class="left" style="width:55px">Version</th>
-        <th class="left" style="width:200px">Demographic Group</th>
-        <th>Enrolled<br>(N)</th>
-        <th>Assessed<br>(N)</th>
-        <th>Proficient<br>(N)</th>
-        <th>Proficient<br>(%)</th>
+        <th class="left" style="width:190px">Demographic Group</th>
+        <th>Enrolled</th>
+        <th>Assessed</th>
+        <th>Proficient</th>
+        <th>Proficient %</th>
       </tr>
     </thead>
     <tbody id="tableBody"></tbody>
@@ -122,14 +120,9 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
     if (num === null || !den) return '<span class="na">*</span>';
     return Math.round(num / den * 100) + '%';
   }
-  function val(v, confV, cls) {
+  function val(v, confV) {
     if (v === null) return '<span class="na">*</span>';
-    const diff = confV !== null && v !== confV;
-    return diff ? `<span class="noisy-diff">${v}</span>` : v;
-  }
-  function plain(v) {
-    if (v === null) return '<span class="na">*</span>';
-    return v;
+    return (confV !== null && v !== confV) ? `<span class="noisy-diff">${v}</span>` : v;
   }
 
   function buildTabs() {
@@ -159,6 +152,8 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
     });
   }
 
+  const STUDENT_CHARS = new Set(['Homeless', 'In Foster Care']);
+
   window.render = function () {
     const distKey = document.getElementById('districtSel').value;
     const dist = SD.txData.districts[distKey];
@@ -168,9 +163,9 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
       `${activeSubject} · ${dist.label}`;
 
     const VERSIONS = [
-      { key: 'conf',  label: 'Conf.',   rowCls: 'row-conf',  secCls: 'section-conf',  fullLabel: 'Confidential (true values)' },
-      { key: 'supp',  label: 'Supp.',   rowCls: 'row-supp',  secCls: 'section-supp',  fullLabel: 'Suppressed (public release · N < 10 → *)' },
-      { key: 'noisy', label: 'Noisy',   rowCls: 'row-noisy', secCls: 'section-noisy', fullLabel: 'Noise-Infused (differential privacy release)' },
+      { key: 'conf',  label: 'Conf.',  rowCls: 'row-conf',  secCls: 'section-conf',  fullLabel: 'Confidential<br>(true values)' },
+      { key: 'supp',  label: 'Supp.',  rowCls: 'row-supp',  secCls: 'section-supp',  fullLabel: 'Suppressed<br>(public release · N &lt; 10 → *)' },
+      { key: 'noisy', label: 'Noisy',  rowCls: 'row-noisy', secCls: 'section-noisy', fullLabel: 'Noise-Infused<br>(differential privacy release)' },
     ];
 
     let html = '';
@@ -178,23 +173,22 @@ td:has(.noisy-diff) { background: rgba(0, 63, 138, 0.1) !important; }
       if (vi > 0) html += `<tr class="section-gap"><td colspan="6"></td></tr>`;
       html += `<tr class="${ver.secCls}"><td colspan="6">${ver.fullLabel}</td></tr>`;
 
+      let lastCat = null;
       rows.forEach(row => {
-        const d = row[ver.key];
-        const c = row.conf;
-
-        const enrCell  = ver.key === 'conf' ? (d.enrolled   ?? '<span class="na">NA</span>') : val(d.enrolled,   c.enrolled,   ver.key);
-        const assCell  = ver.key === 'conf' ? (d.assessed   !== null ? d.assessed   : '<span class="na">NA</span>') : val(d.assessed,   c.assessed,   ver.key);
-        const profCell = ver.key === 'conf' ? (d.proficient !== null ? d.proficient : '<span class="na">NA</span>') : val(d.proficient, c.proficient, ver.key);
-
-        const profPctCell = pct(d.proficient, d.assessed);
-
+        const cat = STUDENT_CHARS.has(row.group) ? 'Other Demographic Groups' : 'Race / Ethnicity';
+        if (cat !== lastCat) {
+          html += `<tr class="group-header group-header-${ver.key}"><td></td><td colspan="5">${cat}</td></tr>`;
+          lastCat = cat;
+        }
+        const d = row[ver.key], c = row.conf;
+        const enr  = ver.key === 'conf' ? (d.enrolled   !== null ? d.enrolled   : '<span class="na">*</span>') : val(d.enrolled,   c.enrolled);
+        const ass  = ver.key === 'conf' ? (d.assessed   !== null ? d.assessed   : '<span class="na">*</span>') : val(d.assessed,   c.assessed);
+        const prof = ver.key === 'conf' ? (d.proficient !== null ? d.proficient : '<span class="na">*</span>') : val(d.proficient, c.proficient);
         html += `<tr class="${ver.rowCls}">
-          <td class="left" style="font-size:10px;color:#888;font-weight:600">${ver.label}</td>
+          <td class="left" style="font-size:9px;color:#888;font-weight:600">${ver.label}</td>
           <td class="left">${row.group}</td>
-          <td>${enrCell}</td>
-          <td>${assCell}</td>
-          <td>${profCell}</td>
-          <td>${profPctCell}</td>
+          <td>${enr}</td><td>${ass}</td><td>${prof}</td>
+          <td>${pct(d.proficient, d.assessed)}</td>
         </tr>`;
       });
     });
