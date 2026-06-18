@@ -10,42 +10,42 @@ html, body { height: 100%; overflow: hidden; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; display: flex; flex-direction: column; }
 
 /* ── Header ── */
-.header { background: #003f8a; padding: 10px 18px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.header { background: #003f8a; padding: 9px 18px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 .back-link { font-size: 11px; color: rgba(255,255,255,.6); text-decoration: none; flex-shrink: 0; }
 .back-link:hover { color: #fff; }
-.title-text { font-size: 14px; font-weight: 700; color: #fff; flex: 1; }
+.title-text { font-size: 15px; font-weight: 700; color: #fff; flex: 1; }
 .title-meta { font-size: 10px; color: rgba(255,255,255,.65); white-space: nowrap; }
 
 /* ── Controls + legend in one bar ── */
-.controls { display: flex; align-items: center; gap: 14px; padding: 7px 14px; background: #fff; border-bottom: 2px solid #003f8a; flex-shrink: 0; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 5px 14px; background: #fff; border-bottom: 2px solid #003f8a; flex-shrink: 0; }
 .tab-nav { display: flex; gap: 3px; }
 .tab-btn { padding: 5px 12px; font-size: 11px; font-weight: 600; color: #555; background: #eee; border: 1px solid #ccc; border-radius: 2px; cursor: pointer; }
 .tab-btn.active { background: #003f8a; color: #fff; border-color: #003f8a; }
 .filter-cell { display: flex; flex-direction: column; gap: 3px; }
 .filter-label { font-size: 10px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: .04em; }
 .filter-select { padding: 5px 22px 5px 8px; font-size: 11px; border: 1px solid #aaa; border-radius: 2px; appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2363666a'/%3E%3C/svg%3E") no-repeat right 7px center; cursor: pointer; min-width: 160px; }
-.legend { display: flex; gap: 10px; align-items: center; margin-left: auto; }
-.legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; color: #444; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; margin-left: auto; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 600; color: #444; white-space: nowrap; }
 .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 .sw-conf  { background: #4a9e72; }
 .sw-supp  { background: #c46820; }
 .sw-noisy { background: #2d6abf; }
-.legend-note { font-size: 10px; color: #777; font-style: italic; }
+.legend-note { font-size: 10px; color: #777; font-style: italic; white-space: nowrap; }
 
 /* ── Table fills remaining height ── */
-.table-wrap { flex: 1; min-height: 0; overflow: auto; margin: 14px 10px; background: #fff; border: 1px solid #ccc; border-radius: 3px; display: flex; flex-direction: column; }
-.table-caption { padding: 4px 12px; background: #f0f4fa; border-bottom: 1px solid #ddd; font-size: 11px; font-weight: 700; color: #1a1a1a; flex-shrink: 0; }
+.table-wrap { flex: 1; min-height: 0; overflow: auto; margin: 10px; background: #fff; border: 1px solid #ccc; border-radius: 3px; display: flex; flex-direction: column; }
+.table-caption { padding: 5px 12px; background: #f0f4fa; border-bottom: 1px solid #ddd; font-size: 12px; font-weight: 700; color: #1a1a1a; flex-shrink: 0; }
 
-table { width: 100%; border-collapse: collapse; }
-th { background: #e8edf5; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #444; padding: 7px 10px; text-align: right; border-bottom: 2px solid #c8d4e8; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; flex: 1; }
+th { background: #e8edf5; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #444; padding: 6px 10px; text-align: right; border-bottom: 2px solid #c8d4e8; white-space: nowrap; }
 th.left { text-align: left; }
-td { padding: 4px 10px; font-size: 11px; text-align: right; border-bottom: 1px solid #f0f0f0; }
+td { padding: 4px 10px; font-size: 12px; text-align: right; border-bottom: 1px solid #f0f0f0; }
 td.left { text-align: left; }
 
 /* Section header rows */
-.section-conf td  { background: #4a9e72; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; text-align: left; }
-.section-supp td  { background: #c46820; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; text-align: left; }
-.section-noisy td { background: #2d6abf; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 5px 10px; text-align: left; }
+.section-conf td  { background: #4a9e72; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 4px 10px; text-align: left; }
+.section-supp td  { background: #c46820; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 4px 10px; text-align: left; }
+.section-noisy td { background: #2d6abf; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 4px 10px; text-align: left; }
 
 /* Data rows */
 .row-conf td, .row-supp td, .row-noisy td { background: #f5f5f5; }
@@ -59,10 +59,10 @@ td:has(.na) { background: rgba(196, 82, 0, 0.1) !important; }
 td:has(.noisy-diff) { background: #c8c8c8 !important; }
 
 /* Spacer between sections */
-.section-gap td { height: 5px; background: #dde1e8; padding: 0; border: none; }
+.section-gap td { height: 3px; background: #dde1e8; padding: 0; border: none; }
 
 /* Category group divider */
-.group-header td { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; text-align: left; border-bottom: 1px solid #ccd4e4; }
+.group-header td { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; text-align: left; border-bottom: 1px solid #ccd4e4; }
 .group-header-conf  td { background: #dff2e9; color: #1a5c3a; border-bottom-color: #b8dccb; }
 .group-header-supp  td { background: #fce8d0; color: #7a3800; border-bottom-color: #e8c8a0; }
 .group-header-noisy td { background: #d0e4f8; color: #003f8a; border-bottom-color: #a8c8f0; }
@@ -87,10 +87,10 @@ td:has(.noisy-diff) { background: #c8c8c8 !important; }
     <select class="filter-select" disabled><option>2022 – 2023</option></select>
   </div>
   <div class="legend">
-    <div class="legend-item"><span class="legend-swatch sw-conf"></span> <span>Confidential<br>(true values)</span></div>
-    <div class="legend-item"><span class="legend-swatch sw-supp"></span> <span>Suppressed<br>(public release)</span></div>
-    <div class="legend-item"><span class="legend-swatch sw-noisy"></span> <span>Noise-Infused<br>(differential privacy)</span></div>
-    <span class="legend-note">Bold blue + darker cell = differs from confidential</span>
+    <div class="legend-item"><span class="legend-swatch sw-conf"></span> <span>Confidential (true values)</span></div>
+    <div class="legend-item"><span class="legend-swatch sw-supp"></span> <span>Suppressed (public release)</span></div>
+    <div class="legend-item"><span class="legend-swatch sw-noisy"></span> <span>Noise-Infused (differential privacy)</span></div>
+    <span class="legend-note">Bold blue text + grey cell = noisy value differs from confidential</span>
   </div>
 </div>
 
@@ -116,9 +116,12 @@ td:has(.noisy-diff) { background: #c8c8c8 !important; }
 (function () {
   let activeSubject = SD.txData.SUBJECTS[0];
 
-  function pct(num, den) {
-    if (num === null || !den) return '<span class="na">*</span>';
-    return Math.round(num / den * 100) + '%';
+  function pctNum(num, den) {
+    return (num === null || !den) ? null : Math.round(num / den * 100);
+  }
+  function pctCell(p, confP, isConf) {
+    if (p === null) return '<span class="na">*</span>';
+    return (!isConf && confP !== null && p !== confP) ? `<span class="noisy-diff">${p}%</span>` : p + '%';
   }
   function val(v, confV) {
     if (v === null) return '<span class="na">*</span>';
@@ -188,7 +191,7 @@ td:has(.noisy-diff) { background: #c8c8c8 !important; }
           <td class="left" style="font-size:9px;color:#888;font-weight:600">${ver.label}</td>
           <td class="left">${row.group}</td>
           <td>${enr}</td><td>${ass}</td><td>${prof}</td>
-          <td>${pct(d.proficient, d.assessed)}</td>
+          <td>${pctCell(pctNum(d.proficient, d.assessed), pctNum(c.proficient, c.assessed), ver.key === 'conf')}</td>
         </tr>`;
       });
     });
