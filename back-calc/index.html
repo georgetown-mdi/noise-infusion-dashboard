@@ -7,7 +7,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; overflow: hidden; }
+/* Fill the viewport on large screens; below the content floor the page scrolls instead of crushing the charts. */
+html { height: 100%; }
+body { min-height: 100vh; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #dde1e8; color: #1a1a1a; font-size: 13px; display: flex; flex-direction: column; }
 
 .back-row { background: #6b1614; padding: 4px 20px; font-size: 11px; flex-shrink: 0; }
@@ -45,7 +47,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-s
 .ms-item.all-opt { font-weight: 700; border-bottom: 1px solid #ddd; background: #fafafa; }
 
 /* ── Page body ── */
-.page-body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 8px 10px; overflow: hidden; min-height: 0; }
+.page-body { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 8px 10px; min-height: 540px; }
 
 /* Stat cards row */
 .stat-mini-row { display: flex; gap: 8px; flex-shrink: 0; }
