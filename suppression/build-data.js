@@ -4,7 +4,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const CSV_PATH   = path.join(__dirname, 'fake_texas_data_v2.csv');
+const CSV_PATH   = path.join(__dirname, 'fake_texas_data_v3.csv');
 const NAMES_PATH = path.join(__dirname, 'district_names.csv');
 const OUT_PATH   = path.join(__dirname, 'data.js');
 

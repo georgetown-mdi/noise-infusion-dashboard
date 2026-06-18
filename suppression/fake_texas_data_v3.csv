@@ -1,0 +1,2449 @@
+DIST_CODE,ASSESSMENT SUBJECT,DATA_CATEGORY_GROUP,DATA_CATEGORY,ECDS_REPORTED,BOTH_BOY_EOY_ASSESSED,MATCH_PROFICIENT_EOY,ECDS_REPORTED_suppress,BOTH_BOY_EOY_ASSESSED_suppress,MATCH_PROFICIENT_EOY_suppress,ECDS_REPORTED_noisy_pp,BOTH_BOY_EOY_ASSESSED_noisy_pp,MATCH_PROFICIENT_EOY_noisy_pp
+014906,Reading,Race/Ethnicity,Black or African American,837,618,508,837,618,508,838,620,508
+014906,Reading,Race/Ethnicity,Hispanic/Latino,921,682,567,921,682,567,921,682,568
+014906,Reading,Race/Ethnicity,Other,346,263,233,346,263,233,346,263,232
+014906,Reading,Race/Ethnicity,White,369,260,224,369,260,224,367,259,224
+014906,Reading,Homeless,Homeless,50,19,19,50,19,19,49,19,18
+014906,Reading,In Foster Care,In Foster Care,43,25,22,43,25,22,45,25,23
+014906,Writing,Race/Ethnicity,Black or African American,837,624,550,837,624,550,838,624,550
+014906,Writing,Race/Ethnicity,Hispanic/Latino,921,681,631,921,681,631,921,681,630
+014906,Writing,Race/Ethnicity,Other,346,265,244,346,265,244,346,266,244
+014906,Writing,Race/Ethnicity,White,369,259,242,369,259,242,367,258,242
+014906,Writing,Homeless,Homeless,50,21,21,50,21,21,49,22,22
+014906,Writing,In Foster Care,In Foster Care,43,25,19,43,25,19,45,26,20
+014906,Health,Race/Ethnicity,Black or African American,837,621,535,837,621,535,838,623,537
+014906,Health,Race/Ethnicity,Hispanic/Latino,921,680,605,921,680,605,921,680,605
+014906,Health,Race/Ethnicity,Other,346,265,237,346,265,237,346,265,236
+014906,Health,Race/Ethnicity,White,369,259,229,369,259,229,367,257,228
+014906,Health,Homeless,Homeless,50,21,21,50,21,21,49,20,20
+014906,Health,In Foster Care,In Foster Care,43,25,21,43,25,21,45,26,21
+014906,Mathematics,Race/Ethnicity,Black or African American,837,618,557,837,618,557,838,619,555
+014906,Mathematics,Race/Ethnicity,Hispanic/Latino,921,682,625,921,682,625,921,683,625
+014906,Mathematics,Race/Ethnicity,Other,346,263,249,346,263,249,346,263,247
+014906,Mathematics,Race/Ethnicity,White,369,260,248,369,260,248,367,258,247
+014906,Mathematics,Homeless,Homeless,50,20,20,50,20,20,49,20,20
+014906,Mathematics,In Foster Care,In Foster Care,43,25,24,43,25,24,45,27,24
+015822,Reading,Race/Ethnicity,Black or African American,9,9,9,NA,NA,NA,8,8,8
+015822,Reading,Race/Ethnicity,Hispanic/Latino,351,270,244,351,270,244,352,269,244
+015822,Reading,Race/Ethnicity,Other,16,7,7,16,NA,NA,15,7,6
+015822,Reading,Race/Ethnicity,White,11,6,6,NA,NA,NA,12,7,7
+015822,Reading,Homeless,Homeless,11,6,6,11,NA,NA,13,6,4
+015822,Reading,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,4,2
+015822,Writing,Race/Ethnicity,Black or African American,9,9,8,NA,NA,NA,8,9,6
+015822,Writing,Race/Ethnicity,Hispanic/Latino,351,271,262,351,271,262,352,272,262
+015822,Writing,Race/Ethnicity,Other,16,8,8,16,NA,NA,15,7,6
+015822,Writing,Race/Ethnicity,White,11,6,6,NA,NA,NA,12,7,5
+015822,Writing,Homeless,Homeless,11,6,6,11,NA,NA,13,5,5
+015822,Writing,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,5,2,2
+015822,Health,Race/Ethnicity,Black or African American,9,9,8,NA,NA,NA,8,8,6
+015822,Health,Race/Ethnicity,Hispanic/Latino,351,271,262,351,271,262,352,271,263
+015822,Health,Race/Ethnicity,Other,16,12,8,16,12,NA,15,13,9
+015822,Health,Race/Ethnicity,White,11,6,6,NA,NA,NA,12,6,5
+015822,Health,Homeless,Homeless,11,6,6,11,NA,NA,13,5,5
+015822,Health,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,3,0
+015822,Mathematics,Race/Ethnicity,Black or African American,9,9,8,NA,NA,NA,8,9,8
+015822,Mathematics,Race/Ethnicity,Hispanic/Latino,351,268,253,351,268,253,352,269,254
+015822,Mathematics,Race/Ethnicity,Other,16,7,7,16,NA,NA,15,6,6
+015822,Mathematics,Race/Ethnicity,White,11,6,6,NA,NA,NA,12,5,4
+015822,Mathematics,Homeless,Homeless,11,6,6,11,NA,NA,13,6,5
+015822,Mathematics,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,2,2
+015828,Reading,Race/Ethnicity,Black or African American,45,36,24,45,36,24,44,34,23
+015828,Reading,Race/Ethnicity,Hispanic/Latino,140,99,72,140,99,72,140,98,71
+015828,Reading,Race/Ethnicity,Other,16,11,11,16,11,11,16,12,12
+015828,Reading,Race/Ethnicity,White,24,21,15,24,21,15,25,21,14
+015828,Reading,Homeless,Homeless,8,5,4,NA,NA,NA,8,7,6
+015828,Reading,In Foster Care,In Foster Care,3,1,1,NA,NA,NA,5,1,1
+015828,Writing,Race/Ethnicity,Black or African American,45,36,21,45,36,21,44,37,20
+015828,Writing,Race/Ethnicity,Hispanic/Latino,140,100,91,140,100,91,140,102,92
+015828,Writing,Race/Ethnicity,Other,16,11,11,16,11,11,16,10,10
+015828,Writing,Race/Ethnicity,White,24,21,21,24,21,21,25,20,20
+015828,Writing,Homeless,Homeless,8,5,4,NA,NA,NA,8,5,2
+015828,Writing,In Foster Care,In Foster Care,3,1,1,NA,NA,NA,5,1,1
+015828,Health,Race/Ethnicity,Black or African American,45,36,19,45,36,19,44,36,19
+015828,Health,Race/Ethnicity,Hispanic/Latino,140,100,92,140,100,92,140,100,90
+015828,Health,Race/Ethnicity,Other,16,11,11,16,11,11,16,9,9
+015828,Health,Race/Ethnicity,White,24,21,21,24,21,21,25,21,20
+015828,Health,Homeless,Homeless,8,5,5,NA,NA,NA,8,5,5
+015828,Health,In Foster Care,In Foster Care,3,2,1,NA,NA,NA,5,3,0
+015828,Mathematics,Race/Ethnicity,Black or African American,45,36,36,45,36,36,44,38,35
+015828,Mathematics,Race/Ethnicity,Hispanic/Latino,140,100,92,140,100,92,140,99,91
+015828,Mathematics,Race/Ethnicity,Other,16,11,11,16,11,11,16,10,9
+015828,Mathematics,Race/Ethnicity,White,24,21,21,24,21,21,25,23,19
+015828,Mathematics,Homeless,Homeless,8,5,5,NA,NA,NA,8,5,5
+015828,Mathematics,In Foster Care,In Foster Care,3,1,1,NA,NA,NA,5,2,0
+015907,Reading,Race/Ethnicity,Black or African American,189,134,105,189,134,105,187,134,106
+015907,Reading,Race/Ethnicity,Hispanic/Latino,2421,1984,1510,2421,1984,1510,2419,1986,1510
+015907,Reading,Race/Ethnicity,Other,46,37,32,46,37,32,44,38,33
+015907,Reading,Race/Ethnicity,White,109,79,65,109,79,65,109,78,66
+015907,Reading,Homeless,Homeless,267,195,136,267,195,136,265,196,135
+015907,Reading,In Foster Care,In Foster Care,12,5,5,12,NA,NA,12,6,5
+015907,Writing,Race/Ethnicity,Black or African American,189,134,112,189,134,112,187,134,111
+015907,Writing,Race/Ethnicity,Hispanic/Latino,2421,1975,1664,2421,1975,1664,2419,1976,1663
+015907,Writing,Race/Ethnicity,Other,46,37,32,46,37,32,44,37,32
+015907,Writing,Race/Ethnicity,White,109,80,71,109,80,71,109,79,71
+015907,Writing,Homeless,Homeless,267,196,157,267,196,157,265,196,160
+015907,Writing,In Foster Care,In Foster Care,12,5,5,12,NA,NA,12,4,4
+015907,Health,Race/Ethnicity,Black or African American,189,134,106,189,134,106,187,134,105
+015907,Health,Race/Ethnicity,Hispanic/Latino,2421,1988,1767,2421,1988,1767,2419,1989,1765
+015907,Health,Race/Ethnicity,Other,46,37,34,46,37,34,44,36,35
+015907,Health,Race/Ethnicity,White,109,80,71,109,80,71,109,78,72
+015907,Health,Homeless,Homeless,267,196,173,267,196,173,265,197,171
+015907,Health,In Foster Care,In Foster Care,12,5,5,12,NA,NA,12,6,6
+015907,Mathematics,Race/Ethnicity,Black or African American,189,134,115,189,134,115,187,136,114
+015907,Mathematics,Race/Ethnicity,Hispanic/Latino,2421,1979,1729,2421,1979,1729,2419,1977,1729
+015907,Mathematics,Race/Ethnicity,Other,46,37,34,46,37,34,44,37,34
+015907,Mathematics,Race/Ethnicity,White,109,78,71,109,78,71,109,79,71
+015907,Mathematics,Homeless,Homeless,267,195,170,267,195,170,265,196,168
+015907,Mathematics,In Foster Care,In Foster Care,12,5,5,12,NA,NA,12,6,4
+015910,Reading,Race/Ethnicity,Black or African American,164,107,85,164,107,85,165,108,85
+015910,Reading,Race/Ethnicity,Hispanic/Latino,1376,1029,805,1376,1029,805,1375,1028,804
+015910,Reading,Race/Ethnicity,Other,153,128,114,153,128,114,153,128,114
+015910,Reading,Race/Ethnicity,White,260,197,171,260,197,171,261,196,170
+015910,Reading,Homeless,Homeless,50,27,12,50,27,12,49,26,13
+015910,Reading,In Foster Care,In Foster Care,23,14,10,23,14,10,23,12,10
+015910,Writing,Race/Ethnicity,Black or African American,164,107,92,164,107,92,165,108,92
+015910,Writing,Race/Ethnicity,Hispanic/Latino,1376,1050,927,1376,1050,927,1375,1051,929
+015910,Writing,Race/Ethnicity,Other,153,130,121,153,130,121,153,130,120
+015910,Writing,Race/Ethnicity,White,260,199,188,260,199,188,261,199,188
+015910,Writing,Homeless,Homeless,50,27,22,50,27,22,49,27,23
+015910,Writing,In Foster Care,In Foster Care,23,14,12,23,14,12,23,15,12
+015910,Health,Race/Ethnicity,Black or African American,164,107,92,164,107,92,165,106,91
+015910,Health,Race/Ethnicity,Hispanic/Latino,1376,1050,956,1376,1050,956,1375,1049,957
+015910,Health,Race/Ethnicity,Other,153,128,120,153,128,120,153,128,120
+015910,Health,Race/Ethnicity,White,260,199,194,260,199,194,261,199,194
+015910,Health,Homeless,Homeless,50,27,27,50,27,27,49,27,26
+015910,Health,In Foster Care,In Foster Care,23,14,12,23,14,12,23,14,11
+015910,Mathematics,Race/Ethnicity,Black or African American,164,106,100,164,106,100,165,106,99
+015910,Mathematics,Race/Ethnicity,Hispanic/Latino,1376,1034,947,1376,1034,947,1375,1032,947
+015910,Mathematics,Race/Ethnicity,Other,153,129,126,153,129,126,153,130,126
+015910,Mathematics,Race/Ethnicity,White,260,197,186,260,197,186,261,200,186
+015910,Mathematics,Homeless,Homeless,50,27,27,50,27,27,49,26,26
+015910,Mathematics,In Foster Care,In Foster Care,23,14,14,23,14,14,23,15,14
+015911,Reading,Race/Ethnicity,Black or African American,75,61,45,75,61,45,76,62,44
+015911,Reading,Race/Ethnicity,Hispanic/Latino,458,361,276,458,361,276,457,360,276
+015911,Reading,Race/Ethnicity,Other,35,22,22,35,22,22,36,22,22
+015911,Reading,Race/Ethnicity,White,70,58,44,70,58,44,70,56,44
+015911,Reading,Homeless,Homeless,24,16,11,24,16,11,25,15,10
+015911,Reading,In Foster Care,In Foster Care,13,6,3,13,NA,NA,12,5,4
+015911,Writing,Race/Ethnicity,Black or African American,75,61,47,75,61,47,76,63,46
+015911,Writing,Race/Ethnicity,Hispanic/Latino,458,357,312,458,357,312,457,358,309
+015911,Writing,Race/Ethnicity,Other,35,22,21,35,22,21,36,23,21
+015911,Writing,Race/Ethnicity,White,70,59,53,70,59,53,70,60,54
+015911,Writing,Homeless,Homeless,24,16,12,24,16,12,25,17,13
+015911,Writing,In Foster Care,In Foster Care,13,6,6,13,NA,NA,12,8,6
+015911,Health,Race/Ethnicity,Black or African American,75,61,53,75,61,53,76,62,51
+015911,Health,Race/Ethnicity,Hispanic/Latino,458,358,313,458,358,313,457,359,314
+015911,Health,Race/Ethnicity,Other,35,21,19,35,21,19,36,21,20
+015911,Health,Race/Ethnicity,White,70,59,53,70,59,53,70,59,54
+015911,Health,Homeless,Homeless,24,16,13,24,16,13,25,16,13
+015911,Health,In Foster Care,In Foster Care,13,6,4,13,NA,NA,12,6,5
+015911,Mathematics,Race/Ethnicity,Black or African American,75,61,52,75,61,52,76,62,52
+015911,Mathematics,Race/Ethnicity,Hispanic/Latino,458,357,310,458,357,310,457,356,309
+015911,Mathematics,Race/Ethnicity,Other,35,22,20,35,22,20,36,21,20
+015911,Mathematics,Race/Ethnicity,White,70,60,54,70,60,54,70,60,54
+015911,Mathematics,Homeless,Homeless,24,16,13,24,16,13,25,17,14
+015911,Mathematics,In Foster Care,In Foster Care,13,6,4,13,NA,NA,12,9,5
+015912,Reading,Race/Ethnicity,Black or African American,48,32,7,48,32,NA,47,32,7
+015912,Reading,Race/Ethnicity,Hispanic/Latino,686,402,62,686,402,62,687,402,62
+015912,Reading,Race/Ethnicity,Other,23,15,2,23,15,NA,23,15,2
+015912,Reading,Race/Ethnicity,White,44,29,4,44,29,NA,44,27,4
+015912,Reading,Homeless,Homeless,41,18,2,41,18,NA,41,17,1
+015912,Reading,In Foster Care,In Foster Care,10,4,1,10,NA,NA,9,3,0
+015912,Writing,Race/Ethnicity,Black or African American,48,35,11,48,35,11,47,34,9
+015912,Writing,Race/Ethnicity,Hispanic/Latino,686,413,100,686,413,100,687,412,98
+015912,Writing,Race/Ethnicity,Other,23,17,7,23,17,NA,23,15,7
+015912,Writing,Race/Ethnicity,White,44,29,7,44,29,NA,44,29,7
+015912,Writing,Homeless,Homeless,41,19,4,41,19,NA,41,18,3
+015912,Writing,In Foster Care,In Foster Care,10,4,1,10,NA,NA,9,5,0
+015912,Health,Race/Ethnicity,Black or African American,48,35,8,48,35,NA,47,36,9
+015912,Health,Race/Ethnicity,Hispanic/Latino,686,418,129,686,418,129,687,418,130
+015912,Health,Race/Ethnicity,Other,23,17,7,23,17,NA,23,18,9
+015912,Health,Race/Ethnicity,White,44,29,9,44,29,NA,44,27,9
+015912,Health,Homeless,Homeless,41,19,5,41,19,NA,41,20,4
+015912,Health,In Foster Care,In Foster Care,10,4,1,10,NA,NA,9,3,1
+015912,Mathematics,Race/Ethnicity,Black or African American,48,35,5,48,35,NA,47,36,6
+015912,Mathematics,Race/Ethnicity,Hispanic/Latino,686,401,47,686,401,47,687,400,48
+015912,Mathematics,Race/Ethnicity,Other,23,17,3,23,17,NA,23,17,4
+015912,Mathematics,Race/Ethnicity,White,44,29,4,44,29,NA,44,29,4
+015912,Mathematics,Homeless,Homeless,41,19,2,41,19,NA,41,19,0
+015912,Mathematics,In Foster Care,In Foster Care,10,4,1,10,NA,NA,9,6,3
+015915,Reading,Race/Ethnicity,Black or African American,289,223,189,289,223,189,289,221,190
+015915,Reading,Race/Ethnicity,Hispanic/Latino,2356,1961,1498,2356,1961,1498,2355,1961,1497
+015915,Reading,Race/Ethnicity,Other,361,302,246,361,302,246,363,301,245
+015915,Reading,Race/Ethnicity,White,339,252,198,339,252,198,339,252,198
+015915,Reading,Homeless,Homeless,127,85,60,127,85,60,128,85,60
+015915,Reading,In Foster Care,In Foster Care,70,44,35,70,44,35,70,45,37
+015915,Writing,Race/Ethnicity,Black or African American,289,221,189,289,221,189,289,221,189
+015915,Writing,Race/Ethnicity,Hispanic/Latino,2356,1919,1677,2356,1919,1677,2355,1919,1678
+015915,Writing,Race/Ethnicity,Other,361,298,267,361,298,267,363,298,266
+015915,Writing,Race/Ethnicity,White,339,247,225,339,247,225,339,248,225
+015915,Writing,Homeless,Homeless,127,82,69,127,82,69,128,81,70
+015915,Writing,In Foster Care,In Foster Care,70,42,37,70,42,37,70,40,38
+015915,Health,Race/Ethnicity,Black or African American,289,218,192,289,218,192,289,217,190
+015915,Health,Race/Ethnicity,Hispanic/Latino,2356,1872,1712,2356,1872,1712,2355,1872,1713
+015915,Health,Race/Ethnicity,Other,361,297,273,361,297,273,363,296,274
+015915,Health,Race/Ethnicity,White,339,245,228,339,245,228,339,246,227
+015915,Health,Homeless,Homeless,127,82,72,127,82,72,128,83,72
+015915,Health,In Foster Care,In Foster Care,70,42,37,70,42,37,70,43,35
+015915,Mathematics,Race/Ethnicity,Black or African American,289,222,205,289,222,205,289,222,204
+015915,Mathematics,Race/Ethnicity,Hispanic/Latino,2356,1943,1731,2356,1943,1731,2355,1941,1730
+015915,Mathematics,Race/Ethnicity,Other,361,299,254,361,299,254,363,297,253
+015915,Mathematics,Race/Ethnicity,White,339,251,236,339,251,236,339,250,234
+015915,Mathematics,Homeless,Homeless,127,83,71,127,83,71,128,82,72
+015915,Mathematics,In Foster Care,In Foster Care,70,42,23,70,42,23,70,43,22
+015916,Reading,Race/Ethnicity,Black or African American,267,198,151,267,198,151,267,199,150
+015916,Reading,Race/Ethnicity,Hispanic/Latino,683,550,436,683,550,436,684,549,436
+015916,Reading,Race/Ethnicity,Other,68,54,49,68,54,49,69,53,49
+015916,Reading,Race/Ethnicity,White,116,91,76,116,91,76,115,92,75
+015916,Reading,Homeless,Homeless,30,13,13,30,13,13,30,11,11
+015916,Reading,In Foster Care,In Foster Care,18,6,6,18,NA,NA,16,6,6
+015916,Writing,Race/Ethnicity,Black or African American,267,192,153,267,192,153,267,192,153
+015916,Writing,Race/Ethnicity,Hispanic/Latino,683,547,492,683,547,492,684,547,489
+015916,Writing,Race/Ethnicity,Other,68,54,50,68,54,50,69,55,49
+015916,Writing,Race/Ethnicity,White,116,91,78,116,91,78,115,92,78
+015916,Writing,Homeless,Homeless,30,13,13,30,13,13,30,12,12
+015916,Writing,In Foster Care,In Foster Care,18,6,6,18,NA,NA,16,6,6
+015916,Health,Race/Ethnicity,Black or African American,267,112,97,267,112,97,267,110,97
+015916,Health,Race/Ethnicity,Hispanic/Latino,683,281,260,683,281,260,684,282,260
+015916,Health,Race/Ethnicity,Other,68,28,27,68,28,27,69,27,27
+015916,Health,Race/Ethnicity,White,116,38,31,116,38,31,115,38,33
+015916,Health,Homeless,Homeless,30,8,8,30,NA,NA,30,7,7
+015916,Health,In Foster Care,In Foster Care,18,4,4,18,NA,NA,16,3,3
+015916,Mathematics,Race/Ethnicity,Black or African American,267,196,167,267,196,167,267,195,168
+015916,Mathematics,Race/Ethnicity,Hispanic/Latino,683,549,486,683,549,486,684,549,485
+015916,Mathematics,Race/Ethnicity,Other,68,53,48,68,53,48,69,54,48
+015916,Mathematics,Race/Ethnicity,White,116,92,82,116,92,82,115,93,81
+015916,Mathematics,Homeless,Homeless,30,13,13,30,13,13,30,11,11
+015916,Mathematics,In Foster Care,In Foster Care,18,6,6,18,NA,NA,16,7,2
+015917,Reading,Race/Ethnicity,Black or African American,12,5,3,NA,NA,NA,11,4,4
+015917,Reading,Race/Ethnicity,Hispanic/Latino,340,291,221,340,291,221,342,289,220
+015917,Reading,Race/Ethnicity,Other,3,2,2,NA,NA,NA,4,1,1
+015917,Reading,Race/Ethnicity,White,21,19,13,21,19,13,19,19,12
+015917,Reading,Homeless,Homeless,8,7,7,NA,NA,NA,8,8,7
+015917,Reading,In Foster Care,In Foster Care,8,6,2,NA,NA,NA,9,6,0
+015917,Writing,Race/Ethnicity,Black or African American,12,5,5,NA,NA,NA,11,6,4
+015917,Writing,Race/Ethnicity,Hispanic/Latino,340,289,250,340,289,250,342,292,249
+015917,Writing,Race/Ethnicity,Other,6,6,6,NA,NA,NA,4,4,4
+015917,Writing,Race/Ethnicity,White,21,19,10,21,19,10,19,19,8
+015917,Writing,Homeless,Homeless,8,7,7,NA,NA,NA,8,5,5
+015917,Writing,In Foster Care,In Foster Care,8,6,2,NA,NA,NA,9,6,2
+015917,Health,Race/Ethnicity,Black or African American,12,6,6,NA,NA,NA,11,6,5
+015917,Health,Race/Ethnicity,Hispanic/Latino,340,288,263,340,288,263,342,288,261
+015917,Health,Race/Ethnicity,Other,6,6,6,NA,NA,NA,4,5,5
+015917,Health,Race/Ethnicity,White,21,19,9,21,19,NA,19,19,9
+015917,Health,Homeless,Homeless,8,6,6,NA,NA,NA,8,6,5
+015917,Health,In Foster Care,In Foster Care,8,6,2,NA,NA,NA,9,6,2
+015917,Mathematics,Race/Ethnicity,Black or African American,12,5,5,NA,NA,NA,11,5,5
+015917,Mathematics,Race/Ethnicity,Hispanic/Latino,340,283,251,340,283,251,342,284,249
+015917,Mathematics,Race/Ethnicity,Other,5,5,5,NA,NA,NA,4,4,4
+015917,Mathematics,Race/Ethnicity,White,21,18,9,21,18,NA,19,19,9
+015917,Mathematics,Homeless,Homeless,8,7,7,NA,NA,NA,8,8,8
+015917,Mathematics,In Foster Care,In Foster Care,8,6,6,NA,NA,NA,9,5,5
+020901,Reading,Race/Ethnicity,Black or African American,202,156,137,202,156,137,204,154,138
+020901,Reading,Race/Ethnicity,Hispanic/Latino,430,356,313,430,356,313,430,355,314
+020901,Reading,Race/Ethnicity,Other,112,96,89,112,96,89,111,96,90
+020901,Reading,Race/Ethnicity,White,113,87,81,113,87,81,113,86,81
+020901,Reading,Homeless,Homeless,28,12,12,28,12,12,28,12,12
+020901,Reading,In Foster Care,In Foster Care,30,11,2,30,11,NA,29,11,2
+020901,Writing,Race/Ethnicity,Black or African American,202,156,144,202,156,144,204,157,145
+020901,Writing,Race/Ethnicity,Hispanic/Latino,430,357,333,430,357,333,430,358,331
+020901,Writing,Race/Ethnicity,Other,112,96,96,112,96,96,111,95,95
+020901,Writing,Race/Ethnicity,White,113,87,76,113,87,76,113,89,76
+020901,Writing,Homeless,Homeless,28,12,12,28,12,12,28,12,12
+020901,Writing,In Foster Care,In Foster Care,30,11,3,30,11,NA,29,11,6
+020901,Health,Race/Ethnicity,Black or African American,202,148,137,202,148,137,204,148,139
+020901,Health,Race/Ethnicity,Hispanic/Latino,430,349,319,430,349,319,430,349,319
+020901,Health,Race/Ethnicity,Other,112,85,78,112,85,78,111,81,79
+020901,Health,Race/Ethnicity,White,113,86,78,113,86,78,113,86,78
+020901,Health,Homeless,Homeless,28,12,12,28,12,12,28,10,10
+020901,Health,In Foster Care,In Foster Care,30,11,2,30,11,NA,29,12,1
+020901,Mathematics,Race/Ethnicity,Black or African American,202,156,147,202,156,147,204,155,147
+020901,Mathematics,Race/Ethnicity,Hispanic/Latino,430,355,336,430,355,336,430,357,335
+020901,Mathematics,Race/Ethnicity,Other,112,95,95,112,95,95,111,97,93
+020901,Mathematics,Race/Ethnicity,White,113,87,77,113,87,77,113,86,80
+020901,Mathematics,Homeless,Homeless,28,12,12,28,12,12,28,10,10
+020901,Mathematics,In Foster Care,In Foster Care,30,11,3,30,11,NA,29,11,3
+020902,Reading,Race/Ethnicity,Black or African American,58,37,11,58,37,NA,58,38,13
+020902,Reading,Race/Ethnicity,Hispanic/Latino,176,141,34,176,141,34,175,141,33
+020902,Reading,Race/Ethnicity,Other,21,15,4,21,15,NA,22,17,5
+020902,Reading,Race/Ethnicity,White,50,39,15,50,39,15,49,40,16
+020902,Reading,Homeless,Homeless,12,6,2,12,NA,NA,15,6,3
+020902,Reading,In Foster Care,In Foster Care,2,1,0,NA,NA,NA,5,2,0
+020902,Writing,Race/Ethnicity,Black or African American,58,37,15,58,37,NA,58,38,17
+020902,Writing,Race/Ethnicity,Hispanic/Latino,176,141,20,176,141,20,175,141,20
+020902,Writing,Race/Ethnicity,Other,21,15,6,21,15,NA,22,15,7
+020902,Writing,Race/Ethnicity,White,50,39,15,50,39,15,49,40,14
+020902,Writing,Homeless,Homeless,12,6,2,12,NA,NA,15,5,3
+020902,Writing,In Foster Care,In Foster Care,2,1,0,NA,NA,NA,5,1,0
+020902,Health,Race/Ethnicity,Black or African American,58,37,17,58,37,NA,58,39,17
+020902,Health,Race/Ethnicity,Hispanic/Latino,176,141,55,176,141,55,175,141,56
+020902,Health,Race/Ethnicity,Other,21,15,6,21,15,NA,22,14,6
+020902,Health,Race/Ethnicity,White,50,39,22,50,39,22,49,41,22
+020902,Health,Homeless,Homeless,12,6,3,12,NA,NA,15,5,4
+020902,Health,In Foster Care,In Foster Care,2,1,0,NA,NA,NA,5,1,0
+020902,Mathematics,Race/Ethnicity,Black or African American,58,37,10,58,37,NA,58,37,13
+020902,Mathematics,Race/Ethnicity,Hispanic/Latino,176,141,32,176,141,32,175,141,32
+020902,Mathematics,Race/Ethnicity,Other,21,15,3,21,15,NA,22,15,4
+020902,Mathematics,Race/Ethnicity,White,50,39,10,50,39,10,49,39,9
+020902,Mathematics,Homeless,Homeless,12,6,2,12,NA,NA,15,6,3
+020902,Mathematics,In Foster Care,In Foster Care,2,1,0,NA,NA,NA,5,1,0
+020908,Reading,Race/Ethnicity,Black or African American,91,66,56,91,66,56,90,67,55
+020908,Reading,Race/Ethnicity,Hispanic/Latino,236,206,167,236,206,167,235,207,167
+020908,Reading,Race/Ethnicity,Other,92,79,73,92,79,73,91,80,74
+020908,Reading,Race/Ethnicity,White,76,64,51,76,64,51,77,64,51
+020908,Reading,Homeless,Homeless,15,9,9,15,NA,NA,14,10,7
+020908,Reading,In Foster Care,In Foster Care,8,2,1,NA,NA,NA,9,3,0
+020908,Writing,Race/Ethnicity,Black or African American,91,66,57,91,66,57,90,64,57
+020908,Writing,Race/Ethnicity,Hispanic/Latino,236,206,171,236,206,171,235,205,172
+020908,Writing,Race/Ethnicity,Other,92,76,70,92,76,70,91,78,71
+020908,Writing,Race/Ethnicity,White,76,63,52,76,63,52,77,64,55
+020908,Writing,Homeless,Homeless,15,9,9,15,NA,NA,14,10,7
+020908,Writing,In Foster Care,In Foster Care,8,2,1,NA,NA,NA,9,2,1
+020908,Health,Race/Ethnicity,Black or African American,91,66,56,91,66,56,90,65,55
+020908,Health,Race/Ethnicity,Hispanic/Latino,236,206,184,236,206,184,235,206,183
+020908,Health,Race/Ethnicity,Other,92,75,67,92,75,67,91,74,67
+020908,Health,Race/Ethnicity,White,76,64,48,76,64,48,77,63,46
+020908,Health,Homeless,Homeless,15,9,9,15,NA,NA,14,9,9
+020908,Health,In Foster Care,In Foster Care,8,2,1,NA,NA,NA,9,1,1
+020908,Mathematics,Race/Ethnicity,Black or African American,91,65,65,91,65,65,90,66,65
+020908,Mathematics,Race/Ethnicity,Hispanic/Latino,236,205,182,236,205,182,235,205,180
+020908,Mathematics,Race/Ethnicity,Other,92,79,48,92,79,48,91,80,49
+020908,Mathematics,Race/Ethnicity,White,76,64,58,76,64,58,77,63,59
+020908,Mathematics,Homeless,Homeless,15,9,9,15,NA,NA,14,8,8
+020908,Mathematics,In Foster Care,In Foster Care,8,2,1,NA,NA,NA,9,2,1
+021902,Reading,Race/Ethnicity,Black or African American,161,123,71,161,123,71,162,123,70
+021902,Reading,Race/Ethnicity,Hispanic/Latino,505,447,338,505,447,338,504,445,338
+021902,Reading,Race/Ethnicity,Other,32,23,16,32,23,16,33,23,16
+021902,Reading,Race/Ethnicity,White,96,83,61,96,83,61,93,84,63
+021902,Reading,Homeless,Homeless,21,12,6,21,12,NA,23,11,5
+021902,Reading,In Foster Care,In Foster Care,11,6,3,11,NA,NA,12,7,3
+021902,Writing,Race/Ethnicity,Black or African American,161,126,106,161,126,106,162,128,106
+021902,Writing,Race/Ethnicity,Hispanic/Latino,505,447,358,505,447,358,504,448,358
+021902,Writing,Race/Ethnicity,Other,32,24,23,32,24,23,33,25,25
+021902,Writing,Race/Ethnicity,White,96,83,76,96,83,76,93,84,76
+021902,Writing,Homeless,Homeless,21,12,12,21,12,12,23,12,12
+021902,Writing,In Foster Care,In Foster Care,11,7,4,11,NA,NA,12,7,5
+021902,Health,Race/Ethnicity,Black or African American,161,126,99,161,126,99,162,126,100
+021902,Health,Race/Ethnicity,Hispanic/Latino,505,447,410,505,447,410,504,449,411
+021902,Health,Race/Ethnicity,Other,32,23,15,32,23,15,33,23,16
+021902,Health,Race/Ethnicity,White,96,83,83,96,83,83,93,82,81
+021902,Health,Homeless,Homeless,21,12,6,21,12,NA,23,12,6
+021902,Health,In Foster Care,In Foster Care,11,7,4,11,NA,NA,12,8,3
+021902,Mathematics,Race/Ethnicity,Black or African American,161,124,99,161,124,99,162,125,100
+021902,Mathematics,Race/Ethnicity,Hispanic/Latino,505,448,375,505,448,375,504,448,373
+021902,Mathematics,Race/Ethnicity,Other,32,23,15,32,23,15,33,22,17
+021902,Mathematics,Race/Ethnicity,White,96,83,83,96,83,83,93,84,84
+021902,Mathematics,Homeless,Homeless,21,12,12,21,12,12,23,15,14
+021902,Mathematics,In Foster Care,In Foster Care,11,6,4,11,NA,NA,12,8,4
+031903,Reading,Race/Ethnicity,Black or African American,5,3,3,NA,NA,NA,4,4,3
+031903,Reading,Race/Ethnicity,Hispanic/Latino,920,768,685,920,768,685,919,769,685
+031903,Reading,Race/Ethnicity,Other,5,5,3,NA,NA,NA,4,4,4
+031903,Reading,Race/Ethnicity,White,30,27,20,30,27,20,28,27,20
+031903,Reading,Homeless,Homeless,19,12,10,19,12,10,20,10,9
+031903,Reading,In Foster Care,In Foster Care,9,1,1,NA,NA,NA,9,1,1
+031903,Writing,Race/Ethnicity,Black or African American,5,5,5,NA,NA,NA,4,3,3
+031903,Writing,Race/Ethnicity,Hispanic/Latino,920,755,695,920,755,695,919,755,696
+031903,Writing,Race/Ethnicity,Other,5,5,3,NA,NA,NA,4,5,1
+031903,Writing,Race/Ethnicity,White,30,27,21,30,27,21,28,28,23
+031903,Writing,Homeless,Homeless,19,11,10,19,11,10,20,11,11
+031903,Writing,In Foster Care,In Foster Care,9,5,5,NA,NA,NA,9,5,5
+031903,Health,Race/Ethnicity,Black or African American,5,5,2,NA,NA,NA,4,3,2
+031903,Health,Race/Ethnicity,Hispanic/Latino,920,755,681,920,755,681,919,754,682
+031903,Health,Race/Ethnicity,Other,6,6,6,NA,NA,NA,4,4,4
+031903,Health,Race/Ethnicity,White,30,27,22,30,27,22,28,28,23
+031903,Health,Homeless,Homeless,19,11,9,19,11,NA,20,13,9
+031903,Health,In Foster Care,In Foster Care,9,5,5,NA,NA,NA,9,5,5
+031903,Mathematics,Race/Ethnicity,Black or African American,5,5,5,NA,NA,NA,4,4,4
+031903,Mathematics,Race/Ethnicity,Hispanic/Latino,920,769,727,920,769,727,919,767,727
+031903,Mathematics,Race/Ethnicity,Other,5,4,3,NA,NA,NA,4,4,3
+031903,Mathematics,Race/Ethnicity,White,30,26,20,30,26,20,28,26,19
+031903,Mathematics,Homeless,Homeless,19,12,11,19,12,11,20,13,9
+031903,Mathematics,In Foster Care,In Foster Care,9,5,5,NA,NA,NA,9,4,4
+037904,Reading,Race/Ethnicity,Black or African American,44,39,21,44,39,21,43,40,21
+037904,Reading,Race/Ethnicity,Hispanic/Latino,150,136,111,150,136,111,151,135,113
+037904,Reading,Race/Ethnicity,Other,17,14,9,17,14,NA,17,14,9
+037904,Reading,Race/Ethnicity,White,34,30,20,34,30,NA,33,29,19
+037904,Reading,Homeless,Homeless,19,13,4,19,13,NA,20,13,3
+037904,Reading,In Foster Care,In Foster Care,5,2,2,NA,NA,NA,5,1,1
+037904,Writing,Race/Ethnicity,Black or African American,44,28,21,44,28,21,43,30,20
+037904,Writing,Race/Ethnicity,Hispanic/Latino,150,45,39,150,45,39,151,43,41
+037904,Writing,Race/Ethnicity,Other,17,10,3,17,10,NA,17,11,4
+037904,Writing,Race/Ethnicity,White,34,14,14,34,14,NA,33,15,14
+037904,Writing,Homeless,Homeless,19,10,2,19,10,NA,20,9,1
+037904,Writing,In Foster Care,In Foster Care,5,1,1,NA,NA,NA,5,2,2
+037904,Health,Race/Ethnicity,Black or African American,44,31,20,44,31,NA,43,31,18
+037904,Health,Race/Ethnicity,Hispanic/Latino,150,53,42,150,53,42,151,52,43
+037904,Health,Race/Ethnicity,Other,17,12,7,17,12,NA,17,11,7
+037904,Health,Race/Ethnicity,White,34,20,20,34,20,20,33,20,20
+037904,Health,Homeless,Homeless,19,11,3,19,11,NA,20,11,3
+037904,Health,In Foster Care,In Foster Care,5,1,1,NA,NA,NA,5,1,1
+037904,Mathematics,Race/Ethnicity,Black or African American,44,36,30,44,36,30,43,36,30
+037904,Mathematics,Race/Ethnicity,Hispanic/Latino,150,134,115,150,134,115,151,134,117
+037904,Mathematics,Race/Ethnicity,Other,17,14,6,17,14,NA,17,13,6
+037904,Mathematics,Race/Ethnicity,White,34,26,26,34,26,NA,33,29,25
+037904,Mathematics,Homeless,Homeless,19,13,13,19,13,13,20,14,13
+037904,Mathematics,In Foster Care,In Foster Care,5,2,2,NA,NA,NA,5,1,1
+043902,Reading,Race/Ethnicity,Black or African American,73,47,42,73,47,42,73,45,44
+043902,Reading,Race/Ethnicity,Hispanic/Latino,75,62,49,75,62,49,73,61,47
+043902,Reading,Race/Ethnicity,Other,26,19,19,26,19,19,25,18,18
+043902,Reading,Race/Ethnicity,White,41,31,19,41,31,19,40,31,19
+043902,Reading,Homeless,Homeless,7,4,3,NA,NA,NA,7,3,3
+043902,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,2,2
+043902,Writing,Race/Ethnicity,Black or African American,73,47,39,73,47,39,73,47,37
+043902,Writing,Race/Ethnicity,Hispanic/Latino,75,51,45,75,51,45,73,50,46
+043902,Writing,Race/Ethnicity,Other,26,19,19,26,19,19,25,19,19
+043902,Writing,Race/Ethnicity,White,41,31,21,41,31,21,40,30,21
+043902,Writing,Homeless,Homeless,7,3,3,NA,NA,NA,7,3,3
+043902,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+043902,Health,Race/Ethnicity,Black or African American,73,47,31,73,47,31,73,47,30
+043902,Health,Race/Ethnicity,Hispanic/Latino,75,49,42,75,49,42,73,47,42
+043902,Health,Race/Ethnicity,Other,26,19,19,26,19,19,25,20,20
+043902,Health,Race/Ethnicity,White,41,31,21,41,31,21,40,29,20
+043902,Health,Homeless,Homeless,7,3,3,NA,NA,NA,7,5,2
+043902,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+043902,Mathematics,Race/Ethnicity,Black or African American,73,46,34,73,46,34,73,45,34
+043902,Mathematics,Race/Ethnicity,Hispanic/Latino,75,59,49,75,59,49,73,57,49
+043902,Mathematics,Race/Ethnicity,Other,26,18,18,26,18,18,25,21,18
+043902,Mathematics,Race/Ethnicity,White,41,30,30,41,30,30,40,30,30
+043902,Mathematics,Homeless,Homeless,7,4,3,NA,NA,NA,7,4,3
+043902,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+043905,Reading,Race/Ethnicity,Black or African American,146,99,77,146,99,77,146,99,77
+043905,Reading,Race/Ethnicity,Hispanic/Latino,196,150,133,196,150,133,195,149,133
+043905,Reading,Race/Ethnicity,Other,856,683,667,856,683,667,859,683,667
+043905,Reading,Race/Ethnicity,White,102,83,69,102,83,69,102,83,68
+043905,Reading,Homeless,Homeless,21,21,21,21,21,21,20,20,20
+043905,Reading,In Foster Care,In Foster Care,6,6,6,NA,NA,NA,6,5,5
+043905,Writing,Race/Ethnicity,Black or African American,146,97,77,146,97,77,146,98,79
+043905,Writing,Race/Ethnicity,Hispanic/Latino,196,139,130,196,139,130,195,137,131
+043905,Writing,Race/Ethnicity,Other,856,668,630,856,668,630,859,668,628
+043905,Writing,Race/Ethnicity,White,102,82,76,102,82,76,102,83,76
+043905,Writing,Homeless,Homeless,20,20,20,20,20,20,20,20,20
+043905,Writing,In Foster Care,In Foster Care,7,7,6,NA,NA,NA,6,7,5
+043905,Health,Race/Ethnicity,Black or African American,146,99,82,146,99,82,146,97,80
+043905,Health,Race/Ethnicity,Hispanic/Latino,196,149,141,196,149,141,195,150,142
+043905,Health,Race/Ethnicity,Other,856,681,395,856,681,395,859,682,395
+043905,Health,Race/Ethnicity,White,102,83,83,102,83,83,102,82,82
+043905,Health,Homeless,Homeless,22,22,22,22,22,22,20,23,22
+043905,Health,In Foster Care,In Foster Care,7,7,6,NA,NA,NA,6,7,4
+043905,Mathematics,Race/Ethnicity,Black or African American,146,99,87,146,99,87,146,101,87
+043905,Mathematics,Race/Ethnicity,Hispanic/Latino,196,150,142,196,150,142,195,150,142
+043905,Mathematics,Race/Ethnicity,Other,856,681,663,856,681,663,859,679,663
+043905,Mathematics,Race/Ethnicity,White,102,83,75,102,83,75,102,83,77
+043905,Mathematics,Homeless,Homeless,22,22,22,22,22,22,20,23,22
+043905,Mathematics,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,6,5,5
+043910,Reading,Race/Ethnicity,Black or African American,190,123,102,190,123,102,191,123,101
+043910,Reading,Race/Ethnicity,Hispanic/Latino,516,388,312,516,388,312,516,389,311
+043910,Reading,Race/Ethnicity,Other,432,311,290,432,311,290,432,308,290
+043910,Reading,Race/Ethnicity,White,191,144,123,191,144,123,193,147,124
+043910,Reading,Homeless,Homeless,68,28,21,68,28,21,68,29,18
+043910,Reading,In Foster Care,In Foster Care,12,7,5,12,NA,NA,14,6,4
+043910,Writing,Race/Ethnicity,Black or African American,190,103,89,190,103,89,191,103,90
+043910,Writing,Race/Ethnicity,Hispanic/Latino,516,366,323,516,366,323,516,366,322
+043910,Writing,Race/Ethnicity,Other,432,285,215,432,285,215,432,283,214
+043910,Writing,Race/Ethnicity,White,191,129,129,191,129,129,193,128,128
+043910,Writing,Homeless,Homeless,68,23,18,68,23,18,68,23,18
+043910,Writing,In Foster Care,In Foster Care,12,6,5,12,NA,NA,14,5,4
+043910,Health,Race/Ethnicity,Black or African American,190,119,108,190,119,108,191,119,108
+043910,Health,Race/Ethnicity,Hispanic/Latino,516,384,355,516,384,355,516,385,354
+043910,Health,Race/Ethnicity,Other,432,304,232,432,304,232,432,305,230
+043910,Health,Race/Ethnicity,White,191,142,142,191,142,142,193,141,141
+043910,Health,Homeless,Homeless,68,25,20,68,25,20,68,26,21
+043910,Health,In Foster Care,In Foster Care,12,6,6,12,NA,NA,14,7,6
+043910,Mathematics,Race/Ethnicity,Black or African American,190,121,116,190,121,116,191,120,115
+043910,Mathematics,Race/Ethnicity,Hispanic/Latino,516,386,360,516,386,360,516,387,359
+043910,Mathematics,Race/Ethnicity,Other,432,309,302,432,309,302,432,307,302
+043910,Mathematics,Race/Ethnicity,White,191,144,136,191,144,136,193,145,137
+043910,Mathematics,Homeless,Homeless,68,27,21,68,27,21,68,26,21
+043910,Mathematics,In Foster Care,In Foster Care,12,7,6,12,NA,NA,14,8,6
+057803,Reading,Race/Ethnicity,Black or African American,390,301,244,390,301,244,389,301,243
+057803,Reading,Race/Ethnicity,Hispanic/Latino,660,557,385,660,557,385,659,557,385
+057803,Reading,Race/Ethnicity,Other,60,44,31,60,44,31,61,45,33
+057803,Reading,Race/Ethnicity,White,35,29,25,35,29,25,34,28,26
+057803,Reading,Homeless,Homeless,24,15,15,24,15,15,25,15,15
+057803,Reading,In Foster Care,In Foster Care,5,5,4,NA,NA,NA,5,4,4
+057803,Writing,Race/Ethnicity,Black or African American,390,299,277,390,299,277,389,299,276
+057803,Writing,Race/Ethnicity,Hispanic/Latino,660,551,521,660,551,521,659,552,524
+057803,Writing,Race/Ethnicity,Other,60,44,34,60,44,34,61,44,34
+057803,Writing,Race/Ethnicity,White,35,28,28,35,28,28,34,26,26
+057803,Writing,Homeless,Homeless,24,15,15,24,15,15,25,18,16
+057803,Writing,In Foster Care,In Foster Care,6,6,6,NA,NA,NA,5,5,5
+057803,Health,Race/Ethnicity,Black or African American,390,294,260,390,294,260,389,294,261
+057803,Health,Race/Ethnicity,Hispanic/Latino,660,504,485,660,504,485,659,503,484
+057803,Health,Race/Ethnicity,Other,60,43,36,60,43,36,61,44,38
+057803,Health,Race/Ethnicity,White,35,28,28,35,28,28,34,28,28
+057803,Health,Homeless,Homeless,24,15,15,24,15,15,25,16,15
+057803,Health,In Foster Care,In Foster Care,6,6,5,NA,NA,NA,5,6,4
+057803,Mathematics,Race/Ethnicity,Black or African American,390,300,255,390,300,255,389,301,256
+057803,Mathematics,Race/Ethnicity,Hispanic/Latino,660,551,441,660,551,441,659,551,443
+057803,Mathematics,Race/Ethnicity,Other,60,44,33,60,44,33,61,47,32
+057803,Mathematics,Race/Ethnicity,White,35,28,28,35,28,28,34,30,29
+057803,Mathematics,Homeless,Homeless,24,15,15,24,15,15,25,15,15
+057803,Mathematics,In Foster Care,In Foster Care,5,5,5,NA,NA,NA,5,5,5
+057903,Reading,Race/Ethnicity,Black or African American,153,100,81,153,100,81,151,98,81
+057903,Reading,Race/Ethnicity,Hispanic/Latino,744,580,489,744,580,489,745,579,489
+057903,Reading,Race/Ethnicity,Other,367,245,237,367,245,237,368,247,238
+057903,Reading,Race/Ethnicity,White,74,61,55,74,61,55,73,58,58
+057903,Reading,Homeless,Homeless,11,6,6,11,NA,NA,11,7,7
+057903,Reading,In Foster Care,In Foster Care,12,7,6,12,NA,NA,13,8,6
+057903,Writing,Race/Ethnicity,Black or African American,153,82,75,153,82,75,151,80,77
+057903,Writing,Race/Ethnicity,Hispanic/Latino,744,544,438,744,544,438,745,545,437
+057903,Writing,Race/Ethnicity,Other,367,232,216,367,232,216,368,230,218
+057903,Writing,Race/Ethnicity,White,74,57,49,74,57,49,73,57,50
+057903,Writing,Homeless,Homeless,11,6,6,11,NA,NA,11,6,6
+057903,Writing,In Foster Care,In Foster Care,12,6,5,12,NA,NA,13,6,4
+057903,Health,Race/Ethnicity,Black or African American,153,73,61,153,73,61,151,72,60
+057903,Health,Race/Ethnicity,Hispanic/Latino,744,564,483,744,564,483,745,565,484
+057903,Health,Race/Ethnicity,Other,367,232,147,367,232,147,368,231,149
+057903,Health,Race/Ethnicity,White,74,57,57,74,57,57,73,59,56
+057903,Health,Homeless,Homeless,11,6,6,11,NA,NA,11,6,6
+057903,Health,In Foster Care,In Foster Care,12,6,5,12,NA,NA,13,5,4
+057903,Mathematics,Race/Ethnicity,Black or African American,153,100,89,153,100,89,151,101,90
+057903,Mathematics,Race/Ethnicity,Hispanic/Latino,744,572,513,744,572,513,745,573,513
+057903,Mathematics,Race/Ethnicity,Other,367,242,155,367,242,155,368,241,154
+057903,Mathematics,Race/Ethnicity,White,74,58,58,74,58,58,73,59,59
+057903,Mathematics,Homeless,Homeless,11,7,7,11,NA,NA,11,6,6
+057903,Mathematics,In Foster Care,In Foster Care,12,7,6,12,NA,NA,13,7,4
+057905,Reading,Race/Ethnicity,Black or African American,1883,1128,967,1883,1128,967,1882,1128,967
+057905,Reading,Race/Ethnicity,Hispanic/Latino,5486,4468,3871,5486,4468,3871,5486,4468,3870
+057905,Reading,Race/Ethnicity,Other,291,216,190,291,216,190,291,216,191
+057905,Reading,Race/Ethnicity,White,365,291,267,365,291,267,365,290,267
+057905,Reading,Homeless,Homeless,395,219,181,395,219,181,396,218,182
+057905,Reading,In Foster Care,In Foster Care,71,41,35,71,41,35,72,39,34
+057905,Writing,Race/Ethnicity,Black or African American,1883,972,866,1883,972,866,1882,973,866
+057905,Writing,Race/Ethnicity,Hispanic/Latino,5486,3785,3410,5486,3785,3410,5486,3785,3411
+057905,Writing,Race/Ethnicity,Other,291,177,159,291,177,159,291,177,160
+057905,Writing,Race/Ethnicity,White,365,263,252,365,263,252,365,265,252
+057905,Writing,Homeless,Homeless,395,194,170,395,194,170,396,194,171
+057905,Writing,In Foster Care,In Foster Care,71,34,29,71,34,29,72,34,31
+057905,Health,Race/Ethnicity,Black or African American,1883,975,818,1883,975,818,1882,976,820
+057905,Health,Race/Ethnicity,Hispanic/Latino,5486,3863,3517,5486,3863,3517,5486,3863,3516
+057905,Health,Race/Ethnicity,Other,291,185,155,291,185,155,291,186,155
+057905,Health,Race/Ethnicity,White,365,257,240,365,257,240,365,259,241
+057905,Health,Homeless,Homeless,395,197,177,395,197,177,396,198,175
+057905,Health,In Foster Care,In Foster Care,71,34,27,71,34,27,72,33,28
+057905,Mathematics,Race/Ethnicity,Black or African American,1883,1049,988,1883,1049,988,1882,1050,989
+057905,Mathematics,Race/Ethnicity,Hispanic/Latino,5486,4283,3968,5486,4283,3968,5486,4283,3968
+057905,Mathematics,Race/Ethnicity,Other,291,204,187,291,204,187,291,203,186
+057905,Mathematics,Race/Ethnicity,White,365,278,273,365,278,273,365,280,273
+057905,Mathematics,Homeless,Homeless,395,206,188,395,206,188,396,206,189
+057905,Mathematics,In Foster Care,In Foster Care,71,39,37,71,39,37,72,42,34
+057907,Reading,Race/Ethnicity,Black or African American,217,172,147,217,172,147,216,174,146
+057907,Reading,Race/Ethnicity,Hispanic/Latino,263,238,214,263,238,214,265,237,213
+057907,Reading,Race/Ethnicity,Other,14,12,12,14,12,12,14,14,12
+057907,Reading,Race/Ethnicity,White,14,13,13,14,13,13,13,12,12
+057907,Reading,Homeless,Homeless,16,10,9,16,10,NA,16,9,8
+057907,Reading,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,4,3,2
+057907,Writing,Race/Ethnicity,Black or African American,217,172,153,217,172,153,216,171,153
+057907,Writing,Race/Ethnicity,Hispanic/Latino,263,238,229,263,238,229,265,239,229
+057907,Writing,Race/Ethnicity,Other,14,12,12,14,12,12,14,13,13
+057907,Writing,Race/Ethnicity,White,14,13,11,14,13,11,13,13,9
+057907,Writing,Homeless,Homeless,16,10,9,16,10,NA,16,9,9
+057907,Writing,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,4,4,4
+057907,Health,Race/Ethnicity,Black or African American,217,171,140,217,171,140,216,173,141
+057907,Health,Race/Ethnicity,Hispanic/Latino,263,238,227,263,238,227,265,238,225
+057907,Health,Race/Ethnicity,Other,14,12,12,14,12,12,14,10,10
+057907,Health,Race/Ethnicity,White,14,13,11,14,13,11,13,13,9
+057907,Health,Homeless,Homeless,16,10,9,16,10,NA,16,10,5
+057907,Health,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,4,2,2
+057907,Mathematics,Race/Ethnicity,Black or African American,217,170,160,217,170,160,216,169,159
+057907,Mathematics,Race/Ethnicity,Hispanic/Latino,263,236,191,263,236,191,265,237,191
+057907,Mathematics,Race/Ethnicity,Other,14,12,12,14,12,12,14,11,11
+057907,Mathematics,Race/Ethnicity,White,14,13,13,14,13,13,13,13,11
+057907,Mathematics,Homeless,Homeless,16,10,9,16,10,NA,16,10,8
+057907,Mathematics,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,4,1,1
+057909,Reading,Race/Ethnicity,Black or African American,394,285,252,394,285,252,393,285,252
+057909,Reading,Race/Ethnicity,Hispanic/Latino,1418,1159,1029,1418,1159,1029,1419,1159,1028
+057909,Reading,Race/Ethnicity,Other,365,298,274,365,298,274,364,297,274
+057909,Reading,Race/Ethnicity,White,216,178,162,216,178,162,216,178,159
+057909,Reading,Homeless,Homeless,63,44,38,63,44,38,62,44,37
+057909,Reading,In Foster Care,In Foster Care,11,11,11,11,11,11,11,11,11
+057909,Writing,Race/Ethnicity,Black or African American,394,273,243,394,273,243,393,272,242
+057909,Writing,Race/Ethnicity,Hispanic/Latino,1418,1098,946,1418,1098,946,1419,1097,947
+057909,Writing,Race/Ethnicity,Other,365,288,272,365,288,272,364,288,273
+057909,Writing,Race/Ethnicity,White,216,171,161,216,171,161,216,171,161
+057909,Writing,Homeless,Homeless,63,42,36,63,42,36,62,43,36
+057909,Writing,In Foster Care,In Foster Care,11,11,11,11,11,11,11,10,10
+057909,Health,Race/Ethnicity,Black or African American,394,275,246,394,275,246,393,274,243
+057909,Health,Race/Ethnicity,Hispanic/Latino,1418,1131,1031,1418,1131,1031,1419,1130,1032
+057909,Health,Race/Ethnicity,Other,365,287,273,365,287,273,364,287,272
+057909,Health,Race/Ethnicity,White,216,173,161,216,173,161,216,173,161
+057909,Health,Homeless,Homeless,63,43,39,63,43,39,62,43,40
+057909,Health,In Foster Care,In Foster Care,12,12,11,12,12,11,11,10,9
+057909,Mathematics,Race/Ethnicity,Black or African American,394,284,268,394,284,268,393,284,267
+057909,Mathematics,Race/Ethnicity,Hispanic/Latino,1418,1161,1081,1418,1161,1081,1419,1161,1082
+057909,Mathematics,Race/Ethnicity,Other,365,300,247,365,300,247,364,299,247
+057909,Mathematics,Race/Ethnicity,White,216,176,176,216,176,176,216,176,174
+057909,Mathematics,Homeless,Homeless,63,44,41,63,44,41,62,43,41
+057909,Mathematics,In Foster Care,In Foster Care,12,12,12,12,12,12,11,13,11
+057910,Reading,Race/Ethnicity,Black or African American,204,150,137,204,150,137,204,149,137
+057910,Reading,Race/Ethnicity,Hispanic/Latino,881,731,670,881,731,670,883,729,672
+057910,Reading,Race/Ethnicity,Other,71,59,56,71,59,56,71,59,56
+057910,Reading,Race/Ethnicity,White,66,55,46,66,55,46,67,53,47
+057910,Reading,Homeless,Homeless,61,41,36,61,41,36,63,40,38
+057910,Reading,In Foster Care,In Foster Care,11,7,6,11,NA,NA,12,5,5
+057910,Writing,Race/Ethnicity,Black or African American,204,148,143,204,148,143,204,149,142
+057910,Writing,Race/Ethnicity,Hispanic/Latino,881,721,675,881,721,675,883,722,675
+057910,Writing,Race/Ethnicity,Other,71,58,57,71,58,57,71,60,56
+057910,Writing,Race/Ethnicity,White,66,55,50,66,55,50,67,57,50
+057910,Writing,Homeless,Homeless,61,42,37,61,42,37,63,42,37
+057910,Writing,In Foster Care,In Foster Care,11,7,6,11,NA,NA,12,7,6
+057910,Health,Race/Ethnicity,Black or African American,204,126,110,204,126,110,204,125,109
+057910,Health,Race/Ethnicity,Hispanic/Latino,881,700,642,881,700,642,883,699,641
+057910,Health,Race/Ethnicity,Other,71,52,47,71,52,47,71,51,48
+057910,Health,Race/Ethnicity,White,66,51,45,66,51,45,67,50,45
+057910,Health,Homeless,Homeless,61,38,19,61,38,19,63,38,21
+057910,Health,In Foster Care,In Foster Care,11,6,5,11,NA,NA,12,5,5
+057910,Mathematics,Race/Ethnicity,Black or African American,204,148,104,204,148,104,204,148,104
+057910,Mathematics,Race/Ethnicity,Hispanic/Latino,881,734,699,881,734,699,883,734,700
+057910,Mathematics,Race/Ethnicity,Other,71,59,59,71,59,59,71,59,59
+057910,Mathematics,Race/Ethnicity,White,66,55,55,66,55,55,67,55,55
+057910,Mathematics,Homeless,Homeless,61,41,22,61,41,22,63,42,21
+057910,Mathematics,In Foster Care,In Foster Care,11,7,6,11,NA,NA,12,5,5
+057912,Reading,Race/Ethnicity,Black or African American,199,148,133,199,148,133,198,148,133
+057912,Reading,Race/Ethnicity,Hispanic/Latino,1314,1099,935,1314,1099,935,1314,1098,935
+057912,Reading,Race/Ethnicity,Other,157,122,96,157,122,96,157,122,97
+057912,Reading,Race/Ethnicity,White,81,59,59,81,59,59,80,60,57
+057912,Reading,Homeless,Homeless,36,14,14,36,14,14,36,13,13
+057912,Reading,In Foster Care,In Foster Care,16,10,8,16,10,NA,14,10,7
+057912,Writing,Race/Ethnicity,Black or African American,199,150,141,199,150,141,198,150,142
+057912,Writing,Race/Ethnicity,Hispanic/Latino,1314,1116,1026,1314,1116,1026,1314,1116,1026
+057912,Writing,Race/Ethnicity,Other,157,122,117,157,122,117,157,121,115
+057912,Writing,Race/Ethnicity,White,81,59,54,81,59,54,80,57,54
+057912,Writing,Homeless,Homeless,36,13,13,36,13,13,36,12,12
+057912,Writing,In Foster Care,In Foster Care,16,10,9,16,10,NA,14,11,9
+057912,Health,Race/Ethnicity,Black or African American,199,150,135,199,150,135,198,150,134
+057912,Health,Race/Ethnicity,Hispanic/Latino,1314,1114,1026,1314,1114,1026,1314,1113,1026
+057912,Health,Race/Ethnicity,Other,157,122,119,157,122,119,157,121,119
+057912,Health,Race/Ethnicity,White,81,59,53,81,59,53,80,60,52
+057912,Health,Homeless,Homeless,36,13,13,36,13,13,36,14,13
+057912,Health,In Foster Care,In Foster Care,16,10,9,16,10,NA,14,10,7
+057912,Mathematics,Race/Ethnicity,Black or African American,199,150,145,199,150,145,198,150,143
+057912,Mathematics,Race/Ethnicity,Hispanic/Latino,1314,1115,1029,1314,1115,1029,1314,1118,1031
+057912,Mathematics,Race/Ethnicity,Other,157,124,93,157,124,93,157,124,94
+057912,Mathematics,Race/Ethnicity,White,81,59,59,81,59,59,80,59,58
+057912,Mathematics,Homeless,Homeless,36,13,13,36,13,13,36,11,11
+057912,Mathematics,In Foster Care,In Foster Care,16,10,9,16,10,NA,14,11,9
+057913,Reading,Race/Ethnicity,Black or African American,295,249,231,295,249,231,294,247,232
+057913,Reading,Race/Ethnicity,Hispanic/Latino,84,71,65,84,71,65,83,72,64
+057913,Reading,Race/Ethnicity,Other,12,10,10,12,10,10,12,9,9
+057913,Reading,Race/Ethnicity,White,23,18,11,23,18,11,22,18,11
+057913,Reading,Homeless,Homeless,39,36,7,39,36,NA,37,36,7
+057913,Reading,In Foster Care,In Foster Care,10,5,2,10,NA,NA,10,5,3
+057913,Writing,Race/Ethnicity,Black or African American,295,234,217,295,234,217,294,235,217
+057913,Writing,Race/Ethnicity,Hispanic/Latino,84,69,59,84,69,59,83,69,61
+057913,Writing,Race/Ethnicity,Other,12,8,8,12,NA,NA,12,10,7
+057913,Writing,Race/Ethnicity,White,23,19,14,23,NA,NA,22,18,13
+057913,Writing,Homeless,Homeless,39,33,7,39,33,NA,37,35,7
+057913,Writing,In Foster Care,In Foster Care,10,5,2,10,NA,NA,10,5,2
+057913,Health,Race/Ethnicity,Black or African American,295,248,214,295,248,214,294,247,215
+057913,Health,Race/Ethnicity,Hispanic/Latino,84,70,60,84,70,60,83,69,59
+057913,Health,Race/Ethnicity,Other,12,10,10,12,10,10,12,9,9
+057913,Health,Race/Ethnicity,White,23,18,14,23,18,14,22,16,12
+057913,Health,Homeless,Homeless,39,36,31,39,36,31,37,36,30
+057913,Health,In Foster Care,In Foster Care,10,5,2,10,NA,NA,10,6,2
+057913,Mathematics,Race/Ethnicity,Black or African American,295,249,231,295,249,231,294,248,231
+057913,Mathematics,Race/Ethnicity,Hispanic/Latino,84,70,60,84,70,60,83,71,61
+057913,Mathematics,Race/Ethnicity,Other,12,10,10,12,10,10,12,10,9
+057913,Mathematics,Race/Ethnicity,White,23,18,14,23,18,14,22,18,13
+057913,Mathematics,Homeless,Homeless,39,36,7,39,36,NA,37,35,7
+057913,Mathematics,In Foster Care,In Foster Care,10,5,5,10,NA,NA,10,6,5
+057914,Reading,Race/Ethnicity,Black or African American,358,238,190,358,238,190,357,237,190
+057914,Reading,Race/Ethnicity,Hispanic/Latino,999,814,704,999,814,704,999,814,705
+057914,Reading,Race/Ethnicity,Other,54,44,34,54,44,34,54,45,35
+057914,Reading,Race/Ethnicity,White,70,59,46,70,59,46,70,61,45
+057914,Reading,Homeless,Homeless,37,24,17,37,24,17,37,23,17
+057914,Reading,In Foster Care,In Foster Care,7,7,6,NA,NA,NA,8,7,5
+057914,Writing,Race/Ethnicity,Black or African American,358,230,194,358,230,194,357,229,194
+057914,Writing,Race/Ethnicity,Hispanic/Latino,999,784,684,999,784,684,999,783,685
+057914,Writing,Race/Ethnicity,Other,54,42,42,54,42,42,54,43,42
+057914,Writing,Race/Ethnicity,White,70,54,39,70,54,39,70,56,39
+057914,Writing,Homeless,Homeless,37,20,14,37,20,14,37,20,15
+057914,Writing,In Foster Care,In Foster Care,7,7,6,NA,NA,NA,8,6,6
+057914,Health,Race/Ethnicity,Black or African American,358,230,183,358,230,183,357,232,184
+057914,Health,Race/Ethnicity,Hispanic/Latino,999,795,704,999,795,704,999,795,705
+057914,Health,Race/Ethnicity,Other,54,42,32,54,42,32,54,43,33
+057914,Health,Race/Ethnicity,White,70,56,48,70,56,48,70,56,47
+057914,Health,Homeless,Homeless,37,22,22,37,22,22,37,21,21
+057914,Health,In Foster Care,In Foster Care,7,7,6,NA,NA,NA,8,6,6
+057914,Mathematics,Race/Ethnicity,Black or African American,358,236,206,358,236,206,357,235,204
+057914,Mathematics,Race/Ethnicity,Hispanic/Latino,999,805,736,999,805,736,999,805,736
+057914,Mathematics,Race/Ethnicity,Other,54,44,39,54,44,39,54,46,40
+057914,Mathematics,Race/Ethnicity,White,70,58,52,70,58,52,70,58,51
+057914,Mathematics,Homeless,Homeless,37,23,16,37,23,16,37,23,18
+057914,Mathematics,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,8,6,6
+057916,Reading,Race/Ethnicity,Black or African American,399,273,223,399,273,223,399,273,220
+057916,Reading,Race/Ethnicity,Hispanic/Latino,728,562,457,728,562,457,725,562,457
+057916,Reading,Race/Ethnicity,Other,186,148,131,186,148,131,184,148,131
+057916,Reading,Race/Ethnicity,White,292,266,237,292,266,237,294,267,237
+057916,Reading,Homeless,Homeless,112,75,57,112,75,57,112,76,54
+057916,Reading,In Foster Care,In Foster Care,19,8,8,19,NA,NA,19,6,6
+057916,Writing,Race/Ethnicity,Black or African American,399,271,239,399,271,239,399,269,239
+057916,Writing,Race/Ethnicity,Hispanic/Latino,728,561,497,728,561,497,725,562,497
+057916,Writing,Race/Ethnicity,Other,186,148,143,186,148,143,184,150,145
+057916,Writing,Race/Ethnicity,White,292,266,256,292,266,256,294,267,255
+057916,Writing,Homeless,Homeless,112,74,61,112,74,61,112,73,60
+057916,Writing,In Foster Care,In Foster Care,19,8,7,19,NA,NA,19,10,7
+057916,Health,Race/Ethnicity,Black or African American,399,272,236,399,272,236,399,272,237
+057916,Health,Race/Ethnicity,Hispanic/Latino,728,562,519,728,562,519,725,562,519
+057916,Health,Race/Ethnicity,Other,186,148,140,186,148,140,184,148,140
+057916,Health,Race/Ethnicity,White,292,266,248,292,266,248,294,266,247
+057916,Health,Homeless,Homeless,112,75,61,112,75,61,112,75,63
+057916,Health,In Foster Care,In Foster Care,19,8,7,19,NA,NA,19,8,7
+057916,Mathematics,Race/Ethnicity,Black or African American,399,273,238,399,273,238,399,272,238
+057916,Mathematics,Race/Ethnicity,Hispanic/Latino,728,560,501,728,560,501,725,560,502
+057916,Mathematics,Race/Ethnicity,Other,186,147,137,186,147,137,184,146,138
+057916,Mathematics,Race/Ethnicity,White,292,267,261,292,267,261,294,266,264
+057916,Mathematics,Homeless,Homeless,112,75,63,112,75,63,112,75,61
+057916,Mathematics,In Foster Care,In Foster Care,19,8,8,19,NA,NA,19,9,7
+061901,Reading,Race/Ethnicity,Black or African American,335,267,209,335,267,209,336,268,210
+061901,Reading,Race/Ethnicity,Hispanic/Latino,573,502,399,573,502,399,574,503,398
+061901,Reading,Race/Ethnicity,Other,250,208,181,250,208,181,249,207,180
+061901,Reading,Race/Ethnicity,White,201,177,144,201,177,144,202,177,143
+061901,Reading,Homeless,Homeless,44,36,31,44,36,31,42,36,31
+061901,Reading,In Foster Care,In Foster Care,14,8,8,14,NA,NA,14,7,7
+061901,Writing,Race/Ethnicity,Black or African American,335,267,212,335,267,212,336,266,213
+061901,Writing,Race/Ethnicity,Hispanic/Latino,573,456,383,573,456,383,574,455,384
+061901,Writing,Race/Ethnicity,Other,250,206,179,250,206,179,249,208,178
+061901,Writing,Race/Ethnicity,White,201,175,159,201,175,159,202,175,159
+061901,Writing,Homeless,Homeless,44,36,26,44,36,26,42,35,25
+061901,Writing,In Foster Care,In Foster Care,14,7,7,14,NA,NA,14,8,8
+061901,Health,Race/Ethnicity,Black or African American,335,257,195,335,257,195,336,257,195
+061901,Health,Race/Ethnicity,Hispanic/Latino,573,463,398,573,463,398,574,463,399
+061901,Health,Race/Ethnicity,Other,250,202,177,250,202,177,249,202,175
+061901,Health,Race/Ethnicity,White,201,174,154,201,174,154,202,174,156
+061901,Health,Homeless,Homeless,44,35,30,44,35,30,42,34,30
+061901,Health,In Foster Care,In Foster Care,14,6,6,14,NA,NA,14,6,6
+061901,Mathematics,Race/Ethnicity,Black or African American,335,261,222,335,261,222,336,261,222
+061901,Mathematics,Race/Ethnicity,Hispanic/Latino,573,464,410,573,464,410,574,464,412
+061901,Mathematics,Race/Ethnicity,Other,250,206,192,250,206,192,249,204,192
+061901,Mathematics,Race/Ethnicity,White,201,175,157,201,175,157,202,175,157
+061901,Mathematics,Homeless,Homeless,44,36,27,44,36,27,42,35,26
+061901,Mathematics,In Foster Care,In Foster Care,14,7,7,14,NA,NA,14,6,6
+061902,Reading,Race/Ethnicity,Black or African American,198,137,108,198,137,108,197,135,107
+061902,Reading,Race/Ethnicity,Hispanic/Latino,594,478,374,594,478,374,592,478,373
+061902,Reading,Race/Ethnicity,Other,338,284,257,338,284,257,336,283,259
+061902,Reading,Race/Ethnicity,White,132,110,94,132,110,94,131,113,93
+061902,Reading,Homeless,Homeless,85,62,48,85,62,48,86,62,48
+061902,Reading,In Foster Care,In Foster Care,19,13,7,19,13,NA,21,12,9
+061902,Writing,Race/Ethnicity,Black or African American,198,135,116,198,135,116,197,135,117
+061902,Writing,Race/Ethnicity,Hispanic/Latino,594,482,427,594,482,427,592,484,429
+061902,Writing,Race/Ethnicity,Other,338,281,250,338,281,250,336,280,251
+061902,Writing,Race/Ethnicity,White,132,110,105,132,110,105,131,110,107
+061902,Writing,Homeless,Homeless,85,62,50,85,62,50,86,61,49
+061902,Writing,In Foster Care,In Foster Care,19,13,8,19,13,NA,21,13,6
+061902,Health,Race/Ethnicity,Black or African American,198,136,100,198,136,100,197,136,98
+061902,Health,Race/Ethnicity,Hispanic/Latino,594,467,409,594,467,409,592,470,410
+061902,Health,Race/Ethnicity,Other,338,281,250,338,281,250,336,281,250
+061902,Health,Race/Ethnicity,White,132,110,99,132,110,99,131,111,101
+061902,Health,Homeless,Homeless,85,60,49,85,60,49,86,61,49
+061902,Health,In Foster Care,In Foster Care,19,13,8,19,13,NA,21,12,7
+061902,Mathematics,Race/Ethnicity,Black or African American,198,135,118,198,135,118,197,136,118
+061902,Mathematics,Race/Ethnicity,Hispanic/Latino,594,478,426,594,478,426,592,478,427
+061902,Mathematics,Race/Ethnicity,Other,338,282,144,338,282,144,336,282,145
+061902,Mathematics,Race/Ethnicity,White,132,110,110,132,110,110,131,111,110
+061902,Mathematics,Homeless,Homeless,85,61,53,85,61,53,86,62,54
+061902,Mathematics,In Foster Care,In Foster Care,19,13,13,19,13,13,21,13,13
+061911,Reading,Race/Ethnicity,Black or African American,195,158,126,195,158,126,195,158,126
+061911,Reading,Race/Ethnicity,Hispanic/Latino,327,277,223,327,277,223,325,277,225
+061911,Reading,Race/Ethnicity,Other,327,261,248,327,261,248,326,261,247
+061911,Reading,Race/Ethnicity,White,319,290,247,319,290,247,320,290,248
+061911,Reading,Homeless,Homeless,11,6,6,11,NA,NA,12,6,6
+061911,Reading,In Foster Care,In Foster Care,23,19,7,23,19,NA,22,18,7
+061911,Writing,Race/Ethnicity,Black or African American,195,158,128,195,158,128,195,157,128
+061911,Writing,Race/Ethnicity,Hispanic/Latino,327,279,227,327,279,227,325,278,229
+061911,Writing,Race/Ethnicity,Other,327,262,244,327,262,244,326,263,244
+061911,Writing,Race/Ethnicity,White,319,289,271,319,289,271,320,286,271
+061911,Writing,Homeless,Homeless,11,6,6,11,NA,NA,12,7,6
+061911,Writing,In Foster Care,In Foster Care,23,19,14,23,19,14,22,20,14
+061911,Health,Race/Ethnicity,Black or African American,195,154,132,195,154,132,195,154,133
+061911,Health,Race/Ethnicity,Hispanic/Latino,327,273,252,327,273,252,325,275,251
+061911,Health,Race/Ethnicity,Other,327,259,252,327,259,252,326,259,253
+061911,Health,Race/Ethnicity,White,319,279,263,319,279,263,320,278,262
+061911,Health,Homeless,Homeless,11,6,6,11,NA,NA,12,5,5
+061911,Health,In Foster Care,In Foster Care,23,19,7,23,19,NA,22,20,7
+061911,Mathematics,Race/Ethnicity,Black or African American,195,158,139,195,158,139,195,157,138
+061911,Mathematics,Race/Ethnicity,Hispanic/Latino,327,278,240,327,278,240,325,277,241
+061911,Mathematics,Race/Ethnicity,Other,327,261,247,327,261,247,326,261,246
+061911,Mathematics,Race/Ethnicity,White,319,290,281,319,290,281,320,291,282
+061911,Mathematics,Homeless,Homeless,11,6,6,11,NA,NA,12,6,5
+061911,Mathematics,In Foster Care,In Foster Care,23,19,8,23,19,NA,22,17,8
+068901,Reading,Race/Ethnicity,Black or African American,58,38,30,58,38,30,59,38,32
+068901,Reading,Race/Ethnicity,Hispanic/Latino,1297,1041,839,1297,1041,839,1296,1042,837
+068901,Reading,Race/Ethnicity,Other,44,35,29,44,35,29,46,35,29
+068901,Reading,Race/Ethnicity,White,163,130,97,163,130,97,162,131,97
+068901,Reading,Homeless,Homeless,116,56,41,116,56,41,117,55,39
+068901,Reading,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,7,7,6
+068901,Writing,Race/Ethnicity,Black or African American,58,36,35,58,36,35,59,37,34
+068901,Writing,Race/Ethnicity,Hispanic/Latino,1297,1038,950,1297,1038,950,1296,1039,950
+068901,Writing,Race/Ethnicity,Other,44,35,32,44,35,32,46,35,33
+068901,Writing,Race/Ethnicity,White,163,128,116,163,128,116,162,128,116
+068901,Writing,Homeless,Homeless,116,54,48,116,54,48,117,55,50
+068901,Writing,In Foster Care,In Foster Care,7,7,3,NA,NA,NA,7,5,4
+068901,Health,Race/Ethnicity,Black or African American,58,36,35,58,36,35,59,37,34
+068901,Health,Race/Ethnicity,Hispanic/Latino,1297,1011,909,1297,1011,909,1296,1011,910
+068901,Health,Race/Ethnicity,Other,44,35,30,44,35,30,46,35,29
+068901,Health,Race/Ethnicity,White,163,129,119,163,129,119,162,127,117
+068901,Health,Homeless,Homeless,116,52,46,116,52,46,117,54,46
+068901,Health,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,7,5,5
+068901,Mathematics,Race/Ethnicity,Black or African American,58,37,31,58,37,31,59,38,30
+068901,Mathematics,Race/Ethnicity,Hispanic/Latino,1297,1038,904,1297,1038,904,1296,1037,905
+068901,Mathematics,Race/Ethnicity,Other,44,35,33,44,35,33,46,35,35
+068901,Mathematics,Race/Ethnicity,White,163,130,112,163,130,112,162,130,114
+068901,Mathematics,Homeless,Homeless,116,56,45,116,56,45,117,56,44
+068901,Mathematics,In Foster Care,In Foster Care,8,8,8,NA,NA,NA,7,7,7
+070912,Reading,Race/Ethnicity,Black or African American,74,58,45,74,58,45,73,58,45
+070912,Reading,Race/Ethnicity,Hispanic/Latino,161,133,113,161,133,113,160,133,114
+070912,Reading,Race/Ethnicity,Other,22,17,13,22,17,13,23,17,15
+070912,Reading,Race/Ethnicity,White,76,62,49,76,62,49,75,62,49
+070912,Reading,Homeless,Homeless,11,6,5,11,NA,NA,11,6,5
+070912,Reading,In Foster Care,In Foster Care,6,2,1,NA,NA,NA,6,3,1
+070912,Writing,Race/Ethnicity,Black or African American,74,58,48,74,58,48,73,59,49
+070912,Writing,Race/Ethnicity,Hispanic/Latino,161,133,117,161,133,117,160,134,117
+070912,Writing,Race/Ethnicity,Other,22,17,15,22,17,15,23,17,15
+070912,Writing,Race/Ethnicity,White,76,62,53,76,62,53,75,61,52
+070912,Writing,Homeless,Homeless,11,6,5,11,NA,NA,11,4,4
+070912,Writing,In Foster Care,In Foster Care,6,2,2,NA,NA,NA,6,2,1
+070912,Health,Race/Ethnicity,Black or African American,74,58,49,74,58,49,73,59,48
+070912,Health,Race/Ethnicity,Hispanic/Latino,161,133,123,161,133,123,160,132,122
+070912,Health,Race/Ethnicity,Other,22,17,16,22,17,16,23,19,16
+070912,Health,Race/Ethnicity,White,76,62,54,76,62,54,75,61,55
+070912,Health,Homeless,Homeless,11,6,5,11,NA,NA,11,3,3
+070912,Health,In Foster Care,In Foster Care,6,2,2,NA,NA,NA,6,4,4
+070912,Mathematics,Race/Ethnicity,Black or African American,74,57,47,74,57,47,73,57,46
+070912,Mathematics,Race/Ethnicity,Hispanic/Latino,161,129,118,161,129,118,160,129,118
+070912,Mathematics,Race/Ethnicity,Other,22,14,14,22,14,14,23,15,14
+070912,Mathematics,Race/Ethnicity,White,76,56,31,76,56,31,75,56,31
+070912,Mathematics,Homeless,Homeless,11,6,5,11,NA,NA,11,6,4
+070912,Mathematics,In Foster Care,In Foster Care,6,2,2,NA,NA,NA,6,3,1
+071901,Reading,Race/Ethnicity,Black or African American,6,4,4,NA,NA,NA,7,5,5
+071901,Reading,Race/Ethnicity,Hispanic/Latino,491,413,359,491,413,359,493,413,360
+071901,Reading,Race/Ethnicity,Other,5,4,3,NA,NA,NA,5,5,2
+071901,Reading,Race/Ethnicity,White,13,13,13,13,13,13,11,11,11
+071901,Reading,Homeless,Homeless,5,5,4,NA,NA,NA,7,5,3
+071901,Reading,In Foster Care,In Foster Care,3,3,3,NA,NA,NA,3,3,3
+071901,Writing,Race/Ethnicity,Black or African American,6,3,3,NA,NA,NA,7,3,3
+071901,Writing,Race/Ethnicity,Hispanic/Latino,491,339,316,491,339,316,493,339,317
+071901,Writing,Race/Ethnicity,Other,5,3,3,NA,NA,NA,5,4,3
+071901,Writing,Race/Ethnicity,White,13,11,7,13,11,NA,11,9,9
+071901,Writing,Homeless,Homeless,5,4,4,NA,NA,NA,7,4,3
+071901,Writing,In Foster Care,In Foster Care,3,3,2,NA,NA,NA,3,1,0
+071901,Health,Race/Ethnicity,Black or African American,6,4,3,NA,NA,NA,7,5,2
+071901,Health,Race/Ethnicity,Hispanic/Latino,491,405,368,491,405,368,493,405,369
+071901,Health,Race/Ethnicity,Other,5,4,4,NA,NA,NA,5,5,4
+071901,Health,Race/Ethnicity,White,13,12,8,13,12,NA,11,12,8
+071901,Health,Homeless,Homeless,10,10,4,10,10,NA,7,9,4
+071901,Health,In Foster Care,In Foster Care,3,3,3,NA,NA,NA,3,1,1
+071901,Mathematics,Race/Ethnicity,Black or African American,6,4,3,NA,NA,NA,7,5,3
+071901,Mathematics,Race/Ethnicity,Hispanic/Latino,491,411,368,491,411,368,493,411,366
+071901,Mathematics,Race/Ethnicity,Other,5,4,4,NA,NA,NA,5,3,3
+071901,Mathematics,Race/Ethnicity,White,13,13,13,13,13,13,11,13,12
+071901,Mathematics,Homeless,Homeless,5,5,4,NA,NA,NA,7,4,3
+071901,Mathematics,In Foster Care,In Foster Care,3,3,3,NA,NA,NA,3,3,3
+071905,Reading,Race/Ethnicity,Black or African American,9,5,5,NA,NA,NA,9,6,4
+071905,Reading,Race/Ethnicity,Hispanic/Latino,1219,1077,1013,1219,1077,1013,1219,1078,1012
+071905,Reading,Race/Ethnicity,Other,22,2,1,22,NA,NA,22,1,1
+071905,Reading,Race/Ethnicity,White,10,6,6,NA,NA,NA,11,6,6
+071905,Reading,Homeless,Homeless,21,10,10,21,10,10,21,9,9
+071905,Reading,In Foster Care,In Foster Care,8,8,7,NA,NA,NA,7,6,6
+071905,Writing,Race/Ethnicity,Black or African American,9,2,2,NA,NA,NA,9,1,1
+071905,Writing,Race/Ethnicity,Hispanic/Latino,1219,1003,966,1219,1003,966,1219,1003,966
+071905,Writing,Race/Ethnicity,Other,22,3,2,22,NA,NA,22,1,1
+071905,Writing,Race/Ethnicity,White,10,5,5,NA,NA,NA,11,5,5
+071905,Writing,Homeless,Homeless,21,9,9,21,NA,NA,21,12,9
+071905,Writing,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,7,7,7
+071905,Health,Race/Ethnicity,Black or African American,9,3,2,NA,NA,NA,9,2,2
+071905,Health,Race/Ethnicity,Hispanic/Latino,1219,1013,936,1219,1013,936,1219,1014,935
+071905,Health,Race/Ethnicity,Other,22,3,3,22,NA,NA,22,2,1
+071905,Health,Race/Ethnicity,White,10,5,5,NA,NA,NA,11,6,4
+071905,Health,Homeless,Homeless,21,10,10,21,10,10,21,10,9
+071905,Health,In Foster Care,In Foster Care,7,7,6,NA,NA,NA,7,5,5
+071905,Mathematics,Race/Ethnicity,Black or African American,9,5,5,NA,NA,NA,9,6,3
+071905,Mathematics,Race/Ethnicity,Hispanic/Latino,1219,1074,1052,1219,1074,1052,1219,1072,1051
+071905,Mathematics,Race/Ethnicity,Other,22,2,2,22,NA,NA,22,4,4
+071905,Mathematics,Race/Ethnicity,White,10,6,6,NA,NA,NA,11,3,3
+071905,Mathematics,Homeless,Homeless,21,10,10,21,10,10,21,7,7
+071905,Mathematics,In Foster Care,In Foster Care,8,8,8,NA,NA,NA,7,8,8
+079901,Reading,Race/Ethnicity,Black or African American,462,389,359,462,389,359,462,390,359
+079901,Reading,Race/Ethnicity,Hispanic/Latino,714,610,525,714,610,525,714,610,525
+079901,Reading,Race/Ethnicity,Other,389,329,311,389,329,311,391,328,311
+079901,Reading,Race/Ethnicity,White,182,141,124,182,141,124,183,140,125
+079901,Reading,Homeless,Homeless,24,11,11,24,11,11,22,10,10
+079901,Reading,In Foster Care,In Foster Care,9,6,5,NA,NA,NA,9,6,5
+079901,Writing,Race/Ethnicity,Black or African American,462,387,367,462,387,367,462,387,365
+079901,Writing,Race/Ethnicity,Hispanic/Latino,714,608,541,714,608,541,714,608,540
+079901,Writing,Race/Ethnicity,Other,389,326,304,389,326,304,391,326,303
+079901,Writing,Race/Ethnicity,White,182,140,128,182,140,128,183,141,127
+079901,Writing,Homeless,Homeless,24,11,11,24,11,11,22,10,10
+079901,Writing,In Foster Care,In Foster Care,9,6,5,NA,NA,NA,9,6,4
+079901,Health,Race/Ethnicity,Black or African American,462,386,355,462,386,355,462,386,356
+079901,Health,Race/Ethnicity,Hispanic/Latino,714,608,559,714,608,559,714,607,558
+079901,Health,Race/Ethnicity,Other,389,325,308,389,325,308,391,326,307
+079901,Health,Race/Ethnicity,White,182,140,129,182,140,129,183,140,131
+079901,Health,Homeless,Homeless,24,11,11,24,11,11,22,10,10
+079901,Health,In Foster Care,In Foster Care,9,6,5,NA,NA,NA,9,5,3
+079901,Mathematics,Race/Ethnicity,Black or African American,462,389,374,462,389,374,462,389,374
+079901,Mathematics,Race/Ethnicity,Hispanic/Latino,714,608,564,714,608,564,714,607,565
+079901,Mathematics,Race/Ethnicity,Other,389,329,314,389,329,314,391,328,314
+079901,Mathematics,Race/Ethnicity,White,182,141,136,182,141,136,183,142,138
+079901,Mathematics,Homeless,Homeless,24,11,11,24,11,11,22,9,9
+079901,Mathematics,In Foster Care,In Foster Care,9,6,5,NA,NA,NA,9,5,5
+079907,Reading,Race/Ethnicity,Black or African American,680,524,462,680,524,462,680,524,462
+079907,Reading,Race/Ethnicity,Hispanic/Latino,738,605,518,738,605,518,738,605,520
+079907,Reading,Race/Ethnicity,Other,772,649,611,772,649,611,772,648,610
+079907,Reading,Race/Ethnicity,White,175,141,130,175,141,130,175,141,132
+079907,Reading,Homeless,Homeless,44,28,22,44,28,22,44,26,22
+079907,Reading,In Foster Care,In Foster Care,15,6,6,15,NA,NA,17,5,5
+079907,Writing,Race/Ethnicity,Black or African American,680,510,469,680,510,469,680,511,468
+079907,Writing,Race/Ethnicity,Hispanic/Latino,738,607,562,738,607,562,738,607,561
+079907,Writing,Race/Ethnicity,Other,772,634,608,772,634,608,772,632,607
+079907,Writing,Race/Ethnicity,White,175,138,128,175,138,128,175,138,128
+079907,Writing,Homeless,Homeless,44,27,27,44,27,27,44,27,27
+079907,Writing,In Foster Care,In Foster Care,15,6,6,15,NA,NA,17,5,5
+079907,Health,Race/Ethnicity,Black or African American,680,508,444,680,508,444,680,507,443
+079907,Health,Race/Ethnicity,Hispanic/Latino,738,605,558,738,605,558,738,606,558
+079907,Health,Race/Ethnicity,Other,772,621,578,772,621,578,772,620,578
+079907,Health,Race/Ethnicity,White,175,135,122,175,135,122,175,136,124
+079907,Health,Homeless,Homeless,44,27,27,44,27,27,44,26,26
+079907,Health,In Foster Care,In Foster Care,15,5,5,15,NA,NA,17,6,6
+079907,Mathematics,Race/Ethnicity,Black or African American,680,517,490,680,517,490,680,519,491
+079907,Mathematics,Race/Ethnicity,Hispanic/Latino,738,598,571,738,598,571,738,598,571
+079907,Mathematics,Race/Ethnicity,Other,772,641,618,772,641,618,772,641,616
+079907,Mathematics,Race/Ethnicity,White,175,139,133,175,139,133,175,139,132
+079907,Mathematics,Homeless,Homeless,44,26,26,44,26,26,44,26,26
+079907,Mathematics,In Foster Care,In Foster Care,15,6,6,15,NA,NA,17,5,4
+084901,Reading,Race/Ethnicity,Black or African American,46,39,36,46,39,36,46,41,36
+084901,Reading,Race/Ethnicity,Hispanic/Latino,305,239,210,305,239,210,305,239,210
+084901,Reading,Race/Ethnicity,Other,27,22,21,27,22,21,28,22,19
+084901,Reading,Race/Ethnicity,White,95,76,64,95,76,64,96,74,63
+084901,Reading,Homeless,Homeless,16,8,8,16,NA,NA,16,10,8
+084901,Reading,In Foster Care,In Foster Care,5,2,1,NA,NA,NA,5,2,0
+084901,Writing,Race/Ethnicity,Black or African American,46,38,38,46,38,38,46,40,38
+084901,Writing,Race/Ethnicity,Hispanic/Latino,305,237,215,305,237,215,305,237,216
+084901,Writing,Race/Ethnicity,Other,27,23,23,27,23,23,28,22,22
+084901,Writing,Race/Ethnicity,White,95,74,27,95,74,27,96,73,27
+084901,Writing,Homeless,Homeless,16,8,8,16,NA,NA,16,7,7
+084901,Writing,In Foster Care,In Foster Care,5,2,1,NA,NA,NA,5,3,2
+084901,Health,Race/Ethnicity,Black or African American,46,38,34,46,38,34,46,40,33
+084901,Health,Race/Ethnicity,Hispanic/Latino,305,238,201,305,238,201,305,236,202
+084901,Health,Race/Ethnicity,Other,27,23,20,27,23,20,28,22,18
+084901,Health,Race/Ethnicity,White,95,73,64,95,73,64,96,72,63
+084901,Health,Homeless,Homeless,16,8,8,16,NA,NA,16,6,6
+084901,Health,In Foster Care,In Foster Care,5,2,1,NA,NA,NA,5,3,2
+084901,Mathematics,Race/Ethnicity,Black or African American,46,38,35,46,38,35,46,38,35
+084901,Mathematics,Race/Ethnicity,Hispanic/Latino,305,240,221,305,240,221,305,240,222
+084901,Mathematics,Race/Ethnicity,Other,27,22,20,27,22,20,28,22,21
+084901,Mathematics,Race/Ethnicity,White,95,75,65,95,75,65,96,74,65
+084901,Mathematics,Homeless,Homeless,16,8,8,16,NA,NA,16,9,8
+084901,Mathematics,In Foster Care,In Foster Care,5,2,1,NA,NA,NA,5,1,1
+084902,Reading,Race/Ethnicity,Black or African American,74,57,52,74,57,52,73,57,52
+084902,Reading,Race/Ethnicity,Hispanic/Latino,186,157,150,186,157,150,185,156,152
+084902,Reading,Race/Ethnicity,Other,19,18,18,19,18,18,20,17,17
+084902,Reading,Race/Ethnicity,White,45,36,22,45,36,22,47,36,23
+084902,Reading,Homeless,Homeless,32,18,7,32,18,NA,32,16,5
+084902,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,4,3,2
+084902,Writing,Race/Ethnicity,Black or African American,74,57,49,74,57,49,73,56,50
+084902,Writing,Race/Ethnicity,Hispanic/Latino,186,158,144,186,158,144,185,159,143
+084902,Writing,Race/Ethnicity,Other,19,18,18,19,18,18,20,18,18
+084902,Writing,Race/Ethnicity,White,45,36,36,45,36,36,47,34,34
+084902,Writing,Homeless,Homeless,32,18,7,32,18,NA,32,20,8
+084902,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,4,1,1
+084902,Health,Race/Ethnicity,Black or African American,74,57,50,74,57,50,73,57,52
+084902,Health,Race/Ethnicity,Hispanic/Latino,186,158,149,186,158,149,185,157,150
+084902,Health,Race/Ethnicity,Other,19,18,18,19,18,18,20,18,18
+084902,Health,Race/Ethnicity,White,45,36,22,45,36,22,47,36,20
+084902,Health,Homeless,Homeless,32,18,7,32,18,NA,32,17,8
+084902,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,4,1,1
+084902,Mathematics,Race/Ethnicity,Black or African American,74,57,50,74,57,50,73,58,50
+084902,Mathematics,Race/Ethnicity,Hispanic/Latino,186,157,151,186,157,151,185,155,151
+084902,Mathematics,Race/Ethnicity,Other,19,18,18,19,18,18,20,17,17
+084902,Mathematics,Race/Ethnicity,White,45,36,23,45,36,23,47,37,23
+084902,Mathematics,Homeless,Homeless,32,18,7,32,18,NA,32,19,7
+084902,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,4,1,1
+084910,Reading,Race/Ethnicity,Black or African American,126,86,66,126,86,66,126,87,63
+084910,Reading,Race/Ethnicity,Hispanic/Latino,489,396,336,489,396,336,488,396,337
+084910,Reading,Race/Ethnicity,Other,176,142,131,176,142,131,176,141,130
+084910,Reading,Race/Ethnicity,White,330,280,245,330,280,245,329,279,246
+084910,Reading,Homeless,Homeless,70,29,23,70,29,23,70,29,23
+084910,Reading,In Foster Care,In Foster Care,12,8,3,12,NA,NA,11,8,2
+084910,Writing,Race/Ethnicity,Black or African American,126,72,63,126,72,63,126,70,63
+084910,Writing,Race/Ethnicity,Hispanic/Latino,489,334,306,489,334,306,488,333,306
+084910,Writing,Race/Ethnicity,Other,176,127,123,176,127,123,176,126,124
+084910,Writing,Race/Ethnicity,White,330,230,220,330,230,220,329,231,220
+084910,Writing,Homeless,Homeless,70,20,19,70,20,19,70,20,20
+084910,Writing,In Foster Care,In Foster Care,12,7,3,12,NA,NA,11,7,2
+084910,Health,Race/Ethnicity,Black or African American,126,85,59,126,85,59,126,86,59
+084910,Health,Race/Ethnicity,Hispanic/Latino,489,352,325,489,352,325,488,351,324
+084910,Health,Race/Ethnicity,Other,176,132,121,176,132,121,176,131,121
+084910,Health,Race/Ethnicity,White,330,250,231,330,250,231,329,249,232
+084910,Health,Homeless,Homeless,70,28,20,70,28,20,70,27,18
+084910,Health,In Foster Care,In Foster Care,12,8,3,12,NA,NA,11,9,4
+084910,Mathematics,Race/Ethnicity,Black or African American,126,85,70,126,85,70,126,86,70
+084910,Mathematics,Race/Ethnicity,Hispanic/Latino,489,386,340,489,386,340,488,383,340
+084910,Mathematics,Race/Ethnicity,Other,176,144,136,176,144,136,176,144,139
+084910,Mathematics,Race/Ethnicity,White,330,281,266,330,281,266,329,280,265
+084910,Mathematics,Homeless,Homeless,70,29,23,70,29,23,70,28,24
+084910,Mathematics,In Foster Care,In Foster Care,12,8,3,12,NA,NA,11,6,5
+093904,Reading,Race/Ethnicity,Black or African American,28,22,17,28,NA,NA,28,24,18
+093904,Reading,Race/Ethnicity,Hispanic/Latino,101,92,71,101,92,71,102,91,69
+093904,Reading,Race/Ethnicity,Other,10,5,5,10,NA,NA,10,4,4
+093904,Reading,Race/Ethnicity,White,31,25,19,31,25,19,31,24,17
+093904,Reading,Homeless,Homeless,7,5,5,NA,NA,NA,6,5,4
+093904,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,1
+093904,Writing,Race/Ethnicity,Black or African American,28,22,12,28,NA,NA,28,23,12
+093904,Writing,Race/Ethnicity,Hispanic/Latino,101,93,88,101,93,88,102,93,88
+093904,Writing,Race/Ethnicity,Other,10,5,5,10,NA,NA,10,5,4
+093904,Writing,Race/Ethnicity,White,31,25,25,31,25,25,31,24,24
+093904,Writing,Homeless,Homeless,7,5,5,NA,NA,NA,6,5,5
+093904,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,2,2
+093904,Health,Race/Ethnicity,Black or African American,28,22,18,28,NA,NA,28,24,17
+093904,Health,Race/Ethnicity,Hispanic/Latino,101,92,86,101,92,86,102,92,87
+093904,Health,Race/Ethnicity,Other,10,5,5,10,NA,NA,10,4,3
+093904,Health,Race/Ethnicity,White,31,25,25,31,25,25,31,26,25
+093904,Health,Homeless,Homeless,7,5,5,NA,NA,NA,6,3,3
+093904,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,0
+093904,Mathematics,Race/Ethnicity,Black or African American,28,22,12,28,NA,NA,28,20,11
+093904,Mathematics,Race/Ethnicity,Hispanic/Latino,101,93,81,101,93,81,102,94,79
+093904,Mathematics,Race/Ethnicity,Other,10,5,5,10,NA,NA,10,6,4
+093904,Mathematics,Race/Ethnicity,White,31,25,25,31,25,25,31,26,25
+093904,Mathematics,Homeless,Homeless,7,5,5,NA,NA,NA,6,4,4
+093904,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,0
+094901,Reading,Race/Ethnicity,Black or African American,9,8,7,NA,NA,NA,10,10,7
+094901,Reading,Race/Ethnicity,Hispanic/Latino,276,239,190,276,239,190,275,239,191
+094901,Reading,Race/Ethnicity,Other,11,11,6,NA,NA,NA,11,11,3
+094901,Reading,Race/Ethnicity,White,57,48,34,57,48,34,55,48,34
+094901,Reading,Homeless,Homeless,9,5,5,NA,NA,NA,9,4,4
+094901,Reading,In Foster Care,In Foster Care,4,3,2,NA,NA,NA,4,3,2
+094901,Writing,Race/Ethnicity,Black or African American,9,8,8,NA,NA,NA,10,9,9
+094901,Writing,Race/Ethnicity,Hispanic/Latino,276,225,208,276,225,208,275,225,209
+094901,Writing,Race/Ethnicity,Other,11,10,10,NA,NA,NA,11,11,9
+094901,Writing,Race/Ethnicity,White,57,45,25,57,45,25,55,43,25
+094901,Writing,Homeless,Homeless,9,5,5,NA,NA,NA,9,6,3
+094901,Writing,In Foster Care,In Foster Care,4,3,2,NA,NA,NA,4,3,2
+094901,Health,Race/Ethnicity,Black or African American,9,8,8,NA,NA,NA,10,6,6
+094901,Health,Race/Ethnicity,Hispanic/Latino,276,225,209,276,225,209,275,224,208
+094901,Health,Race/Ethnicity,Other,11,10,10,NA,NA,NA,11,10,10
+094901,Health,Race/Ethnicity,White,57,45,24,57,45,24,55,45,24
+094901,Health,Homeless,Homeless,9,5,5,NA,NA,NA,9,5,4
+094901,Health,In Foster Care,In Foster Care,4,3,2,NA,NA,NA,4,3,3
+094901,Mathematics,Race/Ethnicity,Black or African American,9,8,8,NA,NA,NA,10,10,9
+094901,Mathematics,Race/Ethnicity,Hispanic/Latino,276,235,221,276,235,221,275,237,220
+094901,Mathematics,Race/Ethnicity,Other,11,11,11,NA,NA,NA,11,9,9
+094901,Mathematics,Race/Ethnicity,White,57,47,26,57,47,26,55,48,28
+094901,Mathematics,Homeless,Homeless,9,5,5,NA,NA,NA,9,5,5
+094901,Mathematics,In Foster Care,In Foster Care,4,3,3,NA,NA,NA,4,4,4
+094902,Reading,Race/Ethnicity,Black or African American,64,50,41,64,50,41,66,48,42
+094902,Reading,Race/Ethnicity,Hispanic/Latino,204,171,138,204,171,138,202,171,139
+094902,Reading,Race/Ethnicity,Other,37,35,30,37,35,30,37,36,29
+094902,Reading,Race/Ethnicity,White,88,68,56,88,68,56,88,66,56
+094902,Reading,Homeless,Homeless,9,7,7,NA,NA,NA,9,7,7
+094902,Reading,In Foster Care,In Foster Care,7,3,2,NA,NA,NA,7,3,3
+094902,Writing,Race/Ethnicity,Black or African American,64,50,40,64,50,40,66,48,40
+094902,Writing,Race/Ethnicity,Hispanic/Latino,204,156,135,204,156,135,202,156,136
+094902,Writing,Race/Ethnicity,Other,37,35,35,37,35,35,37,36,35
+094902,Writing,Race/Ethnicity,White,88,67,61,88,67,61,88,68,61
+094902,Writing,Homeless,Homeless,9,7,7,NA,NA,NA,9,7,7
+094902,Writing,In Foster Care,In Foster Care,7,3,2,NA,NA,NA,7,2,1
+094902,Health,Race/Ethnicity,Black or African American,64,50,44,64,50,44,66,50,45
+094902,Health,Race/Ethnicity,Hispanic/Latino,204,158,143,204,158,143,202,158,142
+094902,Health,Race/Ethnicity,Other,37,35,31,37,35,31,37,36,30
+094902,Health,Race/Ethnicity,White,88,67,61,88,67,61,88,66,59
+094902,Health,Homeless,Homeless,9,6,6,NA,NA,NA,9,5,4
+094902,Health,In Foster Care,In Foster Care,7,3,2,NA,NA,NA,7,2,2
+094902,Mathematics,Race/Ethnicity,Black or African American,64,50,42,64,50,42,66,49,43
+094902,Mathematics,Race/Ethnicity,Hispanic/Latino,204,170,152,204,170,152,202,168,154
+094902,Mathematics,Race/Ethnicity,Other,37,35,35,37,35,35,37,34,34
+094902,Mathematics,Race/Ethnicity,White,88,67,66,88,67,66,88,66,66
+094902,Mathematics,Homeless,Homeless,9,7,7,NA,NA,NA,9,8,7
+094902,Mathematics,In Foster Care,In Foster Care,7,3,3,NA,NA,NA,7,2,2
+101902,Reading,Race/Ethnicity,Black or African American,661,467,414,661,467,414,661,467,414
+101902,Reading,Race/Ethnicity,Hispanic/Latino,2245,1882,1758,2245,1882,1758,2246,1883,1758
+101902,Reading,Race/Ethnicity,Other,88,65,62,88,65,62,87,64,62
+101902,Reading,Race/Ethnicity,White,66,46,45,66,46,45,65,47,46
+101902,Reading,Homeless,Homeless,31,14,14,31,14,14,33,16,15
+101902,Reading,In Foster Care,In Foster Care,18,9,9,18,NA,NA,16,10,9
+101902,Writing,Race/Ethnicity,Black or African American,661,442,407,661,442,407,661,442,407
+101902,Writing,Race/Ethnicity,Hispanic/Latino,2245,1845,1746,2245,1845,1746,2246,1845,1747
+101902,Writing,Race/Ethnicity,Other,88,53,51,88,53,51,87,53,51
+101902,Writing,Race/Ethnicity,White,66,43,39,66,43,39,65,41,38
+101902,Writing,Homeless,Homeless,31,12,12,31,12,12,33,13,13
+101902,Writing,In Foster Care,In Foster Care,18,8,8,18,NA,NA,16,9,7
+101902,Health,Race/Ethnicity,Black or African American,661,443,396,661,443,396,661,443,396
+101902,Health,Race/Ethnicity,Hispanic/Latino,2245,1843,1755,2245,1843,1755,2246,1842,1754
+101902,Health,Race/Ethnicity,Other,88,63,54,88,63,54,87,60,53
+101902,Health,Race/Ethnicity,White,66,44,41,66,44,41,65,45,42
+101902,Health,Homeless,Homeless,31,12,12,31,12,12,33,10,10
+101902,Health,In Foster Care,In Foster Care,18,8,8,18,NA,NA,16,7,7
+101902,Mathematics,Race/Ethnicity,Black or African American,661,470,455,661,470,455,661,470,453
+101902,Mathematics,Race/Ethnicity,Hispanic/Latino,2245,1876,1821,2245,1876,1821,2246,1876,1820
+101902,Mathematics,Race/Ethnicity,Other,88,67,63,88,67,63,87,66,62
+101902,Mathematics,Race/Ethnicity,White,66,45,45,66,45,45,65,44,44
+101902,Mathematics,Homeless,Homeless,31,13,13,31,13,13,33,15,13
+101902,Mathematics,In Foster Care,In Foster Care,18,9,9,18,NA,NA,16,10,8
+101903,Reading,Race/Ethnicity,Black or African American,390,280,239,390,280,239,391,278,240
+101903,Reading,Race/Ethnicity,Hispanic/Latino,1200,929,807,1200,929,807,1199,929,807
+101903,Reading,Race/Ethnicity,Other,170,119,108,170,119,108,172,119,108
+101903,Reading,Race/Ethnicity,White,77,57,46,77,57,46,77,56,47
+101903,Reading,Homeless,Homeless,99,66,49,99,66,49,97,66,50
+101903,Reading,In Foster Care,In Foster Care,11,6,5,11,NA,NA,11,6,5
+101903,Writing,Race/Ethnicity,Black or African American,390,277,248,390,277,248,391,278,248
+101903,Writing,Race/Ethnicity,Hispanic/Latino,1200,933,831,1200,933,831,1199,933,831
+101903,Writing,Race/Ethnicity,Other,170,118,105,170,118,105,172,118,106
+101903,Writing,Race/Ethnicity,White,77,56,50,77,56,50,77,55,51
+101903,Writing,Homeless,Homeless,99,63,54,99,63,54,97,64,54
+101903,Writing,In Foster Care,In Foster Care,11,6,5,11,NA,NA,11,5,5
+101903,Health,Race/Ethnicity,Black or African American,390,276,247,390,276,247,391,275,245
+101903,Health,Race/Ethnicity,Hispanic/Latino,1200,930,862,1200,930,862,1199,929,862
+101903,Health,Race/Ethnicity,Other,170,118,90,170,118,90,172,118,89
+101903,Health,Race/Ethnicity,White,77,56,56,77,56,56,77,54,54
+101903,Health,Homeless,Homeless,99,62,56,99,62,56,97,62,55
+101903,Health,In Foster Care,In Foster Care,11,6,4,11,NA,NA,11,8,5
+101903,Mathematics,Race/Ethnicity,Black or African American,390,276,255,390,276,255,391,275,254
+101903,Mathematics,Race/Ethnicity,Hispanic/Latino,1200,924,879,1200,924,879,1199,923,880
+101903,Mathematics,Race/Ethnicity,Other,170,118,95,170,118,95,172,119,95
+101903,Mathematics,Race/Ethnicity,White,77,56,56,77,56,56,77,56,56
+101903,Mathematics,Homeless,Homeless,99,66,36,99,66,36,97,65,38
+101903,Mathematics,In Foster Care,In Foster Care,11,6,5,11,NA,NA,11,6,4
+101907,Reading,Race/Ethnicity,Black or African American,1001,750,658,1001,750,658,1002,749,658
+101907,Reading,Race/Ethnicity,Hispanic/Latino,2429,2018,1831,2429,2018,1831,2428,2019,1829
+101907,Reading,Race/Ethnicity,Other,716,579,551,716,579,551,716,578,551
+101907,Reading,Race/Ethnicity,White,364,304,276,364,304,276,365,303,276
+101907,Reading,Homeless,Homeless,55,26,26,55,26,26,56,26,26
+101907,Reading,In Foster Care,In Foster Care,51,32,13,51,32,13,51,31,14
+101907,Writing,Race/Ethnicity,Black or African American,1001,728,641,1001,728,641,1002,727,640
+101907,Writing,Race/Ethnicity,Hispanic/Latino,2429,1904,1723,2429,1904,1723,2428,1904,1723
+101907,Writing,Race/Ethnicity,Other,716,555,528,716,555,528,716,556,528
+101907,Writing,Race/Ethnicity,White,364,299,268,364,299,268,365,299,268
+101907,Writing,Homeless,Homeless,55,24,24,55,24,24,56,22,22
+101907,Writing,In Foster Care,In Foster Care,51,31,12,51,31,12,51,31,12
+101907,Health,Race/Ethnicity,Black or African American,1001,728,593,1001,728,593,1002,728,594
+101907,Health,Race/Ethnicity,Hispanic/Latino,2429,1905,1727,2429,1905,1727,2428,1905,1728
+101907,Health,Race/Ethnicity,Other,716,560,524,716,560,524,716,559,523
+101907,Health,Race/Ethnicity,White,364,297,263,364,297,263,365,297,265
+101907,Health,Homeless,Homeless,55,23,23,55,23,23,56,23,22
+101907,Health,In Foster Care,In Foster Care,51,30,23,51,30,23,51,31,23
+101907,Mathematics,Race/Ethnicity,Black or African American,1001,747,679,1001,747,679,1002,747,680
+101907,Mathematics,Race/Ethnicity,Hispanic/Latino,2429,2017,1861,2429,2017,1861,2428,2016,1862
+101907,Mathematics,Race/Ethnicity,Other,716,569,543,716,569,543,716,571,544
+101907,Mathematics,Race/Ethnicity,White,364,302,279,364,302,279,365,302,280
+101907,Mathematics,Homeless,Homeless,55,26,26,55,26,26,56,25,25
+101907,Mathematics,In Foster Care,In Foster Care,51,31,13,51,31,13,51,32,13
+101910,Reading,Race/Ethnicity,Black or African American,103,23,17,103,23,17,104,22,18
+101910,Reading,Race/Ethnicity,Hispanic/Latino,793,444,396,793,444,396,793,443,395
+101910,Reading,Race/Ethnicity,Other,16,9,9,16,NA,NA,16,9,9
+101910,Reading,Race/Ethnicity,White,26,16,7,26,NA,NA,24,16,5
+101910,Reading,Homeless,Homeless,11,11,11,11,11,11,11,11,11
+101910,Reading,In Foster Care,In Foster Care,5,2,2,NA,NA,NA,6,5,2
+101910,Writing,Race/Ethnicity,Black or African American,103,67,61,103,67,61,104,69,62
+101910,Writing,Race/Ethnicity,Hispanic/Latino,793,671,619,793,671,619,793,672,620
+101910,Writing,Race/Ethnicity,Other,16,12,12,16,12,12,16,12,12
+101910,Writing,Race/Ethnicity,White,26,19,12,26,19,12,24,19,11
+101910,Writing,Homeless,Homeless,19,19,19,19,19,19,11,19,18
+101910,Writing,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,6,2,2
+101910,Health,Race/Ethnicity,Black or African American,103,65,59,103,65,59,104,66,59
+101910,Health,Race/Ethnicity,Hispanic/Latino,793,656,617,793,656,617,793,657,618
+101910,Health,Race/Ethnicity,Other,16,12,12,16,12,12,16,12,11
+101910,Health,Race/Ethnicity,White,26,19,12,26,19,12,24,18,13
+101910,Health,Homeless,Homeless,20,20,19,20,20,19,11,19,19
+101910,Health,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,6,2,1
+101910,Mathematics,Race/Ethnicity,Black or African American,103,60,55,103,60,55,104,60,55
+101910,Mathematics,Race/Ethnicity,Hispanic/Latino,793,609,572,793,609,572,793,608,573
+101910,Mathematics,Race/Ethnicity,Other,16,11,11,16,11,11,16,12,12
+101910,Mathematics,Race/Ethnicity,White,26,18,11,26,18,11,24,17,13
+101910,Mathematics,Homeless,Homeless,18,18,18,18,18,18,11,17,17
+101910,Mathematics,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,6,3,2
+101911,Reading,Race/Ethnicity,Black or African American,159,113,78,159,113,78,159,113,79
+101911,Reading,Race/Ethnicity,Hispanic/Latino,566,478,390,566,478,390,566,478,389
+101911,Reading,Race/Ethnicity,Other,33,26,22,33,26,22,33,25,22
+101911,Reading,Race/Ethnicity,White,92,68,55,92,68,55,91,67,55
+101911,Reading,Homeless,Homeless,21,11,11,21,11,11,20,11,11
+101911,Reading,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,5,2
+101911,Writing,Race/Ethnicity,Black or African American,159,114,98,159,114,98,159,113,100
+101911,Writing,Race/Ethnicity,Hispanic/Latino,566,432,392,566,432,392,566,430,393
+101911,Writing,Race/Ethnicity,Other,33,26,24,33,26,24,33,28,25
+101911,Writing,Race/Ethnicity,White,92,67,59,92,67,59,91,65,61
+101911,Writing,Homeless,Homeless,21,11,11,21,11,11,20,12,11
+101911,Writing,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,4,1
+101911,Health,Race/Ethnicity,Black or African American,159,113,97,159,113,97,159,114,97
+101911,Health,Race/Ethnicity,Hispanic/Latino,566,448,421,566,448,421,566,448,418
+101911,Health,Race/Ethnicity,Other,33,26,26,33,26,26,33,24,24
+101911,Health,Race/Ethnicity,White,92,67,60,92,67,60,91,67,62
+101911,Health,Homeless,Homeless,21,11,11,21,11,11,20,13,10
+101911,Health,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,1,1
+101911,Mathematics,Race/Ethnicity,Black or African American,159,113,89,159,113,89,159,112,89
+101911,Mathematics,Race/Ethnicity,Hispanic/Latino,566,476,406,566,476,406,566,475,405
+101911,Mathematics,Race/Ethnicity,Other,33,26,25,33,26,25,33,26,23
+101911,Mathematics,Race/Ethnicity,White,92,68,61,92,68,61,91,68,62
+101911,Mathematics,Homeless,Homeless,21,11,11,21,11,11,20,10,10
+101911,Mathematics,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,5,4,1
+101912,Reading,Race/Ethnicity,Black or African American,2273,1595,1416,2273,1595,1416,2274,1595,1416
+101912,Reading,Race/Ethnicity,Hispanic/Latino,6011,4822,4385,6011,4822,4385,6012,4822,4384
+101912,Reading,Race/Ethnicity,Other,617,458,422,617,458,422,616,456,423
+101912,Reading,Race/Ethnicity,White,423,318,283,423,318,283,421,318,283
+101912,Reading,Homeless,Homeless,680,468,416,680,468,416,679,467,417
+101912,Reading,In Foster Care,In Foster Care,18,13,13,18,13,13,22,13,13
+101912,Writing,Race/Ethnicity,Black or African American,2273,1598,1423,2273,1598,1423,2274,1597,1423
+101912,Writing,Race/Ethnicity,Hispanic/Latino,6011,4809,4404,6011,4809,4404,6012,4808,4402
+101912,Writing,Race/Ethnicity,Other,617,457,433,617,457,433,616,456,434
+101912,Writing,Race/Ethnicity,White,423,317,297,423,317,297,421,317,297
+101912,Writing,Homeless,Homeless,680,471,427,680,471,427,679,471,426
+101912,Writing,In Foster Care,In Foster Care,18,12,12,18,12,12,22,12,12
+101912,Health,Race/Ethnicity,Black or African American,2273,1592,1350,2273,1592,1350,2274,1591,1351
+101912,Health,Race/Ethnicity,Hispanic/Latino,6011,4786,4385,6011,4786,4385,6012,4787,4386
+101912,Health,Race/Ethnicity,Other,617,452,412,617,452,412,616,452,412
+101912,Health,Race/Ethnicity,White,423,316,283,423,316,283,421,316,283
+101912,Health,Homeless,Homeless,680,469,409,680,469,409,679,469,406
+101912,Health,In Foster Care,In Foster Care,18,12,12,18,12,12,22,11,11
+101912,Mathematics,Race/Ethnicity,Black or African American,2273,1593,1510,2273,1593,1510,2274,1592,1507
+101912,Mathematics,Race/Ethnicity,Hispanic/Latino,6011,4822,4598,6011,4822,4598,6012,4823,4599
+101912,Mathematics,Race/Ethnicity,Other,617,458,445,617,458,445,616,459,445
+101912,Mathematics,Race/Ethnicity,White,423,317,301,423,317,301,421,318,302
+101912,Mathematics,Homeless,Homeless,680,472,445,680,472,445,679,472,445
+101912,Mathematics,In Foster Care,In Foster Care,18,13,13,18,13,13,22,12,12
+101913,Reading,Race/Ethnicity,Black or African American,396,312,264,396,312,264,396,312,264
+101913,Reading,Race/Ethnicity,Hispanic/Latino,607,531,458,607,531,458,606,531,458
+101913,Reading,Race/Ethnicity,Other,94,79,68,94,79,68,94,79,68
+101913,Reading,Race/Ethnicity,White,78,69,54,78,69,54,79,71,53
+101913,Reading,Homeless,Homeless,50,34,25,50,34,25,48,34,26
+101913,Reading,In Foster Care,In Foster Care,19,9,3,19,NA,NA,19,9,4
+101913,Writing,Race/Ethnicity,Black or African American,396,283,256,396,283,256,396,285,256
+101913,Writing,Race/Ethnicity,Hispanic/Latino,607,502,446,607,502,446,606,502,445
+101913,Writing,Race/Ethnicity,Other,94,75,73,94,75,73,94,76,72
+101913,Writing,Race/Ethnicity,White,78,64,56,78,64,56,79,62,56
+101913,Writing,Homeless,Homeless,50,32,22,50,32,22,48,32,21
+101913,Writing,In Foster Care,In Foster Care,19,9,3,19,NA,NA,19,10,0
+101913,Health,Race/Ethnicity,Black or African American,396,303,267,396,303,267,396,303,269
+101913,Health,Race/Ethnicity,Hispanic/Latino,607,531,482,607,531,482,606,530,481
+101913,Health,Race/Ethnicity,Other,94,80,70,94,80,70,94,80,70
+101913,Health,Race/Ethnicity,White,78,68,59,78,68,59,79,68,60
+101913,Health,Homeless,Homeless,50,32,23,50,32,23,48,32,23
+101913,Health,In Foster Care,In Foster Care,19,9,3,19,NA,NA,19,10,3
+101913,Mathematics,Race/Ethnicity,Black or African American,396,311,279,396,311,279,396,311,278
+101913,Mathematics,Race/Ethnicity,Hispanic/Latino,607,525,479,607,525,479,606,526,479
+101913,Mathematics,Race/Ethnicity,Other,94,79,76,94,79,76,94,79,77
+101913,Mathematics,Race/Ethnicity,White,78,68,63,78,68,63,79,70,63
+101913,Mathematics,Homeless,Homeless,50,34,25,50,34,25,48,35,26
+101913,Mathematics,In Foster Care,In Foster Care,19,9,3,19,NA,NA,19,8,2
+101914,Reading,Race/Ethnicity,Black or African American,532,406,344,532,406,344,533,405,344
+101914,Reading,Race/Ethnicity,Hispanic/Latino,1232,1071,910,1232,1071,910,1234,1071,908
+101914,Reading,Race/Ethnicity,Other,741,637,596,741,637,596,741,637,595
+101914,Reading,Race/Ethnicity,White,277,236,205,277,236,205,278,235,206
+101914,Reading,Homeless,Homeless,27,19,19,27,19,19,26,19,19
+101914,Reading,In Foster Care,In Foster Care,23,14,8,23,14,NA,23,13,10
+101914,Writing,Race/Ethnicity,Black or African American,532,396,350,532,396,350,533,396,349
+101914,Writing,Race/Ethnicity,Hispanic/Latino,1232,1014,904,1232,1014,904,1234,1015,904
+101914,Writing,Race/Ethnicity,Other,741,631,587,741,631,587,741,632,587
+101914,Writing,Race/Ethnicity,White,277,227,215,277,227,215,278,227,215
+101914,Writing,Homeless,Homeless,27,18,18,27,18,18,26,18,18
+101914,Writing,In Foster Care,In Foster Care,23,14,8,23,14,NA,23,13,9
+101914,Health,Race/Ethnicity,Black or African American,532,403,313,532,403,313,533,403,315
+101914,Health,Race/Ethnicity,Hispanic/Latino,1232,1017,922,1232,1017,922,1234,1017,920
+101914,Health,Race/Ethnicity,Other,741,633,583,741,633,583,741,632,582
+101914,Health,Race/Ethnicity,White,277,229,207,277,229,207,278,229,207
+101914,Health,Homeless,Homeless,27,18,18,27,18,18,26,18,18
+101914,Health,In Foster Care,In Foster Care,23,14,7,23,14,NA,23,13,8
+101914,Mathematics,Race/Ethnicity,Black or African American,532,404,372,532,404,372,533,403,371
+101914,Mathematics,Race/Ethnicity,Hispanic/Latino,1232,1072,984,1232,1072,984,1234,1073,984
+101914,Mathematics,Race/Ethnicity,Other,741,634,612,741,634,612,741,634,611
+101914,Mathematics,Race/Ethnicity,White,277,235,225,277,235,225,278,236,224
+101914,Mathematics,Homeless,Homeless,27,18,18,27,18,18,26,17,17
+101914,Mathematics,In Foster Care,In Foster Care,23,14,8,23,14,NA,23,15,8
+101915,Reading,Race/Ethnicity,Black or African American,335,233,185,335,233,185,335,233,185
+101915,Reading,Race/Ethnicity,Hispanic/Latino,977,799,656,977,799,656,975,798,658
+101915,Reading,Race/Ethnicity,Other,195,157,140,195,157,140,194,154,142
+101915,Reading,Race/Ethnicity,White,135,100,84,135,100,84,133,100,83
+101915,Reading,Homeless,Homeless,23,11,11,23,11,11,23,11,11
+101915,Reading,In Foster Care,In Foster Care,23,10,4,23,10,NA,23,9,3
+101915,Writing,Race/Ethnicity,Black or African American,335,233,187,335,233,187,335,233,188
+101915,Writing,Race/Ethnicity,Hispanic/Latino,977,793,664,977,793,664,975,794,665
+101915,Writing,Race/Ethnicity,Other,195,158,145,195,158,145,194,159,144
+101915,Writing,Race/Ethnicity,White,135,100,91,135,100,91,133,101,91
+101915,Writing,Homeless,Homeless,23,11,11,23,11,11,23,12,11
+101915,Writing,In Foster Care,In Foster Care,23,10,4,23,10,NA,23,11,2
+101915,Health,Race/Ethnicity,Black or African American,335,227,182,335,227,182,335,227,183
+101915,Health,Race/Ethnicity,Hispanic/Latino,977,796,707,977,796,707,975,795,707
+101915,Health,Race/Ethnicity,Other,195,152,137,195,152,137,194,150,137
+101915,Health,Race/Ethnicity,White,135,98,89,135,98,89,133,98,90
+101915,Health,Homeless,Homeless,23,11,11,23,11,11,23,11,11
+101915,Health,In Foster Care,In Foster Care,23,10,4,23,10,NA,23,9,6
+101915,Mathematics,Race/Ethnicity,Black or African American,335,232,199,335,232,199,335,232,200
+101915,Mathematics,Race/Ethnicity,Hispanic/Latino,977,792,662,977,792,662,975,791,662
+101915,Mathematics,Race/Ethnicity,Other,195,157,148,195,157,148,194,157,147
+101915,Mathematics,Race/Ethnicity,White,135,100,89,135,100,89,133,100,89
+101915,Mathematics,Homeless,Homeless,23,11,11,23,11,11,23,11,11
+101915,Mathematics,In Foster Care,In Foster Care,23,10,4,23,10,NA,23,10,5
+101916,Reading,Race/Ethnicity,Black or African American,17,13,13,NA,NA,13,16,12,12
+101916,Reading,Race/Ethnicity,Hispanic/Latino,148,122,106,148,122,106,147,123,106
+101916,Reading,Race/Ethnicity,Other,8,7,7,NA,NA,NA,9,7,7
+101916,Reading,Race/Ethnicity,White,31,22,7,31,22,NA,31,22,7
+101916,Reading,Homeless,Homeless,13,7,4,13,NA,NA,14,7,3
+101916,Reading,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,1,1,0
+101916,Writing,Race/Ethnicity,Black or African American,17,13,13,NA,NA,13,16,13,13
+101916,Writing,Race/Ethnicity,Hispanic/Latino,148,125,112,148,125,112,147,124,112
+101916,Writing,Race/Ethnicity,Other,8,7,7,NA,NA,NA,9,6,6
+101916,Writing,Race/Ethnicity,White,31,25,8,31,25,NA,31,23,7
+101916,Writing,Homeless,Homeless,13,8,4,13,NA,NA,14,8,4
+101916,Writing,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,1,1,0
+101916,Health,Race/Ethnicity,Black or African American,17,13,13,NA,NA,13,16,12,12
+101916,Health,Race/Ethnicity,Hispanic/Latino,148,125,107,148,125,107,147,124,106
+101916,Health,Race/Ethnicity,Other,8,7,7,NA,NA,NA,9,5,5
+101916,Health,Race/Ethnicity,White,31,25,10,31,25,NA,31,26,11
+101916,Health,Homeless,Homeless,13,8,4,13,NA,NA,14,9,4
+101916,Health,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,1,1,0
+101916,Mathematics,Race/Ethnicity,Black or African American,17,13,13,NA,NA,NA,16,14,13
+101916,Mathematics,Race/Ethnicity,Hispanic/Latino,148,124,105,148,124,105,147,125,102
+101916,Mathematics,Race/Ethnicity,Other,8,6,6,NA,NA,NA,9,5,5
+101916,Mathematics,Race/Ethnicity,White,31,24,14,31,24,14,31,24,14
+101916,Mathematics,Homeless,Homeless,13,8,8,13,NA,NA,14,9,7
+101916,Mathematics,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,1,1,1
+101917,Reading,Race/Ethnicity,Black or African American,212,150,132,212,150,132,212,150,133
+101917,Reading,Race/Ethnicity,Hispanic/Latino,1732,1432,1252,1732,1432,1252,1733,1432,1251
+101917,Reading,Race/Ethnicity,Other,89,77,71,89,77,71,89,78,71
+101917,Reading,Race/Ethnicity,White,126,97,85,126,97,85,126,98,87
+101917,Reading,Homeless,Homeless,45,15,15,45,15,15,45,15,14
+101917,Reading,In Foster Care,In Foster Care,13,7,6,13,NA,NA,12,7,7
+101917,Writing,Race/Ethnicity,Black or African American,212,132,118,212,132,118,212,133,119
+101917,Writing,Race/Ethnicity,Hispanic/Latino,1732,1338,1234,1732,1338,1234,1733,1337,1232
+101917,Writing,Race/Ethnicity,Other,89,71,71,89,71,71,89,72,72
+101917,Writing,Race/Ethnicity,White,126,85,77,126,85,77,126,84,77
+101917,Writing,Homeless,Homeless,45,11,11,45,11,11,45,11,10
+101917,Writing,In Foster Care,In Foster Care,13,7,6,13,NA,NA,12,5,5
+101917,Health,Race/Ethnicity,Black or African American,212,145,121,212,145,121,212,145,122
+101917,Health,Race/Ethnicity,Hispanic/Latino,1732,1399,1273,1732,1399,1273,1733,1398,1274
+101917,Health,Race/Ethnicity,Other,89,75,75,89,75,75,89,75,75
+101917,Health,Race/Ethnicity,White,126,93,83,126,93,83,126,92,84
+101917,Health,Homeless,Homeless,45,12,12,45,12,12,45,11,11
+101917,Health,In Foster Care,In Foster Care,13,7,5,13,NA,NA,12,7,5
+101917,Mathematics,Race/Ethnicity,Black or African American,212,150,143,212,150,143,212,149,142
+101917,Mathematics,Race/Ethnicity,Hispanic/Latino,1732,1423,1327,1732,1423,1327,1733,1422,1329
+101917,Mathematics,Race/Ethnicity,Other,89,75,75,89,75,75,89,75,74
+101917,Mathematics,Race/Ethnicity,White,126,97,76,126,97,76,126,96,78
+101917,Mathematics,Homeless,Homeless,45,15,15,45,15,15,45,16,14
+101917,Mathematics,In Foster Care,In Foster Care,13,7,6,13,NA,NA,12,8,5
+101919,Reading,Race/Ethnicity,Black or African American,750,531,453,750,531,453,751,530,455
+101919,Reading,Race/Ethnicity,Hispanic/Latino,1152,899,823,1152,899,823,1151,899,824
+101919,Reading,Race/Ethnicity,Other,119,89,84,119,89,84,120,88,85
+101919,Reading,Race/Ethnicity,White,95,73,68,95,73,68,93,74,68
+101919,Reading,Homeless,Homeless,15,9,9,15,NA,NA,15,9,9
+101919,Reading,In Foster Care,In Foster Care,10,5,5,10,NA,NA,9,4,4
+101919,Writing,Race/Ethnicity,Black or African American,750,532,478,750,532,478,751,531,479
+101919,Writing,Race/Ethnicity,Hispanic/Latino,1152,884,816,1152,884,816,1151,885,814
+101919,Writing,Race/Ethnicity,Other,119,88,85,119,88,85,120,89,84
+101919,Writing,Race/Ethnicity,White,95,73,64,95,73,64,93,72,65
+101919,Writing,Homeless,Homeless,15,10,10,15,10,10,15,12,9
+101919,Writing,In Foster Care,In Foster Care,10,5,5,10,NA,NA,9,5,3
+101919,Health,Race/Ethnicity,Black or African American,750,529,468,750,529,468,751,530,469
+101919,Health,Race/Ethnicity,Hispanic/Latino,1152,883,834,1152,883,834,1151,882,833
+101919,Health,Race/Ethnicity,Other,119,88,83,119,88,83,120,88,83
+101919,Health,Race/Ethnicity,White,95,72,63,95,72,63,93,73,62
+101919,Health,Homeless,Homeless,15,10,10,15,10,10,15,9,9
+101919,Health,In Foster Care,In Foster Care,10,5,5,10,NA,NA,9,6,6
+101919,Mathematics,Race/Ethnicity,Black or African American,750,530,475,750,530,475,751,534,474
+101919,Mathematics,Race/Ethnicity,Hispanic/Latino,1152,902,849,1152,902,849,1151,902,848
+101919,Mathematics,Race/Ethnicity,Other,119,89,86,119,89,86,120,90,84
+101919,Mathematics,Race/Ethnicity,White,95,73,67,95,73,67,93,70,66
+101919,Mathematics,Homeless,Homeless,15,9,9,15,NA,NA,15,9,9
+101919,Mathematics,In Foster Care,In Foster Care,10,5,5,10,NA,NA,9,3,3
+101920,Reading,Race/Ethnicity,Black or African American,103,70,60,103,70,60,104,69,59
+101920,Reading,Race/Ethnicity,Hispanic/Latino,864,679,647,864,679,647,864,683,646
+101920,Reading,Race/Ethnicity,Other,112,88,84,112,88,84,111,89,82
+101920,Reading,Race/Ethnicity,White,221,192,184,221,192,184,220,192,185
+101920,Reading,Homeless,Homeless,41,18,18,41,18,18,43,16,16
+101920,Reading,In Foster Care,In Foster Care,6,4,4,NA,NA,NA,7,1,1
+101920,Writing,Race/Ethnicity,Black or African American,103,70,58,103,70,58,104,68,58
+101920,Writing,Race/Ethnicity,Hispanic/Latino,864,679,638,864,679,638,864,679,640
+101920,Writing,Race/Ethnicity,Other,112,88,84,112,88,84,111,90,83
+101920,Writing,Race/Ethnicity,White,221,192,182,221,192,182,220,193,181
+101920,Writing,Homeless,Homeless,41,18,18,41,18,18,43,19,18
+101920,Writing,In Foster Care,In Foster Care,6,4,4,NA,NA,NA,7,2,2
+101920,Health,Race/Ethnicity,Black or African American,103,70,62,103,70,62,104,71,63
+101920,Health,Race/Ethnicity,Hispanic/Latino,864,678,639,864,678,639,864,679,638
+101920,Health,Race/Ethnicity,Other,112,88,85,112,88,85,111,87,85
+101920,Health,Race/Ethnicity,White,221,192,184,221,192,184,220,190,182
+101920,Health,Homeless,Homeless,41,18,18,41,18,18,43,18,18
+101920,Health,In Foster Care,In Foster Care,6,4,3,NA,NA,NA,7,2,2
+101920,Mathematics,Race/Ethnicity,Black or African American,103,71,65,103,71,65,104,72,66
+101920,Mathematics,Race/Ethnicity,Hispanic/Latino,864,683,643,864,683,643,864,682,643
+101920,Mathematics,Race/Ethnicity,Other,112,88,85,112,88,85,111,87,86
+101920,Mathematics,Race/Ethnicity,White,221,192,187,221,192,187,220,192,186
+101920,Mathematics,Homeless,Homeless,41,18,18,41,18,18,43,18,18
+101920,Mathematics,In Foster Care,In Foster Care,6,4,4,NA,NA,NA,7,5,4
+101921,Reading,Race/Ethnicity,Black or African American,37,21,16,37,21,16,37,21,15
+101921,Reading,Race/Ethnicity,Hispanic/Latino,225,174,154,225,174,154,225,176,155
+101921,Reading,Race/Ethnicity,Other,107,92,88,107,92,88,107,93,87
+101921,Reading,Race/Ethnicity,White,70,55,47,70,55,47,71,55,47
+101921,Reading,Homeless,Homeless,16,10,8,16,10,NA,14,10,10
+101921,Reading,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,7,2,1
+101921,Writing,Race/Ethnicity,Black or African American,37,21,21,37,21,21,37,20,20
+101921,Writing,Race/Ethnicity,Hispanic/Latino,225,176,165,225,176,165,225,177,164
+101921,Writing,Race/Ethnicity,Other,107,92,46,107,92,46,107,91,46
+101921,Writing,Race/Ethnicity,White,70,55,35,70,55,35,71,53,34
+101921,Writing,Homeless,Homeless,16,9,9,16,NA,NA,14,8,8
+101921,Writing,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,7,1,1
+101921,Health,Race/Ethnicity,Black or African American,37,21,21,37,21,21,37,22,22
+101921,Health,Race/Ethnicity,Hispanic/Latino,225,175,161,225,175,161,225,175,160
+101921,Health,Race/Ethnicity,Other,107,92,37,107,92,37,107,91,36
+101921,Health,Race/Ethnicity,White,70,55,50,70,55,50,71,54,49
+101921,Health,Homeless,Homeless,16,9,8,16,NA,NA,14,10,7
+101921,Health,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,7,1,1
+101921,Mathematics,Race/Ethnicity,Black or African American,37,21,21,37,21,21,37,22,21
+101921,Mathematics,Race/Ethnicity,Hispanic/Latino,225,174,169,225,174,169,225,174,167
+101921,Mathematics,Race/Ethnicity,Other,107,92,45,107,92,45,107,92,46
+101921,Mathematics,Race/Ethnicity,White,70,54,34,70,54,34,71,54,36
+101921,Mathematics,Homeless,Homeless,16,10,9,16,10,NA,14,12,8
+101921,Mathematics,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,7,1,0
+102904,Reading,Race/Ethnicity,Black or African American,15,12,7,15,NA,NA,17,13,7
+102904,Reading,Race/Ethnicity,Hispanic/Latino,38,30,22,38,30,22,37,30,22
+102904,Reading,Race/Ethnicity,Other,17,9,5,17,NA,NA,18,8,5
+102904,Reading,Race/Ethnicity,White,58,46,32,58,46,32,57,47,33
+102904,Reading,Homeless,Homeless,5,3,2,NA,NA,NA,4,1,1
+102904,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,1
+102904,Writing,Race/Ethnicity,Black or African American,15,12,12,15,NA,NA,17,11,11
+102904,Writing,Race/Ethnicity,Hispanic/Latino,38,32,25,38,32,25,37,31,26
+102904,Writing,Race/Ethnicity,Other,17,9,8,17,NA,NA,18,10,7
+102904,Writing,Race/Ethnicity,White,58,46,39,58,46,39,57,45,38
+102904,Writing,Homeless,Homeless,5,3,2,NA,NA,NA,4,4,3
+102904,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,0
+102904,Health,Race/Ethnicity,Black or African American,15,8,8,15,NA,NA,17,10,9
+102904,Health,Race/Ethnicity,Hispanic/Latino,38,27,22,38,27,22,37,26,23
+102904,Health,Race/Ethnicity,Other,17,8,4,17,NA,NA,18,9,3
+102904,Health,Race/Ethnicity,White,58,39,28,58,39,28,57,39,30
+102904,Health,Homeless,Homeless,5,2,2,NA,NA,NA,4,1,1
+102904,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,0
+102904,Mathematics,Race/Ethnicity,Black or African American,15,12,12,15,NA,NA,17,12,12
+102904,Mathematics,Race/Ethnicity,Hispanic/Latino,38,25,20,38,25,20,37,24,20
+102904,Mathematics,Race/Ethnicity,Other,17,9,5,17,NA,NA,18,10,4
+102904,Mathematics,Race/Ethnicity,White,58,42,37,58,42,37,57,42,37
+102904,Mathematics,Homeless,Homeless,5,3,2,NA,NA,NA,4,3,3
+102904,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,1,1,0
+105906,Reading,Race/Ethnicity,Black or African American,32,21,18,32,21,18,30,21,19
+105906,Reading,Race/Ethnicity,Hispanic/Latino,690,576,454,690,576,454,690,575,454
+105906,Reading,Race/Ethnicity,Other,65,55,48,65,55,48,65,54,48
+105906,Reading,Race/Ethnicity,White,170,152,128,170,152,128,169,151,127
+105906,Reading,Homeless,Homeless,12,6,6,12,NA,NA,11,5,5
+105906,Reading,In Foster Care,In Foster Care,11,9,5,11,NA,NA,13,6,6
+105906,Writing,Race/Ethnicity,Black or African American,32,20,19,32,20,19,30,18,18
+105906,Writing,Race/Ethnicity,Hispanic/Latino,690,559,515,690,559,515,690,560,515
+105906,Writing,Race/Ethnicity,Other,65,56,51,65,56,51,65,54,51
+105906,Writing,Race/Ethnicity,White,170,151,138,170,151,138,169,153,137
+105906,Writing,Homeless,Homeless,12,5,5,12,NA,NA,11,5,5
+105906,Writing,In Foster Care,In Foster Care,11,9,6,11,NA,NA,13,8,6
+105906,Health,Race/Ethnicity,Black or African American,32,20,19,32,20,19,30,20,19
+105906,Health,Race/Ethnicity,Hispanic/Latino,690,574,523,690,574,523,690,575,525
+105906,Health,Race/Ethnicity,Other,65,56,50,65,56,50,65,56,50
+105906,Health,Race/Ethnicity,White,170,151,138,170,151,138,169,150,137
+105906,Health,Homeless,Homeless,12,5,5,12,NA,NA,11,6,4
+105906,Health,In Foster Care,In Foster Care,11,9,6,11,NA,NA,13,9,4
+105906,Mathematics,Race/Ethnicity,Black or African American,32,21,16,32,21,16,30,20,17
+105906,Mathematics,Race/Ethnicity,Hispanic/Latino,690,574,480,690,574,480,690,573,483
+105906,Mathematics,Race/Ethnicity,Other,65,54,51,65,54,51,65,53,51
+105906,Mathematics,Race/Ethnicity,White,170,151,138,170,151,138,169,151,136
+105906,Mathematics,Homeless,Homeless,12,6,6,12,NA,NA,11,7,7
+105906,Mathematics,In Foster Care,In Foster Care,11,9,6,11,NA,NA,13,9,6
+108904,Reading,Race/Ethnicity,Black or African American,16,11,11,16,11,NA,16,10,10
+108904,Reading,Race/Ethnicity,Hispanic/Latino,1996,1649,1487,1996,1649,1487,1994,1648,1487
+108904,Reading,Race/Ethnicity,Other,15,12,9,15,12,NA,16,12,9
+108904,Reading,Race/Ethnicity,White,35,25,19,35,25,19,34,25,18
+108904,Reading,Homeless,Homeless,35,19,19,35,19,19,35,18,18
+108904,Reading,In Foster Care,In Foster Care,6,3,2,NA,NA,NA,6,1,1
+108904,Writing,Race/Ethnicity,Black or African American,16,11,11,16,11,NA,16,11,10
+108904,Writing,Race/Ethnicity,Hispanic/Latino,1996,1610,1501,1996,1610,1501,1994,1611,1501
+108904,Writing,Race/Ethnicity,Other,15,12,5,15,12,NA,16,12,6
+108904,Writing,Race/Ethnicity,White,35,25,25,35,25,25,34,24,24
+108904,Writing,Homeless,Homeless,35,18,18,35,18,18,35,16,16
+108904,Writing,In Foster Care,In Foster Care,11,11,11,11,11,11,6,10,10
+108904,Health,Race/Ethnicity,Black or African American,16,11,3,16,11,NA,16,10,4
+108904,Health,Race/Ethnicity,Hispanic/Latino,1996,1626,1495,1996,1626,1495,1994,1626,1494
+108904,Health,Race/Ethnicity,Other,15,12,12,15,12,NA,16,12,11
+108904,Health,Race/Ethnicity,White,35,25,25,35,25,25,34,25,24
+108904,Health,Homeless,Homeless,35,19,19,35,19,19,35,19,19
+108904,Health,In Foster Care,In Foster Care,10,10,10,10,10,10,6,9,9
+108904,Mathematics,Race/Ethnicity,Black or African American,16,12,6,16,12,NA,16,12,6
+108904,Mathematics,Race/Ethnicity,Hispanic/Latino,1996,1644,1559,1996,1644,1559,1994,1644,1561
+108904,Mathematics,Race/Ethnicity,Other,15,12,12,15,12,NA,16,12,12
+108904,Mathematics,Race/Ethnicity,White,35,25,25,35,25,25,34,23,23
+108904,Mathematics,Homeless,Homeless,35,18,18,35,18,18,35,19,17
+108904,Mathematics,In Foster Care,In Foster Care,11,11,11,11,11,11,6,11,11
+108906,Reading,Race/Ethnicity,Black or African American,8,8,8,NA,NA,NA,7,7,6
+108906,Reading,Race/Ethnicity,Hispanic/Latino,1053,866,731,1053,866,731,1053,865,730
+108906,Reading,Race/Ethnicity,Other,21,15,6,NA,NA,NA,22,17,4
+108906,Reading,Race/Ethnicity,White,40,32,32,40,32,32,39,30,30
+108906,Reading,Homeless,Homeless,35,22,10,35,22,10,34,23,8
+108906,Reading,In Foster Care,In Foster Care,3,2,1,NA,NA,NA,2,2,0
+108906,Writing,Race/Ethnicity,Black or African American,7,7,7,NA,NA,NA,7,6,6
+108906,Writing,Race/Ethnicity,Hispanic/Latino,1053,811,743,1053,811,743,1053,811,744
+108906,Writing,Race/Ethnicity,Other,21,15,5,NA,NA,NA,22,14,5
+108906,Writing,Race/Ethnicity,White,40,31,31,40,31,31,39,29,29
+108906,Writing,Homeless,Homeless,35,21,10,35,21,10,34,20,9
+108906,Writing,In Foster Care,In Foster Care,6,6,5,NA,NA,NA,2,4,3
+108906,Health,Race/Ethnicity,Black or African American,7,7,3,NA,NA,NA,7,6,4
+108906,Health,Race/Ethnicity,Hispanic/Latino,1053,837,752,1053,837,752,1053,836,753
+108906,Health,Race/Ethnicity,Other,21,14,9,NA,NA,NA,22,13,9
+108906,Health,Race/Ethnicity,White,40,31,31,40,31,31,39,31,31
+108906,Health,Homeless,Homeless,35,21,11,35,21,11,34,21,11
+108906,Health,In Foster Care,In Foster Care,5,5,5,NA,NA,NA,2,5,4
+108906,Mathematics,Race/Ethnicity,Black or African American,12,12,12,12,12,NA,7,13,11
+108906,Mathematics,Race/Ethnicity,Hispanic/Latino,1053,861,787,1053,861,787,1053,862,786
+108906,Mathematics,Race/Ethnicity,Other,21,15,9,21,15,NA,22,13,8
+108906,Mathematics,Race/Ethnicity,White,40,31,31,40,31,31,39,34,32
+108906,Mathematics,Homeless,Homeless,35,22,17,35,22,17,34,22,17
+108906,Mathematics,In Foster Care,In Foster Care,6,6,6,NA,NA,NA,2,5,5
+108909,Reading,Race/Ethnicity,Black or African American,5,3,3,NA,NA,NA,5,3,3
+108909,Reading,Race/Ethnicity,Hispanic/Latino,1988,1704,1599,1988,1704,1599,1989,1703,1599
+108909,Reading,Race/Ethnicity,Other,4,3,2,NA,NA,NA,5,3,2
+108909,Reading,Race/Ethnicity,White,42,34,29,42,34,29,42,32,29
+108909,Reading,Homeless,Homeless,47,27,22,47,27,22,45,28,23
+108909,Reading,In Foster Care,In Foster Care,6,3,3,NA,NA,NA,6,5,4
+108909,Writing,Race/Ethnicity,Black or African American,6,6,6,NA,NA,NA,5,6,5
+108909,Writing,Race/Ethnicity,Hispanic/Latino,1988,1667,1608,1988,1667,1608,1989,1667,1607
+108909,Writing,Race/Ethnicity,Other,4,4,4,NA,NA,NA,5,5,2
+108909,Writing,Race/Ethnicity,White,42,34,26,42,34,26,42,34,26
+108909,Writing,Homeless,Homeless,47,24,22,47,24,22,45,22,22
+108909,Writing,In Foster Care,In Foster Care,11,11,11,11,11,11,6,9,9
+108909,Health,Race/Ethnicity,Black or African American,5,5,3,NA,NA,NA,5,3,1
+108909,Health,Race/Ethnicity,Hispanic/Latino,1988,1668,1647,1988,1668,1647,1989,1667,1645
+108909,Health,Race/Ethnicity,Other,7,7,7,NA,NA,NA,5,4,4
+108909,Health,Race/Ethnicity,White,42,33,27,42,33,27,42,33,26
+108909,Health,Homeless,Homeless,47,24,22,47,24,22,45,24,23
+108909,Health,In Foster Care,In Foster Care,11,11,11,11,11,11,6,10,9
+108909,Mathematics,Race/Ethnicity,Black or African American,5,2,2,NA,NA,NA,5,2,2
+108909,Mathematics,Race/Ethnicity,Hispanic/Latino,1988,1705,1134,1988,1705,1134,1989,1705,1134
+108909,Mathematics,Race/Ethnicity,Other,4,3,1,NA,NA,NA,5,2,1
+108909,Mathematics,Race/Ethnicity,White,42,33,19,42,33,19,42,34,19
+108909,Mathematics,Homeless,Homeless,47,27,16,47,27,16,45,26,15
+108909,Mathematics,In Foster Care,In Foster Care,8,8,8,NA,NA,NA,6,6,6
+123910,Reading,Race/Ethnicity,Black or African American,574,371,308,574,371,308,573,370,307
+123910,Reading,Race/Ethnicity,Hispanic/Latino,216,135,100,216,135,100,215,134,100
+123910,Reading,Race/Ethnicity,Other,51,22,7,51,22,NA,50,22,8
+123910,Reading,Race/Ethnicity,White,31,18,18,31,18,NA,28,17,17
+123910,Reading,Homeless,Homeless,66,28,13,66,28,13,66,29,12
+123910,Reading,In Foster Care,In Foster Care,6,6,6,NA,NA,NA,4,4,4
+123910,Writing,Race/Ethnicity,Black or African American,574,310,288,574,310,288,573,311,287
+123910,Writing,Race/Ethnicity,Hispanic/Latino,216,116,99,216,116,99,215,116,100
+123910,Writing,Race/Ethnicity,Other,51,22,7,51,22,NA,50,23,6
+123910,Writing,Race/Ethnicity,White,31,18,18,31,18,NA,28,17,17
+123910,Writing,Homeless,Homeless,66,28,12,66,28,12,66,27,12
+123910,Writing,In Foster Care,In Foster Care,6,6,3,NA,NA,NA,4,5,3
+123910,Health,Race/Ethnicity,Black or African American,574,292,266,574,292,266,573,293,266
+123910,Health,Race/Ethnicity,Hispanic/Latino,216,105,83,216,105,83,215,105,83
+123910,Health,Race/Ethnicity,Other,51,19,7,51,19,NA,50,18,7
+123910,Health,Race/Ethnicity,White,31,15,15,31,15,NA,28,15,14
+123910,Health,Homeless,Homeless,66,23,9,66,23,NA,66,24,10
+123910,Health,In Foster Care,In Foster Care,6,5,2,NA,NA,NA,4,5,3
+123910,Mathematics,Race/Ethnicity,Black or African American,574,358,329,574,358,329,573,359,329
+123910,Mathematics,Race/Ethnicity,Hispanic/Latino,216,123,102,216,123,102,215,122,103
+123910,Mathematics,Race/Ethnicity,Other,51,21,21,51,21,21,50,22,21
+123910,Mathematics,Race/Ethnicity,White,31,16,16,31,16,16,28,16,15
+123910,Mathematics,Homeless,Homeless,66,26,12,66,26,12,66,27,13
+123910,Mathematics,In Foster Care,In Foster Care,6,6,6,NA,NA,NA,4,5,5
+126903,Reading,Race/Ethnicity,Black or African American,15,11,11,15,11,11,15,12,12
+126903,Reading,Race/Ethnicity,Hispanic/Latino,168,123,82,168,123,82,166,124,82
+126903,Reading,Race/Ethnicity,Other,22,20,10,22,20,10,22,20,10
+126903,Reading,Race/Ethnicity,White,123,97,69,123,97,69,123,97,70
+126903,Reading,Homeless,Homeless,35,21,16,35,21,16,38,21,17
+126903,Reading,In Foster Care,In Foster Care,9,8,1,NA,NA,NA,10,10,1
+126903,Writing,Race/Ethnicity,Black or African American,15,11,11,15,11,11,15,11,11
+126903,Writing,Race/Ethnicity,Hispanic/Latino,168,127,102,168,127,102,166,128,101
+126903,Writing,Race/Ethnicity,Other,22,20,17,22,20,17,22,19,19
+126903,Writing,Race/Ethnicity,White,123,98,83,123,98,83,123,97,84
+126903,Writing,Homeless,Homeless,35,21,6,35,21,NA,38,21,5
+126903,Writing,In Foster Care,In Foster Care,9,8,8,NA,NA,NA,10,7,7
+126903,Health,Race/Ethnicity,Black or African American,15,11,11,15,11,11,15,11,11
+126903,Health,Race/Ethnicity,Hispanic/Latino,168,128,109,168,128,109,166,127,109
+126903,Health,Race/Ethnicity,Other,22,20,11,22,20,11,22,21,11
+126903,Health,Race/Ethnicity,White,123,98,85,123,98,85,123,97,85
+126903,Health,Homeless,Homeless,35,21,6,35,21,NA,38,21,6
+126903,Health,In Foster Care,In Foster Care,9,8,8,NA,NA,NA,10,9,8
+126903,Mathematics,Race/Ethnicity,Black or African American,15,11,11,15,11,11,15,12,11
+126903,Mathematics,Race/Ethnicity,Hispanic/Latino,168,121,94,168,121,94,166,121,95
+126903,Mathematics,Race/Ethnicity,Other,22,19,11,22,19,11,22,17,10
+126903,Mathematics,Race/Ethnicity,White,123,96,81,123,96,81,123,98,81
+126903,Mathematics,Homeless,Homeless,35,21,6,35,21,NA,38,19,7
+126903,Mathematics,In Foster Care,In Foster Care,9,8,2,NA,NA,NA,10,8,5
+126905,Reading,Race/Ethnicity,Black or African American,5,3,3,NA,NA,NA,4,4,2
+126905,Reading,Race/Ethnicity,Hispanic/Latino,105,91,80,105,91,80,106,91,80
+126905,Reading,Race/Ethnicity,Other,3,2,2,NA,NA,NA,4,2,2
+126905,Reading,Race/Ethnicity,White,71,64,54,71,64,54,72,63,54
+126905,Reading,Homeless,Homeless,7,5,4,NA,NA,NA,8,7,4
+126905,Reading,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,8,4,1
+126905,Writing,Race/Ethnicity,Black or African American,5,3,3,NA,NA,NA,4,3,3
+126905,Writing,Race/Ethnicity,Hispanic/Latino,105,91,84,105,91,84,106,90,85
+126905,Writing,Race/Ethnicity,Other,3,2,2,NA,NA,NA,4,4,2
+126905,Writing,Race/Ethnicity,White,71,64,53,71,64,53,72,66,53
+126905,Writing,Homeless,Homeless,7,5,4,NA,NA,NA,8,3,3
+126905,Writing,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,8,1,0
+126905,Health,Race/Ethnicity,Black or African American,22,22,3,22,22,NA,4,22,5
+126905,Health,Race/Ethnicity,Hispanic/Latino,105,91,81,105,91,81,106,90,81
+126905,Health,Race/Ethnicity,Other,17,17,2,17,17,NA,4,17,1
+126905,Health,Race/Ethnicity,White,71,64,55,71,64,55,72,64,54
+126905,Health,Homeless,Homeless,7,5,4,NA,NA,NA,8,7,3
+126905,Health,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,8,1,1
+126905,Mathematics,Race/Ethnicity,Black or African American,21,21,21,21,21,21,4,20,20
+126905,Mathematics,Race/Ethnicity,Hispanic/Latino,105,92,56,105,92,56,106,92,56
+126905,Mathematics,Race/Ethnicity,Other,16,16,16,16,16,16,4,14,14
+126905,Mathematics,Race/Ethnicity,White,71,64,57,71,64,57,72,64,56
+126905,Mathematics,Homeless,Homeless,7,5,4,NA,NA,NA,8,5,4
+126905,Mathematics,In Foster Care,In Foster Care,6,1,1,NA,NA,NA,8,2,0
+129901,Reading,Race/Ethnicity,Black or African American,102,82,70,102,82,70,101,82,73
+129901,Reading,Race/Ethnicity,Hispanic/Latino,170,154,106,170,154,106,171,153,106
+129901,Reading,Race/Ethnicity,Other,17,14,12,17,14,12,16,14,14
+129901,Reading,Race/Ethnicity,White,42,38,27,42,38,27,43,39,28
+129901,Reading,Homeless,Homeless,11,7,5,11,NA,NA,11,7,4
+129901,Reading,In Foster Care,In Foster Care,13,8,1,13,NA,NA,15,8,2
+129901,Writing,Race/Ethnicity,Black or African American,102,82,73,102,82,73,101,81,74
+129901,Writing,Race/Ethnicity,Hispanic/Latino,170,153,123,170,153,123,171,153,123
+129901,Writing,Race/Ethnicity,Other,17,14,14,17,14,14,16,14,14
+129901,Writing,Race/Ethnicity,White,42,39,34,42,39,34,43,38,35
+129901,Writing,Homeless,Homeless,11,7,5,11,NA,NA,11,5,5
+129901,Writing,In Foster Care,In Foster Care,13,8,8,13,NA,NA,15,7,7
+129901,Health,Race/Ethnicity,Black or African American,102,82,51,102,82,51,101,81,53
+129901,Health,Race/Ethnicity,Hispanic/Latino,170,152,142,170,152,142,171,151,142
+129901,Health,Race/Ethnicity,Other,17,14,14,17,14,14,16,13,13
+129901,Health,Race/Ethnicity,White,42,39,39,42,39,39,43,39,39
+129901,Health,Homeless,Homeless,11,7,6,11,NA,NA,11,6,5
+129901,Health,In Foster Care,In Foster Care,13,8,8,13,NA,NA,15,8,8
+129901,Mathematics,Race/Ethnicity,Black or African American,102,81,52,102,81,52,101,80,52
+129901,Mathematics,Race/Ethnicity,Hispanic/Latino,170,149,127,170,149,127,171,148,127
+129901,Mathematics,Race/Ethnicity,Other,17,14,14,17,14,14,16,13,13
+129901,Mathematics,Race/Ethnicity,White,42,39,35,42,39,35,43,39,37
+129901,Mathematics,Homeless,Homeless,11,7,6,11,NA,NA,11,7,6
+129901,Mathematics,In Foster Care,In Foster Care,13,8,2,13,NA,NA,15,9,1
+129903,Reading,Race/Ethnicity,Black or African American,15,10,10,15,NA,NA,16,11,10
+129903,Reading,Race/Ethnicity,Hispanic/Latino,127,116,106,127,116,106,129,115,104
+129903,Reading,Race/Ethnicity,Other,10,9,9,10,NA,NA,11,9,8
+129903,Reading,Race/Ethnicity,White,57,53,17,57,53,17,58,53,19
+129903,Reading,Homeless,Homeless,5,4,4,NA,NA,NA,6,5,5
+129903,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,0
+129903,Writing,Race/Ethnicity,Black or African American,15,10,10,15,NA,NA,16,9,9
+129903,Writing,Race/Ethnicity,Hispanic/Latino,127,117,111,127,117,111,129,115,111
+129903,Writing,Race/Ethnicity,Other,10,9,9,10,NA,NA,11,10,8
+129903,Writing,Race/Ethnicity,White,57,52,23,57,52,23,58,52,22
+129903,Writing,Homeless,Homeless,5,4,4,NA,NA,NA,6,3,3
+129903,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,2,2
+129903,Health,Race/Ethnicity,Black or African American,15,10,9,15,NA,NA,16,11,10
+129903,Health,Race/Ethnicity,Hispanic/Latino,127,117,110,127,117,110,129,119,110
+129903,Health,Race/Ethnicity,Other,10,9,8,10,NA,NA,11,10,9
+129903,Health,Race/Ethnicity,White,57,52,47,57,52,47,58,54,46
+129903,Health,Homeless,Homeless,5,4,4,NA,NA,NA,6,4,4
+129903,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+129903,Mathematics,Race/Ethnicity,Black or African American,15,9,9,15,NA,NA,16,9,7
+129903,Mathematics,Race/Ethnicity,Hispanic/Latino,127,116,106,127,116,106,129,116,107
+129903,Mathematics,Race/Ethnicity,Other,10,9,9,10,NA,NA,11,7,7
+129903,Mathematics,Race/Ethnicity,White,57,53,27,57,53,27,58,51,29
+129903,Mathematics,Homeless,Homeless,5,4,4,NA,NA,NA,6,3,2
+129903,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,0
+130901,Reading,Race/Ethnicity,Black or African American,9,9,9,NA,NA,NA,11,11,9
+130901,Reading,Race/Ethnicity,Hispanic/Latino,99,78,57,99,78,57,98,80,55
+130901,Reading,Race/Ethnicity,Other,18,8,7,NA,NA,NA,18,9,8
+130901,Reading,Race/Ethnicity,White,44,32,26,44,32,26,45,32,28
+130901,Reading,Homeless,Homeless,9,5,3,NA,NA,NA,10,6,3
+130901,Reading,In Foster Care,In Foster Care,8,1,1,NA,NA,NA,8,1,1
+130901,Writing,Race/Ethnicity,Black or African American,13,13,13,13,13,13,11,13,13
+130901,Writing,Race/Ethnicity,Hispanic/Latino,99,79,68,99,79,68,98,82,67
+130901,Writing,Race/Ethnicity,Other,18,14,14,18,14,14,18,13,13
+130901,Writing,Race/Ethnicity,White,44,34,21,44,34,21,45,33,22
+130901,Writing,Homeless,Homeless,9,5,3,NA,NA,NA,10,6,5
+130901,Writing,In Foster Care,In Foster Care,8,1,1,NA,NA,NA,8,1,1
+130901,Health,Race/Ethnicity,Black or African American,12,12,12,12,12,12,11,11,11
+130901,Health,Race/Ethnicity,Hispanic/Latino,99,79,67,99,79,67,98,79,67
+130901,Health,Race/Ethnicity,Other,18,13,13,18,13,13,18,14,14
+130901,Health,Race/Ethnicity,White,44,34,21,44,34,21,45,33,20
+130901,Health,Homeless,Homeless,9,5,5,NA,NA,NA,10,4,4
+130901,Health,In Foster Care,In Foster Care,8,1,1,NA,NA,NA,8,2,2
+130901,Mathematics,Race/Ethnicity,Black or African American,14,14,14,14,14,14,11,13,13
+130901,Mathematics,Race/Ethnicity,Hispanic/Latino,99,76,66,99,76,66,98,76,64
+130901,Mathematics,Race/Ethnicity,Other,18,12,12,18,12,12,18,11,11
+130901,Mathematics,Race/Ethnicity,White,44,33,21,44,33,21,45,33,23
+130901,Mathematics,Homeless,Homeless,9,5,3,NA,NA,NA,10,5,2
+130901,Mathematics,In Foster Care,In Foster Care,8,1,1,NA,NA,NA,8,1,1
+133903,Reading,Race/Ethnicity,Black or African American,5,5,2,NA,NA,NA,6,5,1
+133903,Reading,Race/Ethnicity,Hispanic/Latino,75,69,49,75,69,49,74,69,49
+133903,Reading,Race/Ethnicity,Other,4,3,2,NA,NA,NA,3,2,2
+133903,Reading,Race/Ethnicity,White,40,38,23,40,38,23,42,39,23
+133903,Reading,Homeless,Homeless,5,4,2,NA,NA,NA,4,4,3
+133903,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,2,0
+133903,Writing,Race/Ethnicity,Black or African American,5,5,4,NA,NA,NA,6,5,4
+133903,Writing,Race/Ethnicity,Hispanic/Latino,75,69,64,75,69,64,74,69,62
+133903,Writing,Race/Ethnicity,Other,4,3,3,NA,NA,NA,3,2,2
+133903,Writing,Race/Ethnicity,White,40,38,33,40,38,33,42,38,34
+133903,Writing,Homeless,Homeless,5,4,3,NA,NA,NA,4,3,3
+133903,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,2,0
+133903,Health,Race/Ethnicity,Black or African American,5,4,2,NA,NA,NA,6,5,1
+133903,Health,Race/Ethnicity,Hispanic/Latino,75,69,58,75,69,58,74,69,58
+133903,Health,Race/Ethnicity,Other,4,4,3,NA,NA,NA,3,3,3
+133903,Health,Race/Ethnicity,White,40,37,31,40,37,31,42,38,29
+133903,Health,Homeless,Homeless,5,4,3,NA,NA,NA,4,5,2
+133903,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,1,1
+133903,Mathematics,Race/Ethnicity,Black or African American,5,5,2,NA,NA,NA,6,4,3
+133903,Mathematics,Race/Ethnicity,Hispanic/Latino,75,69,61,75,69,61,74,69,60
+133903,Mathematics,Race/Ethnicity,Other,4,3,2,NA,NA,NA,3,3,1
+133903,Mathematics,Race/Ethnicity,White,40,38,31,40,38,31,42,39,31
+133903,Mathematics,Homeless,Homeless,5,4,3,NA,NA,NA,4,3,3
+133903,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,1,0
+146901,Reading,Race/Ethnicity,Black or African American,29,18,15,29,18,NA,28,17,15
+146901,Reading,Race/Ethnicity,Hispanic/Latino,613,485,430,613,485,430,616,485,431
+146901,Reading,Race/Ethnicity,Other,14,11,9,14,11,NA,15,13,11
+146901,Reading,Race/Ethnicity,White,95,75,70,95,75,70,97,75,70
+146901,Reading,Homeless,Homeless,14,14,14,14,14,14,15,13,13
+146901,Reading,In Foster Care,In Foster Care,4,2,2,NA,NA,NA,4,4,2
+146901,Writing,Race/Ethnicity,Black or African American,29,17,14,29,17,NA,28,16,13
+146901,Writing,Race/Ethnicity,Hispanic/Latino,613,476,423,613,476,423,616,475,423
+146901,Writing,Race/Ethnicity,Other,14,11,8,14,11,NA,15,10,7
+146901,Writing,Race/Ethnicity,White,95,73,67,95,73,67,97,73,67
+146901,Writing,Homeless,Homeless,14,14,14,14,14,14,15,13,13
+146901,Writing,In Foster Care,In Foster Care,4,2,2,NA,NA,NA,4,4,2
+146901,Health,Race/Ethnicity,Black or African American,29,18,18,29,18,18,28,18,18
+146901,Health,Race/Ethnicity,Hispanic/Latino,613,478,448,613,478,448,616,481,446
+146901,Health,Race/Ethnicity,Other,14,11,11,14,11,11,15,13,12
+146901,Health,Race/Ethnicity,White,95,75,21,95,75,21,97,74,22
+146901,Health,Homeless,Homeless,15,15,14,15,15,14,15,15,11
+146901,Health,In Foster Care,In Foster Care,4,2,2,NA,NA,NA,4,3,1
+146901,Mathematics,Race/Ethnicity,Black or African American,29,17,17,29,17,17,28,15,15
+146901,Mathematics,Race/Ethnicity,Hispanic/Latino,613,475,437,613,475,437,616,474,437
+146901,Mathematics,Race/Ethnicity,Other,14,11,11,14,11,11,15,10,10
+146901,Mathematics,Race/Ethnicity,White,95,72,34,95,72,34,97,71,32
+146901,Mathematics,Homeless,Homeless,15,15,15,15,15,15,15,15,13
+146901,Mathematics,In Foster Care,In Foster Care,4,2,2,NA,NA,NA,4,1,1
+152901,Reading,Race/Ethnicity,Black or African American,158,132,98,158,132,98,159,132,99
+152901,Reading,Race/Ethnicity,Hispanic/Latino,797,667,554,797,667,554,798,668,553
+152901,Reading,Race/Ethnicity,Other,69,63,58,69,63,58,68,64,57
+152901,Reading,Race/Ethnicity,White,217,187,161,217,187,161,215,187,158
+152901,Reading,Homeless,Homeless,71,42,31,71,42,31,72,41,30
+152901,Reading,In Foster Care,In Foster Care,18,15,14,18,15,14,20,14,13
+152901,Writing,Race/Ethnicity,Black or African American,158,135,120,158,135,120,159,135,119
+152901,Writing,Race/Ethnicity,Hispanic/Latino,797,672,625,797,672,625,798,671,626
+152901,Writing,Race/Ethnicity,Other,69,63,61,69,63,61,68,63,60
+152901,Writing,Race/Ethnicity,White,217,188,177,217,188,177,215,189,176
+152901,Writing,Homeless,Homeless,71,42,35,71,42,35,72,40,36
+152901,Writing,In Foster Care,In Foster Care,18,15,7,18,15,NA,20,15,7
+152901,Health,Race/Ethnicity,Black or African American,158,136,119,158,136,119,159,137,120
+152901,Health,Race/Ethnicity,Hispanic/Latino,797,674,632,797,674,632,798,674,632
+152901,Health,Race/Ethnicity,Other,69,63,61,69,63,61,68,64,60
+152901,Health,Race/Ethnicity,White,217,189,178,217,189,178,215,190,179
+152901,Health,Homeless,Homeless,71,42,37,71,42,37,72,43,38
+152901,Health,In Foster Care,In Foster Care,18,14,14,18,14,14,20,15,14
+152901,Mathematics,Race/Ethnicity,Black or African American,158,131,115,158,131,115,159,130,116
+152901,Mathematics,Race/Ethnicity,Hispanic/Latino,797,657,595,797,657,595,798,656,595
+152901,Mathematics,Race/Ethnicity,Other,69,63,60,69,63,60,68,63,59
+152901,Mathematics,Race/Ethnicity,White,217,187,179,217,187,179,215,186,176
+152901,Mathematics,Homeless,Homeless,71,41,19,71,41,19,72,39,19
+152901,Mathematics,In Foster Care,In Foster Care,18,14,7,18,14,NA,20,14,7
+152907,Reading,Race/Ethnicity,Black or African American,30,26,18,30,26,18,32,27,18
+152907,Reading,Race/Ethnicity,Hispanic/Latino,251,208,142,251,208,142,250,207,145
+152907,Reading,Race/Ethnicity,Other,30,26,23,30,26,23,29,26,25
+152907,Reading,Race/Ethnicity,White,123,104,90,123,104,90,122,106,90
+152907,Reading,Homeless,Homeless,13,7,5,13,NA,NA,13,8,6
+152907,Reading,In Foster Care,In Foster Care,12,12,4,12,12,NA,12,12,4
+152907,Writing,Race/Ethnicity,Black or African American,30,25,20,30,25,20,32,23,21
+152907,Writing,Race/Ethnicity,Hispanic/Latino,251,207,186,251,207,186,250,208,186
+152907,Writing,Race/Ethnicity,Other,30,26,25,30,26,25,29,25,25
+152907,Writing,Race/Ethnicity,White,123,104,98,123,104,98,122,104,98
+152907,Writing,Homeless,Homeless,13,8,7,13,NA,NA,13,9,6
+152907,Writing,In Foster Care,In Foster Care,12,12,2,12,12,NA,12,11,3
+152907,Health,Race/Ethnicity,Black or African American,30,25,25,30,25,25,32,25,24
+152907,Health,Race/Ethnicity,Hispanic/Latino,251,207,192,251,207,192,250,207,191
+152907,Health,Race/Ethnicity,Other,30,26,20,30,26,20,29,27,18
+152907,Health,Race/Ethnicity,White,123,104,97,123,104,97,122,105,97
+152907,Health,Homeless,Homeless,13,9,7,13,NA,NA,13,8,7
+152907,Health,In Foster Care,In Foster Care,12,12,5,12,12,NA,12,11,5
+152907,Mathematics,Race/Ethnicity,Black or African American,30,26,21,30,26,21,32,25,22
+152907,Mathematics,Race/Ethnicity,Hispanic/Latino,251,208,169,251,208,169,250,208,170
+152907,Mathematics,Race/Ethnicity,Other,30,26,18,30,26,18,29,26,18
+152907,Mathematics,Race/Ethnicity,White,123,104,104,123,104,104,122,106,103
+152907,Mathematics,Homeless,Homeless,13,7,6,13,NA,NA,13,8,8
+152907,Mathematics,In Foster Care,In Foster Care,12,12,12,12,12,12,12,12,11
+161914,Reading,Race/Ethnicity,Black or African American,241,179,139,241,179,139,243,179,141
+161914,Reading,Race/Ethnicity,Hispanic/Latino,477,409,350,477,409,350,477,409,351
+161914,Reading,Race/Ethnicity,Other,29,25,18,29,25,18,29,24,17
+161914,Reading,Race/Ethnicity,White,66,52,45,66,52,45,65,51,45
+161914,Reading,Homeless,Homeless,54,36,27,54,36,27,54,38,28
+161914,Reading,In Foster Care,In Foster Care,8,8,8,NA,NA,NA,6,6,6
+161914,Writing,Race/Ethnicity,Black or African American,241,175,149,241,175,149,243,176,147
+161914,Writing,Race/Ethnicity,Hispanic/Latino,477,392,370,477,392,370,477,393,368
+161914,Writing,Race/Ethnicity,Other,29,24,19,29,24,19,29,23,21
+161914,Writing,Race/Ethnicity,White,66,50,50,66,50,50,65,49,49
+161914,Writing,Homeless,Homeless,54,35,13,54,35,13,54,35,12
+161914,Writing,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,6,6,6
+161914,Health,Race/Ethnicity,Black or African American,241,177,137,241,177,137,243,177,137
+161914,Health,Race/Ethnicity,Hispanic/Latino,477,408,373,477,408,373,477,410,373
+161914,Health,Race/Ethnicity,Other,29,25,19,29,25,19,29,26,19
+161914,Health,Race/Ethnicity,White,66,50,48,66,50,48,65,51,49
+161914,Health,Homeless,Homeless,54,35,30,54,35,30,54,36,31
+161914,Health,In Foster Care,In Foster Care,8,8,8,NA,NA,NA,6,8,8
+161914,Mathematics,Race/Ethnicity,Black or African American,241,179,142,241,179,142,243,179,144
+161914,Mathematics,Race/Ethnicity,Hispanic/Latino,477,405,355,477,405,355,477,405,355
+161914,Mathematics,Race/Ethnicity,Other,29,24,19,29,24,19,29,24,19
+161914,Mathematics,Race/Ethnicity,White,66,51,44,66,51,44,65,51,43
+161914,Mathematics,Homeless,Homeless,54,34,28,54,34,28,54,33,27
+161914,Mathematics,In Foster Care,In Foster Care,8,8,8,NA,NA,NA,6,9,7
+165901,Reading,Race/Ethnicity,Black or African American,97,80,73,97,80,73,96,81,74
+165901,Reading,Race/Ethnicity,Hispanic/Latino,927,766,707,927,766,707,927,766,707
+165901,Reading,Race/Ethnicity,Other,66,54,42,66,54,42,66,54,42
+165901,Reading,Race/Ethnicity,White,143,114,114,143,114,114,143,112,112
+165901,Reading,Homeless,Homeless,73,52,43,73,52,43,74,51,42
+165901,Reading,In Foster Care,In Foster Care,7,6,6,NA,NA,NA,6,6,6
+165901,Writing,Race/Ethnicity,Black or African American,97,81,69,97,81,69,96,83,70
+165901,Writing,Race/Ethnicity,Hispanic/Latino,927,768,702,927,768,702,927,769,703
+165901,Writing,Race/Ethnicity,Other,66,54,54,66,54,54,66,53,53
+165901,Writing,Race/Ethnicity,White,143,114,104,143,114,104,143,113,106
+165901,Writing,Homeless,Homeless,73,53,44,73,53,44,74,54,47
+165901,Writing,In Foster Care,In Foster Care,7,5,3,NA,NA,NA,6,7,4
+165901,Health,Race/Ethnicity,Black or African American,97,81,70,97,81,70,96,82,70
+165901,Health,Race/Ethnicity,Hispanic/Latino,927,764,725,927,764,725,927,764,723
+165901,Health,Race/Ethnicity,Other,66,54,54,66,54,54,66,54,54
+165901,Health,Race/Ethnicity,White,143,112,101,143,112,101,143,112,98
+165901,Health,Homeless,Homeless,73,52,46,73,52,46,74,52,47
+165901,Health,In Foster Care,In Foster Care,7,6,6,NA,NA,NA,6,6,6
+165901,Mathematics,Race/Ethnicity,Black or African American,97,80,49,97,80,49,96,82,48
+165901,Mathematics,Race/Ethnicity,Hispanic/Latino,927,767,741,927,767,741,927,768,740
+165901,Mathematics,Race/Ethnicity,Other,66,54,54,66,54,54,66,53,53
+165901,Mathematics,Race/Ethnicity,White,143,114,114,143,114,114,143,113,113
+165901,Mathematics,Homeless,Homeless,73,52,47,73,52,47,74,51,47
+165901,Mathematics,In Foster Care,In Foster Care,7,7,7,NA,NA,NA,6,5,5
+170908,Reading,Race/Ethnicity,Black or African American,77,60,50,77,60,50,77,61,49
+170908,Reading,Race/Ethnicity,Hispanic/Latino,543,453,375,543,453,375,544,452,373
+170908,Reading,Race/Ethnicity,Other,43,34,28,43,34,28,42,34,28
+170908,Reading,Race/Ethnicity,White,134,98,79,134,98,79,134,99,78
+170908,Reading,Homeless,Homeless,59,39,30,59,39,30,59,40,29
+170908,Reading,In Foster Care,In Foster Care,7,5,4,NA,NA,NA,6,3,3
+170908,Writing,Race/Ethnicity,Black or African American,77,60,52,77,60,52,77,62,50
+170908,Writing,Race/Ethnicity,Hispanic/Latino,543,451,391,543,451,391,544,450,392
+170908,Writing,Race/Ethnicity,Other,43,34,31,43,34,31,42,34,32
+170908,Writing,Race/Ethnicity,White,134,99,83,134,99,83,134,99,81
+170908,Writing,Homeless,Homeless,59,39,12,59,39,12,59,38,12
+170908,Writing,In Foster Care,In Foster Care,7,5,4,NA,NA,NA,6,5,5
+170908,Health,Race/Ethnicity,Black or African American,77,60,53,77,60,53,77,59,53
+170908,Health,Race/Ethnicity,Hispanic/Latino,543,451,387,543,451,387,544,451,387
+170908,Health,Race/Ethnicity,Other,43,34,32,43,34,32,42,34,32
+170908,Health,Race/Ethnicity,White,134,99,90,134,99,90,134,99,91
+170908,Health,Homeless,Homeless,59,39,12,59,39,12,59,41,14
+170908,Health,In Foster Care,In Foster Care,7,5,4,NA,NA,NA,6,6,5
+170908,Mathematics,Race/Ethnicity,Black or African American,77,60,48,77,60,48,77,62,49
+170908,Mathematics,Race/Ethnicity,Hispanic/Latino,543,453,410,543,453,410,544,455,411
+170908,Mathematics,Race/Ethnicity,Other,43,34,31,43,34,31,42,36,29
+170908,Mathematics,Race/Ethnicity,White,134,99,86,134,99,86,134,99,85
+170908,Mathematics,Homeless,Homeless,59,39,31,59,39,31,59,40,32
+170908,Mathematics,In Foster Care,In Foster Care,7,5,5,NA,NA,NA,6,5,4
+174904,Reading,Race/Ethnicity,Black or African American,114,80,68,114,80,68,113,78,68
+174904,Reading,Race/Ethnicity,Hispanic/Latino,143,117,110,143,117,110,144,119,111
+174904,Reading,Race/Ethnicity,Other,25,22,6,25,22,NA,26,23,4
+174904,Reading,Race/Ethnicity,White,26,19,19,26,19,NA,26,20,19
+174904,Reading,Homeless,Homeless,11,7,6,11,NA,NA,12,7,5
+174904,Reading,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,6,1,1
+174904,Writing,Race/Ethnicity,Black or African American,114,81,31,114,81,31,113,82,30
+174904,Writing,Race/Ethnicity,Hispanic/Latino,143,116,111,143,116,111,144,114,110
+174904,Writing,Race/Ethnicity,Other,25,22,22,25,22,22,26,22,22
+174904,Writing,Race/Ethnicity,White,26,19,19,26,19,19,26,19,19
+174904,Writing,Homeless,Homeless,11,7,7,11,NA,NA,12,7,5
+174904,Writing,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,6,2,2
+174904,Health,Race/Ethnicity,Black or African American,114,81,59,114,81,59,113,82,58
+174904,Health,Race/Ethnicity,Hispanic/Latino,143,116,108,143,116,108,144,115,107
+174904,Health,Race/Ethnicity,Other,25,22,19,25,22,19,26,23,20
+174904,Health,Race/Ethnicity,White,26,19,19,26,19,19,26,20,17
+174904,Health,Homeless,Homeless,11,7,6,11,NA,NA,12,6,6
+174904,Health,In Foster Care,In Foster Care,5,3,2,NA,NA,NA,6,2,2
+174904,Mathematics,Race/Ethnicity,Black or African American,114,81,73,114,81,73,113,80,72
+174904,Mathematics,Race/Ethnicity,Hispanic/Latino,143,118,111,143,118,111,144,119,110
+174904,Mathematics,Race/Ethnicity,Other,25,22,22,25,22,22,26,23,21
+174904,Mathematics,Race/Ethnicity,White,26,19,19,26,19,19,26,17,17
+174904,Mathematics,Homeless,Homeless,11,7,7,11,NA,NA,12,7,6
+174904,Mathematics,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,6,3,3
+175903,Reading,Race/Ethnicity,Black or African American,35,32,24,NA,NA,24,35,32,23
+175903,Reading,Race/Ethnicity,Hispanic/Latino,142,122,99,142,122,99,143,121,100
+175903,Reading,Race/Ethnicity,Other,9,6,6,NA,NA,NA,10,6,6
+175903,Reading,Race/Ethnicity,White,47,35,21,47,35,NA,46,33,23
+175903,Reading,Homeless,Homeless,10,4,3,10,NA,NA,12,4,2
+175903,Reading,In Foster Care,In Foster Care,4,3,2,NA,NA,NA,3,3,3
+175903,Writing,Race/Ethnicity,Black or African American,35,32,26,NA,NA,NA,35,34,25
+175903,Writing,Race/Ethnicity,Hispanic/Latino,142,120,97,142,120,97,143,120,96
+175903,Writing,Race/Ethnicity,Other,9,6,6,NA,NA,NA,10,6,6
+175903,Writing,Race/Ethnicity,White,47,35,28,47,35,28,46,35,28
+175903,Writing,Homeless,Homeless,10,4,4,10,NA,NA,12,6,3
+175903,Writing,In Foster Care,In Foster Care,4,3,2,NA,NA,NA,3,3,2
+175903,Health,Race/Ethnicity,Black or African American,35,19,14,NA,19,NA,35,20,14
+175903,Health,Race/Ethnicity,Hispanic/Latino,142,36,27,142,36,27,143,35,25
+175903,Health,Race/Ethnicity,Other,9,7,6,NA,NA,NA,10,7,7
+175903,Health,Race/Ethnicity,White,47,17,17,47,NA,17,46,16,16
+175903,Health,Homeless,Homeless,10,2,1,10,NA,NA,12,1,1
+175903,Health,In Foster Care,In Foster Care,4,1,1,NA,NA,NA,3,1,0
+175903,Mathematics,Race/Ethnicity,Black or African American,35,16,11,NA,NA,NA,35,18,11
+175903,Mathematics,Race/Ethnicity,Hispanic/Latino,142,31,22,142,31,22,143,31,21
+175903,Mathematics,Race/Ethnicity,Other,9,5,5,NA,NA,NA,10,3,3
+175903,Mathematics,Race/Ethnicity,White,47,16,14,47,16,14,46,16,16
+175903,Mathematics,Homeless,Homeless,10,1,1,10,NA,NA,12,1,0
+175903,Mathematics,In Foster Care,In Foster Care,4,1,1,NA,NA,NA,3,2,1
+178904,Reading,Race/Ethnicity,Black or African American,47,38,28,47,38,28,47,38,27
+178904,Reading,Race/Ethnicity,Hispanic/Latino,1277,1083,843,1277,1083,843,1278,1081,844
+178904,Reading,Race/Ethnicity,Other,61,51,48,61,51,48,61,53,49
+178904,Reading,Race/Ethnicity,White,134,101,80,134,101,80,134,103,81
+178904,Reading,Homeless,Homeless,77,49,33,77,49,33,77,52,30
+178904,Reading,In Foster Care,In Foster Care,30,30,22,30,30,22,31,31,22
+178904,Writing,Race/Ethnicity,Black or African American,47,34,27,47,34,27,47,33,27
+178904,Writing,Race/Ethnicity,Hispanic/Latino,1277,995,887,1277,995,887,1278,994,887
+178904,Writing,Race/Ethnicity,Other,61,45,45,61,45,45,61,45,44
+178904,Writing,Race/Ethnicity,White,134,96,77,134,96,77,134,95,79
+178904,Writing,Homeless,Homeless,77,49,41,77,49,41,77,49,41
+178904,Writing,In Foster Care,In Foster Care,30,28,23,30,28,23,31,28,23
+178904,Health,Race/Ethnicity,Black or African American,47,37,29,47,37,29,47,39,29
+178904,Health,Race/Ethnicity,Hispanic/Latino,1277,1043,947,1277,1043,947,1278,1044,947
+178904,Health,Race/Ethnicity,Other,61,46,43,61,46,43,61,46,42
+178904,Health,Race/Ethnicity,White,134,98,81,134,98,81,134,99,80
+178904,Health,Homeless,Homeless,77,49,40,77,49,40,77,50,39
+178904,Health,In Foster Care,In Foster Care,30,29,20,30,29,20,31,29,19
+178904,Mathematics,Race/Ethnicity,Black or African American,47,38,38,47,38,38,47,39,38
+178904,Mathematics,Race/Ethnicity,Hispanic/Latino,1277,1052,976,1277,1052,976,1278,1053,975
+178904,Mathematics,Race/Ethnicity,Other,61,48,45,61,48,45,61,48,45
+178904,Mathematics,Race/Ethnicity,White,134,101,94,134,101,94,134,102,94
+178904,Mathematics,Homeless,Homeless,77,49,41,77,49,41,77,50,40
+178904,Mathematics,In Foster Care,In Foster Care,30,29,17,30,29,17,31,29,18
+182903,Reading,Race/Ethnicity,Black or African American,8,8,8,NA,NA,NA,7,7,7
+182903,Reading,Race/Ethnicity,Hispanic/Latino,88,68,61,88,68,61,90,66,62
+182903,Reading,Race/Ethnicity,Other,16,7,7,NA,NA,NA,15,8,8
+182903,Reading,Race/Ethnicity,White,102,80,67,102,80,67,103,79,66
+182903,Reading,Homeless,Homeless,11,5,4,11,NA,NA,12,5,4
+182903,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,3,1
+182903,Writing,Race/Ethnicity,Black or African American,8,8,8,NA,NA,NA,7,9,7
+182903,Writing,Race/Ethnicity,Hispanic/Latino,88,68,63,88,68,63,90,68,63
+182903,Writing,Race/Ethnicity,Other,16,7,7,NA,NA,NA,15,8,7
+182903,Writing,Race/Ethnicity,White,102,80,71,102,80,71,103,81,70
+182903,Writing,Homeless,Homeless,11,5,4,11,NA,NA,12,6,5
+182903,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+182903,Health,Race/Ethnicity,Black or African American,8,8,8,NA,NA,NA,7,9,7
+182903,Health,Race/Ethnicity,Hispanic/Latino,88,68,58,88,68,58,90,68,59
+182903,Health,Race/Ethnicity,Other,16,7,7,NA,NA,NA,15,7,7
+182903,Health,Race/Ethnicity,White,102,79,69,102,79,69,103,80,69
+182903,Health,Homeless,Homeless,11,5,4,11,NA,NA,12,5,2
+182903,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+182903,Mathematics,Race/Ethnicity,Black or African American,17,17,17,17,17,17,7,16,16
+182903,Mathematics,Race/Ethnicity,Hispanic/Latino,88,68,47,88,68,47,90,67,47
+182903,Mathematics,Race/Ethnicity,Other,16,13,13,16,13,13,15,14,13
+182903,Mathematics,Race/Ethnicity,White,102,80,70,102,80,70,103,80,70
+182903,Mathematics,Homeless,Homeless,11,5,4,11,NA,NA,12,6,4
+182903,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,3,1,1
+187907,Reading,Race/Ethnicity,Black or African American,18,15,13,18,NA,NA,18,17,14
+187907,Reading,Race/Ethnicity,Hispanic/Latino,57,37,37,57,37,37,58,38,36
+187907,Reading,Race/Ethnicity,Other,13,7,7,13,NA,NA,13,6,6
+187907,Reading,Race/Ethnicity,White,73,57,34,73,57,34,72,56,36
+187907,Reading,Homeless,Homeless,6,3,2,NA,NA,NA,6,3,1
+187907,Reading,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,3,3,3
+187907,Writing,Race/Ethnicity,Black or African American,18,15,9,18,NA,NA,18,15,9
+187907,Writing,Race/Ethnicity,Hispanic/Latino,57,37,37,57,37,37,58,36,36
+187907,Writing,Race/Ethnicity,Other,13,7,7,13,NA,NA,13,6,6
+187907,Writing,Race/Ethnicity,White,73,57,52,73,57,52,72,58,51
+187907,Writing,Homeless,Homeless,6,3,2,NA,NA,NA,6,4,2
+187907,Writing,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,3,1,1
+187907,Health,Race/Ethnicity,Black or African American,18,15,9,18,NA,NA,18,16,9
+187907,Health,Race/Ethnicity,Hispanic/Latino,57,37,37,57,37,37,58,35,35
+187907,Health,Race/Ethnicity,Other,13,7,7,13,NA,NA,13,9,7
+187907,Health,Race/Ethnicity,White,73,57,51,73,57,51,72,58,50
+187907,Health,Homeless,Homeless,6,3,2,NA,NA,NA,6,3,3
+187907,Health,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,3,1,1
+187907,Mathematics,Race/Ethnicity,Black or African American,18,15,15,18,NA,NA,18,16,13
+187907,Mathematics,Race/Ethnicity,Hispanic/Latino,57,37,32,57,37,32,58,37,31
+187907,Mathematics,Race/Ethnicity,Other,13,7,7,13,NA,NA,13,5,5
+187907,Mathematics,Race/Ethnicity,White,73,57,52,73,57,52,72,57,53
+187907,Mathematics,Homeless,Homeless,6,3,2,NA,NA,NA,6,4,1
+187907,Mathematics,In Foster Care,In Foster Care,1,1,1,NA,NA,NA,3,1,0
+188901,Reading,Race/Ethnicity,Black or African American,206,160,107,206,160,107,207,160,108
+188901,Reading,Race/Ethnicity,Hispanic/Latino,787,635,471,787,635,471,786,634,471
+188901,Reading,Race/Ethnicity,Other,123,101,79,123,101,79,122,101,80
+188901,Reading,Race/Ethnicity,White,333,264,190,333,264,190,332,264,190
+188901,Reading,Homeless,Homeless,83,59,43,83,59,43,85,59,41
+188901,Reading,In Foster Care,In Foster Care,18,10,5,18,10,NA,18,9,7
+188901,Writing,Race/Ethnicity,Black or African American,206,142,125,206,142,125,207,141,127
+188901,Writing,Race/Ethnicity,Hispanic/Latino,787,581,524,787,581,524,786,581,522
+188901,Writing,Race/Ethnicity,Other,123,86,78,123,86,78,122,87,81
+188901,Writing,Race/Ethnicity,White,333,241,219,333,241,219,332,241,217
+188901,Writing,Homeless,Homeless,83,57,48,83,57,48,85,57,49
+188901,Writing,In Foster Care,In Foster Care,18,8,6,18,NA,NA,18,9,4
+188901,Health,Race/Ethnicity,Black or African American,206,153,135,206,153,135,207,154,135
+188901,Health,Race/Ethnicity,Hispanic/Latino,787,608,557,787,608,557,786,608,556
+188901,Health,Race/Ethnicity,Other,123,94,86,123,94,86,122,95,87
+188901,Health,Race/Ethnicity,White,333,250,215,333,250,215,332,249,214
+188901,Health,Homeless,Homeless,83,59,50,83,59,50,85,60,50
+188901,Health,In Foster Care,In Foster Care,18,8,6,18,NA,NA,18,8,6
+188901,Mathematics,Race/Ethnicity,Black or African American,206,149,121,206,149,121,207,150,121
+188901,Mathematics,Race/Ethnicity,Hispanic/Latino,787,617,551,787,617,551,786,617,551
+188901,Mathematics,Race/Ethnicity,Other,123,96,86,123,96,86,122,98,87
+188901,Mathematics,Race/Ethnicity,White,333,254,224,333,254,224,332,251,224
+188901,Mathematics,Homeless,Homeless,83,57,48,83,57,48,85,58,47
+188901,Mathematics,In Foster Care,In Foster Care,18,8,7,18,NA,NA,18,9,7
+199902,Reading,Race/Ethnicity,Black or African American,85,69,60,85,69,60,86,71,59
+199902,Reading,Race/Ethnicity,Hispanic/Latino,145,120,101,145,120,101,145,121,100
+199902,Reading,Race/Ethnicity,Other,30,23,21,30,23,21,30,22,22
+199902,Reading,Race/Ethnicity,White,63,54,47,63,54,47,65,54,45
+199902,Reading,Homeless,Homeless,6,6,5,NA,NA,NA,8,7,4
+199902,Reading,In Foster Care,In Foster Care,12,8,1,12,NA,NA,12,6,0
+199902,Writing,Race/Ethnicity,Black or African American,85,69,63,85,69,63,86,68,64
+199902,Writing,Race/Ethnicity,Hispanic/Latino,145,120,115,145,120,115,145,120,115
+199902,Writing,Race/Ethnicity,Other,30,23,23,30,23,23,30,25,24
+199902,Writing,Race/Ethnicity,White,63,54,33,63,54,33,65,54,32
+199902,Writing,Homeless,Homeless,6,6,6,NA,NA,NA,8,5,5
+199902,Writing,In Foster Care,In Foster Care,12,8,8,12,NA,NA,12,8,6
+199902,Health,Race/Ethnicity,Black or African American,85,69,62,85,69,62,86,70,63
+199902,Health,Race/Ethnicity,Hispanic/Latino,145,120,120,145,120,120,145,119,119
+199902,Health,Race/Ethnicity,Other,30,23,23,30,23,23,30,24,23
+199902,Health,Race/Ethnicity,White,63,54,32,63,54,32,65,53,33
+199902,Health,Homeless,Homeless,6,6,6,NA,NA,NA,8,7,6
+199902,Health,In Foster Care,In Foster Care,12,8,8,12,NA,NA,12,8,8
+199902,Mathematics,Race/Ethnicity,Black or African American,85,69,62,85,69,62,86,69,60
+199902,Mathematics,Race/Ethnicity,Hispanic/Latino,145,119,107,145,119,107,145,120,108
+199902,Mathematics,Race/Ethnicity,Other,30,23,23,30,23,23,30,24,24
+199902,Mathematics,Race/Ethnicity,White,63,53,34,63,53,34,65,52,33
+199902,Mathematics,Homeless,Homeless,6,6,5,NA,NA,NA,8,4,4
+199902,Mathematics,In Foster Care,In Foster Care,12,8,8,12,NA,NA,12,8,8
+212905,Reading,Race/Ethnicity,Black or African American,215,180,147,215,180,147,216,179,147
+212905,Reading,Race/Ethnicity,Hispanic/Latino,384,345,318,384,345,318,384,347,317
+212905,Reading,Race/Ethnicity,Other,41,28,27,41,28,27,41,27,26
+212905,Reading,Race/Ethnicity,White,137,125,118,137,125,118,138,123,117
+212905,Reading,Homeless,Homeless,15,11,11,15,11,11,16,12,12
+212905,Reading,In Foster Care,In Foster Care,12,8,7,12,NA,NA,13,6,6
+212905,Writing,Race/Ethnicity,Black or African American,215,179,161,215,179,161,216,178,160
+212905,Writing,Race/Ethnicity,Hispanic/Latino,384,345,317,384,345,317,384,343,316
+212905,Writing,Race/Ethnicity,Other,41,28,26,41,28,26,41,28,26
+212905,Writing,Race/Ethnicity,White,137,125,119,137,125,119,138,124,118
+212905,Writing,Homeless,Homeless,15,11,11,15,11,11,16,11,11
+212905,Writing,In Foster Care,In Foster Care,12,8,4,12,NA,NA,13,9,4
+212905,Health,Race/Ethnicity,Black or African American,215,180,165,215,180,165,216,181,164
+212905,Health,Race/Ethnicity,Hispanic/Latino,384,341,324,384,341,324,384,341,326
+212905,Health,Race/Ethnicity,Other,41,28,21,41,28,21,41,30,20
+212905,Health,Race/Ethnicity,White,137,124,116,137,124,116,138,122,116
+212905,Health,Homeless,Homeless,15,11,11,15,11,11,16,10,10
+212905,Health,In Foster Care,In Foster Care,12,8,7,12,NA,NA,13,8,6
+212905,Mathematics,Race/Ethnicity,Black or African American,215,177,158,215,177,158,216,177,157
+212905,Mathematics,Race/Ethnicity,Hispanic/Latino,384,325,305,384,325,305,384,325,303
+212905,Mathematics,Race/Ethnicity,Other,41,28,23,41,28,23,41,30,23
+212905,Mathematics,Race/Ethnicity,White,137,123,123,137,123,123,138,122,122
+212905,Mathematics,Homeless,Homeless,15,11,11,15,11,11,16,9,9
+212905,Mathematics,In Foster Care,In Foster Care,12,7,7,12,NA,NA,13,8,7
+220901,Reading,Race/Ethnicity,Black or African American,873,598,513,873,598,513,875,596,515
+220901,Reading,Race/Ethnicity,Hispanic/Latino,1588,1287,1117,1588,1287,1117,1588,1287,1117
+220901,Reading,Race/Ethnicity,Other,255,205,185,255,205,185,255,205,183
+220901,Reading,Race/Ethnicity,White,442,358,322,442,358,322,440,358,322
+220901,Reading,Homeless,Homeless,146,92,77,146,92,77,146,91,76
+220901,Reading,In Foster Care,In Foster Care,11,7,7,11,NA,NA,11,8,6
+220901,Writing,Race/Ethnicity,Black or African American,873,627,546,873,627,546,875,627,546
+220901,Writing,Race/Ethnicity,Hispanic/Latino,1588,1307,1181,1588,1307,1181,1588,1307,1181
+220901,Writing,Race/Ethnicity,Other,255,211,192,255,211,192,255,211,193
+220901,Writing,Race/Ethnicity,White,442,369,348,442,369,348,440,368,346
+220901,Writing,Homeless,Homeless,146,96,80,146,96,80,146,98,80
+220901,Writing,In Foster Care,In Foster Care,11,7,7,11,NA,NA,11,7,7
+220901,Health,Race/Ethnicity,Black or African American,873,625,517,873,625,517,875,625,515
+220901,Health,Race/Ethnicity,Hispanic/Latino,1588,1313,1216,1588,1313,1216,1588,1313,1215
+220901,Health,Race/Ethnicity,Other,255,213,197,255,213,197,255,212,197
+220901,Health,Race/Ethnicity,White,442,373,337,442,373,337,440,372,337
+220901,Health,Homeless,Homeless,146,97,83,146,97,83,146,96,81
+220901,Health,In Foster Care,In Foster Care,11,6,6,11,NA,NA,11,5,5
+220901,Mathematics,Race/Ethnicity,Black or African American,873,631,574,873,631,574,875,630,574
+220901,Mathematics,Race/Ethnicity,Hispanic/Latino,1588,1304,1226,1588,1304,1226,1588,1305,1228
+220901,Mathematics,Race/Ethnicity,Other,255,209,196,255,209,196,255,209,197
+220901,Mathematics,Race/Ethnicity,White,442,371,361,442,371,361,440,370,362
+220901,Mathematics,Homeless,Homeless,146,96,83,146,96,83,146,94,81
+220901,Mathematics,In Foster Care,In Foster Care,11,7,7,11,NA,NA,11,8,6
+220902,Reading,Race/Ethnicity,Black or African American,101,70,57,101,70,57,100,70,57
+220902,Reading,Race/Ethnicity,Hispanic/Latino,512,447,382,512,447,382,511,449,383
+220902,Reading,Race/Ethnicity,Other,95,86,73,95,86,73,94,85,72
+220902,Reading,Race/Ethnicity,White,168,140,115,168,140,115,169,140,115
+220902,Reading,Homeless,Homeless,18,14,14,18,14,14,18,14,14
+220902,Reading,In Foster Care,In Foster Care,9,7,5,NA,NA,NA,9,5,4
+220902,Writing,Race/Ethnicity,Black or African American,101,70,70,101,70,70,100,69,69
+220902,Writing,Race/Ethnicity,Hispanic/Latino,512,444,406,512,444,406,511,442,407
+220902,Writing,Race/Ethnicity,Other,95,85,75,95,85,75,94,83,76
+220902,Writing,Race/Ethnicity,White,168,139,116,168,139,116,169,139,117
+220902,Writing,Homeless,Homeless,18,14,14,18,14,14,18,14,14
+220902,Writing,In Foster Care,In Foster Care,9,6,6,NA,NA,NA,9,7,6
+220902,Health,Race/Ethnicity,Black or African American,101,70,70,101,70,70,100,69,69
+220902,Health,Race/Ethnicity,Hispanic/Latino,512,446,422,512,446,422,511,448,420
+220902,Health,Race/Ethnicity,Other,95,86,75,95,86,75,94,86,74
+220902,Health,Race/Ethnicity,White,168,140,115,168,140,115,169,140,114
+220902,Health,Homeless,Homeless,18,14,14,18,14,14,18,15,12
+220902,Health,In Foster Care,In Foster Care,9,6,5,NA,NA,NA,9,6,3
+220902,Mathematics,Race/Ethnicity,Black or African American,101,70,65,101,70,65,100,71,64
+220902,Mathematics,Race/Ethnicity,Hispanic/Latino,512,447,414,512,447,414,511,447,416
+220902,Mathematics,Race/Ethnicity,Other,95,86,84,95,86,84,94,85,85
+220902,Mathematics,Race/Ethnicity,White,168,139,132,168,139,132,169,139,132
+220902,Mathematics,Homeless,Homeless,18,14,14,18,14,14,18,13,13
+220902,Mathematics,In Foster Care,In Foster Care,9,7,6,NA,NA,NA,9,9,4
+220904,Reading,Race/Ethnicity,Black or African American,98,62,51,98,62,51,99,61,52
+220904,Reading,Race/Ethnicity,Hispanic/Latino,149,122,105,149,122,105,151,123,105
+220904,Reading,Race/Ethnicity,Other,7,5,4,NA,NA,NA,8,5,5
+220904,Reading,Race/Ethnicity,White,10,8,6,NA,NA,NA,11,7,5
+220904,Reading,Homeless,Homeless,12,6,5,12,NA,NA,13,6,5
+220904,Reading,In Foster Care,In Foster Care,3,2,1,NA,NA,NA,3,3,0
+220904,Writing,Race/Ethnicity,Black or African American,98,62,47,98,62,47,99,64,45
+220904,Writing,Race/Ethnicity,Hispanic/Latino,149,124,117,149,124,117,151,124,117
+220904,Writing,Race/Ethnicity,Other,7,5,4,NA,NA,NA,8,5,2
+220904,Writing,Race/Ethnicity,White,10,8,6,NA,NA,NA,11,10,5
+220904,Writing,Homeless,Homeless,12,6,5,12,NA,NA,13,5,5
+220904,Writing,In Foster Care,In Foster Care,3,2,1,NA,NA,NA,3,1,1
+220904,Health,Race/Ethnicity,Black or African American,98,62,48,98,62,48,99,62,49
+220904,Health,Race/Ethnicity,Hispanic/Latino,149,124,116,149,124,116,151,125,115
+220904,Health,Race/Ethnicity,Other,7,5,4,NA,NA,NA,8,5,5
+220904,Health,Race/Ethnicity,White,10,8,5,NA,NA,NA,11,8,6
+220904,Health,Homeless,Homeless,12,6,5,12,NA,NA,13,7,6
+220904,Health,In Foster Care,In Foster Care,3,2,1,NA,NA,NA,3,2,2
+220904,Mathematics,Race/Ethnicity,Black or African American,98,62,56,98,62,56,99,63,56
+220904,Mathematics,Race/Ethnicity,Hispanic/Latino,149,123,106,149,123,106,151,122,107
+220904,Mathematics,Race/Ethnicity,Other,7,5,4,NA,NA,NA,8,6,6
+220904,Mathematics,Race/Ethnicity,White,10,8,7,NA,NA,NA,11,7,7
+220904,Mathematics,Homeless,Homeless,12,6,5,12,NA,NA,13,5,5
+220904,Mathematics,In Foster Care,In Foster Care,3,2,2,NA,NA,NA,3,2,1
+220907,Reading,Race/Ethnicity,Black or African American,133,106,37,133,106,37,133,105,36
+220907,Reading,Race/Ethnicity,Hispanic/Latino,241,211,82,241,211,82,242,212,83
+220907,Reading,Race/Ethnicity,Other,201,188,56,201,188,56,202,190,59
+220907,Reading,Race/Ethnicity,White,142,132,58,142,132,58,143,132,58
+220907,Reading,Homeless,Homeless,11,11,6,11,11,NA,12,11,6
+220907,Reading,In Foster Care,In Foster Care,15,14,6,15,14,NA,14,14,6
+220907,Writing,Race/Ethnicity,Black or African American,133,100,24,133,100,24,133,101,23
+220907,Writing,Race/Ethnicity,Hispanic/Latino,241,204,29,241,204,29,242,204,28
+220907,Writing,Race/Ethnicity,Other,201,180,40,201,180,40,202,179,39
+220907,Writing,Race/Ethnicity,White,142,128,44,142,128,44,143,129,45
+220907,Writing,Homeless,Homeless,11,8,4,11,NA,NA,12,8,3
+220907,Writing,In Foster Care,In Foster Care,15,13,6,15,13,NA,14,13,8
+220907,Health,Race/Ethnicity,Black or African American,133,107,34,133,107,34,133,107,34
+220907,Health,Race/Ethnicity,Hispanic/Latino,241,211,82,241,211,82,242,212,83
+220907,Health,Race/Ethnicity,Other,201,189,51,201,189,51,202,187,49
+220907,Health,Race/Ethnicity,White,142,133,50,142,133,50,143,136,51
+220907,Health,Homeless,Homeless,11,11,6,11,11,NA,12,10,8
+220907,Health,In Foster Care,In Foster Care,15,14,5,15,14,NA,14,12,6
+220907,Mathematics,Race/Ethnicity,Black or African American,133,98,25,133,98,25,133,98,26
+220907,Mathematics,Race/Ethnicity,Hispanic/Latino,241,199,70,241,199,70,242,200,70
+220907,Mathematics,Race/Ethnicity,Other,201,175,46,201,175,46,202,173,46
+220907,Mathematics,Race/Ethnicity,White,142,124,49,142,124,49,143,125,49
+220907,Mathematics,Homeless,Homeless,11,8,5,11,NA,NA,12,7,5
+220907,Mathematics,In Foster Care,In Foster Care,15,13,6,15,13,NA,14,12,6
+220908,Reading,Race/Ethnicity,Black or African American,471,404,357,471,404,357,471,405,357
+220908,Reading,Race/Ethnicity,Hispanic/Latino,363,310,263,363,310,263,363,312,263
+220908,Reading,Race/Ethnicity,Other,211,194,175,211,194,175,210,194,176
+220908,Reading,Race/Ethnicity,White,184,158,130,184,158,130,184,159,129
+220908,Reading,Homeless,Homeless,14,9,9,14,NA,NA,13,9,9
+220908,Reading,In Foster Care,In Foster Care,20,14,8,20,14,NA,20,15,9
+220908,Writing,Race/Ethnicity,Black or African American,471,401,378,471,401,378,471,401,378
+220908,Writing,Race/Ethnicity,Hispanic/Latino,363,306,287,363,306,287,363,307,286
+220908,Writing,Race/Ethnicity,Other,211,194,183,211,194,183,210,194,184
+220908,Writing,Race/Ethnicity,White,184,153,145,184,153,145,184,152,147
+220908,Writing,Homeless,Homeless,14,9,9,14,NA,NA,13,11,9
+220908,Writing,In Foster Care,In Foster Care,20,14,14,20,14,14,20,15,13
+220908,Health,Race/Ethnicity,Black or African American,471,388,357,471,388,357,471,388,357
+220908,Health,Race/Ethnicity,Hispanic/Latino,363,295,272,363,295,272,363,295,271
+220908,Health,Race/Ethnicity,Other,211,188,177,211,188,177,210,187,175
+220908,Health,Race/Ethnicity,White,184,147,134,184,147,134,184,146,134
+220908,Health,Homeless,Homeless,14,7,7,14,NA,NA,13,7,7
+220908,Health,In Foster Care,In Foster Care,20,14,7,20,14,NA,20,13,4
+220908,Mathematics,Race/Ethnicity,Black or African American,471,398,375,471,398,375,471,398,374
+220908,Mathematics,Race/Ethnicity,Hispanic/Latino,363,302,295,363,302,295,363,304,294
+220908,Mathematics,Race/Ethnicity,Other,211,192,186,211,192,186,210,193,187
+220908,Mathematics,Race/Ethnicity,White,184,155,147,184,155,147,184,154,146
+220908,Mathematics,Homeless,Homeless,14,7,7,14,NA,NA,13,6,6
+220908,Mathematics,In Foster Care,In Foster Care,20,14,9,20,14,NA,20,14,11
+220916,Reading,Race/Ethnicity,Black or African American,271,215,192,271,215,192,271,216,192
+220916,Reading,Race/Ethnicity,Hispanic/Latino,333,290,238,333,290,238,334,290,237
+220916,Reading,Race/Ethnicity,Other,275,242,222,275,242,222,274,242,222
+220916,Reading,Race/Ethnicity,White,182,158,142,182,158,142,181,158,142
+220916,Reading,Homeless,Homeless,52,44,39,52,44,39,52,42,40
+220916,Reading,In Foster Care,In Foster Care,7,6,6,NA,NA,NA,7,7,7
+220916,Writing,Race/Ethnicity,Black or African American,271,213,179,271,213,179,271,212,180
+220916,Writing,Race/Ethnicity,Hispanic/Latino,333,269,230,333,269,230,334,269,230
+220916,Writing,Race/Ethnicity,Other,275,242,225,275,242,225,274,243,225
+220916,Writing,Race/Ethnicity,White,182,157,145,182,157,145,181,157,147
+220916,Writing,Homeless,Homeless,52,42,32,52,42,32,52,41,30
+220916,Writing,In Foster Care,In Foster Care,7,6,6,NA,NA,NA,7,6,6
+220916,Health,Race/Ethnicity,Black or African American,271,214,192,271,214,192,271,213,193
+220916,Health,Race/Ethnicity,Hispanic/Latino,333,290,256,333,290,256,334,290,256
+220916,Health,Race/Ethnicity,Other,275,242,218,275,242,218,274,241,218
+220916,Health,Race/Ethnicity,White,182,158,142,182,158,142,181,158,141
+220916,Health,Homeless,Homeless,52,44,39,52,44,39,52,44,41
+220916,Health,In Foster Care,In Foster Care,7,6,6,NA,NA,NA,7,8,8
+220916,Mathematics,Race/Ethnicity,Black or African American,271,215,191,271,215,191,271,215,192
+220916,Mathematics,Race/Ethnicity,Hispanic/Latino,333,289,252,333,289,252,334,289,253
+220916,Mathematics,Race/Ethnicity,Other,275,242,226,275,242,226,274,242,223
+220916,Mathematics,Race/Ethnicity,White,182,158,148,182,158,148,181,160,148
+220916,Mathematics,Homeless,Homeless,52,44,23,52,44,23,52,43,24
+220916,Mathematics,In Foster Care,In Foster Care,7,6,6,NA,NA,NA,7,7,7
+220918,Reading,Race/Ethnicity,Black or African American,206,146,120,206,146,120,205,145,119
+220918,Reading,Race/Ethnicity,Hispanic/Latino,282,232,175,282,232,175,282,232,175
+220918,Reading,Race/Ethnicity,Other,138,113,102,138,113,102,139,113,102
+220918,Reading,Race/Ethnicity,White,94,74,61,94,74,61,94,74,61
+220918,Reading,Homeless,Homeless,13,13,13,13,13,13,13,13,13
+220918,Reading,In Foster Care,In Foster Care,12,6,4,12,NA,NA,11,7,4
+220918,Writing,Race/Ethnicity,Black or African American,206,143,120,206,143,120,205,144,120
+220918,Writing,Race/Ethnicity,Hispanic/Latino,282,227,213,282,227,213,282,227,213
+220918,Writing,Race/Ethnicity,Other,138,107,99,138,107,99,139,108,99
+220918,Writing,Race/Ethnicity,White,94,72,64,94,72,64,94,74,65
+220918,Writing,Homeless,Homeless,15,15,14,15,15,14,13,14,13
+220918,Writing,In Foster Care,In Foster Care,12,6,4,12,NA,NA,11,6,3
+220918,Health,Race/Ethnicity,Black or African American,206,146,128,206,146,128,205,145,128
+220918,Health,Race/Ethnicity,Hispanic/Latino,282,231,217,282,231,217,282,232,217
+220918,Health,Race/Ethnicity,Other,138,111,105,138,111,105,139,111,104
+220918,Health,Race/Ethnicity,White,94,74,65,94,74,65,94,75,64
+220918,Health,Homeless,Homeless,15,15,14,15,15,14,13,14,13
+220918,Health,In Foster Care,In Foster Care,12,6,4,12,NA,NA,11,7,4
+220918,Mathematics,Race/Ethnicity,Black or African American,206,143,128,206,143,128,205,145,126
+220918,Mathematics,Race/Ethnicity,Hispanic/Latino,282,230,209,282,230,209,282,230,210
+220918,Mathematics,Race/Ethnicity,Other,138,112,68,138,112,68,139,112,67
+220918,Mathematics,Race/Ethnicity,White,94,74,74,94,74,74,94,75,75
+220918,Mathematics,Homeless,Homeless,14,14,14,14,14,14,13,14,12
+220918,Mathematics,In Foster Care,In Foster Care,12,6,6,12,NA,NA,11,6,4
+225902,Reading,Race/Ethnicity,Black or African American,29,27,14,29,27,14,28,26,13
+225902,Reading,Race/Ethnicity,Hispanic/Latino,181,169,124,181,169,124,183,168,126
+225902,Reading,Race/Ethnicity,Other,2,1,1,NA,NA,NA,3,1,1
+225902,Reading,Race/Ethnicity,White,6,5,4,NA,NA,NA,7,6,5
+225902,Reading,Homeless,Homeless,8,6,4,NA,NA,NA,6,6,4
+225902,Reading,In Foster Care,In Foster Care,3,3,2,NA,NA,NA,4,4,1
+225902,Writing,Race/Ethnicity,Black or African American,29,26,20,29,26,20,28,28,20
+225902,Writing,Race/Ethnicity,Hispanic/Latino,181,169,139,181,169,139,183,168,138
+225902,Writing,Race/Ethnicity,Other,7,7,1,NA,NA,NA,3,5,1
+225902,Writing,Race/Ethnicity,White,6,5,5,NA,NA,NA,7,3,3
+225902,Writing,Homeless,Homeless,8,6,5,NA,NA,NA,6,6,4
+225902,Writing,In Foster Care,In Foster Care,3,3,1,NA,NA,NA,4,2,2
+225902,Health,Race/Ethnicity,Black or African American,29,27,20,29,27,20,28,28,20
+225902,Health,Race/Ethnicity,Hispanic/Latino,181,169,151,181,169,151,183,169,150
+225902,Health,Race/Ethnicity,Other,2,1,1,NA,NA,NA,3,1,0
+225902,Health,Race/Ethnicity,White,6,5,4,NA,NA,NA,7,5,4
+225902,Health,Homeless,Homeless,8,6,4,NA,NA,NA,6,6,3
+225902,Health,In Foster Care,In Foster Care,3,2,1,NA,NA,NA,4,1,1
+225902,Mathematics,Race/Ethnicity,Black or African American,29,27,22,29,27,22,28,27,23
+225902,Mathematics,Race/Ethnicity,Hispanic/Latino,181,169,130,181,169,130,183,169,129
+225902,Mathematics,Race/Ethnicity,Other,2,1,1,NA,NA,NA,3,1,0
+225902,Mathematics,Race/Ethnicity,White,6,5,4,NA,NA,NA,7,6,3
+225902,Mathematics,Homeless,Homeless,8,6,4,NA,NA,NA,6,5,5
+225902,Mathematics,In Foster Care,In Foster Care,3,3,1,NA,NA,NA,4,3,1
+226903,Reading,Race/Ethnicity,Black or African American,14,9,6,14,NA,NA,13,10,6
+226903,Reading,Race/Ethnicity,Hispanic/Latino,191,152,113,191,152,113,191,152,113
+226903,Reading,Race/Ethnicity,Other,18,13,9,18,NA,NA,18,13,9
+226903,Reading,Race/Ethnicity,White,65,48,37,65,48,37,66,46,38
+226903,Reading,Homeless,Homeless,9,6,3,NA,NA,NA,7,7,2
+226903,Reading,In Foster Care,In Foster Care,5,3,1,NA,NA,NA,5,4,0
+226903,Writing,Race/Ethnicity,Black or African American,14,9,4,14,NA,NA,13,9,4
+226903,Writing,Race/Ethnicity,Hispanic/Latino,191,138,133,191,138,133,191,139,132
+226903,Writing,Race/Ethnicity,Other,18,12,6,18,NA,NA,18,12,7
+226903,Writing,Race/Ethnicity,White,65,46,46,65,46,46,66,46,46
+226903,Writing,Homeless,Homeless,9,5,5,NA,NA,NA,7,5,5
+226903,Writing,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,5,2,2
+226903,Health,Race/Ethnicity,Black or African American,14,9,4,14,NA,NA,13,8,6
+226903,Health,Race/Ethnicity,Hispanic/Latino,191,151,144,191,151,144,191,151,144
+226903,Health,Race/Ethnicity,Other,18,13,7,18,NA,NA,18,10,8
+226903,Health,Race/Ethnicity,White,65,49,49,65,49,49,66,50,48
+226903,Health,Homeless,Homeless,9,6,6,NA,NA,NA,7,6,3
+226903,Health,In Foster Care,In Foster Care,5,3,3,NA,NA,NA,5,3,2
+226903,Mathematics,Race/Ethnicity,Black or African American,14,9,8,14,NA,NA,13,11,7
+226903,Mathematics,Race/Ethnicity,Hispanic/Latino,191,152,141,191,152,141,191,153,144
+226903,Mathematics,Race/Ethnicity,Other,18,12,11,18,NA,NA,18,11,10
+226903,Mathematics,Race/Ethnicity,White,65,49,44,65,49,44,66,49,43
+226903,Mathematics,Homeless,Homeless,9,6,6,NA,NA,NA,7,6,4
+226903,Mathematics,In Foster Care,In Foster Care,5,3,1,NA,NA,NA,5,5,1
+227820,Reading,Race/Ethnicity,Black or African American,789,528,461,789,528,461,791,527,461
+227820,Reading,Race/Ethnicity,Hispanic/Latino,1406,1021,795,1406,1021,795,1406,1022,795
+227820,Reading,Race/Ethnicity,Other,146,101,87,146,101,87,145,102,88
+227820,Reading,Race/Ethnicity,White,76,49,43,76,49,43,76,49,44
+227820,Reading,Homeless,Homeless,170,117,88,170,117,88,170,117,87
+227820,Reading,In Foster Care,In Foster Care,9,7,6,NA,NA,NA,9,7,5
+227820,Writing,Race/Ethnicity,Black or African American,789,509,463,789,509,463,791,509,463
+227820,Writing,Race/Ethnicity,Hispanic/Latino,1406,989,912,1406,989,912,1406,989,913
+227820,Writing,Race/Ethnicity,Other,146,77,64,146,77,64,145,76,62
+227820,Writing,Race/Ethnicity,White,76,43,43,76,43,43,76,41,41
+227820,Writing,Homeless,Homeless,170,95,82,170,95,82,170,97,82
+227820,Writing,In Foster Care,In Foster Care,9,7,6,NA,NA,NA,9,7,5
+227820,Health,Race/Ethnicity,Black or African American,789,530,468,789,530,468,791,529,469
+227820,Health,Race/Ethnicity,Hispanic/Latino,1406,1002,919,1406,1002,919,1406,1002,919
+227820,Health,Race/Ethnicity,Other,146,97,77,146,97,77,145,98,76
+227820,Health,Race/Ethnicity,White,76,47,47,76,47,47,76,47,47
+227820,Health,Homeless,Homeless,170,97,85,170,97,85,170,97,86
+227820,Health,In Foster Care,In Foster Care,9,7,5,NA,NA,NA,9,7,5
+227820,Mathematics,Race/Ethnicity,Black or African American,789,576,552,789,576,552,791,576,554
+227820,Mathematics,Race/Ethnicity,Hispanic/Latino,1406,1140,1035,1406,1140,1035,1406,1140,1037
+227820,Mathematics,Race/Ethnicity,Other,146,113,89,146,113,89,145,116,91
+227820,Mathematics,Race/Ethnicity,White,76,55,55,76,55,55,76,55,55
+227820,Mathematics,Homeless,Homeless,170,129,115,170,129,115,170,127,114
+227820,Mathematics,In Foster Care,In Foster Care,9,8,7,NA,NA,NA,9,6,6
+227901,Reading,Race/Ethnicity,Black or African American,247,162,115,247,162,115,247,161,116
+227901,Reading,Race/Ethnicity,Hispanic/Latino,2206,1738,1289,2206,1738,1289,2204,1738,1289
+227901,Reading,Race/Ethnicity,Other,338,284,249,338,284,249,337,283,249
+227901,Reading,Race/Ethnicity,White,633,572,495,633,572,495,633,572,495
+227901,Reading,Homeless,Homeless,103,49,30,103,49,30,105,48,29
+227901,Reading,In Foster Care,In Foster Care,25,12,12,25,12,12,24,12,12
+227901,Writing,Race/Ethnicity,Black or African American,247,163,125,247,163,125,247,163,127
+227901,Writing,Race/Ethnicity,Hispanic/Latino,2206,1651,1405,2206,1651,1405,2204,1650,1405
+227901,Writing,Race/Ethnicity,Other,338,273,265,338,273,265,337,272,264
+227901,Writing,Race/Ethnicity,White,633,545,516,633,545,516,633,543,516
+227901,Writing,Homeless,Homeless,103,46,46,103,46,46,105,47,47
+227901,Writing,In Foster Care,In Foster Care,25,12,12,25,12,12,24,13,11
+227901,Health,Race/Ethnicity,Black or African American,247,114,73,247,114,73,247,115,73
+227901,Health,Race/Ethnicity,Hispanic/Latino,2206,1154,933,2206,1154,933,2204,1154,931
+227901,Health,Race/Ethnicity,Other,338,210,178,338,210,178,337,210,177
+227901,Health,Race/Ethnicity,White,633,415,361,633,415,361,633,414,361
+227901,Health,Homeless,Homeless,103,36,29,103,36,29,105,35,30
+227901,Health,In Foster Care,In Foster Care,25,9,9,25,NA,NA,24,7,7
+227901,Mathematics,Race/Ethnicity,Black or African American,247,118,101,247,118,101,247,119,101
+227901,Mathematics,Race/Ethnicity,Hispanic/Latino,2206,1269,1124,2206,1269,1124,2204,1269,1124
+227901,Mathematics,Race/Ethnicity,Other,338,203,190,338,203,190,337,203,191
+227901,Mathematics,Race/Ethnicity,White,633,388,365,633,388,365,633,389,366
+227901,Mathematics,Homeless,Homeless,103,32,25,103,32,25,105,32,26
+227901,Mathematics,In Foster Care,In Foster Care,25,9,9,25,NA,NA,24,10,9
+230902,Reading,Race/Ethnicity,Black or African American,17,12,11,17,12,NA,17,10,10
+230902,Reading,Race/Ethnicity,Hispanic/Latino,28,22,22,28,22,22,25,20,20
+230902,Reading,Race/Ethnicity,Other,19,12,4,19,12,NA,21,12,4
+230902,Reading,Race/Ethnicity,White,59,46,37,59,46,37,59,45,35
+230902,Reading,Homeless,Homeless,10,6,2,10,NA,NA,9,5,1
+230902,Reading,In Foster Care,In Foster Care,7,5,1,NA,NA,NA,7,6,1
+230902,Writing,Race/Ethnicity,Black or African American,17,10,10,17,10,10,17,11,11
+230902,Writing,Race/Ethnicity,Hispanic/Latino,28,22,22,28,22,22,25,22,20
+230902,Writing,Race/Ethnicity,Other,19,11,11,19,11,11,21,11,10
+230902,Writing,Race/Ethnicity,White,59,41,28,59,41,28,59,40,28
+230902,Writing,Homeless,Homeless,10,5,2,10,NA,NA,9,7,4
+230902,Writing,In Foster Care,In Foster Care,7,1,1,NA,NA,NA,7,1,1
+230902,Health,Race/Ethnicity,Black or African American,17,12,12,17,12,NA,17,12,11
+230902,Health,Race/Ethnicity,Hispanic/Latino,28,22,22,28,22,22,25,21,20
+230902,Health,Race/Ethnicity,Other,19,12,4,19,12,NA,21,13,5
+230902,Health,Race/Ethnicity,White,59,46,38,59,46,38,59,47,38
+230902,Health,Homeless,Homeless,10,6,2,10,NA,NA,9,6,3
+230902,Health,In Foster Care,In Foster Care,7,5,1,NA,NA,NA,7,6,0
+230902,Mathematics,Race/Ethnicity,Black or African American,17,12,10,17,12,10,17,11,11
+230902,Mathematics,Race/Ethnicity,Hispanic/Latino,28,22,21,28,22,21,25,22,22
+230902,Mathematics,Race/Ethnicity,Other,19,12,12,19,12,12,21,13,13
+230902,Mathematics,Race/Ethnicity,White,59,46,40,59,46,40,59,47,40
+230902,Mathematics,Homeless,Homeless,10,6,2,10,NA,NA,9,8,3
+230902,Mathematics,In Foster Care,In Foster Care,7,5,1,NA,NA,NA,7,6,1
+233901,Reading,Race/Ethnicity,Black or African American,3,2,1,NA,NA,NA,3,2,0
+233901,Reading,Race/Ethnicity,Hispanic/Latino,343,296,178,343,296,178,342,297,178
+233901,Reading,Race/Ethnicity,Other,4,2,2,NA,NA,NA,5,2,2
+233901,Reading,Race/Ethnicity,White,28,18,16,28,18,16,29,18,15
+233901,Reading,Homeless,Homeless,13,6,3,13,NA,NA,12,6,1
+233901,Reading,In Foster Care,In Foster Care,7,5,1,NA,NA,NA,6,4,0
+233901,Writing,Race/Ethnicity,Black or African American,3,2,2,NA,NA,NA,3,2,2
+233901,Writing,Race/Ethnicity,Hispanic/Latino,343,295,266,343,295,266,342,295,264
+233901,Writing,Race/Ethnicity,Other,4,2,2,NA,NA,NA,5,3,0
+233901,Writing,Race/Ethnicity,White,28,18,18,28,18,18,29,16,16
+233901,Writing,Homeless,Homeless,13,6,6,13,NA,NA,12,5,5
+233901,Writing,In Foster Care,In Foster Care,7,4,4,NA,NA,NA,6,3,3
+233901,Health,Race/Ethnicity,Black or African American,3,2,2,NA,NA,NA,3,1,1
+233901,Health,Race/Ethnicity,Hispanic/Latino,343,291,258,343,291,258,342,289,260
+233901,Health,Race/Ethnicity,Other,4,2,2,NA,NA,NA,5,1,1
+233901,Health,Race/Ethnicity,White,28,18,18,28,18,18,29,18,18
+233901,Health,Homeless,Homeless,13,6,6,13,NA,NA,12,6,4
+233901,Health,In Foster Care,In Foster Care,7,4,4,NA,NA,NA,6,3,3
+233901,Mathematics,Race/Ethnicity,Black or African American,3,2,1,NA,NA,NA,3,1,1
+233901,Mathematics,Race/Ethnicity,Hispanic/Latino,343,292,237,343,292,237,342,294,237
+233901,Mathematics,Race/Ethnicity,Other,4,2,2,NA,NA,NA,5,1,1
+233901,Mathematics,Race/Ethnicity,White,28,18,17,28,18,17,29,18,17
+233901,Mathematics,Homeless,Homeless,13,6,6,13,NA,NA,12,6,6
+233901,Mathematics,In Foster Care,In Foster Care,7,5,2,NA,NA,NA,6,5,2
+237904,Reading,Race/Ethnicity,Black or African American,57,45,35,57,45,35,58,46,34
+237904,Reading,Race/Ethnicity,Hispanic/Latino,283,245,234,283,245,234,283,245,233
+237904,Reading,Race/Ethnicity,Other,27,19,19,27,19,19,26,19,19
+237904,Reading,Race/Ethnicity,White,43,35,20,43,35,20,44,37,19
+237904,Reading,Homeless,Homeless,13,11,8,13,11,NA,13,11,9
+237904,Reading,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,1,0
+237904,Writing,Race/Ethnicity,Black or African American,57,46,41,57,46,41,58,45,41
+237904,Writing,Race/Ethnicity,Hispanic/Latino,283,244,227,283,244,227,283,245,227
+237904,Writing,Race/Ethnicity,Other,27,19,19,27,19,19,26,19,18
+237904,Writing,Race/Ethnicity,White,43,35,21,43,35,21,44,34,19
+237904,Writing,Homeless,Homeless,13,11,11,13,11,11,13,12,12
+237904,Writing,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,1,1
+237904,Health,Race/Ethnicity,Black or African American,57,46,38,57,46,38,58,48,38
+237904,Health,Race/Ethnicity,Hispanic/Latino,283,244,235,283,244,235,283,244,237
+237904,Health,Race/Ethnicity,Other,27,19,19,27,19,19,26,18,18
+237904,Health,Race/Ethnicity,White,43,35,22,43,35,22,44,35,23
+237904,Health,Homeless,Homeless,13,11,11,13,11,11,13,11,10
+237904,Health,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,1,0
+237904,Mathematics,Race/Ethnicity,Black or African American,57,45,38,57,45,38,58,47,38
+237904,Mathematics,Race/Ethnicity,Hispanic/Latino,283,245,225,283,245,225,283,244,225
+237904,Mathematics,Race/Ethnicity,Other,27,19,19,27,19,19,26,20,18
+237904,Mathematics,Race/Ethnicity,White,43,36,23,43,36,23,44,36,24
+237904,Mathematics,Homeless,Homeless,13,11,11,13,11,11,13,12,12
+237904,Mathematics,In Foster Care,In Foster Care,2,1,1,NA,NA,NA,2,1,0
+243905,Reading,Race/Ethnicity,Black or African American,104,77,53,104,77,53,102,76,54
+243905,Reading,Race/Ethnicity,Hispanic/Latino,286,255,181,286,255,181,286,255,182
+243905,Reading,Race/Ethnicity,Other,57,42,32,57,42,32,56,40,33
+243905,Reading,Race/Ethnicity,White,140,114,89,140,114,89,140,115,87
+243905,Reading,Homeless,Homeless,24,13,8,24,13,NA,24,15,9
+243905,Reading,In Foster Care,In Foster Care,16,7,5,16,NA,NA,16,7,6
+243905,Writing,Race/Ethnicity,Black or African American,104,77,61,104,77,61,102,77,60
+243905,Writing,Race/Ethnicity,Hispanic/Latino,286,253,219,286,253,219,286,254,220
+243905,Writing,Race/Ethnicity,Other,57,42,41,57,42,41,56,41,41
+243905,Writing,Race/Ethnicity,White,140,114,103,140,114,103,140,115,104
+243905,Writing,Homeless,Homeless,24,13,11,24,13,11,24,14,12
+243905,Writing,In Foster Care,In Foster Care,16,7,3,16,NA,NA,16,7,4
+243905,Health,Race/Ethnicity,Black or African American,104,77,64,104,77,64,102,77,62
+243905,Health,Race/Ethnicity,Hispanic/Latino,286,253,229,286,253,229,286,252,227
+243905,Health,Race/Ethnicity,Other,57,42,40,57,42,40,56,42,39
+243905,Health,Race/Ethnicity,White,140,114,102,140,114,102,140,113,102
+243905,Health,Homeless,Homeless,24,13,11,24,13,11,24,13,12
+243905,Health,In Foster Care,In Foster Care,16,7,3,16,NA,NA,16,9,2
+243905,Mathematics,Race/Ethnicity,Black or African American,104,77,61,104,77,61,102,78,60
+243905,Mathematics,Race/Ethnicity,Hispanic/Latino,286,253,225,286,253,225,286,254,225
+243905,Mathematics,Race/Ethnicity,Other,57,42,37,57,42,37,56,41,36
+243905,Mathematics,Race/Ethnicity,White,140,114,102,140,114,102,140,115,103
+243905,Mathematics,Homeless,Homeless,24,13,11,24,13,11,24,10,10
+243905,Mathematics,In Foster Care,In Foster Care,16,7,3,16,NA,NA,16,7,3
+246906,Reading,Race/Ethnicity,Black or African American,50,42,35,50,42,35,51,43,37
+246906,Reading,Race/Ethnicity,Hispanic/Latino,186,153,127,186,153,127,188,152,127
+246906,Reading,Race/Ethnicity,Other,77,63,61,77,63,61,77,61,60
+246906,Reading,Race/Ethnicity,White,58,53,44,58,53,44,59,53,45
+246906,Reading,Homeless,Homeless,8,6,4,NA,NA,NA,9,7,3
+246906,Reading,In Foster Care,In Foster Care,4,3,2,NA,NA,NA,3,2,2
+246906,Writing,Race/Ethnicity,Black or African American,50,29,14,50,29,14,51,31,15
+246906,Writing,Race/Ethnicity,Hispanic/Latino,186,86,86,186,86,86,188,86,85
+246906,Writing,Race/Ethnicity,Other,77,53,36,77,53,36,77,53,37
+246906,Writing,Race/Ethnicity,White,58,43,39,58,43,39,59,43,39
+246906,Writing,Homeless,Homeless,8,4,4,NA,NA,NA,9,3,3
+246906,Writing,In Foster Care,In Foster Care,4,2,2,NA,NA,NA,3,1,1
+246906,Health,Race/Ethnicity,Black or African American,50,27,27,50,27,27,51,25,25
+246906,Health,Race/Ethnicity,Hispanic/Latino,186,92,92,186,92,92,188,93,90
+246906,Health,Race/Ethnicity,Other,77,51,51,77,51,51,77,51,49
+246906,Health,Race/Ethnicity,White,58,43,43,58,43,43,59,43,43
+246906,Health,Homeless,Homeless,8,4,4,NA,NA,NA,9,2,2
+246906,Health,In Foster Care,In Foster Care,4,2,2,NA,NA,NA,3,3,3
+246906,Mathematics,Race/Ethnicity,Black or African American,50,41,21,50,41,21,51,42,19
+246906,Mathematics,Race/Ethnicity,Hispanic/Latino,186,152,57,186,152,57,188,151,59
+246906,Mathematics,Race/Ethnicity,Other,77,62,38,77,62,38,77,63,38
+246906,Mathematics,Race/Ethnicity,White,58,53,26,58,53,26,59,52,25
+246906,Mathematics,Homeless,Homeless,8,6,3,NA,NA,NA,9,5,0
+246906,Mathematics,In Foster Care,In Foster Care,4,3,1,NA,NA,NA,3,3,0
+246908,Reading,Race/Ethnicity,Black or African American,13,8,8,13,NA,NA,14,8,8
+246908,Reading,Race/Ethnicity,Hispanic/Latino,75,65,56,75,65,56,76,64,56
+246908,Reading,Race/Ethnicity,Other,86,53,43,86,NA,NA,86,53,44
+246908,Reading,Race/Ethnicity,White,73,55,49,73,55,49,72,54,48
+246908,Reading,Homeless,Homeless,11,5,3,11,NA,NA,10,6,1
+246908,Reading,In Foster Care,In Foster Care,6,2,1,NA,NA,NA,5,1,1
+246908,Writing,Race/Ethnicity,Black or African American,13,8,8,13,NA,NA,14,6,6
+246908,Writing,Race/Ethnicity,Hispanic/Latino,75,64,64,75,64,64,76,64,62
+246908,Writing,Race/Ethnicity,Other,86,52,25,86,52,NA,86,53,25
+246908,Writing,Race/Ethnicity,White,73,47,42,73,NA,42,72,46,42
+246908,Writing,Homeless,Homeless,11,5,3,11,NA,NA,10,4,4
+246908,Writing,In Foster Care,In Foster Care,6,2,1,NA,NA,NA,5,3,1
+246908,Health,Race/Ethnicity,Black or African American,13,8,8,13,NA,NA,14,8,8
+246908,Health,Race/Ethnicity,Hispanic/Latino,75,64,59,75,64,59,76,63,58
+246908,Health,Race/Ethnicity,Other,86,52,37,86,NA,NA,86,52,38
+246908,Health,Race/Ethnicity,White,73,55,47,73,55,47,72,54,47
+246908,Health,Homeless,Homeless,11,5,5,11,NA,NA,10,6,5
+246908,Health,In Foster Care,In Foster Care,6,2,1,NA,NA,NA,5,1,1
+246908,Mathematics,Race/Ethnicity,Black or African American,13,8,8,13,NA,NA,14,9,8
+246908,Mathematics,Race/Ethnicity,Hispanic/Latino,75,64,64,75,64,64,76,64,62
+246908,Mathematics,Race/Ethnicity,Other,86,53,30,86,NA,NA,86,53,29
+246908,Mathematics,Race/Ethnicity,White,73,55,31,73,55,31,72,55,31
+246908,Mathematics,Homeless,Homeless,11,5,3,11,NA,NA,10,5,4
+246908,Mathematics,In Foster Care,In Foster Care,6,2,2,NA,NA,NA,5,3,2
+246909,Reading,Race/Ethnicity,Black or African American,164,111,94,164,111,94,163,111,94
+246909,Reading,Race/Ethnicity,Hispanic/Latino,585,444,363,585,444,363,585,443,361
+246909,Reading,Race/Ethnicity,Other,535,433,421,535,433,421,535,435,422
+246909,Reading,Race/Ethnicity,White,193,154,134,193,154,134,192,153,135
+246909,Reading,Homeless,Homeless,69,33,26,69,33,26,67,33,26
+246909,Reading,In Foster Care,In Foster Care,21,16,8,21,16,NA,24,15,8
+246909,Writing,Race/Ethnicity,Black or African American,164,103,83,164,103,83,163,104,83
+246909,Writing,Race/Ethnicity,Hispanic/Latino,585,433,382,585,433,382,585,433,383
+246909,Writing,Race/Ethnicity,Other,535,393,379,535,393,379,535,393,379
+246909,Writing,Race/Ethnicity,White,193,144,128,193,144,128,192,144,129
+246909,Writing,Homeless,Homeless,69,32,20,69,32,20,67,34,20
+246909,Writing,In Foster Care,In Foster Care,21,15,9,21,15,NA,24,16,9
+246909,Health,Race/Ethnicity,Black or African American,164,102,76,164,102,76,163,100,76
+246909,Health,Race/Ethnicity,Hispanic/Latino,585,413,371,585,413,371,585,414,370
+246909,Health,Race/Ethnicity,Other,535,392,368,535,392,368,535,390,368
+246909,Health,Race/Ethnicity,White,193,146,132,193,146,132,192,147,132
+246909,Health,Homeless,Homeless,69,30,19,69,30,19,67,30,19
+246909,Health,In Foster Care,In Foster Care,21,15,7,21,15,NA,24,15,7
+246909,Mathematics,Race/Ethnicity,Black or African American,164,111,98,164,111,98,163,112,98
+246909,Mathematics,Race/Ethnicity,Hispanic/Latino,585,443,415,585,443,415,585,444,417
+246909,Mathematics,Race/Ethnicity,Other,535,430,423,535,430,423,535,430,421
+246909,Mathematics,Race/Ethnicity,White,193,151,144,193,151,144,192,151,144
+246909,Mathematics,Homeless,Homeless,69,33,19,69,33,19,67,32,21
+246909,Mathematics,In Foster Care,In Foster Care,21,16,10,21,16,10,24,16,10
